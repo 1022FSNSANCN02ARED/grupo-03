@@ -12,7 +12,7 @@ Federico Vazquez:
 
 Magalí Matamala:
 
-Iván Ramírez:
+Iván Ramírez: DB Tengo 24 años, soy profesor de Educación Física. Estoy comenzando en el mundo de la programación.
 
 Gabi Palacios:
 
