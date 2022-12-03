@@ -5,11 +5,17 @@ Nuestro proyecto será dedicado a un complejo turístico el cual tendrá varias 
 
 
 INTEGRANTES:
-Ignacio Pardo:
+
+Ignacio Pardo: PA
+
 Federico Vazquez:
+
 Magalí Matamala:
+
 Iván Ramírez:
+
 Gabi Palacios:
+
 
 PAGINAS REFERENTES:
 
