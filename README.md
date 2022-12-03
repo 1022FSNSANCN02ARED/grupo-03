@@ -6,7 +6,7 @@ Nuestro proyecto será dedicado a un complejo turístico el cual tendrá varias 
 
 INTEGRANTES:
 
-Ignacio Pardo: Mi sobrenombre es Nacho, tengo 27 años y me gusta la programación, estudiaba Sistemas en la UADER pero por motivos laborales termine abandonando, pero es un sueño que quiero cumplir y acá estoy para APRENDER !!
+Ignacio Pardo: Mi sobrenombre es Nacho, tengo 27 años. Soy Suboficial Del Ejercito Argentino. Me gusta la programación, estudiaba Sistemas en la UADER pero por motivos laborales termine abandonando, pero es un sueño que quiero cumplir y acá estoy para APRENDER !!
 
 Federico Vazquez:
 
