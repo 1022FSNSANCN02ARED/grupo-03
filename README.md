@@ -1,21 +1,19 @@
 # grupo-03
 
 OBJETIVO:
-Nuestro proyecto será dedicado a un complejo turístico el cual tendrá varias cabañas disponibles para alquilar, con sus respectivos servicios. La audiencia que buscamos son personas mayores de edad, con ganas de vacacionar en un lugar tranquilo, capaces de abordar los costos de un viaje de placer. 
-
+Nuestro proyecto será dedicado a un complejo turístico el cual tendrá varias cabañas disponibles para alquilar, con sus respectivos servicios. La audiencia que buscamos son personas mayores de edad, con ganas de vacacionar en un lugar tranquilo, capaces de abordar los costos de un viaje de placer.
 
 INTEGRANTES:
 
 Ignacio Pardo: Mi sobrenombre es Nacho, tengo 27 años. Soy Suboficial Del Ejercito Argentino. Me gusta la programación, estudiaba Sistemas en la UADER pero por motivos laborales termine abandonando, pero es un sueño que quiero cumplir y acá estoy para APRENDER !!
 
-Federico Vazquez:
+Federico Vazquez: ADM. Tengo 22 años, me gusta dibujar, resolver problemas simples y, desde hace poco, la programación.
 
 Magalí Matamala:
 
 Iván Ramírez: DB Tengo 24 años, soy profesor de Educación Física. Estoy comenzando en el mundo de la programación.
 
 Gabi Palacios:
-
 
 PAGINAS REFERENTES:
 
@@ -33,8 +31,3 @@ Por las funcionalidades implementadas
 
 https://termascolon.gov.ar/
 Por los servicios que ofrece
-
-
-
-
-
