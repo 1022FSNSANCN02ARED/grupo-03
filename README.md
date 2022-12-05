@@ -9,7 +9,8 @@ Ignacio Pardo:
 Federico Vazquez:
 Magalí Matamala:
 Iván Ramírez:
-Gabi Palacios:
+Gabi Palacios:FE. Soy la mas grande del grupo,este mes cumplo 41. Hace 20 años estudie Analista de Sistemas, pero nunca trabaje de eso. Durante muchos años tuve un negocio. Actualmente soy ama de casa y tengo 2 hijas. Me encanta todo lo que sea visual y de diseño. Creo que ese es mi fuerte.
+
 
 PAGINAS REFERENTES:
 
