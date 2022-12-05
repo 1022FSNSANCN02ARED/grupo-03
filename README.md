@@ -7,7 +7,7 @@ Nuestro proyecto será dedicado a un complejo turístico el cual tendrá varias 
 INTEGRANTES:
 Ignacio Pardo:
 Federico Vazquez:
-Magalí Matamala:
+Magalí Matamala: Tengo 24 años, estudiante de Biotecnología, interesada en el mundo de la programación desde hace poco tiempo.  
 Iván Ramírez:
 Gabi Palacios:
 
