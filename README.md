@@ -26,7 +26,7 @@ https://complejodellago.com.ar/
 Por las funcionalidades implementadas
 
 https://termascolon.gov.ar/
-Por los servicios que ofrece
+Por los servicios que ofrecen
 
 
 
