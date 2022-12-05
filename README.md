@@ -1,27 +1,27 @@
 # grupo-03
 
-OBJETIVO:
+<strong>OBJETIVO:</strong>
 Nuestro proyecto será dedicado a un complejo turístico el cual tendrá varias cabañas disponibles para alquilar, con sus respectivos servicios. La audiencia que buscamos son personas mayores de edad, con ganas de vacacionar en un lugar tranquilo, capaces de abordar los costos de un viaje de placer.
 
-INTEGRANTES:
+<strong>INTEGRANTES:</strong>
 
-Ignacio Pardo: Mi sobrenombre es Nacho, tengo 27 años. Soy Suboficial Del Ejercito Argentino. Me gusta la programación, estudiaba Sistemas en la UADER pero por motivos laborales termine abandonando, pero es un sueño que quiero cumplir y acá estoy para APRENDER !!
-
-
-Federico Vazquez: ADM. Tengo 22 años, me gusta dibujar, resolver problemas simples y, desde hace poco, la programación.
+* Ignacio Pardo: Mi sobrenombre es Nacho, tengo 27 años. Soy Suboficial Del Ejercito Argentino. Me gusta la programación, estudiaba Sistemas en la UADER pero por motivos laborales termine abandonando, pero es un sueño que quiero cumplir y acá estoy para APRENDER !!
 
 
-Magalí Matamala:
+* Federico Vazquez: ADM. Tengo 22 años, me gusta dibujar, resolver problemas simples y, desde hace poco, la programación.
 
 
-Iván Ramírez: DB Tengo 24 años, soy profesor de Educación Física. Estoy comenzando en el mundo de la programación.
+* Magalí Matamala:
 
 
-Gabi Palacios:FE. Soy la mas grande del grupo,este mes cumplo 41. Hace 20 años estudie Analista de Sistemas, pero nunca trabaje de eso. Durante muchos años tuve un negocio. Actualmente soy ama de casa y tengo 2 hijas. Me encanta todo lo que sea visual y de diseño. Creo que ese es mi fuerte.
+* Iván Ramírez: DB Tengo 24 años, soy profesor de Educación Física. Estoy comenzando en el mundo de la programación.
+
+
+* Gabi Palacios:FE. Soy la mas grande del grupo,este mes cumplo 41. Hace 20 años estudie Analista de Sistemas, pero nunca trabaje de eso. Durante muchos años tuve un negocio. Actualmente soy ama de casa y tengo 2 hijas. Me encanta todo lo que sea visual y de diseño. Creo que ese es mi fuerte.
 
 
 
-PAGINAS REFERENTES:
+<strong>PAGINAS REFERENTES:</strong>
 
 https://www.alquilerargentina.com/
 Su diseño en movil
