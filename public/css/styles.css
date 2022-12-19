@@ -3,3 +3,83 @@
   margin: 0;
   padding: 0;
 }
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.fs-18{
+  font-size: 18px;
+}
+
+.flex{
+  display: flex;
+}
+
+.hide{
+  display: none;
+}
+
+.m-auto{
+  margin: auto;
+}
+
+.main-header{
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo-domum{
+  height: 100%;
+}
+
+.page-navbar{
+  flex-grow: 1;
+}
+
+.page-navbar ul li{
+  list-style: none;
+  margin: 0px 8px;
+}
+
+
+.header-buttons{
+  gap: 8px;
+  margin-right: 15px;
+  align-items: center;
+}
+
+.cart-icon, .user-icon{
+  font-size: 18px;
+  border: solid 1px black;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.login-button, .sing-in-button{
+  padding: 0px 10px;
+  font-size: 18px;
+}
+
+.burguer-menu{
+  padding-right: 5px;
+  font-size: 25px;
+}
+
+@media (min-width: 761px){
+  .burguer-menu{
+    display: none;
+  }
+  .page-navbar{
+    display: block;
+  }
+  .sing-in-button{
+    display: block;
+  }
+  .user-icon{
+    display: block;
+  }
+}
