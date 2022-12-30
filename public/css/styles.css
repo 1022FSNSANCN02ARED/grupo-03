@@ -70,7 +70,9 @@ ul{
 .p-1rem{
   padding: 1rem;
 }
-
+.p-top-10{
+  padding-top: 10px;
+}
 /* config navbar y header */
 
 .main-header{
@@ -163,7 +165,44 @@ ul{
   font-size: 1.5rem;
   padding: 0.5rem;
 }
+/* registro */
+.title-register{
+   font-size: 20px;
+   color:#373737;
+   padding: 10px
+}
+.form{
+  background-color:#66b9bf;
+  margin: 0 auto;
+  width: 80%;
+  padding: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgb(134, 134, 134);
+}
+.f-input{
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  padding: 5px;
+  margin-bottom: 10px;
+  height: 25px;
+  font-size: 15px;
+  color:#373737
 
+}
+.f-submit{
+  width: 40%;
+  border: none;
+  border-radius: 10px;
+  margin: 2px;
+  margin-bottom: 10px;
+  height: 30px;
+  font-size: 18px;
+  background-color: #e37222;
+  color: white;
+  font-size: 15px;
+  
+}
 /* animación para el carrusel del inicio. */
 
 @keyframes carrousel {
