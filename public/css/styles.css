@@ -19,6 +19,10 @@ ul{
   font-size: 18px;
 }
 
+.title{
+  font-size: 2rem;
+}
+
 .w-100{
   width: 100%;
 }
@@ -29,6 +33,10 @@ ul{
 
 .flex-wrap{
   flex-wrap: wrap;
+}
+
+.jc-center{
+  justify-content: center;
 }
 
 .hide{
@@ -57,6 +65,10 @@ ul{
 
 .of-hidden{
   overflow: hidden;
+}
+
+.p-1rem{
+  padding: 1rem;
 }
 
 /* config navbar y header */
@@ -118,7 +130,6 @@ ul{
   top: 70px;
   background-color: rgba(0, 0, 0, 0.8);
   color: #ffffff;
-  font-size: 30px;
 }
 
 .carrousel ul{
@@ -126,13 +137,31 @@ ul{
   animation: carrousel 20s infinite;
 }
 
-.carrousel li{
-  justify-content: center;
-}
-
 .carrousel li img{
   width: 1800px;
   height: 100%;
+}
+
+/* config para cabañas en el home */
+
+#info-domum{
+  margin-bottom: 2rem;
+}
+
+#cottage-selector{
+  gap: 7%;
+  justify-content: space-around;
+  max-width: 500px;
+}
+
+.cottage-button{
+  border: 2px solid black;
+  width: 30%;
+  background-color: #e37222;
+  color: black;
+  color: #ffffff;
+  font-size: 1.5rem;
+  padding: 0.5rem;
 }
 
 /* animación para el carrusel del inicio. */
@@ -173,6 +202,7 @@ ul{
 /* media queries */
 
 @media (min-width: 761px){
+  /* laptops */
   .burguer-menu{
     display: none;
   }
