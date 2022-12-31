@@ -38,7 +38,9 @@ ul{
 .jc-center{
   justify-content: center;
 }
-
+.al-items{
+  align-items:center;
+}
 .hide{
   display: none;
 }
@@ -167,9 +169,26 @@ ul{
 }
 /* registro */
 .title-register{
-   font-size: 20px;
-   color:#373737;
-   padding: 10px
+  width: 50%;
+  font-size: 20px;
+  color:#373737;
+  padding: 10px
+}
+.but-back{
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  border: 1px rgb(1, 95, 124);
+  background-color:#66b9bf;
+}
+.but-back:hover{
+  background-color:white;
+}
+#arrow{
+  color: white;
+}
+#arrow:hover{
+  color: #66b9bf;
 }
 .form{
   background-color:#66b9bf;
@@ -185,7 +204,6 @@ ul{
   border-radius: 3px;
   padding: 5px;
   margin-bottom: 10px;
-  height: 25px;
   font-size: 15px;
   color:#373737
 
@@ -202,6 +220,11 @@ ul{
   color: white;
   font-size: 15px;
   
+}
+.f-submit:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgb(172, 119, 49);
+  transition: all 0.2s ease;
 }
 /* animación para el carrusel del inicio. */
 
@@ -255,3 +278,26 @@ ul{
     display: block;
   }
 }
+
+@media (min-width: 1024px){
+  /*laptop*/
+  .title-register{
+    font-size: 25px;
+  }
+  .form{
+    width: 60%;
+  }
+  .f-input{
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .f-submit{
+    height: 40px;
+  }
+  .f-input{
+    padding: 10px;
+  }  
+}
+
