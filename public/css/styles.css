@@ -8,8 +8,9 @@
 
 a{
   text-decoration: none;
-  color: black;
+  color: #07889b;
 }
+
 
 ul{
   list-style: none;
@@ -62,11 +63,11 @@ ul{
 /* config navbar y header */
 
 .main-header{
-  background-color: #ffffff;
+ background-color: #f1f7ed;  
 }
 
 .fixed-navbar{
-  background-color: #ffffff;
+  background-color: #f1f7ed;
   align-items: center;
   justify-content: space-between;
   z-index: 1;
@@ -74,11 +75,13 @@ ul{
 }
 
 .logo-domum{
-  height: 70px;
+  height: 75px;
 }
 
 .page-navbar{
   flex-grow: 1;
+
+ 
 }
 
 .page-navbar ul li{
@@ -93,13 +96,21 @@ ul{
 
 .cart-icon, .user-icon{
   font-size: 18px;
-  border: solid 1px black;
+  border: solid 1px #07889b;
   border-radius: 50%;
   padding: 6px;
 }
 
 .login-button, .sing-in-button{
-  padding: 0px 10px;
+ /* padding: 0px 10px;*/
+  background-color: #07889b;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 2px 4px #0e0e0e;
+  color: #f1f7ed;
+  font-size: 0.7em;
+  padding: 10px 25px;
+  cursor: pointer;
 }
 
 .burguer-menu{
@@ -116,9 +127,10 @@ ul{
 
 .carrousel h2{
   top: 70px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #ffffff;
-  font-size: 30px;
+  background-color:#66b9bf;
+  color: #373737;
+  font-size: 40px;
+
 }
 
 .carrousel ul{
