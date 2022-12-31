@@ -39,6 +39,10 @@ ul {
   justify-content: center;
 }
 
+.jc-bet {
+  justify-content: space-between;
+}
+
 .hide {
   display: none;
 }
@@ -70,9 +74,11 @@ ul {
 .p-1rem {
   padding: 1rem;
 }
+
 .p-top-10 {
   padding-top: 10px;
 }
+
 /* config navbar y header */
 
 .main-header {
@@ -148,25 +154,54 @@ ul {
 
 /* config para cabañas en el home */
 
-#info-domum {
-  margin-bottom: 2rem;
-}
-
 #cottage-selector {
-  gap: 7%;
+  gap: 3%;
   justify-content: space-around;
   max-width: 500px;
 }
 
-.cottage-button {
-  border: 2px solid black;
-  width: 30%;
-  background-color: #e37222;
-  color: black;
-  color: #ffffff;
+.cottage-button{
+  border: solid 2px black;
   font-size: 1.5rem;
-  padding: 0.5rem;
+  padding: 5px 20px;
 }
+
+.cottage-card{
+  width: 80%;
+  border: 2px solid black;
+}
+
+.card-img{
+  width: 100%;
+  height: 100%;
+}
+
+.share-button{
+  background: rgba(255, 255, 255, 0.8);
+  top: 5px;
+  right: 5px;
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.icons-beds{
+  background-color: rgba(255, 255, 255, 0.8);
+  bottom: 0;
+  height: 8%;
+  align-items: center;
+  justify-content: end;
+}
+
+.icon-bed{
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+.price-res{
+  align-items: center;
+}
+
 /* registro */
 .title-register {
   font-size: 20px;
