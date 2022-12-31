@@ -1,4 +1,4 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -6,36 +6,36 @@
 
 /* config general */
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
 
-ul{
+ul {
   list-style: none;
 }
 
-.fs-18{
+.fs-18 {
   font-size: 18px;
 }
 
-.title{
+.title {
   font-size: 2rem;
 }
 
-.w-100{
+.w-100 {
   width: 100%;
 }
 
-.flex{
+.flex {
   display: flex;
 }
 
-.flex-wrap{
+.flex-wrap {
   flex-wrap: wrap;
 }
 
-.jc-center{
+.jc-center {
   justify-content: center;
 }
 .al-items{
@@ -45,43 +45,43 @@ ul{
   display: none;
 }
 
-.pos-relative{
+.pos-relative {
   position: relative;
 }
 
-.pos-absolute{
+.pos-absolute {
   position: absolute;
 }
 
-.pos-fixed{
+.pos-fixed {
   position: fixed;
 }
 
-.m-auto{
+.m-auto {
   margin: auto;
 }
 
-.txt-center{
+.txt-center {
   text-align: center;
 }
 
-.of-hidden{
+.of-hidden {
   overflow: hidden;
 }
 
-.p-1rem{
+.p-1rem {
   padding: 1rem;
 }
-.p-top-10{
+.p-top-10 {
   padding-top: 10px;
 }
 /* config navbar y header */
 
-.main-header{
+.main-header {
   background-color: #ffffff;
 }
 
-.fixed-navbar{
+.fixed-navbar {
   background-color: #ffffff;
   align-items: center;
   justify-content: space-between;
@@ -89,76 +89,78 @@ ul{
   top: 0;
 }
 
-.logo-domum{
+.logo-domum {
   height: 70px;
 }
 
-.page-navbar{
+.page-navbar {
   flex-grow: 1;
 }
 
-.page-navbar ul li{
+.page-navbar ul li {
   margin: 0px 8px;
 }
 
-.header-buttons{
+.header-buttons {
   gap: 8px;
   margin-right: 15px;
   align-items: center;
 }
 
-.cart-icon, .user-icon{
+.cart-icon,
+.user-icon {
   font-size: 18px;
   border: solid 1px black;
   border-radius: 50%;
   padding: 6px;
 }
 
-.login-button, .sing-in-button{
+.login-button,
+.sing-in-button {
   padding: 0px 10px;
 }
 
-.burguer-menu{
+.burguer-menu {
   padding-right: 5px;
   font-size: 25px;
 }
 
 /* config para el carrucel */
 
-.carrousel{
+.carrousel {
   height: 80vh;
   max-width: 1800px;
 }
 
-.carrousel h2{
+.carrousel h2 {
   top: 70px;
   background-color: rgba(0, 0, 0, 0.8);
   color: #ffffff;
 }
 
-.carrousel ul{
+.carrousel ul {
   width: 500%;
   animation: carrousel 20s infinite;
 }
 
-.carrousel li img{
+.carrousel li img {
   width: 1800px;
   height: 100%;
 }
 
 /* config para cabañas en el home */
 
-#info-domum{
+#info-domum {
   margin-bottom: 2rem;
 }
 
-#cottage-selector{
+#cottage-selector {
   gap: 7%;
   justify-content: space-around;
   max-width: 500px;
 }
 
-.cottage-button{
+.cottage-button {
   border: 2px solid black;
   width: 30%;
   background-color: #e37222;
@@ -190,25 +192,24 @@ ul{
 #arrow:hover{
   color: #66b9bf;
 }
-.form{
-  background-color:#66b9bf;
+.form {
+  background-color: #66b9bf;
   margin: 0 auto;
   width: 80%;
   padding: 1.5rem;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgb(134, 134, 134);
 }
-.f-input{
+.f-input {
   width: 100%;
   border: none;
   border-radius: 3px;
   padding: 5px;
   margin-bottom: 10px;
   font-size: 15px;
-  color:#373737
-
+  color: #373737;
 }
-.f-submit{
+.f-submit {
   width: 40%;
   border: none;
   border-radius: 10px;
@@ -219,7 +220,6 @@ ul{
   background-color: #e37222;
   color: white;
   font-size: 15px;
-  
 }
 .f-submit:hover {
   color: rgba(255, 255, 255, 1) !important;
@@ -229,52 +229,52 @@ ul{
 /* animación para el carrusel del inicio. */
 
 @keyframes carrousel {
-  0%{
+  0% {
     margin-left: 0%;
   }
-  15%{
+  15% {
     margin-left: 0%;
   }
-  20%{
+  20% {
     margin-left: -100%;
   }
-  35%{
+  35% {
     margin-left: -100%;
   }
-  40%{
+  40% {
     margin-left: -200%;
   }
-  55%{
+  55% {
     margin-left: -200%;
   }
-  60%{
+  60% {
     margin-left: -300%;
   }
-  75%{
+  75% {
     margin-left: -300%;
   }
-  80%{
+  80% {
     margin-left: -400%;
   }
-  100%{
+  100% {
     margin-left: -400%;
   }
 }
 
 /* media queries */
 
-@media (min-width: 761px){
+@media (min-width: 761px) {
   /* laptops */
-  .burguer-menu{
+  .burguer-menu {
     display: none;
   }
-  .page-navbar{
+  .page-navbar {
     display: block;
   }
-  .sing-in-button{
+  .sing-in-button {
     display: block;
   }
-  .user-icon{
+  .user-icon {
     display: block;
   }
 }
