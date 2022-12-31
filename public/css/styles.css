@@ -11,12 +11,7 @@ a {
   color: #07889b;
 }
 
-<<<<<<< HEAD
-
-ul{
-=======
 ul {
->>>>>>> 25b4e88e7026be3b06f05baf4ca34be831274714
   list-style: none;
 }
 
@@ -82,40 +77,25 @@ ul {
 }
 /* config navbar y header */
 
-<<<<<<< HEAD
 .main-header{
  background-color: #f1f7ed;  
 }
 
 .fixed-navbar{
   background-color: #f1f7ed;
-=======
-.main-header {
-  background-color: #ffffff;
-}
-
-.fixed-navbar {
-  background-color: #ffffff;
->>>>>>> 25b4e88e7026be3b06f05baf4ca34be831274714
   align-items: center;
   justify-content: space-between;
   z-index: 1;
   top: 0;
+  height: 70px;
 }
 
-<<<<<<< HEAD
 .logo-domum{
   height: 75px;
-=======
-.logo-domum {
-  height: 70px;
->>>>>>> 25b4e88e7026be3b06f05baf4ca34be831274714
 }
 
 .page-navbar {
   flex-grow: 1;
-
- 
 }
 
 .page-navbar ul li {
@@ -136,7 +116,6 @@ ul {
   padding: 6px;
 }
 
-<<<<<<< HEAD
 .login-button, .sing-in-button{
  /* padding: 0px 10px;*/
   background-color: #07889b;
@@ -147,11 +126,6 @@ ul {
   font-size: 0.7em;
   padding: 10px 25px;
   cursor: pointer;
-=======
-.login-button,
-.sing-in-button {
-  padding: 0px 10px;
->>>>>>> 25b4e88e7026be3b06f05baf4ca34be831274714
 }
 
 .burguer-menu {
@@ -168,15 +142,10 @@ ul {
 
 .carrousel h2 {
   top: 70px;
-<<<<<<< HEAD
   background-color:#66b9bf;
   color: #373737;
   font-size: 40px;
 
-=======
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #ffffff;
->>>>>>> 25b4e88e7026be3b06f05baf4ca34be831274714
 }
 
 .carrousel ul {
