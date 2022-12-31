@@ -8,7 +8,7 @@
 
 a {
   text-decoration: none;
-  color: black;
+  color: #07889b;
 }
 
 ul {
@@ -43,7 +43,11 @@ ul {
   justify-content: space-between;
 }
 
-.hide {
+.al-items{
+  align-items:center;
+}
+
+.hide{
   display: none;
 }
 
@@ -81,20 +85,21 @@ ul {
 
 /* config navbar y header */
 
-.main-header {
-  background-color: #ffffff;
+.main-header{
+ background-color: #f1f7ed;  
 }
 
-.fixed-navbar {
-  background-color: #ffffff;
+.fixed-navbar{
+  background-color: #f1f7ed;
   align-items: center;
   justify-content: space-between;
   z-index: 1;
   top: 0;
+  height: 70px;
 }
 
-.logo-domum {
-  height: 70px;
+.logo-domum{
+  height: 75px;
 }
 
 .page-navbar {
@@ -114,14 +119,21 @@ ul {
 .cart-icon,
 .user-icon {
   font-size: 18px;
-  border: solid 1px black;
+  border: solid 1px #07889b;
   border-radius: 50%;
   padding: 6px;
 }
 
-.login-button,
-.sing-in-button {
-  padding: 0px 10px;
+.login-button, .sing-in-button{
+ /* padding: 0px 10px;*/
+  background-color: #07889b;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 2px 4px #0e0e0e;
+  color: #f1f7ed;
+  font-size: 0.7em;
+  padding: 10px 25px;
+  cursor: pointer;
 }
 
 .burguer-menu {
@@ -138,8 +150,10 @@ ul {
 
 .carrousel h2 {
   top: 70px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #ffffff;
+  background-color:#66b9bf;
+  color: #373737;
+  font-size: 40px;
+
 }
 
 .carrousel ul {
@@ -203,10 +217,27 @@ ul {
 }
 
 /* registro */
-.title-register {
+.title-register{
+  width: 50%;
   font-size: 20px;
-  color: #373737;
-  padding: 10px;
+  color:#373737;
+  padding: 10px
+}
+.but-back{
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  border: 1px rgb(1, 95, 124);
+  background-color:#66b9bf;
+}
+.but-back:hover{
+  background-color:white;
+}
+#arrow{
+  color: white;
+}
+#arrow:hover{
+  color: #66b9bf;
 }
 .form {
   background-color: #66b9bf;
@@ -222,7 +253,6 @@ ul {
   border-radius: 3px;
   padding: 5px;
   margin-bottom: 10px;
-  height: 25px;
   font-size: 15px;
   color: #373737;
 }
@@ -237,6 +267,11 @@ ul {
   background-color: #e37222;
   color: white;
   font-size: 15px;
+}
+.f-submit:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgb(172, 119, 49);
+  transition: all 0.2s ease;
 }
 /* animación para el carrusel del inicio. */
 
@@ -290,3 +325,26 @@ ul {
     display: block;
   }
 }
+
+@media (min-width: 1024px){
+  /*laptop*/
+  .title-register{
+    font-size: 25px;
+  }
+  .form{
+    width: 60%;
+  }
+  .f-input{
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .f-submit{
+    height: 40px;
+  }
+  .f-input{
+    padding: 10px;
+  }  
+}
+

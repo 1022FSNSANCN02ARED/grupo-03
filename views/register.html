@@ -13,7 +13,9 @@
 <body>
   <header class="main-header">
     <div class="fixed-navbar flex  w-100">
-      <img src="/images/sinfondo-logo.png" alt="Logo de Domum" class="logo-domum">
+
+     <img src="/images/sinfondo-logo.png" alt="Logo de Domum" class="logo-domum">
+     
       <nav class="page-navbar hide">
         <ul class="flex fs-18">
           <li><a href="/">inicio</a></li>
@@ -23,17 +25,13 @@
           <li><a href="#">contacto</a></li>
         </ul>
       </nav>
-      <div class="header-buttons flex">
-        <a href="#"><i class="fa-solid fa-cart-shopping cart-icon"></i></a>
-        <a href="#"><button class="login-button fs-18">ingresar</button></a>
-        <a href="/register"><button class="sing-in-button hide fs-18">crear cuenta</button></a>
-        <i class="fa-solid fa-bars burguer-menu"></i>
-        <a href="#"><i class="fa-solid fa-user user-icon hide"></i></a>
-      </div>
+      
     </div>
 
   </header>
-  <h1 class="title-register txt-center">Registrate</h1>
+  <div class="flex jc-center ">
+    <h1 class="title-register txt-center">Registrate </h1>
+    <button class="but-back"><a href="/login"><i class="fa-solid fa-arrow-left " id="arrow"></i></a></button></div>
   
 
   <div><form action="" method="get" class="form ">
@@ -56,7 +54,7 @@
         <button type="submit" class="f-input">
           <i class="fa-brands fa-twitter"></i>
           Registrate con twitter</button>
-        <p class="txt-center p-top-10">¿Ya tienes una cuenta?<a href="#">  Iniciar sesion</a></p>
+        <p class="txt-center p-top-10">¿Ya tenés una cuenta?<a href="/login">  Iniciar sesion</a></p>
         <hr>
     </form></div>
    
