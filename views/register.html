@@ -7,10 +7,15 @@
   <title>Registro</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body>
+<body >
   <header class="main-header">
     <div class="fixed-navbar flex  w-100">
 
@@ -20,7 +25,7 @@
         <ul class="flex fs-18">
           <li><a href="/">inicio</a></li>
           <li><a href="#">nosotros</a></li>
-          <li><a href="/product">cabañas</a></li>
+          <li><a href="#">cabañas</a></li>
           <li><a href="#">actividades</a></li>
           <li><a href="#">contacto</a></li>
         </ul>
@@ -29,32 +34,32 @@
     </div>
 
   </header>
-  <div class="flex jc-center ">
+  <div class="flex jc-center f-f">
     <h1 class="title-register txt-center">Registrate </h1>
-    <button class="but-back"><a href="/login"><i class="fa-solid fa-arrow-left " id="arrow"></i></a></button></div>
+    <button class="but-back "><a href="/login"><i class="fa-solid fa-arrow-left" id="arrow"></i></a></button></div>
   
 
-  <div><form action="" method="get" class="form ">
+  <div class="f-f"><form action="" method="get" class="form">
 
-        <input type="text" name="name" id="name" placeholder="nombre"  class=" f-input" >
-        <input type="text" name="surname" id="surname" placeholder="apellido"  class="f-input">
-        <input type="email" name="email" id="email" placeholder="email" class="f-input">
-        <input type="password" name="password" id="password" placeholder="contraseña"  class="f-input">
-        <input type="confirmPassword" name="confirmPassword" id="confirmPassword" placeholder="confirmar contraseña" class="f-input">
+        <input type="text" name="name" id="name" placeholder="nombre"  class=" f-input f-f" >
+        <input type="text" name="surname" id="surname" placeholder="apellido"  class="f-input f-f">
+        <input type="email" name="email" id="email" placeholder="email" class="f-input f-f">
+        <input type="password" name="password" id="password" placeholder="contraseña"  class="f-input f-f">
+        <input type="confirmPassword" name="confirmPassword" id="confirmPassword" placeholder="confirmar contraseña" class="f-input f-f">
         <div class="flex flex-wrap jc-center ">
-          <input type="submit" name="register" id="register" class="f-submit" >
-          <input type="reset" name="reset" id="reset" class="f-submit">
+          <input type="submit" name="register" id="register" class="f-submit f-f" >
+          <input type="reset" name="reset" id="reset" class="f-submit f-f">
         </div>
-        <button type="submit" class="f-input">
+        <button type="submit" class="f-input f-f">
           <i class="fa-brands fa-google"></i>
           Registrate con google</button>
-        <button type="submit" class="f-input">
+        <button type="submit" class="f-input f-f">
           <i class="fa-brands fa-facebook-f"></i>
           Registrate con facebook</button>
-        <button type="submit" class="f-input">
+        <button type="submit" class="f-input f-f">
           <i class="fa-brands fa-twitter"></i>
           Registrate con twitter</button>
-        <p class="txt-center p-top-10">¿Ya tenés una cuenta?<a href="/login">  Iniciar sesion</a></p>
+        <p class="txt-center p-top-10 f-f">¿Ya tenés una cuenta?<a href="/login" class="f-f">  Iniciar sesion</a></p>
         <hr>
     </form></div>
    
