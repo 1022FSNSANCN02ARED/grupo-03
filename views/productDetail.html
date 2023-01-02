@@ -7,6 +7,11 @@
   <title>Domum</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 
@@ -18,7 +23,7 @@
         <ul class="flex fs-18">
           <li><a href="/">inicio</a></li>
           <li><a href="#">nosotros</a></li>
-          <li><a href="/product">cabañas</a></li>
+          <li><a href="#">cabañas</a></li>
           <li><a href="#">actividades</a></li>
           <li><a href="#">contacto</a></li>
         </ul>
@@ -35,5 +40,78 @@
    
 
   </header>
+
+
+  <section class="date-select">
+     <form action="" method="get" class="flex flex-wrap jc-center">
+      
+       <label for="check-in" class="label-check-in txt-center fs-18 f-f">Check-in</label>
+       <label for="check-out" class="label-check-out txt-center fs-18 f-f">Check-out</label>
+       <input type="date" name="check-in" id="check-in" value="2023-01-02"class="input-check-in txt-center f-f">
+       <input type="date" name="check-out" id="check-out"  class="input-check-out txt-center f-f">
+       <select name="selector" class="selector-huesped f-f ">
+        <option value="disabled" selected>Seleccione número de huéspes</option>
+        <option value="cabaña-1">1</option>
+        <option value="cabaña-2">2</option>
+       </select>
+       <hr class="hr">
+      
+    </form>
+  </section>
+    <h1 class="w-100 txt-center p-top-10 f-f fc-37 fs-25 ">Cabaña blanca</h1>
+
+  <section class=" w-100  f-f fc-37">
+    <div class="ft-producto-elegido flex flex-wrap p-1rem">
+     <img src="images/cabañaLIQUIDAMBAR/liquidambar02.jpg" alt="" class="w-100 p-2px img-productDetail">
+     <img src="images/cabañaLIQUIDAMBAR/liquidambar01.jpg" alt="" class="w-33 p-2px img-productDetail">
+     <img src="images/cabañaLIQUIDAMBAR/liquidambar04.jpg" alt="" class="w-33 p-2px img-productDetail">
+     <img src="images/cabañaLIQUIDAMBAR/liquidambar05.jpg" alt="" class="w-33 p-2px img-productDetail">
+    </div>
+    <hr class="hr">
+    <p class="txt-center">.2 huespedes .1 dormitorio .1 cama .1 baño</p>
+    <hr class="hr">
+    <div class="flex flex-wrap f-f p-1rem">
+      
+      <h3 class="w-100 p-1rem txt-center fs-18 ">Características del lugar</h3>
+      
+      <h4 class="caract p-2px"><i class="fa-solid fa-fire-burner icon-servicios"></i> Cocina</h4>
+      <h4 class="caract p-2px"><i class="fa-solid fa-car icon-servicios"></i> Estacionamiento</h4>
+      <h4 class="caract p-2px"><i class="fa-solid fa-paw icon-servicios"></i> Pet-friendly</h4>
+      <h4 class="caract p-2px"><i class="fa-solid fa-wifi icon-servicios"></i> WIFI</h4>
+      <h4 class="caract p-2px"><i class="fa-solid fa-person-swimming icon-servicios"></i> Pileta de uso compartido</h4>
+      <h4 class="caract p-2px"><i class="fa-solid fa-tv icon-servicios"></i> TV</h4>
+      <h4 class="caract p-2px"><i class="fa-solid fa-fire icon-servicios"></i> Calefacción</h4>
+
+    </div>
+  </section>
+  <section class="fc-37 fs-18">
+    
+    <h3 class="w-100 txt-center p-1rem f-f fs-18 "><i class="fa-solid fa-location-dot icon-servicios"></i> Mapa del complejo</h3>
+    <div class="flex flex-wrap jc-center f-f p-1rem ">
+     <label for="n-cabañas" class="label-selector ">Cabañas:</label>
+     <select name="selector" class="selector-cabañas f-f fc-37 ">
+      <option value="disabled" selected>Seleccione una cabaña</option>
+      <option value="cabaña-1">Cabaña blanca</option>
+      <option value="cabaña-2">Cabaña xx</option>
+      <option value="cabaña-3">Cabaña xx</option>
+      <option value="cabaña-4">Cabaña xx</option>
+      <option value="cabaña-5">Cabaña xx</option>
+      <option value="cabaña-5">Cabaña xx</option>
+    
+     </select>
+    <img src="images/vista-aerea.jpg" alt="100px" class="w-100 p-2px  img-productDetail"> 
+    </div>
+  </section >
+
+  <article class="f-f fc-37 border-top pos-fixed w-100 fs-15 ">
+    <div class="flex flex-wrap p-2px">
+       <h3 class="article-precio">$$$</h3>
+       <p class="article-x-noche">x noche</p>
+       <h3 class="article-total">Total $$$</h3></div>
+    <div class= "flex flex-wrap p-2px">
+        <p class="article-fecha">Desde: dd/mm/aa Hasta: dd/mm/aa</p>
+        <a href="/productCart" class="but-reserva- fs-18">Reservar</a>
+        <p class="w-100 article-fecha">Cantidad de días: xx</p></div>
+  </article>
 </body>
 </html>
