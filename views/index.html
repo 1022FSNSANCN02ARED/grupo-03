@@ -57,29 +57,74 @@
 
   <main>
     <!-- breve descripción -->
-    <section id="info-domum">
-      <h1 class="txt-center p-1rem title">
+    <section id="info-domum" class="p-1rem">
+      <h1 class="txt-center title">
         Complejo de cabañas Domum
       </h1>
 
-      <p class="txt-center p-1rem">
+      <p class="txt-center p-top-10">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem mollitia est, numquam praesentium voluptatem laborum libero iusto temporibus repellat repudiandae.
       </p>
-      <!-- breve descripción -->
     </section>
+    <!-- breve descripción -->
 
+    <!-- apartado de cabañas -->
     <section id="cabañas">
-      <article class="w-100">
-        <ul class="flex jc-center m-auto" id="cottage-selector">
-          <li><a href="#" class="cottage-button">cabaña</a></li>
-          <li><a href="#" class="cottage-button">cabaña</a></li>
-          <li><a href="#" class="cottage-button">cabaña</a></li>
+      <article>
+        <ul class="flex jc-center m-auto p-1rem" id="cottage-selector">
+          <li class=" txt-center"><a href="#" class="cottage-button">cabaña</a></li>
+          <li class=" txt-center"><a href="#" class="cottage-button">cabaña</a></li>
+          <li class=" txt-center"><a href="#" class="cottage-button">cabaña</a></li>
         </ul>
+        
       </article>
-      <article id="cottage-cards">
+      <ul class="p-1rem">
+        <li class="p-top-10">
+                <article class="flex flex-wrap m-auto cottage-card">
+        <figure class="pos-relative">
+          <img class="card-img" src="/images/cabaña01-fuera.jpg" alt="foto de cabaña">
+
+          <a href="#" class="share-button pos-absolute flex">
+            <i class="fa-solid fa-share-nodes"></i>
+          </a>
+
+          <div class="icons-beds flex pos-absolute w-100">
+            <i class="fa-solid fa-bed icon-bed"></i>
+            <i class="fa-solid fa-bed icon-bed"></i>
+            <i class="fa-solid fa-bed icon-bed"></i>
+          </div>
+        </figure>
+
+          <div class="p-1rem w-100">
+            <h2 class="txt-center">
+              cabaña hasta 4 personas
+            </h2>
+            <p class="p-top-10 txt-center">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptate itaque totam voluptatem quidem magnam recusandae fugiat illo a iusto!
+            </p>
+            <h3 class="p-top-10 txt-center">
+              servicios principales
+            </h3>
+            <ul class="p-1rem">
+              <li>- item</li>
+              <li>- item</li>
+              <li>- item</li>
+              <li>- item</li>
+              <li>- item</li>
+            </ul>
+
+            <div class="price-res flex w-100 jc-bet">
+              <h2>total a pagar: $$$</h2>
+              <a href="#" class="cottage-button">reservar</a>
+            </div>
+          </div>
+        </li>
+      </ul>
 
       </article>
     </section>
+    <!-- apartado de cabañas -->
+
   </main>
 </body>
 </html>
