@@ -169,20 +169,27 @@ ul {
 /* config para cabañas en el home */
 
 #cottage-selector {
-  gap: 3%;
+  gap: 2%;
   justify-content: space-around;
   max-width: 500px;
 }
 
 .cottage-button{
   border: solid 2px black;
-  font-size: 1.5rem;
-  padding: 5px 20px;
+  font-size: 1.2rem;
+  padding: 5px 15px;
+}
+
+.cont-cottage{
+  width: 90vw;
+  overflow-x: scroll;
+}
+
+.cottage-list{
 }
 
 .cottage-card{
-  width: 80%;
-  border: 2px solid black;
+  padding: 0 10px;
 }
 
 .card-img{
@@ -202,7 +209,6 @@ ul {
 .icons-beds{
   background-color: rgba(255, 255, 255, 0.8);
   bottom: 0;
-  height: 8%;
   align-items: center;
   justify-content: end;
 }
@@ -323,6 +329,9 @@ ul {
   }
   .user-icon {
     display: block;
+  }
+  .info-card{
+    padding: 0;
   }
 }
 
