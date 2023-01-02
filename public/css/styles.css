@@ -391,7 +391,7 @@ ul {
   width: 30%;
 }
 .border-top{
-  border-top:  solid 0.2px  #373737;
+  border-top:  solid 0.2px #e37222 ;
   background-color: beige;
   bottom: 0;
 }
@@ -469,6 +469,7 @@ ul {
   .f-input{
     margin-bottom: 20px;
   }
+  
 }
 
 @media (min-width: 1440px) {
