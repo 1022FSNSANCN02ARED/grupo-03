@@ -142,6 +142,12 @@ ul {
 .top-70{
   padding-top: 70px;
 }
+.box-shadow{
+  box-shadow: 0px 0px 10px rgb(137, 137, 137);
+}
+.border-rad{
+  border-radius: 10px;
+}
 /* config navbar y header */
 
 /* Paleta de colores:   gris oscuro #373737 -  naranja #e37222  -turquesa oscuro #07889b -turquesa claro #66b9f  -grisclaro #f1f7ed */
@@ -366,7 +372,7 @@ ul {
   width: 80%;
   padding: 1.5rem;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgb(134, 134, 134);
+  
 }
 
 .f-input {
@@ -435,7 +441,6 @@ ul {
   border: 1px solid #373737;
   border-radius: 10px;
   background-color: #f1f7ed;
-  box-shadow: 0px 0px 10px rgb(137, 137, 137);
   color: #373737;
   margin-bottom: 10px;
 }
@@ -448,7 +453,6 @@ ul {
   border: 1px solid #373737;
   border-radius: 10px;
   background-color: #f1f7ed;
-  box-shadow: 0px 0px 10px rgb(137, 137, 137);
   margin-bottom: 10px;
 }
 
@@ -486,7 +490,6 @@ ul {
   margin-right: 1rem;
   border-radius: 10px;
   border: 1px solid #373737;
-  box-shadow: 0px 0px 10px rgb(137, 137, 137);
 }
 .caract{
   color: #373737;
@@ -525,10 +528,6 @@ ul {
 
 .article-fecha {
   padding-left: 8px;
-}
-
-.article-total {
- 
 }
 .border-top{
   border-top:  solid 0.2px #e37222 ;
@@ -659,7 +658,7 @@ footer h1 {
   width: 65%;
   }
   .img-map-lugar{
-    width: 70%;
+    width: 65%;
   }
   .desde-hasta{
    flex-grow: 0.7;
@@ -696,9 +695,9 @@ footer h1 {
   }
   .img-productDetail-1{
     width: 90%;
+    height: 400px;
   }
   .img-productDetail-2{
-   
    height: 170.32px;
   }
   .selector-huesped{
