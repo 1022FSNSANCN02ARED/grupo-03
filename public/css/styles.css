@@ -5,6 +5,9 @@
 }
 
 /* config general */
+body {
+  font-family: 'Roboto', sans-serif;
+}
 
 a {
   text-decoration: none;
@@ -14,37 +17,49 @@ a {
 ul {
   list-style: none;
 }
-.fs-15{
+
+.fs-15 {
   font-size: 15px;
 }
+
 .fs-18 {
   font-size: 18px;
 }
-.fc-37{
+
+.fc-37 {
   color: #373737;
 }
-.fs-25{
+
+.fs-25 {
   font-size: 25px;
 }
+
 .title {
   font-size: 2rem;
 }
-.f-f{
+
+.f-f {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 .w-100 {
   width: 100%;
 }
 
 
-.w-50{
+.w-50 {
   width: 50%;
 }
 
-.w-33{
+.w-33 {
   width: 33.3%;
 }
-.h-20rem{
+
+.w-80 {
+  width: 80%;
+}
+
+.h-20rem {
   height: 150px;
 }
 
@@ -66,11 +81,11 @@ ul {
   justify-content: space-between;
 }
 
-.al-items{
-  align-items:center;
+.al-items {
+  align-items: center;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
@@ -90,7 +105,7 @@ ul {
   margin: auto;
 }
 
-.m-auto-0{
+.m-auto-0 {
   margin: 0 auto;
 }
 
@@ -111,9 +126,11 @@ ul {
 .p-1rem {
   padding: 1rem;
 }
-.p-2px{
+
+.p-2px {
   padding: 2px;
 }
+
 .p-top-10 {
   padding-top: 10px;
 }
@@ -130,11 +147,45 @@ ul {
 }
 /* config navbar y header */
 
-.main-header{
- background-color: #f1f7ed;  
+/* Paleta de colores:   gris oscuro #373737 -  naranja #e37222  -turquesa oscuro #07889b -turquesa claro #66b9f  -grisclaro #f1f7ed */
+.bg-1 {
+  background-color: #373737;
+
 }
 
-.fixed-navbar{
+.bg-2 {
+  background-color: #e37222;
+
+
+}
+
+.bg-3 {
+  background-color: #07889b;
+
+}
+
+.bg-4 {
+  background-color: #66b9bf;
+
+}
+
+.bg-5 {
+  background-color: #f1f7ed;
+
+}
+
+
+
+
+
+
+/* config navbar y header */
+
+.main-header {
+  background-color: #f1f7ed;
+}
+
+.fixed-navbar {
   background-color: #f1f7ed;
   align-items: center;
   justify-content: space-between;
@@ -143,8 +194,8 @@ ul {
   height: 70px;
 }
 
-.logo-domum{
-  height: 75px;
+.logo-domum {
+  height: 160px;
 }
 
 .page-navbar {
@@ -169,8 +220,9 @@ ul {
   padding: 6px;
 }
 
-.login-button, .sing-in-button{
- /* padding: 0px 10px;*/
+.login-button,
+.sing-in-button {
+  /* padding: 0px 10px;*/
   background-color: #07889b;
   border-radius: 6px;
   border: none;
@@ -195,7 +247,7 @@ ul {
 
 .carrousel h2 {
   top: 70px;
-  background-color:#66b9bf;
+  background-color: #66b9bf;
   color: #373737;
   font-size: 40px;
 
@@ -214,78 +266,103 @@ ul {
 /* config para cabañas en el home */
 
 #cottage-selector {
-  gap: 3%;
+  gap: 2%;
   justify-content: space-around;
   max-width: 500px;
 }
 
-.cottage-button{
-  border: solid 2px black;
-  font-size: 1.5rem;
-  padding: 5px 20px;
+.cottage-button {
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  background-color: #07889b;
+  color: #ffffff;
+  width: 40%;
+  border-radius: 10px;
 }
 
-.cottage-card{
-  width: 80%;
-  border: 2px solid black;
+.cont-cottage {
+  width: 90vw;
+  overflow-x: scroll;
+  background-color: #f1f7ed;
+  border-radius: 8px;
+  padding: 10px 0;
+  max-width: 1800px;
 }
 
-.card-img{
+.mb {
+  margin-bottom: 20px;
+}
+
+.cottage-card {
+  margin: 0 10px;
+}
+
+.cont-card-img {
+  height: 250px;
+  border-radius: 8px;
+}
+
+.card-img {
   width: 100%;
-  height: 100%;
+  min-height: 250px;
+  position: absolute;
 }
 
-.share-button{
+.share-button {
   background: rgba(255, 255, 255, 0.8);
   top: 5px;
   right: 5px;
   font-size: 2rem;
   padding: 0.5rem;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
-.icons-beds{
+.icons-beds {
   background-color: rgba(255, 255, 255, 0.8);
   bottom: 0;
-  height: 8%;
   align-items: center;
   justify-content: end;
 }
 
-.icon-bed{
+.icon-bed {
   padding: 5px;
   font-size: 1.2rem;
 }
 
-.price-res{
+.price-res {
   align-items: center;
 }
 
 /* registro */
 
-.title-register{
+.title-register {
   width: 50%;
   font-size: 20px;
-  color:#373737;
+  color: #373737;
   padding: 10px
 }
-.but-back{
+
+.but-back {
   height: 30px;
   width: 30px;
   border-radius: 100%;
   border: 1px rgb(1, 95, 124);
-  background-color:#66b9bf;
+  background-color: #66b9bf;
   margin-top: 5px;
 }
-.but-back:hover{
-  background-color:white;
+
+.but-back:hover {
+  background-color: white;
 }
-#arrow{
+
+#arrow {
   color: white;
 }
-#arrow:hover{
+
+#arrow:hover {
   color: #66b9bf;
 }
+
 .form {
   background-color: #66b9bf;
   margin: 0 auto;
@@ -294,6 +371,7 @@ ul {
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgb(134, 134, 134);
 }
+
 .f-input {
   width: 100%;
   border: none;
@@ -303,6 +381,7 @@ ul {
   font-size: 15px;
   color: #373737;
 }
+
 .f-submit {
   width: 40%;
   border: none;
@@ -315,6 +394,7 @@ ul {
   color: white;
   font-size: 15px;
 }
+
 .f-submit:hover {
   color: rgba(255, 255, 255, 1) !important;
   box-shadow: 0 4px 16px rgb(172, 119, 49);
@@ -322,32 +402,35 @@ ul {
 }
 
 /*Detalles del producto*/
-.date-select{
+.date-select {
   margin-top: 80px;
 }
-.label-check-in{
+
+.label-check-in {
   color: #e37222;
   background-color: #e372223a;
   width: 35%;
-  border: 1px solid #e37222bd ;
+  border: 1px solid #e37222bd;
   margin-right: 5px;
   height: 25;
   border-radius: 10px;
   box-shadow: 0px 0px 10px #525252;
-  
+
 }
-.label-check-out{
+
+.label-check-out {
   color: #e37222;
   width: 35%;
-  border: 1px solid #e37222bd ;
+  border: 1px solid #e37222bd;
   background-color: #e372223a;
   margin-left: 5px;
   height: 25px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px #525252;
-  
+
 }
-.input-check-in{
+
+.input-check-in {
   width: 40%;
   margin-top: 5px;
   height: 30px;
@@ -359,22 +442,24 @@ ul {
   color: #373737;
   margin-bottom: 10px;
 }
-.input-check-out{
+
+.input-check-out {
   width: 40%;
   margin-top: 5px;
   height: 30px;
   margin-right: 1px;
-  border:1px solid #373737;
+  border: 1px solid #373737;
   border-radius: 10px;
   background-color: #f1f7ed;
   box-shadow: 0px 0px 10px rgb(137, 137, 137);
   margin-bottom: 10px;
 }
-.selector-huesped{
+
+.selector-huesped {
   padding: 8px;
   margin-bottom: 20px;
   border-radius: 10px;
-  border: solid  0.5px #66b9bf;
+  border: solid 0.5px #66b9bf;
 }
 .selector-huespedes{
   padding: 8px;
@@ -414,12 +499,15 @@ ul {
 .marg-end{
   margin-bottom: 90px;
 }
-.icon-servicios{
+
+
+.icon-servicios {
   color: #66b9bf;
 }
-.selector-cabañas{
+
+.selector-cabañas {
   border-radius: 10px;
-  border: solid  0.5px #66b9bf;
+  border: solid 0.5px #66b9bf;
   padding: 8px;
 }
 .article-precio{
@@ -434,7 +522,16 @@ ul {
   padding-left: 8px; 
 }
 
-.article-total{
+.article-x-noche {
+  width: 55%;
+}
+
+.article-fecha {
+  width: 70%;
+  padding-left: 8px;
+}
+
+.article-total {
   width: 30%;
 }
 .border-top{
@@ -464,82 +561,97 @@ ul {
   0% {
     margin-left: 0%;
   }
+
   15% {
     margin-left: 0%;
   }
+
   20% {
     margin-left: -100%;
   }
+
   35% {
     margin-left: -100%;
   }
+
   40% {
     margin-left: -200%;
   }
+
   55% {
     margin-left: -200%;
   }
+
   60% {
     margin-left: -300%;
   }
+
   75% {
     margin-left: -300%;
   }
+
   80% {
     margin-left: -400%;
   }
+
   100% {
     margin-left: -400%;
   }
 }
 
 /* footer */
-.footer-bgc{
+.footer-bgc {
   background-color: #f1f7ed;
 }
 
-.logo-footer{
+.logo-footer {
   max-width: 300px;
 }
-.div-img{
+
+.div-img {
   width: 100%;
   text-align: center;
 }
 
-.border-ul{
+.border-ul {
   border-top: solid 1px #e37222;
 }
 
-.ul-footer{
+.ul-footer {
   margin: 10px 30px 10px 30px;
   width: 100%;
 }
 
-.copy-footer{
+.copy-footer {
   margin: 10px;
   color: #373737;
 }
 
-.padd-5{
+.padd-5 {
   padding: 5px;
 }
 
-footer h1{
+footer h1 {
   color: #e37222;
 }
+
 /* media queries */
 
 @media (min-width: 761px) {
-  /* tablet */
+
+  /* laptops */
   .burguer-menu {
     display: none;
   }
+
   .page-navbar {
     display: block;
   }
+
   .sing-in-button {
     display: block;
   }
+
   .user-icon {
     display: block;
   }
@@ -556,23 +668,28 @@ footer h1{
   .desde-hasta{
    flex-grow: 0.7;
   }
-  /* footer */
- .ul-footer{
-  width: 42%;
- }
- 
-}
-@media (min-width: 1024px){
-  /*laptop */
+  .info-card {
+    padding: 0;
+  }
 
-  /*register*/
-  .title-register{
+  /* footer */
+  .ul-footer {
+    width: 42%;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /*laptop*/
+  .title-register {
     font-size: 25px;
   }
-  .form{
+
+  .form {
     width: 60%;
   }
-  .f-input{
+
+  .f-input {
     margin-bottom: 20px;
   }
   .aside-prod-detail{
@@ -602,11 +719,11 @@ footer h1{
   /*desktop*/
 
   /*register*/
-  .f-submit{
+  .f-submit {
     height: 40px;
   }
-  .f-input{
-    padding: 10px;
-  }  
-}
 
+  .f-input {
+    padding: 10px;
+  }
+}
