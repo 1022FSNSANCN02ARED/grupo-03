@@ -8,7 +8,7 @@ function WidthList(list, elementList) {
   let numberCards = cotaggeCard.length;
   let windowWidth = window.innerWidth;
   let totalWidthList;
-  if (windowWidth < 700) {
+  if (windowWidth <= 760) {
     totalWidthList = numberCards * 100;
   } else if (windowWidth < 1200) {
     totalWidthList = numberCards * 50;
