@@ -5,6 +5,9 @@
 }
 
 /* config general */
+body{
+  font-family: 'Roboto', sans-serif;
+}
 
 a {
   text-decoration: none;
@@ -130,7 +133,7 @@ ul {
 }
 
 .logo-domum{
-  height: 75px;
+  height: 160px;
 }
 
 .page-navbar {
@@ -221,6 +224,9 @@ ul {
   border-radius: 8px;
   padding: 10px 0;
   max-width: 1800px;
+}
+.mb{
+  margin-bottom: 20px;
 }
 
 .cottage-card{
