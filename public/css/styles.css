@@ -14,17 +14,38 @@ a {
 ul {
   list-style: none;
 }
-
+.fs-15{
+  font-size: 15px;
+}
 .fs-18 {
   font-size: 18px;
 }
-
+.fc-37{
+  color: #373737;
+}
+.fs-25{
+  font-size: 25px;
+}
 .title {
   font-size: 2rem;
 }
-
+.f-f{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 .w-100 {
   width: 100%;
+}
+
+
+.w-50{
+  width: 50%;
+}
+
+.w-33{
+  width: 33.3%;
+}
+.h-20rem{
+  height: 150px;
 }
 
 .flex {
@@ -67,6 +88,10 @@ ul {
   margin: auto;
 }
 
+.m-auto-0{
+  margin: 0 auto;
+}
+
 .txt-center {
   text-align: center;
 }
@@ -78,11 +103,17 @@ ul {
 .p-1rem {
   padding: 1rem;
 }
-
+.p-2px{
+  padding: 2px;
+}
 .p-top-10 {
   padding-top: 10px;
 }
-
+.hr{
+  width: 80%;
+  margin: 0 auto;
+  color: #373737;
+}
 /* config navbar y header */
 
 .main-header{
@@ -233,6 +264,7 @@ ul {
 }
 
 /* registro */
+
 .title-register{
   width: 50%;
   font-size: 20px;
@@ -245,6 +277,7 @@ ul {
   border-radius: 100%;
   border: 1px rgb(1, 95, 124);
   background-color:#66b9bf;
+  margin-top: 5px;
 }
 .but-back:hover{
   background-color:white;
@@ -289,6 +322,112 @@ ul {
   box-shadow: 0 4px 16px rgb(172, 119, 49);
   transition: all 0.2s ease;
 }
+
+/*Detalles del producto*/
+.date-select{
+  margin-top: 80px;
+}
+.label-check-in{
+  color: #e37222;
+  background-color: #e372223a;
+  width: 35%;
+  border: 1px solid #e37222bd ;
+  margin-right: 5px;
+  height: 25;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #525252;
+  
+}
+.label-check-out{
+  color: #e37222;
+  width: 35%;
+  border: 1px solid #e37222bd ;
+  background-color: #e372223a;
+  margin-left: 5px;
+  height: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #525252;
+  
+}
+.input-check-in{
+  width: 40%;
+  margin-top: 5px;
+  height: 30px;
+  margin-right: 1px;
+  border: 1px solid #373737;
+  border-radius: 10px;
+  background-color: #f1f7ed;
+  box-shadow: 0px 0px 10px rgb(137, 137, 137);
+  color: #373737;
+  margin-bottom: 10px;
+}
+.input-check-out{
+  width: 40%;
+  margin-top: 5px;
+  height: 30px;
+  margin-right: 1px;
+  border:1px solid #373737;
+  border-radius: 10px;
+  background-color: #f1f7ed;
+  box-shadow: 0px 0px 10px rgb(137, 137, 137);
+  margin-bottom: 10px;
+}
+.selector-huesped{
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: solid  0.5px #66b9bf;
+}
+.label-selector{
+ margin-right: 4px;
+ align-self: center;
+}
+.img-productDetail{
+  border-radius: 10px;
+}
+.caract{
+  color: #373737;
+  width: 50%;
+  padding-left: 10px;
+}
+.icon-servicios{
+  color: #66b9bf;
+}
+.selector-cabañas{
+  border-radius: 10px;
+  border: solid  0.5px #66b9bf;
+  padding: 8px;
+}
+.article-precio{
+  width: 15%;
+  padding-left: 8px; 
+}
+.article-x-noche{
+  width: 55%;
+}
+.article-fecha{
+  width: 70%;
+  padding-left: 8px; 
+}
+
+.article-total{
+  width: 30%;
+}
+.border-top{
+  border-top:  solid 0.2px  #373737;
+  background-color: beige;
+  bottom: 0;
+}
+.but-reserva-{
+  height: 32px;
+  width: 120px;
+  background: linear-gradient(to bottom right,#07889b ,#66b9bf );
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #44220a;
+  color: white;
+  text-align: center;
+}
+
 /* animación para el carrusel del inicio. */
 
 @keyframes carrousel {
@@ -324,6 +463,40 @@ ul {
   }
 }
 
+/* footer */
+.footer-bgc{
+  background-color: #f1f7ed;
+}
+
+.logo-footer{
+  max-width: 300px;
+}
+.div-img{
+  width: 100%;
+  text-align: center;
+}
+
+.border-ul{
+  border-top: solid 1px #e37222;
+}
+
+.ul-footer{
+  margin: 10px 30px 10px 30px;
+  width: 100%;
+}
+
+.copy-footer{
+  margin: 10px;
+  color: #373737;
+}
+
+.padd-5{
+  padding: 5px;
+}
+
+footer h1{
+  color: #e37222;
+}
 /* media queries */
 
 @media (min-width: 761px) {
@@ -343,8 +516,11 @@ ul {
   .info-card{
     padding: 0;
   }
+  /* footer */
+ .ul-footer{
+  width: 42%;
+ }
 }
-
 @media (min-width: 1024px){
   /*laptop*/
   .title-register{
