@@ -1,0 +1,1 @@
+Link al tablero de trello donde desarrollamos la retroalimentación: https://trello.com/b/9skajMUm/retrospectiva
