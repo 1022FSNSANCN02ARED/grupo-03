@@ -16,13 +16,13 @@
 </head>
 
 <body>
-  <header class="main-header">
+  <header class="main-header bg-5">
 
     <!-- nav fijo -->
-    <div class="fixed-navbar flex pos-fixed w-100">
+    <div class="fixed-navbar flex pos-fixed w-100 bg-5">
       <img src="/images/logo-domum.png" alt="Logo de Domum" class="logo-domum">
       <nav class="page-navbar hide">
-        <ul class="flex fs-18">
+        <ul class="flex fs-15">
           <li><a href="/">Inicio</a></li>
           <li><a href="#">Nosotros</a></li>
           <li><a href="#">Cabañas</a></li>
@@ -32,8 +32,8 @@
       </nav>
       <div class="header-buttons flex">
         <a href="/productCart"><i class="fa-solid fa-cart-shopping cart-icon"></i></a>
-        <a href="/login"><button class="login-button fs-18">Ingresar</button></a>
-        <a href="/register"><button class="sing-in-button hide fs-18">Crear cuenta</button></a>
+        <a href="/login"><button class="login-button fs-18 bg-3">Ingresar</button></a>
+        <a href="/register"><button class="sing-in-button hide fs-18 bg-3">Crear cuenta</button></a>
         <i class="fa-solid fa-bars burguer-menu"></i>
         <a href="#"><i class="fa-solid fa-user user-icon hide"></i></a>
       </div>
@@ -42,7 +42,7 @@
     
     <!-- carrusel -->
     <div class="carrousel pos-relative flex m-auto of-hidden">
-      <h2 class="pos-absolute txt-center w-100 title">COMO EN TU HOGAR</h2>
+      <h2 class="pos-absolute txt-center w-100 title bg-4 fc-37">COMO EN TU HOGAR</h2>
       <ul class="flex m-auto">
         <li class="of-hidden flex jc-center"><img src="/images/slider-home01.jpg" alt="imagen de referencia 1"></li>
         <li class="of-hidden flex jc-center"><img src="/images/slider-home02.jpg" alt="imagen de referencia 2"></li>
@@ -69,149 +69,152 @@
     <!-- breve descripción -->
 
     <!-- apartado de cabañas -->
-    <section id="cabañas">
+    <section id="cabañas flex">
       <article>
         <ul class="flex jc-center m-auto p-1rem" id="cottage-selector">
-          <li class=" txt-center"><a href="#" class="cottage-button">cabaña</a></li>
-          <li class=" txt-center"><a href="#" class="cottage-button">mediana</a></li>
-          <li class=" txt-center"><a href="#" class="cottage-button">cabaña</a></li>
+          <li class=" txt-center"><a href="#" class="cottage-button bg-3">Pequeña</a></li>
+          <li class=" txt-center"><a href="#" class="cottage-button bg-3">Mediana</a></li>
+          <li class=" txt-center"><a href="#" class="cottage-button bg-3">Grande</a></li>
         </ul>
       </article>
 
-      <article class="m-auto cont-cottage">
-        <!-- <button id="next-button">a</button> -->
-      <ul class="cottage-list flex pos-relative">
+      <div class="cot-nav flex al-items jc-center m-auto">
+        <button id="prev-button" class="scroll-button"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="next-button" class="scroll-button order-1"><i class="fa-solid fa-chevron-right"></i></button>
+        
+        <article class="m-auto cont-cottage w-80 bg-5">
+          <ul class="cottage-list flex pos-relative">
+        
+            <li class="cottage-card">
+              <figure class="pos-relative of-hidden cont-card-img flex al-items">
+                <img class="card-img" src="/images/cabaña01-fuera.jpg" alt="foto de cabaña">
+        
+                <a href="#" class="share-button pos-absolute flex">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </a>
+        
+                <div class="icons-beds flex pos-absolute w-100">
+                  <i class="fa-solid fa-bed icon-bed"></i>
+                  <i class="fa-solid fa-bed icon-bed"></i>
+                  <i class="fa-solid fa-bed icon-bed"></i>
+                </div>
+              </figure>
+        
+              <div class="info-card p-1rem">
+                <h2 class="txt-center">
+                  cabaña hasta 4 personas
+                </h2>
+                <p class="p-top-10 txt-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptate itaque totam voluptatem quidem magnam recusandae fugiat illo a iusto!
+                </p>
+                <h3 class="p-top-10 txt-center">
+                  servicios principales
+                </h3>
+                <ul class="p-1rem">
+                  <li>- item</li>
+                  <li>- item</li>
+                  <li>- item</li>
+                  <li>- item</li>
+                  <li>- item</li>
+                </ul>
+        
+                <div class="price-res flex w-100 jc-bet">
+                  <h3>total a pagar: $$$</h3>
+                  <a href="/product" class="cottage-button txt-center bg-3">reservar</a>
+                </div>
+              </div>
+            </li>
+        
+            <li class="cottage-card">
+              <figure class="pos-relative of-hidden cont-card-img flex al-items">
+                <img class="card-img" src="/images/CabañaNARANJOS/naranjos01.jpg" alt="foto de cabaña">
+        
+                <a href="#" class="share-button pos-absolute flex">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </a>
+        
+                <div class="icons-beds flex pos-absolute w-100">
+                  <i class="fa-solid fa-bed icon-bed"></i>
+                  <i class="fa-solid fa-bed icon-bed"></i>
+                  <i class="fa-solid fa-bed icon-bed"></i>
+                </div>
+              </figure>
+        
+              <div class="info-card p-1rem">
+                <h2 class="txt-center">
+                  cabaña hasta 4 personas
+                </h2>
+                <p class="p-top-10 txt-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptate itaque totam voluptatem quidem magnam
+                recusandae fugiat illo a iusto!
+                </p>
+                <h3 class="p-top-10 txt-center">
+                servicios principales
+                </h3>
+                <ul class="p-1rem">
+                  <li>- item</li>
+                  <li>- item</li>
+                  <li>- item</li>
+                  <li>- item</li>
+                  <li>- item</li>
+                </ul>
+        
+                <div class="price-res flex w-100 jc-bet">
+                  <h3>total a pagar: $$$</h3>
+                  <a href="/product" class="cottage-button txt-center bg-3">reservar</a>
+                </div>
+            </div>
+          </li>
+          <li class="cottage-card">
+            <figure class="pos-relative of-hidden cont-card-img flex al-items">
+              <img class="card-img" src="/images/CabañaLIQUIDAMBAR/liquidambar01.jpg" alt="foto de cabaña">
+        
+              <a href="#" class="share-button pos-absolute flex">
+                <i class="fa-solid fa-share-nodes"></i>
+              </a>
+        
+              <div class="icons-beds flex pos-absolute w-100">
+                <i class="fa-solid fa-bed icon-bed"></i>
+                <i class="fa-solid fa-bed icon-bed"></i>
+                <i class="fa-solid fa-bed icon-bed"></i>
+              </div>
+            </figure>
+        
+            <div class="info-card p-1rem">
+              <h2 class="txt-center">
+                cabaña hasta 4 personas
+              </h2>
+              <p class="p-top-10 txt-center">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptate itaque totam voluptatem quidem magnam
+                recusandae fugiat illo a iusto!
+              </p>
+              <h3 class="p-top-10 txt-center">
+                servicios principales
+              </h3>
+              <ul class="p-1rem">
+                <li>- item</li>
+                <li>- item</li>
+                <li>- item</li>
+                <li>- item</li>
+                <li>- item</li>
+              </ul>
+        
+              <div class="price-res flex w-100 jc-bet">
+                <h3>total a pagar: $$$</h3>
+                <a href="/product" class="cottage-button txt-center bg-3">reservar</a>
+              </div>
+            </div>
+          </li>
+        
+          </ul>
+        </article>
+      </div>
 
-        <li class="cottage-card">
-          <figure class="pos-relative of-hidden cont-card-img flex al-items">
-            <img class="card-img" src="/images/cabaña01-fuera.jpg" alt="foto de cabaña">
-          
-            <a href="#" class="share-button pos-absolute flex">
-              <i class="fa-solid fa-share-nodes"></i>
-            </a>
-          
-            <div class="icons-beds flex pos-absolute w-100">
-              <i class="fa-solid fa-bed icon-bed"></i>
-              <i class="fa-solid fa-bed icon-bed"></i>
-              <i class="fa-solid fa-bed icon-bed"></i>
-            </div>
-          </figure>
-
-          <div class="info-card p-1rem">
-            <h2 class="txt-center">
-              cabaña hasta 4 personas
-            </h2>
-            <p class="p-top-10 txt-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptate itaque totam voluptatem quidem magnam recusandae fugiat illo a iusto!
-            </p>
-            <h3 class="p-top-10 txt-center">
-              servicios principales
-            </h3>
-            <ul class="p-1rem">
-              <li>- item</li>
-              <li>- item</li>
-              <li>- item</li>
-              <li>- item</li>
-              <li>- item</li>
-            </ul>
-
-            <div class="price-res flex w-100 jc-bet">
-              <h2>total a pagar: $$$</h2>
-              <a href="/product" class="cottage-button txt-center">reservar</a>
-            </div>
-          </div>
-        </li>
-        
-        <li class="cottage-card">
-          <figure class="pos-relative of-hidden cont-card-img flex al-items">
-            <img class="card-img" src="/images/CabañaNARANJOS/naranjos01.jpg" alt="foto de cabaña">
-        
-            <a href="#" class="share-button pos-absolute flex">
-              <i class="fa-solid fa-share-nodes"></i>
-            </a>
-        
-            <div class="icons-beds flex pos-absolute w-100">
-              <i class="fa-solid fa-bed icon-bed"></i>
-              <i class="fa-solid fa-bed icon-bed"></i>
-              <i class="fa-solid fa-bed icon-bed"></i>
-            </div>
-          </figure>
-        
-          <div class="info-card p-1rem">
-            <h2 class="txt-center">
-              cabaña hasta 4 personas
-            </h2>
-            <p class="p-top-10 txt-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptate itaque totam voluptatem quidem magnam
-              recusandae fugiat illo a iusto!
-            </p>
-            <h3 class="p-top-10 txt-center">
-              servicios principales
-            </h3>
-            <ul class="p-1rem">
-              <li>- item</li>
-              <li>- item</li>
-              <li>- item</li>
-              <li>- item</li>
-              <li>- item</li>
-            </ul>
-        
-            <div class="price-res flex w-100 jc-bet">
-              <h3>total a pagar: $$$</h3>
-              <a href="/product" class="cottage-button txt-center">reservar</a>
-            </div>
-          </div>
-        </li>
-
-        <li class="cottage-card">
-          <figure class="pos-relative of-hidden cont-card-img flex al-items">
-            <img class="card-img" src="/images/CabañaLIQUIDAMBAR/liquidambar01.jpg" alt="foto de cabaña">
-        
-            <a href="#" class="share-button pos-absolute flex">
-              <i class="fa-solid fa-share-nodes"></i>
-            </a>
-        
-            <div class="icons-beds flex pos-absolute w-100">
-              <i class="fa-solid fa-bed icon-bed"></i>
-              <i class="fa-solid fa-bed icon-bed"></i>
-              <i class="fa-solid fa-bed icon-bed"></i>
-            </div>
-          </figure>
-        
-          <div class="info-card p-1rem">
-            <h2 class="txt-center">
-              cabaña hasta 4 personas
-            </h2>
-            <p class="p-top-10 txt-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptate itaque totam voluptatem quidem magnam
-              recusandae fugiat illo a iusto!
-            </p>
-            <h3 class="p-top-10 txt-center">
-              servicios principales
-            </h3>
-            <ul class="p-1rem">
-              <li>- item</li>
-              <li>- item</li>
-              <li>- item</li>
-              <li>- item</li>
-              <li>- item</li>
-            </ul>
-        
-            <div class="price-res flex w-100 jc-bet">
-              <h3>total a pagar: $$$</h3>
-              <a href="/product" class="cottage-button txt-center">reservar</a>
-            </div>
-          </div>
-        </li>
-        
-      </ul>
-
-      </article>
     </section>
     <!-- apartado de cabañas -->
 
   </main>
-  <footer class="footer-bgc flex jc-center flex-wrap">
+  <footer class="bg-5 flex jc-center flex-wrap">
     <div class="div-img"><img src="/images/logo-domum.png" alt="Logo de Domum" class="w-50 logo-footer"></div>
     <ul class="ul-footer border-ul">
       <h1 class="fs-18 padd-5">Contactos</h1>
