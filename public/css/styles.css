@@ -228,13 +228,12 @@ ul {
 .login-button,
 .sing-in-button {
   /* padding: 0px 10px;*/
-  background-color: #07889b;
   border-radius: 6px;
   border: none;
   box-shadow: 0 2px 4px #0e0e0e;
   color: #f1f7ed;
-  font-size: 0.7em;
-  padding: 10px 25px;
+  font-size: 0.8em;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
@@ -410,7 +409,6 @@ ul {
 
 .label-check-in {
   color: #07889b;
-  background-color: #f1f7ed;
   width: 35%;
   border: 1px solid #07889b;
   margin-right: 5px;
@@ -424,7 +422,6 @@ ul {
   color: #07889b;
   width: 35%;
   border: 1px solid #07889b;
-  background-color: #f1f7ed;
   margin-left: 5px;
   height: 25px;
   border-radius: 10px;
