@@ -505,8 +505,6 @@ ul {
 .marg-end{
   margin-bottom: 90px;
 }
-
-
 .icon-servicios {
   color: #66b9bf;
 }
@@ -676,9 +674,7 @@ footer h1 {
   .desde-hasta{
     width: 60%;
   }
-  .article-fecha{
-    width: 30%;
-  }
+  
   .but-reserva-{
     width: 15%;
     margin-left: 200px;
@@ -777,6 +773,8 @@ footer h1 {
   border-radius: 10px;
   box-shadow: 5px 5px 5px #6b6b6b;
   color: white;
+  width: 100px;
+  text-align: center;
   
 }
 }
