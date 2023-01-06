@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/style-pd-footer.css">
+  <link rel="icon" href="/images/logo-domum.png" >
 </head>
 
 <body>
@@ -74,12 +75,14 @@
     <aside class=" p-1rem aside-prod-detail box-shadow">
       
       <form action="get" class=" flex flex-wrap">
-        <h3 class="article-precio">$$$</h3> 
-        <p class="article-x-noche">x noche</p>
-        <input type="date" name="check-in" id="check-in" value="2023-01-02"class="">
-        <input type="date" name="check-out" id="check-out"  class="">
-        <p class="w-100 article-fecha">Cantidad de días: xx</p></div>
-        <select name="selector" class="selector-cabañas f-f fc-37 ">
+        <h3 class=" aside-precio p-bot-20px">$$$</h3> 
+        <p class=" aside-noche p-bot-20px">x noche</p>
+        <label for="check-in" class="aside-input mr-9 ">Check-in</label>
+        <label for="check-out" class="aside-input">Check-out</label>
+        <input type="date" name="check-in" id="check-in" value="2023-01-02"class="aside-input mr-9 p-20px">
+        <input type="date" name="check-out" id="check-out"  class="aside-input p-10px">
+        <p class="w-100 aside-dias p-bot-20px ">Cantidad de días: xx</p></div>
+        <select name="selector" class="aside-selector-cabañas f-f fc-37 p-bot-20px mb">
           <option value="disabled" selected>Seleccione una cabaña</option>
           <option value="cabaña-1">Cabaña blanca</option>
           <option value="cabaña-2">Cabaña xx</option>
@@ -87,17 +90,15 @@
           <option value="cabaña-4">Cabaña xx</option>
           <option value="cabaña-5">Cabaña xx</option>
         </select>
-        <select name="selector" class="selector-huespedes  ">
+        <select name="selector" class=" aside-selector-cabañas p-bot-20px mb">
             <option value="disabled" selected>Seleccione número de huéspes</option>
             <option value="cabaña-1">1</option>
             <option value="cabaña-2">2</option>
             <option value="cabaña-2">3</option>
             <option value="cabaña-2">4</option>
         </select>
-            <label for="pet">Mascota</label>
-            <input type="radio">
-            <h3 class="article-total">Total $$$</h3>
-            <a href="/productCart" class="but-reserva- fs-18">Reservar</a>
+            <h3 class=" aside-total">Total $$$</h3>
+            <a href="/productCart" class=" aside-but fs-18">Reservar</a>
         
       </form>
     </aside>
@@ -123,7 +124,7 @@
     <h3 class="w-100 txt-center p-1rem f-f fs-18 "><i class="fa-solid fa-location-dot icon-servicios"></i> Mapa del complejo</h3>
     <div class="flex flex-wrap jc-center f-f p-1rem ">
      <label for="n-cabañas" class="label-selector ">Cabañas:</label>
-     <select name="selector" class="selector-cabañas f-f fc-37 ">
+     <select name="selector" class="selector-cabañas fc-37 ">
       <option value="disabled" selected>Seleccione una cabaña</option>
       <option value="cabaña-1">Cabaña blanca</option>
       <option value="cabaña-2">Cabaña xx</option>
@@ -137,15 +138,18 @@
     </div>
   </section >
 
-  <article class="fc-37 border-top pos-fixed w-100 p-5px">
+  <article class="fc-37 border-top bg-5 pos-fixed w-100 p-5px">
     <div class="flex flex-wrap p-2px w-100">
        <h3 class="article-precio">$$$</h3>
        <p class="article-x-noche">x noche</p>
        <h3 class="article-total">Total $$$</h3></div>
     <div class= "flex flex-wrap p-2px w-100">
-        <h5 class="desde-hasta">Desde: dd/mm/aa Hasta: dd/mm/aa</h5>
-        <h5 class="w-100 article-fecha">Cantidad de días: xx</h5>
-        <a href="/productCart" class="but-reserva- fs-18">Reservar</a>
+        <h4 class="desde-hasta">Desde: dd/mm/aa Hasta: dd/mm/aa</h4>
+        <h4 class="w-100 article-fecha">Cantidad de días: xx</h4>
+        <div class="flex  w-100 ">
+         <input type="text" name="cupon" id="cupon"  class="input-cupon fc-37 bg-5 flex-grow" placeholder="¿Cupón de descuento?"><button class="input-cupon bg-5"><i class="fa-solid fa-play fc-3"></i></button>
+         <a href="/productCart" class="but-reserva- fs-18">Reservar</a>
+        </div>
     </div>
         
   </article>

@@ -104,6 +104,9 @@ ul {
 .m-auto-0 {
   margin: 0 auto;
 }
+.mr-9{
+  margin-right: 9px;
+}
 
 .mb {
   margin-bottom: 20px;
@@ -132,7 +135,9 @@ ul {
 .p-2px {
   padding: 2px;
 }
-
+.p-10px{
+  padding: 10px;
+}
 .p-top-10 {
   padding-top: 10px;
 }
@@ -141,6 +146,9 @@ ul {
 }
 .p-right-15rem{
   padding-right: 1.5rem;
+}
+.p-bot-20px{
+  padding-bottom: 20px;
 }
 .hr{
   width: 80%;
@@ -186,6 +194,9 @@ ul {
 
 .fc-37 {
   color: #373737;
+}
+.fc-3{
+  color: #07889b;
 }
 
 /* config navbar y header */
@@ -512,7 +523,6 @@ ul {
 .border-top{
   border-top:  solid 0.2px #07889b;
   border-bottom:  solid 0.2px #07889b ;
-  background-color: beige;
   bottom: 0;
 }
 .article-precio{
@@ -524,26 +534,27 @@ ul {
 }
 .article-total{
   width: 40%;
- 
+  text-align: center;
 }
 .desde-hasta{
   margin: 5px;
+  width: 100%;
 }
 .article-fecha{
   margin: 5px;
 }
+.input-cupon{
+  border-radius: 10px;
+  border: solid 0.5px #66b9bf;
+  padding: 8px;
+}
 .but-reserva-{
   padding: 5px;
   margin: 5px;
-  justify-self: end;
-  height: 32px;
-  width: 100%;
   background: linear-gradient(to bottom right,#07889b ,#66b9bf );
   border-radius: 10px;
-  box-shadow: 0px 0px 10px #44220a;
+  box-shadow: 5px 5px 5px #6b6b6b;
   color: white;
-  text-align: center;
-
 }
 
 /* animación para el carrusel del inicio. */
@@ -625,7 +636,22 @@ footer h1 {
 
 /* media queries */
 @media (min-width: 488px){
-
+  .article-precio{
+    margin-right: 10px;
+  }
+  .article-x-noche{
+    width: 45%;
+   
+  }
+  .flex-grow{
+    flex-grow: 0.3;
+  }
+  .but-reserva-{
+  width: 20%;
+  text-align: center;
+  margin-left: 140px;
+  
+  }
 }
 @media (min-width: 761px) {
 
@@ -645,21 +671,26 @@ footer h1 {
   .user-icon {
     display: block;
   }
-
-  .article-total{
-    width: 25%;
-  }
-  .article-x-noche{
-  width: 65%;
-  }
-  .img-map-lugar{
-    width: 65%;
-  }
-  .desde-hasta{
-   flex-grow: 0.7;
-  }
+  
+  
   .info-card {
     padding: 0;
+  }
+  .desde-hasta{
+    width: 60%;
+  }
+  .article-fecha{
+    width: 30%;
+  }
+  .but-reserva-{
+    width: 15%;
+    margin-left: 200px;
+    
+  }
+  .aside-selector-cabañas{
+    border-radius: 10px;
+   border: solid 0.5px #66b9bf;
+   padding: 8px;
   }
 
   /* footer */
@@ -701,8 +732,38 @@ footer h1 {
   .selector-cabañas{
     width: 30%;
   }
+  .img-map-lugar{
+    width: 70%;
+  }
+  .aside-precio{
+    margin-right: 10px;
+  
+  }
+  .aside-noche{
+    width: 50%;
+    align-self: self-end;
+  }
+  .aside-input{
+    width: 48%;
+    font-size: large;
+  }
+  .aside-dias{
+    padding-top: 20px;
+  }
+  .aside-total{
+    width: 50%;
+    align-self: center;
 
-
+  }
+  .aside-but{
+  padding: 5px;
+  margin: 5px;
+  background: linear-gradient(to bottom right,#07889b ,#66b9bf );
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #6b6b6b;
+  color: white;
+  
+}
 }
 
 @media (min-width: 1440px) {
