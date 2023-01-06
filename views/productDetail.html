@@ -47,8 +47,8 @@
       
        <label for="check-in" class="label-check-in txt-center fs-18 box-shadow">Check-in</label>
        <label for="check-out" class="label-check-out txt-center fs-18 box-shadow">Check-out</label>
-       <input type="date" name="check-in" id="check-in" value="2023-01-02"class="input-check-in bg-5 txt-center article-fecha">
-       <input type="date" name="check-out" id="check-out"  class="input-check-out bg-5 txt-center  article-fecha">
+       <input type="date" name="check-in" id="check-in" value="2023-01-02"class="input-check-in bg-5 txt-center article-fecha fs-18" >
+       <input type="date" name="check-out" id="check-out"  class="input-check-out bg-5 txt-center  article-fecha fs-18">
        <select name="selector" class="selector-huesped  ">
         <option value="disabled" selected>Seleccione número de huéspes</option>
         <option value="cabaña-1">1</option>
@@ -60,7 +60,7 @@
       
     </form>
   </section>
-    <h1 class="w-100 p-2rem-t p-top-10 fc-37 fs-25 ">Cabaña xxxx</h1>
+    <h1 class="w-100 p-1rem fc-37 fs-25 txt-center ">Cabaña xxxx</h1>
 
   <section class=" w-100  fc-37 flex">
   
@@ -102,7 +102,7 @@
     </aside>
   </section>
   <hr class="hr">
-    <p class="txt-center">.4 huespedes .2 dormitorios .2 camas .1 baño</p>
+    <p class="txt-center fs-18 p-2px">.4 huespedes .2 dormitorios .2 camas .1 baño</p>
     <hr class="hr">
     <div class="flex flex-wrap  p-1rem">
       
@@ -136,15 +136,35 @@
     </div>
   </section >
 
-  <article class="fc-37 border-top pos-fixed w-100 fs-15 ">
-    <div class="flex flex-wrap p-2px">
+  <article class="fc-37 border-top pos-fixed w-100 p-5px">
+    <div class="flex flex-wrap p-2px w-100">
        <h3 class="article-precio">$$$</h3>
        <p class="article-x-noche">x noche</p>
        <h3 class="article-total">Total $$$</h3></div>
-    <div class= "flex flex-wrap p-2px">
-        <p class="desde-hasta">Desde: dd/mm/aa Hasta: dd/mm/aa</p>
+    <div class= "flex flex-wrap p-2px w-100">
+        <h5 class="desde-hasta">Desde: dd/mm/aa Hasta: dd/mm/aa</h5>
+        <h5 class="w-100 article-fecha">Cantidad de días: xx</h5>
         <a href="/productCart" class="but-reserva- fs-18">Reservar</a>
-        <p class="w-100 article-fecha">Cantidad de días: xx</p></div>
+    </div>
+        
   </article>
+  <footer class="bg-5 flex jc-center flex-wrap footer-producDetail">
+    <div class="div-img"><img src="/images/logo-domum.png" alt="Logo de Domum" class="w-50 logo-footer"></div>
+    <ul class="ul-footer border-ul">
+      <h1 class="fs-18 padd-5">Contactos</h1>
+      <li><i class="fa-regular fa-clock padd-5"></i> De 9:00 a 18:00hs</li>
+      <li><i class="fa-solid fa-phone padd-5"></i> +54 123 1234567</li>
+      <li><i class="fa-regular fa-envelope padd-5"></i> consultas@domun.com</li>
+      <li><i class="fa-brands fa-whatsapp padd-5"></i> +54 123 1234567</li>
+    </ul>
+    <ul class="ul-footer border-ul">
+      <h1 class="fs-18 padd-5 ">Redes Sociales</h1>
+      <li><i class="fa-brands fa-facebook padd-5"></i> Facebook</li>
+      <li><i class="fa-brands fa-twitter padd-5"></i> Twiteer</li>
+      <li><i class="fa-brands fa-youtube padd-5"></i> YouTube</li>
+      <li><i class="fa-brands fa-instagram padd-5"></i> Instagram</li>
+    </ul>
+    <div class="w-100 copy-footer">© 2023 Domun</div>
+  </footer>
 </body>
 </html>
