@@ -2,4 +2,11 @@
 .footer-producDetail{
     margin-bottom: 140px;
   }
+
+@media (min-width: 1024px)
+{
+  .footer-producDetail{
+    margin-bottom: 0px;
+  }
+}
   

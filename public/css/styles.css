@@ -488,7 +488,7 @@ ul {
   margin: 10px;
 }
 .aside-prod-detail{
-  background-color: #dddddd;
+  background-color: #f1f7ed;
   display: none;
   width: 30%;
   height: 400px;
@@ -732,6 +732,9 @@ footer h1 {
   .img-map-lugar{
     width: 70%;
   }
+  .border-top{
+    display: none;
+  }
   .aside-precio{
     margin-right: 10px;
   
@@ -741,8 +744,23 @@ footer h1 {
     align-self: self-end;
   }
   .aside-input{
+    background-color: white;
     width: 48%;
     font-size: large;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top: solid 0.5px #66b9bf;
+    padding: 5px;
+    
+  }
+  .aside-input-date{
+    border: none;
+    width: 48%;
+    font-size: large;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: solid 0.5px #66b9bf;
+    padding: 5px;
   }
   .aside-dias{
     padding-top: 20px;
