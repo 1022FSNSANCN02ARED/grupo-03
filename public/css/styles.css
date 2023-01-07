@@ -77,6 +77,10 @@ ul {
   justify-content: space-between;
 }
 
+.jc-end {
+  justify-content: end;
+}
+
 .al-items {
   align-items: center;
 }
@@ -104,6 +108,11 @@ ul {
 .m-auto-0 {
   margin: 0 auto;
 }
+
+.m-10{
+  margin: 10px;
+}
+
 .mr-9{
   margin-right: 9px;
 }
@@ -292,6 +301,7 @@ ul {
   padding: 10px 15px;
   color: #ffffff;
   border-radius: 8px;
+  flex-grow: 0.8;
 }
 
 .scroll-button{
@@ -344,8 +354,21 @@ ul {
   font-size: 1.2rem;
 }
 
-.price-res {
-  align-items: center;
+/* activities */
+
+.act-img-cont{
+  height: 40vw;
+  max-height: 400px;
+  max-width: 800px;
+}
+
+.act-img{
+  width: 650px;
+  height: 325px;
+}
+
+.qual-star{
+  max-width: 800px;
 }
 
 /* registro */
@@ -669,7 +692,6 @@ footer h1 {
     display: block;
   }
   
-  
   .info-card {
     padding: 0;
   }
@@ -689,6 +711,11 @@ footer h1 {
    border: solid 0.5px #66b9bf;
    padding: 8px;
   }
+
+  .act-img{
+  width: 800px;
+  height: 400px;
+}
 
   /* footer */
   .ul-footer {

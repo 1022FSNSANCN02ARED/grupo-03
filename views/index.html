@@ -1,238 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Domum</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Domum</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
-  
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="icon" href="/images/logo-domum.png" >
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
 
-<body>
-  <header class="main-header bg-5">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="icon" href="/images/logo-domum.png" />
+  </head>
 
-    <!-- nav fijo -->
-    <div class="fixed-navbar flex pos-fixed w-100 bg-5">
-      <img src="/images/logo-domum.png" alt="Logo de Domum" class="logo-domum">
-      <nav class="page-navbar hide">
-        <ul class="flex fs-15">
-          <li><a href="/">Inicio</a></li>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Cabañas</a></li>
-          <li><a href="#">Actividades</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </nav>
-      <div class="header-buttons flex">
-        <a href="/productCart"><i class="fa-solid fa-cart-shopping cart-icon"></i></a>
-        <a href="/login"><button class="login-button fs-18 bg-3">Ingresar</button></a>
-        <a href="/register"><button class="sing-in-button hide fs-18 bg-3">Crear cuenta</button></a>
-        <i class="fa-solid fa-bars burguer-menu"></i>
-        <a href="#"><i class="fa-solid fa-user user-icon hide"></i></a>
+  <body>
+    <header class="main-header bg-5">
+      <!-- nav fijo -->
+      <div class="fixed-navbar flex pos-fixed w-100 bg-5">
+        <img
+          src="/images/logo-domum.png"
+          alt="Logo de Domum"
+          class="logo-domum"
+        />
+        <nav class="page-navbar hide">
+          <ul class="flex fs-15">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Cabañas</a></li>
+            <li><a href="#">Actividades</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+        <div class="header-buttons flex">
+          <a href="/productCart"
+            ><i class="fa-solid fa-cart-shopping cart-icon"></i
+          ></a>
+          <a href="/login"
+            ><button class="login-button fs-18 bg-3">Ingresar</button></a
+          >
+          <a href="/register"
+            ><button class="sing-in-button hide fs-18 bg-3">
+              Crear cuenta
+            </button></a
+          >
+          <i class="fa-solid fa-bars burguer-menu"></i>
+          <a href="#"><i class="fa-solid fa-user user-icon hide"></i></a>
+        </div>
       </div>
-    </div>
-    <!-- nav fijo -->
-    
-    <!-- carrusel -->
-    <div class="carrousel pos-relative flex m-auto of-hidden">
-      <h2 class="pos-absolute txt-center w-100 title bg-4 fc-37">COMO EN TU HOGAR</h2>
-      <ul class="flex m-auto">
-        <li class="of-hidden flex jc-center"><img src="/images/slider-home01.jpg" alt="imagen de referencia 1"></li>
-        <li class="of-hidden flex jc-center"><img src="/images/slider-home02.jpg" alt="imagen de referencia 2"></li>
-        <li class="of-hidden flex jc-center"><img src="/images/slider-home03.jpg" alt="imagen de referencia 3"></li>
-        <li class="of-hidden flex jc-center"><img src="/images/slider-home04.jpg" alt="imagen de referencia 4"></li>
-        <li class="of-hidden flex jc-center"><img src="/images/slider-home01.jpg" alt="imagen de referencia 1"></li>
-      </ul>
-    </div>
-    <!-- carrusel -->
+      <!-- nav fijo -->
 
-  </header>
-
-  <main>
-    <!-- breve descripción -->
-    <section id="info-domum" class="p-1rem">
-      <h1 class="txt-center title">
-        Complejo de cabañas Domum
-      </h1>
-
-      <p class="txt-center p-top-10">
-        Nuestros alojamientos, buscan superar las expectativas de nuestros clientes, mejorando constantemente.
-      </p>
-    </section>
-    <!-- breve descripción -->
-
-    <!-- apartado de cabañas -->
-    <section id="cabañas flex">
-      <article>
-        <ul class="flex jc-center m-auto p-1rem" id="cottage-selector">
-          <li class=" txt-center"><a href="#" class="cottage-button bg-3">Pequeña</a></li>
-          <li class=" txt-center"><a href="#" class="cottage-button bg-3">Mediana</a></li>
-          <li class=" txt-center"><a href="#" class="cottage-button bg-3">Grande</a></li>
+      <!-- carrusel -->
+      <div class="carrousel pos-relative flex m-auto of-hidden">
+        <h2 class="pos-absolute txt-center w-100 title bg-4 fc-37">
+          COMO EN TU HOGAR
+        </h2>
+        <ul class="flex m-auto">
+          <li class="of-hidden flex jc-center">
+            <img src="/images/slider-home01.jpg" alt="imagen de referencia 1" />
+          </li>
+          <li class="of-hidden flex jc-center">
+            <img src="/images/slider-home02.jpg" alt="imagen de referencia 2" />
+          </li>
+          <li class="of-hidden flex jc-center">
+            <img src="/images/slider-home03.jpg" alt="imagen de referencia 3" />
+          </li>
+          <li class="of-hidden flex jc-center">
+            <img src="/images/slider-home04.jpg" alt="imagen de referencia 4" />
+          </li>
+          <li class="of-hidden flex jc-center">
+            <img src="/images/slider-home01.jpg" alt="imagen de referencia 1" />
+          </li>
         </ul>
-      </article>
+      </div>
+      <!-- carrusel -->
+    </header>
 
-      <div class="cot-nav flex al-items jc-center m-auto">
-        <button id="prev-button" class="scroll-button"><i class="fa-solid fa-chevron-left"></i></button>
-        <button id="next-button" class="scroll-button order-1"><i class="fa-solid fa-chevron-right"></i></button>
-        
-        <article class="m-auto cont-cottage w-80 bg-5">
-          <ul class="cottage-list flex pos-relative">
-        
-            <li class="cottage-card">
-              <figure class="pos-relative of-hidden cont-card-img flex al-items">
-                <img class="card-img" src="/images/cabaña01-fuera.jpg" alt="foto de cabaña">
-        
-                <a href="#" class="share-button pos-absolute flex">
-                  <i class="fa-solid fa-share-nodes"></i>
-                </a>
-        
-                <div class="icons-beds flex pos-absolute w-100">
-                  <i class="fa-solid fa-bed icon-bed"></i>
-                  <i class="fa-solid fa-bed icon-bed"></i>
-                  <i class="fa-solid fa-bed icon-bed"></i>
-                </div>
-              </figure>
-        
-              <div class="info-card p-1rem">
-                <h2 class="txt-center">
-                  cabaña hasta 4 personas
-                </h2>
-                <p class="p-top-10 txt-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptate itaque totam voluptatem quidem magnam recusandae fugiat illo a iusto!
-                </p>
-                <h3 class="p-top-10 txt-center">
-                  servicios principales
-                </h3>
-                <ul class="p-1rem">
-                  <li>- item</li>
-                  <li>- item</li>
-                  <li>- item</li>
-                  <li>- item</li>
-                  <li>- item</li>
-                </ul>
-        
-                <div class="price-res flex w-100 jc-bet">
-                  <h3>total a pagar: $$$</h3>
-                  <a href="/product" class="cottage-button txt-center bg-3">reservar</a>
-                </div>
-              </div>
+    <main>
+      <!-- breve descripción -->
+      <section id="info-domum" class="p-1rem">
+        <h1 class="txt-center title">Complejo de cabañas Domum</h1>
+
+        <p class="txt-center p-top-10">
+          Nuestros alojamientos, buscan superar las expectativas de nuestros
+          clientes, mejorando constantemente.
+        </p>
+      </section>
+
+      <!-- apartado de cabañas -->
+      <section id="cabañas flex">
+        <article>
+          <ul class="flex jc-center m-auto p-1rem" id="cottage-selector">
+            <li class="txt-center">
+              <a href="#" class="cottage-button bg-3">Pequeña</a>
             </li>
-        
-            <li class="cottage-card">
-              <figure class="pos-relative of-hidden cont-card-img flex al-items">
-                <img class="card-img" src="/images/CabañaNARANJOS/naranjos01.jpg" alt="foto de cabaña">
-        
-                <a href="#" class="share-button pos-absolute flex">
-                  <i class="fa-solid fa-share-nodes"></i>
-                </a>
-        
-                <div class="icons-beds flex pos-absolute w-100">
-                  <i class="fa-solid fa-bed icon-bed"></i>
-                  <i class="fa-solid fa-bed icon-bed"></i>
-                  <i class="fa-solid fa-bed icon-bed"></i>
-                </div>
-              </figure>
-        
-              <div class="info-card p-1rem">
-                <h2 class="txt-center">
-                  cabaña hasta 4 personas
-                </h2>
-                <p class="p-top-10 txt-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptate itaque totam voluptatem quidem magnam
-                recusandae fugiat illo a iusto!
-                </p>
-                <h3 class="p-top-10 txt-center">
-                servicios principales
-                </h3>
-                <ul class="p-1rem">
-                  <li>- item</li>
-                  <li>- item</li>
-                  <li>- item</li>
-                  <li>- item</li>
-                  <li>- item</li>
-                </ul>
-        
-                <div class="price-res flex w-100 jc-bet">
-                  <h3>total a pagar: $$$</h3>
-                  <a href="/product" class="cottage-button txt-center bg-3">reservar</a>
-                </div>
-            </div>
-          </li>
-          <li class="cottage-card">
-            <figure class="pos-relative of-hidden cont-card-img flex al-items">
-              <img class="card-img" src="/images/CabañaLIQUIDAMBAR/liquidambar01.jpg" alt="foto de cabaña">
-        
-              <a href="#" class="share-button pos-absolute flex">
-                <i class="fa-solid fa-share-nodes"></i>
-              </a>
-        
-              <div class="icons-beds flex pos-absolute w-100">
-                <i class="fa-solid fa-bed icon-bed"></i>
-                <i class="fa-solid fa-bed icon-bed"></i>
-                <i class="fa-solid fa-bed icon-bed"></i>
-              </div>
-            </figure>
-        
-            <div class="info-card p-1rem">
-              <h2 class="txt-center">
-                cabaña hasta 4 personas
-              </h2>
-              <p class="p-top-10 txt-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil voluptate itaque totam voluptatem quidem magnam
-                recusandae fugiat illo a iusto!
-              </p>
-              <h3 class="p-top-10 txt-center">
-                servicios principales
-              </h3>
-              <ul class="p-1rem">
-                <li>- item</li>
-                <li>- item</li>
-                <li>- item</li>
-                <li>- item</li>
-                <li>- item</li>
-              </ul>
-        
-              <div class="price-res flex w-100 jc-bet">
-                <h3>total a pagar: $$$</h3>
-                <a href="/product" class="cottage-button txt-center bg-3">reservar</a>
-              </div>
-            </div>
-          </li>
-        
+            <li class="txt-center">
+              <a href="#" class="cottage-button bg-3">Mediana</a>
+            </li>
+            <li class="txt-center">
+              <a href="#" class="cottage-button bg-3">Grande</a>
+            </li>
           </ul>
         </article>
+
+        <div class="cot-nav flex m-auto">
+          <button id="prev-button" class="scroll-button">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button id="next-button" class="scroll-button order-1">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+
+          <article class="m-auto cont-cottage w-80 bg-5">
+            <ul class="cottage-list flex pos-relative">
+              <li class="cottage-card">
+                <figure
+                  class="pos-relative of-hidden cont-card-img flex al-items"
+                >
+                  <img
+                    class="card-img"
+                    src="/images/cabaña01-fuera.jpg"
+                    alt="foto de cabaña"
+                  />
+
+                  <a href="#" class="share-button pos-absolute flex">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </a>
+
+                  <div class="icons-beds flex pos-absolute w-100">
+                    <i class="fa-solid fa-bed icon-bed"></i>
+                    <i class="fa-solid fa-bed icon-bed"></i>
+                    <i class="fa-solid fa-bed icon-bed"></i>
+                  </div>
+                </figure>
+
+                <div class="info-card p-1rem">
+                  <h2 class="txt-center">cabaña hasta 4 personas</h2>
+                  <p class="p-top-10 txt-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nihil voluptate itaque totam voluptatem quidem magnam
+                    recusandae fugiat illo a iusto!
+                  </p>
+                  <h3 class="p-top-10 txt-center">servicios principales</h3>
+                  <ul class="p-1rem">
+                    <li>- item</li>
+                    <li>- item</li>
+                    <li>- item</li>
+                    <li>- item</li>
+                    <li>- item</li>
+                  </ul>
+
+                  <div class="price-res flex w-100 jc-bet al-items">
+                    <h3>total a pagar: $$$</h3>
+                    <a href="/product" class="cottage-button txt-center bg-3"
+                      >reservar</a
+                    >
+                  </div>
+                </div>
+              </li>
+
+              <li class="cottage-card">
+                <figure
+                  class="pos-relative of-hidden cont-card-img flex al-items"
+                >
+                  <img
+                    class="card-img"
+                    src="/images/CabañaNARANJOS/naranjos01.jpg"
+                    alt="foto de cabaña"
+                  />
+
+                  <a href="#" class="share-button pos-absolute flex">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </a>
+
+                  <div class="icons-beds flex pos-absolute w-100">
+                    <i class="fa-solid fa-bed icon-bed"></i>
+                    <i class="fa-solid fa-bed icon-bed"></i>
+                    <i class="fa-solid fa-bed icon-bed"></i>
+                  </div>
+                </figure>
+
+                <div class="info-card p-1rem">
+                  <h2 class="txt-center">cabaña hasta 4 personas</h2>
+                  <p class="p-top-10 txt-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nihil voluptate itaque totam voluptatem quidem magnam
+                    recusandae fugiat illo a iusto!
+                  </p>
+                  <h3 class="p-top-10 txt-center">servicios principales</h3>
+                  <ul class="p-1rem">
+                    <li>- item</li>
+                    <li>- item</li>
+                    <li>- item</li>
+                    <li>- item</li>
+                    <li>- item</li>
+                  </ul>
+
+                  <div class="price-res flex w-100 jc-bet al-items">
+                    <h3>total a pagar: $$$</h3>
+                    <a href="/product" class="cottage-button txt-center bg-3"
+                      >reservar</a
+                    >
+                  </div>
+                </div>
+              </li>
+              <li class="cottage-card">
+                <figure
+                  class="pos-relative of-hidden cont-card-img flex al-items"
+                >
+                  <img
+                    class="card-img"
+                    src="/images/CabañaLIQUIDAMBAR/liquidambar01.jpg"
+                    alt="foto de cabaña"
+                  />
+
+                  <a href="#" class="share-button pos-absolute flex">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </a>
+
+                  <div class="icons-beds flex pos-absolute w-100">
+                    <i class="fa-solid fa-bed icon-bed"></i>
+                    <i class="fa-solid fa-bed icon-bed"></i>
+                    <i class="fa-solid fa-bed icon-bed"></i>
+                  </div>
+                </figure>
+
+                <div class="info-card p-1rem">
+                  <h2 class="txt-center">cabaña hasta 4 personas</h2>
+                  <p class="p-top-10 txt-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nihil voluptate itaque totam voluptatem quidem magnam
+                    recusandae fugiat illo a iusto!
+                  </p>
+                  <h3 class="p-top-10 txt-center">servicios principales</h3>
+                  <ul class="p-1rem">
+                    <li>- item</li>
+                    <li>- item</li>
+                    <li>- item</li>
+                    <li>- item</li>
+                    <li>- item</li>
+                  </ul>
+
+                  <div class="price-res flex w-100 jc-bet al-items">
+                    <h3>total a pagar: $$$</h3>
+                    <a href="/product" class="cottage-button txt-center bg-3"
+                      >reservar</a
+                    >
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- apartado de actividades -->
+      <section id="actividades">
+        <article class="p-1rem w-80 m-auto txt-center">
+          <h2 class="">Actividades</h2>
+          <p class="p-top-10">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+            adipisci enim vel eos ullam rem eaque aliquam nulla laborum
+            possimus.
+          </p>
+        </article>
+
+        <article class="cont-act flex flex-wrap txt-center">
+          <div class="act-nav flex m-auto">
+            <button id="prev-button" class="scroll-button">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button id="next-button" class="scroll-button order-1">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <div class="w-80 of-hidden">
+              <ul id="act-list" class="flex">
+                <li class="act-card m-auto bg-5 border-rad p-10px w-100">
+                  <h2 class="mb">Lorem ipsum</h2>
+                  <figure class="act-img-cont m-auto of-hidden m-auto flex jc-center al-items pos-relative">
+                    <img class="act-img pos-absolute" src="/images/CabañaLIQUIDAMBAR/liquidambar01.jpg" alt="Actividad"/>
+                  </figure>
+                  <div class="qual-star flex jc-end m-auto p-top-10 w-90">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                  </div>
+                  <p class="p-10px">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, saepe! Quam voluptates consequatur itaque quibusdam molestiae illo quis!
+                  </p>
+                  <h2>Dias y horarios:</h2>
+                  <p class="txt-start m-10">Dias de semana de 6AM a 1PM y de 5PM a 10 PM</p>
+                  <p class="txt-start m-10">Fines de semana de 9AM a 15PM</p>
+                  <div class="act-mgn p-top-10 p-10px txt-start">
+                    <h3>Actividad a cargo de: </h3>
+                    <p>Cosme Fulanito y Carlos Santana</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="bg-5 flex jc-center flex-wrap">
+      <div class="div-img">
+        <img
+          src="/images/logo-domum.png"
+          alt="Logo de Domum"
+          class="w-50 logo-footer"
+        />
       </div>
-
-    </section>
-    <!-- apartado de cabañas -->
-
-  </main>
-  <footer class="bg-5 flex jc-center flex-wrap">
-    <div class="div-img"><img src="/images/logo-domum.png" alt="Logo de Domum" class="w-50 logo-footer"></div>
-    <ul class="ul-footer border-ul">
-      <h1 class="fs-18 padd-5">Contactos</h1>
-      <li><i class="fa-regular fa-clock padd-5"></i> De 9:00 a 18:00hs</li>
-      <li><i class="fa-solid fa-phone padd-5"></i> +54 123 1234567</li>
-      <li><i class="fa-regular fa-envelope padd-5"></i> consultas@domun.com</li>
-      <li><i class="fa-brands fa-whatsapp padd-5"></i> +54 123 1234567</li>
-    </ul>
-    <ul class="ul-footer border-ul">
-      <h1 class="fs-18 padd-5 ">Redes Sociales</h1>
-      <li><i class="fa-brands fa-facebook padd-5"></i> Facebook</li>
-      <li><i class="fa-brands fa-twitter padd-5"></i> Twiteer</li>
-      <li><i class="fa-brands fa-youtube padd-5"></i> YouTube</li>
-      <li><i class="fa-brands fa-instagram padd-5"></i> Instagram</li>
-    </ul>
-    <div class="w-100 copy-footer">© 2023 Domun</div>
-  </footer>
-</body>
-<script src="/js/slider.js"></script>
+      <ul class="ul-footer border-ul">
+        <h1 class="fs-18 padd-5">Contactos</h1>
+        <li><i class="fa-regular fa-clock padd-5"></i> De 9:00 a 18:00hs</li>
+        <li><i class="fa-solid fa-phone padd-5"></i> +54 123 1234567</li>
+        <li>
+          <i class="fa-regular fa-envelope padd-5"></i> consultas@domun.com
+        </li>
+        <li><i class="fa-brands fa-whatsapp padd-5"></i> +54 123 1234567</li>
+      </ul>
+      <ul class="ul-footer border-ul">
+        <h1 class="fs-18 padd-5">Redes Sociales</h1>
+        <li><i class="fa-brands fa-facebook padd-5"></i> Facebook</li>
+        <li><i class="fa-brands fa-twitter padd-5"></i> Twiteer</li>
+        <li><i class="fa-brands fa-youtube padd-5"></i> YouTube</li>
+        <li><i class="fa-brands fa-instagram padd-5"></i> Instagram</li>
+      </ul>
+      <div class="w-100 copy-footer">© 2023 Domun</div>
+    </footer>
+  </body>
+  <script src="/js/slider.js"></script>
 </html>
