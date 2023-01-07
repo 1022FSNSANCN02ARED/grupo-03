@@ -66,6 +66,11 @@ ul {
 .flex-wrap {
   flex-wrap: wrap;
 }
+
+.flex-d-column{
+  flex-direction: column;
+}
+
 .jc-evenly{
   justify-content: space-evenly;
 }
@@ -111,6 +116,10 @@ ul {
 
 .m-10{
   margin: 10px;
+}
+
+.m-20{
+  margin: 20px;
 }
 
 .mr-9{
@@ -619,10 +628,19 @@ ul {
   }
 }
 
+/* maps de ¿donde estamos? */
+
+.de-maps{
+  width: 80%;
+  max-width: 300px;
+  height: 200px;
+}
+
 /* footer */
 
 .logo-footer {
   max-width: 300px;
+  margin: 20px 0px 20px 0px;
 }
 
 .div-img {
