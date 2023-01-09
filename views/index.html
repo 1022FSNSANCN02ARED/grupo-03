@@ -112,10 +112,10 @@
         </article>
 
         <div class="cot-nav flex m-auto">
-          <button id="prev-button" class="scroll-button">
+          <button class="scroll-button prev-button">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <button id="next-button" class="scroll-button order-1">
+          <button class="scroll-button order-1 next-button">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
 
@@ -273,12 +273,12 @@
           </p>
         </article>
 
-        <article class="cont-act flex flex-wrap txt-center">
-          <div class="act-nav flex m-auto">
-            <button id="prev-button" class="scroll-button">
+        <article id="cont-act" class="flex flex-wrap txt-center">
+          <div class="act-nav flex m-auto flex">
+            <button class="scroll-button prev-button">
               <i class="fa-solid fa-chevron-left"></i>
             </button>
-            <button id="next-button" class="scroll-button order-1">
+            <button class="scroll-button order-1 next-button">
               <i class="fa-solid fa-chevron-right"></i>
             </button>
 
@@ -289,7 +289,7 @@
                   <figure class="act-img-cont m-auto of-hidden m-auto flex jc-center al-items pos-relative">
                     <img class="act-img pos-absolute" src="/images/CabañaLIQUIDAMBAR/liquidambar01.jpg" alt="Actividad"/>
                   </figure>
-                  <div class="qual-star flex jc-end m-auto p-top-10 w-90">
+                  <div class="qual-star flex jc-end m-auto p-top-10">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -306,13 +306,108 @@
                     <h3>Actividad a cargo de: </h3>
                     <p>Cosme Fulanito y Carlos Santana</p>
                   </div>
+                
+                  <!-- comentarios de las actividades -->
+                  <div id="act-cmts" class="flex flex-wrap">
+                    <h2 class="w-100 txt-center">Comentarios</h2>
+                    <!-- vista previa de califiaciones -->
+                    <figure class="stats-cmts flex flex-wrap al-items p-top-10 h-100">
+                      <div class="m-auto stats-box bg-3">
+                        <p class="p-1rem">Estadisticas de comentarios</p>
+                      </div>
+                      <p>Deja tu comentario sobre como fue tu experiencia con esta actividad</p>
+                    </figure>
+
+                    <div class="cmt-box txt-start of-auto">
+                      <ul class="cmt-list">
+                        <li class="flex p-top-10 cont-cmt">
+                          <figure class="mr-9">
+                          <img src="/images/user-img.png" alt="" class="user-img">
+                          <div class="qual-star flex jc-end fs-15">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                          </div>
+                          </figure>
+                          <div class="flex flex-d-column">
+                            <h3>Cosme Fulanito</h3>
+                            <div class="user-cmt of-auto">
+                              <h4>Comentario abreviado</h4>
+                              <p class="fs-15">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum dolorum repellendus tempore, explicabo obcaecati, itaque
+                                inventore velit eveniet at reiciendis voluptate laboriosam incidunt. Illum nam labore eaque! Accusamus, recusandae
+                                autem.
+                                Quisquam consectetur non omnis quas! Explicabo distinctio reiciendis sunt atque deleniti ducimus magnam odit, nam
+                                illum ut commodi obcaecati quae nostrum soluta cupiditate hic officiis officia dicta! Similique, ea iure.
+                              </p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="flex p-top-10 cont-cmt">
+                          <figure class="mr-9">
+                          <img src="/images/user-img.png" alt="" class="user-img">
+                          <div class="qual-star flex jc-end fs-15">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star-half-stroke"></i>
+                          </div>
+                          </figure>
+                          <div class="flex flex-d-column">
+                            <h3>Carlos Santana</h3>
+                            <div class="user-cmt of-auto">
+                              <h4>Comentario abreviado</h4>
+                              <p class="fs-15">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum dolorum repellendus tempore, explicabo obcaecati, itaque
+                                inventore velit eveniet at reiciendis voluptate laboriosam incidunt. Illum nam labore eaque! Accusamus, recusandae
+                                autem.
+                                Quisquam consectetur non omnis quas! Explicabo distinctio reiciendis sunt atque deleniti ducimus magnam odit, nam
+                                illum ut commodi obcaecati quae nostrum soluta cupiditate hic officiis officia dicta! Similique, ea iure.
+                              </p>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="flex p-top-10 cont-cmt">
+                          <figure class="mr-9">
+                            <img src="/images/user-img.png" alt="" class="user-img">
+                            <div class="qual-star flex jc-end fs-15">
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-solid fa-star"></i>
+                              <i class="fa-regular fa-star-half-stroke"></i>
+                            </div>
+                          </figure>
+                          <div class="flex flex-d-column">
+                            <h3>Carlos Santana</h3>
+                            <div class="user-cmt of-auto">
+                              <h4>Comentario abreviado</h4>
+                              <p class="fs-15">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum dolorum repellendus tempore, explicabo obcaecati,
+                                itaque
+                                inventore velit eveniet at reiciendis voluptate laboriosam incidunt. Illum nam labore eaque! Accusamus,
+                                recusandae
+                                autem.
+                                Quisquam consectetur non omnis quas! Explicabo distinctio reiciendis sunt atque deleniti ducimus magnam odit,
+                                nam
+                                illum ut commodi obcaecati quae nostrum soluta cupiditate hic officiis officia dicta! Similique, ea iure.
+                              </p>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
           </div>
         </article>
       </section>
-      <!-- apartado de actividades -->
+      
       <article class="flex flex-d-column al-items bg-5 border-rad m-20">
         <h1 class="m-10">¿Donde estamos?</h1>
           <iframe class="de-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d297036.76031724334!2d-58.60718037547631!3d-34.659158741183155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb14540715555%3A0x95502fb2a3baf427!2sDomun!5e0!3m2!1ses-419!2sar!4v1673106916534!5m2!1ses-419!2sar" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
