@@ -35,3 +35,16 @@ widthList("#act-list", ".act-card", false);
 //   let list = document.querySelector(".cottage-list");
 //   list.style.marginLeft = "+=-100%";
 // });
+
+// configuracion apartado de preguntas frecuentes
+//quiero que el boton sea dinamico y cambie la posicion al estan abierta o cerrada la preguta
+// al hacer click sobre el boton > abre una pestaña mostrando la pregunta
+ 
+ 
+ let listPreguntas = document.querySelectorAll('.list-preg');
+
+ listPreguntas.forEach(listPregunta => {
+    listPregunta.addEventListener('click', ()=>{
+       listPregunta.classList.toggle('arrow');
+    });
+ });

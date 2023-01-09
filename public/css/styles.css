@@ -3,6 +3,23 @@
   margin: 0;
   padding: 0;
 }
+/*preguntas frecuestes*/
+
+.list-click{
+  height: 40px;
+  overflow: hidden;
+  
+}
+.but-preg{
+  border-style: none;
+}
+
+.arrow .arrow-but{
+  transform: rotate(180deg);
+}
+.arrow-but{
+  transition: transform 0.4s;
+}
 
 /* config general */
 body {
@@ -17,6 +34,7 @@ a {
 ul {
   list-style: none;
 }
+
 
 .fs-15 {
   font-size: 15px;
@@ -129,6 +147,7 @@ ul {
 .mb {
   margin-bottom: 20px;
 }
+
 
 .txt-center {
   text-align: center;
