@@ -72,9 +72,16 @@ ul {
   width: 33.3%;
 }
 
+.h-100{
+  height: 100%;
+}
 
 .h-20rem {
   height: 150px;
+}
+
+.grow-1{
+  flex-grow: 1;
 }
 
 .flex {
@@ -159,10 +166,16 @@ ul {
 .of-hidden {
   overflow: hidden;
 }
+.of-auto{
+  overflow: auto;
+}
 .p-2rem{
   padding-left: 2rem;
 }
 
+.p-05rem{
+  padding: 0.5rem;
+}
 .p-1rem {
   padding: 1rem;
 }
@@ -395,8 +408,27 @@ ul {
   height: 325px;
 }
 
-.qual-star{
-  max-width: 800px;
+
+.stats-box{
+  width: 180px;
+}
+
+.cmt-box {
+  height: 240px;
+}
+
+.cont-cmt{
+  height: 120px;
+  border-bottom: #525252 solid 1px;
+}
+
+.user-img{
+  width: 100%;
+  border: #07889b 1px solid;
+}
+
+.user-cmt{
+  height: 60px;
 }
 
 /* registro */
@@ -705,7 +737,10 @@ footer h1 {
   width: 20%;
   text-align: center;
   margin-left: 140px;
-  
+  }
+
+  .stats-cmts{
+    flex-wrap: nowrap;
   }
 }
 @media (min-width: 761px) {
@@ -753,6 +788,17 @@ footer h1 {
   /* footer */
   .ul-footer {
     width: 42%;
+  }
+
+  /* cmts */
+  .stats-cmts{
+    flex-wrap: wrap;
+    width: 30%;
+  }
+  .cmt-box {
+    width: 70%;
+    padding-left: 0.5rem;
+    height: 360px;
   }
 }
 
@@ -811,7 +857,6 @@ footer h1 {
     border-top-right-radius: 10px;
     border-top: solid 0.5px #66b9bf;
     padding: 5px;
-    
   }
   .aside-input-date{
     border: none;
