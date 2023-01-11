@@ -6,19 +6,22 @@
 /*preguntas frecuestes*/
 
 .list-click{
-  height: 40px;
   overflow: hidden;
-  
+}
+.list-respu{
+  height: 0;
+  transition: height 0.5s;
+
 }
 .but-preg{
   border-style: none;
 }
 
 .arrow .arrow-but{
-  transform: rotate(180deg);
+  transform: rotate(90deg);
 }
 .arrow-but{
-  transition: transform 0.4s;
+  transition: transform 0.5s;
 }
 
 /* config general */
@@ -137,6 +140,9 @@ ul {
 
 .m-auto-0 {
   margin: 0 auto;
+}
+.m-lef-10px{
+  margin-left: 10px;
 }
 
 .m-10{
@@ -742,6 +748,8 @@ footer h1 {
   .stats-cmts{
     flex-wrap: nowrap;
   }
+ 
+ 
 }
 @media (min-width: 761px) {
 
@@ -799,6 +807,15 @@ footer h1 {
     width: 70%;
     padding-left: 0.5rem;
     height: 360px;
+  }
+  /*seccion informacion general*/
+  .preguntas-frecuentes{
+    width: 43%;
+    align-self: flex-start;
+   
+  }
+  #location{
+    width: 46%;
   }
 }
 
