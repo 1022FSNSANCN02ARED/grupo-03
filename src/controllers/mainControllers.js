@@ -3,7 +3,9 @@ module.exports = {
     res.render("index");
   },
   product: (req, res) => {
-    res.render("productDetail");
+    res.render("productDetail", {
+      footerProductDetails: "footer-producDetail",
+    });
   },
   register: (req, res) => {
     res.render("register");

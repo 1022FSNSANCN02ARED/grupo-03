@@ -1,11 +1,11 @@
 /*cambio en el footer solo para el detalle de producto*/
-.footer-producDetail{
+.footer-produc-detail{
     margin-bottom: 140px;
   }
 
 @media (min-width: 1024px)
 {
-  .footer-producDetail{
+  .footer-produc-detail{
     margin-bottom: 0px;
   }
 }
