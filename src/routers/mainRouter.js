@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const mainController = require("../controllers/mainControllers.js")
+const mainController = require("../controllers/mainControllers");
 const router = Router();
 
 router.get("/", mainController.home);
@@ -8,4 +8,4 @@ router.get("/register", mainController.register);
 router.get("/productCart", mainController.productCart);
 router.get("/login", mainController.login);
 
-module.exports = router
+module.exports = router;
