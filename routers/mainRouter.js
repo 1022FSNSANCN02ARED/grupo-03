@@ -1,0 +1,11 @@
+const { Router } = require("express");
+const mainController = require("../controllers/mainControllers.js")
+const router = Router();
+
+router.get("/", mainController.home);
+router.get("/product", mainController.product);
+router.get("/register", mainController.register);
+router.get("/productCart", mainController.productCart);
+router.get("/login", mainController.login);
+
+module.exports = router
