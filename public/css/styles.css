@@ -101,6 +101,10 @@ body {
   justify-content: space-evenly;
 }
 
+.al-items{
+  align-items: center;
+}
+
 .m-10{
   margin: 10px;
 }
@@ -391,8 +395,12 @@ grisclaro #f1f7ed */
 
 /*-------------- activities */
 
+#actividades{
+  max-width: 1800px;
+}
+
 .act-img{
-  width: 650px;
+  width: 550px;
   height: 325px;
 }
 
@@ -400,28 +408,6 @@ grisclaro #f1f7ed */
   height: 40vw;
   max-height: 400px;
   max-width: 800px;
-}
-
-.cmt-box {
-  height: 240px;
-}
-
-.cont-cmt{
-  height: 120px;
-  border-bottom: #525252 solid 1px;
-}
-
-.stats-box{
-  width: 180px;
-}
-
-.user-cmt{
-  height: 60px;
-}
-
-.user-img{
-  width: 100%;
-  border: #07889b 1px solid;
 }
 
 /* ----------------------registro */
@@ -801,25 +787,16 @@ grisclaro #f1f7ed */
     width: 42%;
   }
 
-  /*---------------cmts */
+  /*----------------- act */
 
-  .cmt-box {
-    height: 360px;
-    padding-left: 0.5rem;
-    width: 70%;
-  }
-
-  .stats-cmts{
-    flex-wrap: wrap;
-    width: 30%;
+  .act-img-cont{
+    height: 20vw;
   }
 
   /*---------------------seccion informacion general*/
   .preguntas-frecuentes{
     align-self: flex-start;
-    width: 43%;
-    
-   
+    width: 43%;   
   }
   #location{
     width: 46%;
@@ -919,6 +896,10 @@ grisclaro #f1f7ed */
     display: none;
   }
   
+  .act-img-cont{
+    height: 15vw;
+  }
+
 }
 
 @media (min-width: 1440px) {
