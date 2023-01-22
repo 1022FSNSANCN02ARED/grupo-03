@@ -10,6 +10,9 @@ a {
   text-decoration: none;
   color: #07889b;
 }
+.al-center{
+  align-self: center;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -461,6 +464,7 @@ grisclaro #f1f7ed */
 .but-preg{
   border-style: none;
 }
+
 .list-click{
   overflow: hidden;
 }
