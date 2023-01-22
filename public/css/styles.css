@@ -3,33 +3,15 @@
   margin: 0;
   padding: 0;
 }
-/*---------------------------preguntas frecuestes*/
-
-.arrow .arrow-but{
-  transform: rotate(90deg);
-}
-
-.arrow-but{
-  transition: transform 0.5s;
-}
-
-.but-preg{
-  border-style: none;
-}
-.list-click{
-  overflow: hidden;
-}
-
-.list-respu{
-  height: 0;
-  transition: height 0.5s;
-}
 
 /*----------------------- config general */
 
 a {
   text-decoration: none;
   color: #07889b;
+}
+.al-center{
+  align-self: center;
 }
 
 body {
@@ -409,6 +391,89 @@ grisclaro #f1f7ed */
   max-height: 400px;
   max-width: 800px;
 }
+/* animación para el carrusel del inicio. */
+
+@keyframes carrousel {
+  0% {
+    margin-left: 0%;
+  }
+
+  15% {
+    margin-left: 0%;
+  }
+
+  20% {
+    margin-left: -100%;
+  }
+
+  35% {
+    margin-left: -100%;
+  }
+
+  40% {
+    margin-left: -200%;
+  }
+
+  55% {
+    margin-left: -200%;
+  }
+
+  60% {
+    margin-left: -300%;
+  }
+
+  75% {
+    margin-left: -300%;
+  }
+
+  80% {
+    margin-left: -400%;
+  }
+
+  100% {
+    margin-left: -400%;
+  }
+}
+
+/* maps de ¿donde estamos? */
+
+.de-maps{
+  width: 80%;
+  max-width: 300px;
+  height: 200px;
+}
+
+/*preguntas frecuestes*/
+.arrow .arrow-but{
+  transform: rotate(90deg);
+}
+
+.arrow-but{
+  transition: transform 0.5s;
+}
+
+.but-preg{
+  border-style: none;
+}
+
+.list-click{
+  overflow: hidden;
+}
+.list-respu{
+  height: 0;
+  transition: height 0.5s;
+
+}
+.but-preg{
+  border-style: none;
+}
+
+.arrow .arrow-but{
+  transform: rotate(90deg);
+}
+.arrow-but{
+  transition: transform 0.5s;
+}
 
 /* ----------------------registro */
 
@@ -600,7 +665,7 @@ grisclaro #f1f7ed */
 
 .label-selector{
   align-self: center;
-   margin-right: 4px;
+  margin-right: 4px;
   }
 
   .marg-end{
@@ -625,59 +690,6 @@ grisclaro #f1f7ed */
   margin-bottom: 20px;
   border-radius: 10px;
   border: solid  0.5px #66b9bf;
-}
-
-/*---------------------- animación para el carrusel del inicio. */
-
-@keyframes carrousel {
-  0% {
-    margin-left: 0%;
-  }
-
-  15% {
-    margin-left: 0%;
-  }
-
-  20% {
-    margin-left: -100%;
-  }
-
-  35% {
-    margin-left: -100%;
-  }
-
-  40% {
-    margin-left: -200%;
-  }
-
-  55% {
-    margin-left: -200%;
-  }
-
-  60% {
-    margin-left: -300%;
-  }
-
-  75% {
-    margin-left: -300%;
-  }
-
-  80% {
-    margin-left: -400%;
-  }
-
-  100% {
-    margin-left: -400%;
-  }
-}
-
-/*------------- maps de ¿donde estamos? */
-
-.de-maps{
-  height: 200px;
-  max-width: 300px;
-  width: 80%;
- 
 }
 
 /* -------------------footer */

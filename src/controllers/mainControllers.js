@@ -16,4 +16,7 @@ module.exports = {
   login: (req, res) => {
     res.render("login");
   },
+  crear: (req,res) => {
+    res.render("crear-cabaña");
+  },
 };
