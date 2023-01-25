@@ -7,16 +7,22 @@ const fs = require("fs");
 // de copiar el mismo controlador "serv.js".
 
 function rutaDB(nameDB) {
-  return path.join(__dirname, nameDB + ".json");
+  return path.join(__dirname, nameDB);
 }
 
 module.exports = {
   // Buscar la base de datos que queramos y pasarla a formato JavaScript
   findAll(nameDB) {
     // Lee el archivo que esta en la ruta generada con la función "rutaDB"
-    let data = fs.readFileSync(rutaDB(nameDB), "utf-8");
+    let ruta = rutaDB(nameDB);
+    let data = fs.readFileSync(ruta, "utf-8");
     // Devuelve el json convertido a js (el array)
-    return JSON.parse(data);
+    if (data == "") {
+      data = [];
+    } else {
+      data = JSON.parse(data);
+    }
+    return data;
   },
   findById(nameDB, id) {
     // Busca en el array generado con "findAll" el objeto que tenga el mismo id.
@@ -33,10 +39,11 @@ module.exports = {
   },
   updateDB(nameDB, newDB) {
     // Convierte el array enviado en "newDB" a formato json
-    let dataJSON = JSON.stringify(newDB);
+    let dataJSON = JSON.stringify(newDB, null, 4);
     // Usa la ruta generada con "rutaDB" para modificar la base de datos que coloquemos
     // y escribe la nueva base de datos de "dataJSON"
-    fs.writeFileSync(rutaDB(nameDB), dataJSON, "utf-8");
+    let ruta = rutaDB(nameDB);
+    fs.writeFileSync(ruta, dataJSON, "utf-8");
   },
   delete(nameDB, id) {
     // Pide la base de datos y la transforma en array
