@@ -7,16 +7,10 @@ module.exports = {
       footerProductDetails: "footer-producDetail",
     });
   },
-  register: (req, res) => {
-    res.render("register");
-  },
   productCart: (req, res) => {
     res.render("productCart");
   },
-  login: (req, res) => {
-    res.render("login");
-  },
-  crear: (req,res) => {
+  crear: (req, res) => {
     res.render("crear-cabaña");
   },
 };
