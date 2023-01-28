@@ -74,14 +74,17 @@
           </button>
 
           <article class="m-auto cont-cottage w-80 bg-5">
-            <ul class="cottage-list flex pos-relative">
+            <ul class="cottage-list flex pos-relative of-auto">
+
+              <% cottage.forEach(cabana => { %>
+                
               <li class="cottage-card">
                 <figure
                   class="pos-relative of-hidden cont-card-img flex al-items"
                 >
                   <img
                     class="card-img"
-                    src="/images/cabaña01-fuera.jpg"
+                    src="<%= cabana.image[0] %> "
                     alt="foto de cabaña"
                   />
 
@@ -96,118 +99,33 @@
                   </div>
                 </figure>
 
-                <div class="info-card p-1rem">
-                  <h2 class="txt-center">cabaña hasta 4 personas</h2>
-                  <p class="p-top-10 txt-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nihil voluptate
+                <h2 class="txt-center"><%= cabana.name %></h2>
+                <div class="info-card">
+                  <p class="p-top-10 txt-center cottage-description">
+                    <%= cabana.description %>
                   </p>
                   <h3 class="p-top-10 txt-center">servicios principales</h3>
-                  <ul class="p-1rem">
-                    <li>- item</li>
-                    <li>- item</li>
-                    <li>- item</li>
-                    <li>- item</li>
-                    <li>- item</li>
+                  
+                  <ul class="flex">
+                    
+                    <% for (let i = 0; i < 4; i++) { %>
+
+                    <li class="m-10 serv-icon"> <%= cabana.servs[i] %>  </li>
+
+                    <% } %>
                   </ul>
 
                   <div class="price-res flex w-100 jc-bet al-items">
-                    <h3>total a pagar: $$$</h3>
-                    <a href="/product" class="cottage-button txt-center bg-3"
+                    <h3>precio por noche: $<%= cabana.price %> </h3>
+                    <a href="/product/<%= cabana.id  %> " class="cottage-button txt-center bg-3"
                       >reservar</a
                     >
                   </div>
                 </div>
               </li>
 
-              <li class="cottage-card">
-                <figure
-                  class="pos-relative of-hidden cont-card-img flex al-items"
-                >
-                  <img
-                    class="card-img"
-                    src="/images/CabañaNARANJOS/naranjos01.jpg"
-                    alt="foto de cabaña"
-                  />
+              <% }); %>
 
-                  <a href="#" class="share-button pos-absolute flex">
-                    <i class="fa-solid fa-share-nodes"></i>
-                  </a>
-
-                  <div class="icons-beds flex pos-absolute w-100">
-                    <i class="fa-solid fa-bed icon-bed"></i>
-                    <i class="fa-solid fa-bed icon-bed"></i>
-                    <i class="fa-solid fa-bed icon-bed"></i>
-                  </div>
-                </figure>
-
-                <div class="info-card p-1rem">
-                  <h2 class="txt-center">cabaña hasta 4 personas</h2>
-                  <p class="p-top-10 txt-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nihil voluptate
-                  </p>
-                  <h3 class="p-top-10 txt-center">servicios principales</h3>
-                  <ul class="p-1rem">
-                    <li>- item</li>
-                    <li>- item</li>
-                    <li>- item</li>
-                    <li>- item</li>
-                    <li>- item</li>
-                  </ul>
-
-                  <div class="price-res flex w-100 jc-bet al-items">
-                    <h3>total a pagar: $$$</h3>
-                    <a href="/product" class="cottage-button txt-center bg-3"
-                      >reservar</a
-                    >
-                  </div>
-                </div>
-              </li>
-              <li class="cottage-card">
-                <figure
-                  class="pos-relative of-hidden cont-card-img flex al-items"
-                >
-                  <img
-                    class="card-img"
-                    src="/images/CabañaLIQUIDAMBAR/liquidambar01.jpg"
-                    alt="foto de cabaña"
-                  />
-
-                  <a href="#" class="share-button pos-absolute flex">
-                    <i class="fa-solid fa-share-nodes"></i>
-                  </a>
-
-                  <div class="icons-beds flex pos-absolute w-100">
-                    <i class="fa-solid fa-bed icon-bed"></i>
-                    <i class="fa-solid fa-bed icon-bed"></i>
-                    <i class="fa-solid fa-bed icon-bed"></i>
-                  </div>
-                </figure>
-
-                <div class="info-card p-1rem">
-                  <h2 class="txt-center">cabaña hasta 4 personas</h2>
-                  <p class="p-top-10 txt-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nihil voluptate
-                  </p>
-                  <h3 class="p-top-10 txt-center">servicios principales</h3>
-                  <ul class="p-1rem">
-                    <li>- item</li>
-                    <li>- item</li>
-                    <li>- item</li>
-                    <li>- item</li>
-                    <li>- item</li>
-                  </ul>
-
-                  <div class="price-res flex w-100 jc-bet al-items">
-                    <h3>total a pagar: $$$</h3>
-                    <a href="/product" class="cottage-button txt-center bg-3">
-                      reservar
-                    </a>
-                  </div>
-                </div>
-              </li>
             </ul>
           </article>
         </div>

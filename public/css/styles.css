@@ -328,18 +328,26 @@ grisclaro #f1f7ed */
 }
 
 .cottage-card {
-  padding: 0 10px;
+  min-width: 100%;
+  padding: 0 5px;
+}
+
+.cottage-description{
+  height: 5rem;
+}
+
+.serv-icon{
+  height: 1em;
 }
 
 .cont-card-img {
   height: 250px;
   border-radius: 8px;
 }
- 
+
 .cont-cottage {
-  overflow-x: scroll;
   border-radius: 8px;
-  padding: 10px 0;
+  padding: 10px 10px;
 }
 
 .cot-nav{
@@ -753,6 +761,10 @@ grisclaro #f1f7ed */
 
   /*----------- laptops */
 
+  .cottage-card{
+    min-width: 50%;
+  }
+
   .act-img{
     width: 800px;
     height: 400px;
@@ -775,10 +787,6 @@ grisclaro #f1f7ed */
 
   .desde-hasta{
     width: 60%;
-  }
-
-  .info-card {
-    padding: 0;
   }
 
   .page-navbar {
@@ -910,6 +918,10 @@ grisclaro #f1f7ed */
   
   .act-img-cont{
     height: 15vw;
+  }
+
+  .cottage-card {
+    min-width: 25%;
   }
 
 }

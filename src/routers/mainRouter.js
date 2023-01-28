@@ -3,7 +3,7 @@ const router = Router();
 const mainController = require("../controllers/mainControllers");
 
 router.get("/", mainController.home);
-router.get("/product", mainController.product);
+router.get("/product/:id", mainController.product);
 router.get("/productCart", mainController.productCart);
 router.get("/crear", mainController.crear);
 

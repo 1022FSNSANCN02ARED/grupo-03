@@ -25,9 +25,9 @@ function widthList(list, elementList, responsive) {
   document.querySelector(list).style.width = totalWidthList + "%";
 }
 
-widthList(".cottage-list", ".cottage-card", true);
+// widthList(".cottage-list", ".cottage-card", true);
 
-widthList("#act-list", ".act-card", true);
+// widthList("#act-list", ".act-card", true);
 
 // intento de boton para avanzar, aun no esta completo.
 

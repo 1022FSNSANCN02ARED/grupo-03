@@ -1,32 +1,48 @@
 [
-    {
-        "id": 1,
-        "disponibilidad": true,
-        "fecha": "5/28/2022"
-    },
-    {
-        "id": 2,
-        "disponibilidad": true,
-        "fecha": "8/28/2022"
-    },
-    {
-        "id": 3,
-        "disponibilidad": false,
-        "fecha": "8/4/2022"
-    },
-    {
-        "id": 4,
-        "disponibilidad": false,
-        "fecha": "12/14/2022"
-    },
-    {
-        "id": 5,
-        "disponibilidad": false,
-        "fecha": "12/26/2022"
-    },
-    {
-        "id": 6,
-        "disponibilidad": true,
-        "fecha": "10/27/2022"
-    }
+  {
+  "id": 1,
+  "name": "cabaña1",
+  "price": 3009,
+  "servs": ["wi-fi", "bañera"],
+  "email": "hbracknell0@earthlink.net",
+  "description": "Displ oblique fx shaft of l femur, init for opn fx type I/2",
+  "image": ["/images/CabañaLOSPINOS/pinos01.jpg"],
+  "beds": 1
+}, {
+  "id": 2,
+  "name": "cabaña2",
+  "price": 4655,
+  "servs": [],
+  "email": "smcgoogan1@1688.com",
+  "description": "Infantile idiopathic scoliosis, thoracic region",
+  "image": ["/images/CabañaLOSPINOS/pinos02.jpg"],
+  "beds": 2
+}, {
+  "id": 3,
+  "name": "cabaña3",
+  "price": 3675,
+  "servs": ["wi-fi", "bañera"],
+  "email": "efumagall2@discuz.net",
+  "description": "Chronic gout, unspecified",
+  "image": ["/images/CabañaLOSPINOS/pinos03.jpg"],
+  "beds": 3
+}, {
+  "id": 4,
+  "name": "cabaña4",
+  "price": 4699,
+  "servs": ["wi-fi"],
+  "email": "bmaccaughey3@yolasite.com",
+  "description": "Mech compl of cranial or spinal infusion catheter",
+  "image": ["/images/CabañaLOSPINOS/pinos04.jpg"],
+  "beds": 4
+}, {
+  "id": 5,
+  "name": "cabaña5",
+  "price": 4954,
+  "servs": [],
+  "email": "kfranzonello4@sohu.com",
+  "description": "Melanoma in situ of scalp and neck",
+  "image": ["/images/CabañaLOSPINOS/pinos05.jpg"],
+  "beds": 5
+}
 ]

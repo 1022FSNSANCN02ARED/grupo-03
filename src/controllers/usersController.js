@@ -16,5 +16,8 @@ module.exports = {
 
     res.redirect("/");
   },
-  delete: (req, res) => {},
+  delete: (req, res) => {
+    serv.delete("users.json", req.params.id);
+    res.redirect("/");
+  },
 };
