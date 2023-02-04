@@ -793,6 +793,7 @@ grisclaro #f1f7ed */
     display: block;
   }
 
+  .login-button,
   .sing-in-button {
     display: block;
   }
