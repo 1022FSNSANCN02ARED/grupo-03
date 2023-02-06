@@ -10,7 +10,7 @@ app.use(express.static(publicPath));
 
 app.set("view engine", "ejs");
 
-app.set("views", "src/views");
+app.set("views", path.join(__dirname, "./views"));
 
 app.use(express.urlencoded({ extended: false }));
 
