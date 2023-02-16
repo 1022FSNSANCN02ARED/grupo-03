@@ -25,6 +25,23 @@
   transition: height 0.5s;
 }
 
+/*---------------------------quienes somos?*/
+
+cont-qui{
+  overflow-x: scroll;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+qui-card{
+padding:0 10px;
+}
+
+ qui-nav{
+  max-width: 1000px;
+ }
+
+
 /*----------------------- config general */
 
 a {
