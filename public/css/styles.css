@@ -3,27 +3,6 @@
   margin: 0;
   padding: 0;
 }
-/*---------------------------preguntas frecuestes*/
-
-.arrow .arrow-but{
-  transform: rotate(90deg);
-}
-
-.arrow-but{
-  transition: transform 0.5s;
-}
-
-.but-preg{
-  border-style: none;
-}
-.list-click{
-  overflow: hidden;
-}
-
-.list-respu{
-  height: 0;
-  transition: height 0.5s;
-}
 
 /*---------------------------quienes somos?*/
 
@@ -47,6 +26,9 @@ padding:0 10px;
 a {
   text-decoration: none;
   color: #07889b;
+}
+.al-center{
+  align-self: center;
 }
 
 body {
@@ -116,6 +98,10 @@ body {
 }
 .jc-evenly{
   justify-content: space-evenly;
+}
+
+.al-items{
+  align-items: center;
 }
 
 .m-10{
@@ -359,18 +345,26 @@ grisclaro #f1f7ed */
 }
 
 .cottage-card {
-  padding: 0 10px;
+  min-width: 100%;
+  padding: 0 5px;
+}
+
+.cottage-description{
+  height: 5rem;
+}
+
+.serv-icon{
+  height: 1em;
 }
 
 .cont-card-img {
   height: 250px;
   border-radius: 8px;
 }
- 
+
 .cont-cottage {
-  overflow-x: scroll;
   border-radius: 8px;
-  padding: 10px 0;
+  padding: 10px 10px;
 }
 
 .cot-nav{
@@ -408,8 +402,12 @@ grisclaro #f1f7ed */
 
 /*-------------- activities */
 
+#actividades{
+  max-width: 1800px;
+}
+
 .act-img{
-  width: 650px;
+  width: 550px;
   height: 325px;
 }
 
@@ -418,27 +416,88 @@ grisclaro #f1f7ed */
   max-height: 400px;
   max-width: 800px;
 }
+/* animación para el carrusel del inicio. */
 
-.cmt-box {
-  height: 240px;
+@keyframes carrousel {
+  0% {
+    margin-left: 0%;
+  }
+
+  15% {
+    margin-left: 0%;
+  }
+
+  20% {
+    margin-left: -100%;
+  }
+
+  35% {
+    margin-left: -100%;
+  }
+
+  40% {
+    margin-left: -200%;
+  }
+
+  55% {
+    margin-left: -200%;
+  }
+
+  60% {
+    margin-left: -300%;
+  }
+
+  75% {
+    margin-left: -300%;
+  }
+
+  80% {
+    margin-left: -400%;
+  }
+
+  100% {
+    margin-left: -400%;
+  }
 }
 
-.cont-cmt{
-  height: 120px;
-  border-bottom: #525252 solid 1px;
+/* maps de ¿donde estamos? */
+
+.de-maps{
+  width: 80%;
+  max-width: 300px;
+  height: 200px;
 }
 
-.stats-box{
-  width: 180px;
+/*preguntas frecuestes*/
+.arrow .arrow-but{
+  transform: rotate(90deg);
 }
 
-.user-cmt{
-  height: 60px;
+.arrow-but{
+  transition: transform 0.5s;
 }
 
-.user-img{
-  width: 100%;
-  border: #07889b 1px solid;
+.but-preg{
+  border-style: none;
+}
+
+.list-click{
+  overflow: hidden;
+}
+.list-respu{
+  height: 0;
+  transition: height 0.5s;
+
+}
+.but-preg{
+  border-style: none;
+}
+
+.arrow .arrow-but{
+  transform: rotate(90deg);
+}
+.arrow-but{
+  transition: transform 0.5s;
 }
 
 /* ----------------------registro */
@@ -631,7 +690,7 @@ grisclaro #f1f7ed */
 
 .label-selector{
   align-self: center;
-   margin-right: 4px;
+  margin-right: 4px;
   }
 
   .marg-end{
@@ -656,59 +715,6 @@ grisclaro #f1f7ed */
   margin-bottom: 20px;
   border-radius: 10px;
   border: solid  0.5px #66b9bf;
-}
-
-/*---------------------- animación para el carrusel del inicio. */
-
-@keyframes carrousel {
-  0% {
-    margin-left: 0%;
-  }
-
-  15% {
-    margin-left: 0%;
-  }
-
-  20% {
-    margin-left: -100%;
-  }
-
-  35% {
-    margin-left: -100%;
-  }
-
-  40% {
-    margin-left: -200%;
-  }
-
-  55% {
-    margin-left: -200%;
-  }
-
-  60% {
-    margin-left: -300%;
-  }
-
-  75% {
-    margin-left: -300%;
-  }
-
-  80% {
-    margin-left: -400%;
-  }
-
-  100% {
-    margin-left: -400%;
-  }
-}
-
-/*------------- maps de ¿donde estamos? */
-
-.de-maps{
-  height: 200px;
-  max-width: 300px;
-  width: 80%;
- 
 }
 
 /* -------------------footer */
@@ -772,6 +778,10 @@ grisclaro #f1f7ed */
 
   /*----------- laptops */
 
+  .cottage-card{
+    min-width: 50%;
+  }
+
   .act-img{
     width: 800px;
     height: 400px;
@@ -796,14 +806,11 @@ grisclaro #f1f7ed */
     width: 60%;
   }
 
-  .info-card {
-    padding: 0;
-  }
-
   .page-navbar {
     display: block;
   }
 
+  .login-button,
   .sing-in-button {
     display: block;
   }
@@ -818,25 +825,16 @@ grisclaro #f1f7ed */
     width: 42%;
   }
 
-  /*---------------cmts */
+  /*----------------- act */
 
-  .cmt-box {
-    height: 360px;
-    padding-left: 0.5rem;
-    width: 70%;
-  }
-
-  .stats-cmts{
-    flex-wrap: wrap;
-    width: 30%;
+  .act-img-cont{
+    height: 20vw;
   }
 
   /*---------------------seccion informacion general*/
   .preguntas-frecuentes{
     align-self: flex-start;
-    width: 43%;
-    
-   
+    width: 43%;   
   }
   #location{
     width: 46%;
@@ -936,6 +934,14 @@ grisclaro #f1f7ed */
     display: none;
   }
   
+  .act-img-cont{
+    height: 15vw;
+  }
+
+  .cottage-card {
+    min-width: 25%;
+  }
+
 }
 
 @media (min-width: 1440px) {

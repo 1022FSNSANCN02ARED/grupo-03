@@ -6,28 +6,10 @@
 </head>
 
 <body>
-  <header class="main-header">
-    <div class="fixed-navbar flex w-100 bg-5">
-
-      <a href="/"> <img src="/images/logo-domum.png" alt="Logo de Domum" class="logo-domum"/> </a>
-
-      <nav class="page-navbar hide">
-        <ul class="flex fs-15">
-          <li><a href="/">Inicio</a></li>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Cabañas</a></li>
-          <li><a href="#">Actividades</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </nav>
-
-    </div>
-
-  </header>
+  <%- include("./partials/nav-login-register")  %>
   <div class="flex jc-center ">
     <h1 class="title-register txt-center">Iniciar sesión</h1>
-    <button class="but-back bg-3"><a href="/"><i class="fa-solid fa-arrow-left " id="arrow"></i></a></button>
-  </div>
+    <button class="but-back bg-3"><a href="/"><i class="fa-solid fa-arrow-left" id="arrow"></i></a></button></div>
 
 
   <div>
@@ -35,13 +17,15 @@
 
       <input type="text" name="name" id="name" placeholder="Nombre de Usuario" class=" f-input">
       <input type="password" name="password" id="password" placeholder="Contraseña" class="f-input">
+      <label for="recordame">Recordame</label>
+      <input type="checkbox" name="recordame" id="recordame">
       
       
       <div class="flex flex-wrap jc-center ">
         <input type="submit" name="register" id="register" class="f-submit bg-2" value="Ingresar">
         
       </div>
-      <p class="txt-center p-top-10 mb"><a href="/login"> ¿Olvidaste tu contraseña? </a></p>
+      <p class="txt-center p-top-10 mb"><a href="/user/login"> ¿Olvidaste tu contraseña? </a></p>
       <button type="submit" class="f-input">
         <i class="fa-brands fa-google"></i>
         Ingresar con Google</button>

@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Lizzie",
+        "surname": "Harbin",
+        "email": "lharbin0@symantec.com"
+    },
+    {
+        "id": 2,
+        "name": "Emelita",
+        "surname": "Crystal",
+        "email": "ecrystal1@ted.com"
+    },
+    {
+        "id": 3,
+        "name": "Candice",
+        "surname": "Elven",
+        "email": "celven2@facebook.com"
+    },
+    {
+        "id": 4,
+        "name": "Willetta",
+        "surname": "Adam",
+        "email": "wadam3@epa.gov"
+    },
+    {
+        "id": 5,
+        "name": "Ulrica",
+        "surname": "Grimsey",
+        "email": "ugrimsey4@wisc.edu"
+    },
+    {
+        "id": 6,
+        "name": "Patty",
+        "surname": "Inold",
+        "email": "pinold5@w3.org"
+    }
+]
