@@ -344,7 +344,7 @@ grisclaro #f1f7ed */
   padding: 10px 15px;
 }
 
-.cottage-card {
+.list-card {
   min-width: 100%;
   padding: 0 5px;
 }
@@ -362,7 +362,7 @@ grisclaro #f1f7ed */
   border-radius: 8px;
 }
 
-.cont-cottage {
+.cont-cottage, .cont-act {
   border-radius: 8px;
   padding: 10px 10px;
 }
@@ -778,7 +778,7 @@ grisclaro #f1f7ed */
 
   /*----------- laptops */
 
-  .cottage-card{
+  .list-card{
     min-width: 50%;
   }
 
@@ -938,7 +938,7 @@ grisclaro #f1f7ed */
     height: 15vw;
   }
 
-  .cottage-card {
+  .list-card {
     min-width: 25%;
   }
 
