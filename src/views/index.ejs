@@ -153,32 +153,42 @@
 
             <div class="w-80 of-hidden bg-5 cont-act">
               <ul id="act-list" class="flex of-auto">
-                <li class="list-card m-auto border-rad p-10px w-100">
-                  <h2 class="txt-center">Lorem ipsum</h2>
-                  <div class="act-inf">
-                    <figure class="act-img-cont m-auto of-hidden m-auto flex jc-center al-items pos-relative">
-                      <img class="act-img pos-absolute" src="/images/CabañaLIQUIDAMBAR/liquidambar01.jpg" alt="Actividad"/>
-                    </figure>
-                    <div class="qual-star flex jc-end m-auto p-top-10">
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-solid fa-star"></i>
-                      <i class="fa-regular fa-star-half-stroke"></i>
+
+              <% activities.forEach(activity => { %>
+                  
+                <li class="list-card border-rad p-10px flex flex-d-column jc-bet">
+                    <div class="act-inf">
+                    <h2 class="txt-center"><%= activity.title %></h2>
+                      <figure class="cont-card-img m-auto of-hidden m-auto flex jc-center al-items pos-relative">
+                        <img class="act-img pos-absolute" src="<%= activity.img %>" alt="Actividad"/>
+                      </figure>
+                      <div class="qual-star flex jc-end m-auto p-top-10">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star-half-stroke"></i>
+                      </div>
+                      <h2>Dias y horarios:</h2>
+                      <p class="fs-15">
+                        Días de semana:
+                        de <%= activity.wk_open_act[0] %> a <%= activity.wk_close_act[0] %> <%= activity.wk_open_act[1] ? ` y de ${activity.wk_open_act[1]} a ${activity.wk_close_act[1]}`: ""; %>
+                      </p>
+                      <p class="fs-15">
+                        Fines de semana:
+                        de <%= activity.wknd_open_act[0] %> a <%= activity.wknd_close_act[0] %> <%= activity.wknd_open_act[1] ? ` y de ${activity.wknd_open_act[1]} a ${activity.wknd_close_act[1]}`: ""; %>
+                      </p>
                     </div>
-                    <p class="p-10px act-description hide">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, saepe! Quam voluptates consequatur itaque quibusdam molestiae illo quis!
-                    </p>
-                    <h2>Dias y horarios:</h2>
-                    <p>Dias de semana de 6AM a 1PM y de 5PM a 10 PM</p>
-                    <p>Fines de semana de 9AM a 15PM</p>
-                    <div class="act-mgn p-top-10 mb">
-                      <h3>Actividad a cargo de: </h3>
-                      <p>Cosme Fulanito y Carlos Santana</p>
+                    <div class="flex jc-center p-10px">
+                      <a href="" class="cottage-button bg-3 txt-center">
+                         Más información
+                      </a>
                     </div>
-                    <p class="txt-center mb"><a href="" class="cottage-button bg-3">Más información</a></p>
-                  </div>
                 </li>
+
+              <% }); %>
+
+
               </ul>
             </div>
           </div>

@@ -6,19 +6,19 @@
 
 /*---------------------------quienes somos?*/
 
-cont-qui{
+.cont-qui{
   overflow-x: scroll;
   border-radius: 8px;
   padding: 10px;
 }
 
-qui-card{
+.qui-card{
 padding:0 10px;
 }
 
- qui-nav{
+.qui-nav{
   max-width: 1000px;
- }
+}
 
 
 /*----------------------- config general */
@@ -362,11 +362,6 @@ grisclaro #f1f7ed */
   border-radius: 8px;
 }
 
-.cont-cottage, .cont-act {
-  border-radius: 8px;
-  padding: 10px 10px;
-}
-
 .cot-nav{
   max-width: 1800px;
 }
@@ -411,11 +406,6 @@ grisclaro #f1f7ed */
   height: 325px;
 }
 
-.act-img-cont{
-  height: 40vw;
-  max-height: 400px;
-  max-width: 800px;
-}
 /* animación para el carrusel del inicio. */
 
 @keyframes carrousel {
@@ -825,12 +815,6 @@ grisclaro #f1f7ed */
     width: 42%;
   }
 
-  /*----------------- act */
-
-  .act-img-cont{
-    height: 20vw;
-  }
-
   /*---------------------seccion informacion general*/
   .preguntas-frecuentes{
     align-self: flex-start;
@@ -933,15 +917,13 @@ grisclaro #f1f7ed */
   .border-top{
     display: none;
   }
-  
-  .act-img-cont{
-    height: 15vw;
-  }
 
+}
+
+@media (min-width: 1200px) {
   .list-card {
     min-width: 25%;
   }
-
 }
 
 @media (min-width: 1440px) {

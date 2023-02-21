@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Senderismo",
+    "img": "/images/CabañaLOSPINOS/pinos01.jpg",
+    "description": "Lorem ipsum dolor",
+    "wk_open_act": ["6:00 AM", "6:30 PM"],
+    "wk_close_act": ["11:30 AM", "10:30 PM"],
+    "wknd_open_act": ["11:00 AM"],
+    "wknd_close_act": ["4:00 PM"],
+    "instructor": ["Cosme Fulanito", "Carlos Santana"]
+  },
+  {
+    "id": 2,
+    "title": "Fogata",
+    "img": "/images/CabañaLOSPINOS/pinos02.jpg",
+    "description": "Lorem ipsum dolor",
+    "wk_open_act": ["7:00 PM"],
+    "wk_close_act": ["12:00 AM"],
+    "wknd_open_act": ["7:00 PM"],
+    "wknd_close_act": ["1:30 AM"],
+    "instructor": ["Cosme Fulanito"]
+  },
+  {
+    "id": 3,
+    "title": "Senderismo",
+    "img": "/images/CabañaLOSPINOS/pinos03.jpg",
+    "description": "Lorem ipsum dolor",
+    "wk_open_act": ["6:00 AM", "6:30 PM"],
+    "wk_close_act": ["11:30 AM", "10:30 PM"],
+    "wknd_open_act": ["11:00 AM"],
+    "wknd_close_act": ["4:00 PM"],
+    "instructor": ["Cosme Fulanito", "Carlos Santana"]
+  },
+  {
+    "id": 4,
+    "title": "Senderismo",
+    "img": "/images/CabañaLOSPINOS/pinos04.jpg",
+    "description": "Lorem ipsum dolor",
+    "wk_open_act": ["6:00 AM", "6:30 PM"],
+    "wk_close_act": ["11:30 AM", "10:30 PM"],
+    "wknd_open_act": ["11:00 AM"],
+    "wknd_close_act": ["4:00 PM"],
+    "instructor": ["Cosme Fulanito", "Carlos Santana", "Alguien más"]
+  }
+]
