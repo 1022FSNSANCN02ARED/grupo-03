@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("./partials/head") %>
+    <title>Editar perfil</title>
+</head>
+
+<body>
+  <%- include("./partials/nav-login-register") %>
+    <div class="flex jc-center f-f">
+      <h1 class="title-register txt-center">Editar información personal</h1>
+      <button class="but-back bg-3"><a href="/"><i class="fa-solid fa-arrow-left" id="arrow"></i></a></button>
+    </div>
+
+
+    <div class="f-f">
+      <form action="/user/edit/<%= user.id %>?_method=PUT" method="post" class="form bg-4 box-shadow">
+        <div>
+          <input type="text" name="name" id="name" placeholder="Nombre" class=" f-input f-f" value="<%= user.name %>">
+          <input type="text" name="surname" id="surname" placeholder="Apellido" class="f-input f-f" value="<%= user.surname %>">
+          <div class="flex flex-wrap jc-center ">
+            <input type="submit" id="register" class="f-submit bg-2 f-f" value="Editar">
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <%- include("./partials/footer") %>
+
+</body>
+
+</html>
