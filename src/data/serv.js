@@ -55,4 +55,17 @@ module.exports = {
         // Guardamos en la base de datos seleccionada el nuevo array modificado
         this.updateDB(nameDB, data);
     },
+    editData(nameDB, id, dataToEdit) {
+        // Pide la base de datos y la transforma en array
+        let data = this.findAll(nameDB);
+        // Encuentra el index del objeto que queremos eliminar con el id que se pasa como parámetro
+        let indexDataEdit = data.findIndex((p) => p.id == id);
+        // Modifica el objeto que está en el index resultante.
+        data[indexDataEdit] = {
+            ...data[indexDataEdit],
+            ...dataToEdit,
+        };
+        // Guarda la nueva base de datos con el objeto ya modificado
+        this.updateDB(nameDB, data);
+    },
 };
