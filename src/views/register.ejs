@@ -15,33 +15,33 @@
   <div class="f-f">
     <form action="/user/register" method="post" class="form bg-4 box-shadow">
       <div>
-        <input type="text" name="name" id="name" placeholder="Nombre"  class=" f-input f-f" >
+        <input type="text" name="name" id="name" placeholder="Nombre"  class=" f-input f-f" value="<%= (locals.oldData && oldData.name) ? oldData.name : "";%>">
         <% if (locals.errors && errors.name){ %>
           <p class="txt-error"><%= errors.name.msg %></p>
         <% } %>
 
-        <input type="text" name="surname" id="surname" placeholder="Apellido"  class="f-input f-f">
+        <input type="text" name="surname" id="surname" placeholder="Apellido"  class="f-input f-f" value="<%= (locals.oldData && oldData.surname) ? oldData.surname : "";%>">
         <% if (locals.errors && errors.surname){ %>
           <p class="txt-error">
             <%= errors.surname.msg %>
           </p>
         <% } %>
 
-        <input type="text" name="email" id="email" placeholder="Email" class="f-input f-f">
+        <input type="text" name="email" id="email" placeholder="Email" class="f-input f-f" value="<%= (locals.oldData && oldData.email) ? oldData.email : "";%>">
         <% if (locals.errors && errors.email){ %>
           <p class="txt-error">
             <%= errors.email.msg %>
           </p>
         <% } %>
 
-        <input type="password" name="password" id="password" placeholder="Contraseña"  class="f-input f-f">
+        <input type="password" name="password" id="password" placeholder="Contraseña"  class="f-input f-f" value="<%= (locals.oldData && oldData.password) ? oldData.password : "";%>">
         <% if (locals.errors && errors.password){ %>
           <p class="txt-error">
             <%= errors.password.msg %>
           </p>
         <% } %>
 
-        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirmar contraseña" class="f-input f-f">
+        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirmar contraseña" class="f-input f-f" value="<%= (locals.oldData && oldData.confirmPassword) ? oldData.confirmPassword : "";%>">
         <% if (locals.errors && errors.confirmPassword){ %>
           <p class="txt-error">
             <%= errors.confirmPassword.msg %>
