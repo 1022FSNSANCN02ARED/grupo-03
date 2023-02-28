@@ -31,6 +31,11 @@ a {
   align-self: center;
 }
 
+.txt-error{
+  color: #e00031;
+  font-weight:bolder;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
 }
@@ -517,7 +522,7 @@ grisclaro #f1f7ed */
   border: none;
   border-radius: 3px;
   padding: 5px;
-  margin-bottom: 10px;
+  margin-top: 10px;
   font-size: 15px;
   color: #373737;
 }
@@ -879,7 +884,7 @@ grisclaro #f1f7ed */
 
 
   .f-input {
-    margin-bottom: 20px;
+    margin-top: 20px;
   }
  
   .ft-producto-elegido{
