@@ -834,6 +834,14 @@ footer h1 {
     #location {
         width: 46%;
     }
+    /*quienes somos*/
+    .ul-qs {
+        display: flex;
+    }
+
+    .li-qs {
+        display: inline;
+    }
 }
 
 @media (min-width: 1024px) {
