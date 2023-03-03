@@ -1,4 +1,5 @@
 const serv = require("../data/serv");
+const bcryptjs = require("bcryptjs");
 
 module.exports = {
     showLogin: (req, res) => {
@@ -10,7 +11,11 @@ module.exports = {
     create: (req, res) => {
         let user = {
             id: Date.now(),
-            ...req.body,
+            name: req.body.name,
+            surname: req.body.surname,
+            email: req.body.email,
+            password: bcryptjs.hashSync(req.body.password, 10),
+            //confirmPassword: bcryptjs.hashSync(req.body.confirmPassword, 10),
         };
         serv.uploadData("users.json", user);
         res.redirect("/");

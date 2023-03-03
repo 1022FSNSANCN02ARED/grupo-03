@@ -34,5 +34,12 @@
         "name": "Patty",
         "surname": "Inold",
         "email": "pinold5@w3.org"
+    },
+    {
+        "id": 1677876718582,
+        "name": "Cosme",
+        "surname": "Fulanito",
+        "email": "consmefulanito@gmail.com",
+        "password": "$2a$10$gNTvfx3LppM81kgHB4ysOeT/o79M.AA2VYSbniJRj/3BgPTgNDGqW"
     }
 ]
