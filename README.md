@@ -15,6 +15,8 @@ Iván Ramírez: DB Tengo 24 años, soy profesor de Educación Física. Estoy com
 
 Gabi Palacios:FE. Soy la mas grande del grupo,este mes cumplo 41. Hace 20 años estudie Analista de Sistemas, pero nunca trabaje de eso. Durante muchos años tuve un negocio. Actualmente soy ama de casa y tengo 2 hijas. Me encanta todo lo que sea visual y de diseño. Creo que ese es mi fuerte.
 
+Mariana Martinez:FE Tengo 28 años, me gusta todo lo que es la informatica , y me comenzo a gustar el mundo de la programacion desde el año pasado, soy mamá de dos niñas. soy ama de casa. me gusta mucho el diseño hice un curso de diseño grafico. 
+
 PAGINAS REFERENTES:
 
 https://www.alquilerargentina.com/  
