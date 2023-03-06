@@ -6,13 +6,8 @@
 </head>
 
 <body>
-  <%- include("./partials/nav-login-register")  %>
-  <div class="flex jc-center ">
-    <h1 class="title-register txt-center">Iniciar sesión</h1>
-    <button class="but-back bg-3"><a href="/"><i class="fa-solid fa-arrow-left" id="arrow"></i></a></button></div>
+  <%- include("./partials/nav-login-register", {title: "Iniciar sesión"})  %>
 
-
-  <div>
     <form action="/" method="get" class="form bg-4 box-shadow">
 
       <input type="text" name="name" id="name" placeholder="Nombre de Usuario" class=" f-input">
