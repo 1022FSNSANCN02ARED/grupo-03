@@ -15,8 +15,14 @@ module.exports = {
             surname: req.body.surname,
             email: req.body.email,
             password: bcryptjs.hashSync(req.body.password, 10),
-            //confirmPassword: bcryptjs.hashSync(req.body.confirmPassword, 10),
         };
+
+        if (req.file) {
+            user.file = req.file.filename;
+        } else {
+            user.file = "usuarioDefault.jpg";
+        }
+        
         serv.uploadData("users.json", user);
         res.redirect("/");
     },

@@ -6,8 +6,10 @@
 </head>
 
 <body >
-  <%- include("./partials/nav-login-register", {title: "Registrate"})  %>
-    <form action="/user/register" method="post" class="form bg-4 box-shadow">
+  <%- include("./partials/nav-login-register", {title: "Regístrate"})  %>
+
+  <div class="f-f">
+    <form action="/user/register" method="post" enctype="multipart/form-data" class="form bg-4 box-shadow">
       <div>
         <input type="text" name="name" id="name" placeholder="Nombre"  class=" f-input f-f" value="<%= (locals.oldData && oldData.name) ? oldData.name : "";%>">
         <% if (locals.errors && errors.name){ %>
@@ -42,21 +44,25 @@
           </p>
         <% } %>
 
+        <input type="file" name="file" id="file" class="f-input f-f" accept=".jpg, .png, .jpeg">
+        
         <div class="flex flex-wrap jc-center p-top-10">
           <input type="submit" id="register" class="f-submit bg-2 f-f" value="Registrarse" >
           <input type="reset" id="reset" class="f-submit bg-2 f-f">
+        </div>
+
       </div>
-</div>
+
         <div class="p-1rem">
           <button type="submit" class="f-input f-f">
             <i class="fa-brands fa-google"></i>
-            Registrate con google</button>
+            Regístrate con google</button>
           <button type="submit" class="f-input f-f">
             <i class="fa-brands fa-facebook-f"></i>
-           Registrate con facebook</button>
+           Regístrate con facebook</button>
          <button type="submit" class="f-input f-f">
             <i class="fa-brands fa-twitter"></i>
-           Registrate con twitter</button>
+           Regístrate con twitter</button>
           <p class="txt-center p-top-10 f-f">¿Ya tenés una cuenta?<a href="/user/login" class="f-f">  Iniciar sesion</a></p>
         </div>
         <hr>
