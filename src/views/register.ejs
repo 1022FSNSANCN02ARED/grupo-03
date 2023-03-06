@@ -13,7 +13,7 @@
   
 
   <div class="f-f">
-    <form action="/user/register" method="post" class="form bg-4 box-shadow">
+    <form action="/user/register" method="post" enctype="multipart/form-data" class="form bg-4 box-shadow">
       <div>
         <input type="text" name="name" id="name" placeholder="Nombre"  class=" f-input f-f" value="<%= (locals.oldData && oldData.name) ? oldData.name : "";%>">
         <% if (locals.errors && errors.name){ %>
@@ -48,11 +48,15 @@
           </p>
         <% } %>
 
+        <input type="file" name="file" id="file" class="f-input f-f" accept=".jpg, .png, .jpeg">
+        
         <div class="flex flex-wrap jc-center p-top-10">
           <input type="submit" id="register" class="f-submit bg-2 f-f" value="Registrarse" >
           <input type="reset" id="reset" class="f-submit bg-2 f-f">
+        </div>
+
       </div>
-</div>
+
         <div class="p-1rem">
           <button type="submit" class="f-input f-f">
             <i class="fa-brands fa-google"></i>

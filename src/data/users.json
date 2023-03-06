@@ -41,5 +41,13 @@
         "surname": "Fulanito",
         "email": "consmefulanito@gmail.com",
         "password": "$2a$10$gNTvfx3LppM81kgHB4ysOeT/o79M.AA2VYSbniJRj/3BgPTgNDGqW"
+    },
+    {
+        "id": 1678067386148,
+        "name": "cosme",
+        "surname": "fulanito",
+        "email": "cosme12345@gmail.copm",
+        "password": "$2a$10$1dW/GgKAXHsgbOTZpF7cTuRK/RK9PlDDqSFkPIWluHyHGRJ7gAF72",
+        "file": "usuarioDefault.jpg"
     }
 ]
