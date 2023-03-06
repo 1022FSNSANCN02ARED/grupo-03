@@ -15,11 +15,11 @@ module.exports = {
         res.render("crear-cabaña");
     },
     create: (req, res) => {
-        let user = {
+        let cottage = {
             id: Date.now(),
             ...req.body,
         };
-        serv.uploadData("productsDataBase.json", user);
+        serv.uploadData("productsDataBase.json", cottage);
 
         res.redirect("/");
     },
