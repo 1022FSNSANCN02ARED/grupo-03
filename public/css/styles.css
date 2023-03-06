@@ -366,6 +366,7 @@ grisclaro #f1f7ed */
 
 .cottage-description {
     height: 5rem;
+    word-wrap: break-word;
 }
 
 .serv-icon {
