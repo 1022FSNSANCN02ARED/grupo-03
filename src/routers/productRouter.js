@@ -29,4 +29,10 @@ router.post(
     productController.create
 );
 
+router.get("/edit/:id", productController.showEditForm);
+router.put("/edit/:id", productController.update);
+
+router.get("/delete/:id", productController.showDeleteOption);
+router.delete("/delete/:id", productController.delete);
+
 module.exports = router;

@@ -31,6 +31,38 @@ module.exports = {
 
         res.redirect("/");
     },
+    showEditForm: (req, res) => {
+        // el controlador funciona, solo que falta la vista
+        const productToEdit = serv.findById(
+            "productsDataBase.json",
+            req.params.id
+        );
+        res.render("editar-cabaña", { cottage: productToEdit });
+    },
+    update: (req, res) => {
+        // el controlador funciona, solo que falta la vista
+        const cottageToEdit = {
+            name: req.body.name,
+            price: req.body.price,
+            huespedes: req.body.huespedes,
+            servs: req.body.servs || [],
+            dormitorios: req.body.dormitorios,
+            beds: req.body.beds,
+            description: req.body.description,
+            image: req.files.map(
+                (file) => `/images/cottageImages/${file.filename}`
+            ),
+        };
+        serv.editData("productDataBase.json", req.params.id, cottageToEdit);
+        res.redirect("/");
+    },
+    showDeleteOption: (req, res) => {
+        const cottageToDelete = serv.findById(
+            "productsDataBase.json",
+            req.params.id
+        );
+        res.render("delete-detail", { product: cottageToDelete });
+    },
     delete: (req, res) => {
         serv.delete("productsDataBase.json", req.params.id);
         res.redirect("/");
