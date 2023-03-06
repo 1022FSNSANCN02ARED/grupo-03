@@ -6,13 +6,7 @@
 </head>
 
 <body >
-  <%- include("./partials/nav-login-register")  %>
-  <div class="flex jc-center f-f">
-    <h1 class="title-register txt-center">Registrate </h1>
-    <button class="but-back bg-3"><a href="/"><i class="fa-solid fa-arrow-left" id="arrow"></i></a></button></div>
-  
-
-  <div class="f-f">
+  <%- include("./partials/nav-login-register", {title: "Registrate"})  %>
     <form action="/user/register" method="post" class="form bg-4 box-shadow">
       <div>
         <input type="text" name="name" id="name" placeholder="Nombre"  class=" f-input f-f" value="<%= (locals.oldData && oldData.name) ? oldData.name : "";%>">

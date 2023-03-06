@@ -507,32 +507,27 @@ grisclaro #f1f7ed */
 /* ----------------------registro */
 
 #arrow {
-    color: white;
+    color: #f1f7ed;
+    background-color: #07889b;
+    padding: 12px;
+    border-radius: 100%;
+    font-size: 20px;
+    transition: all 250ms;
 }
 
 #arrow:hover {
-    color: #66b9bf;
-}
-
-.but-back {
-    height: 30px;
-    width: 30px;
-    border-radius: 100%;
-    border: 1px rgb(1, 95, 124);
-    margin-top: 5px;
-}
-
-.but-back:hover {
-    background-color: white;
+    background: #f1f7ed ;
+    color: #07889b;
+    box-shadow: 0 0 14px #5f5f5f71;
 }
 
 .f-input {
     width: 100%;
     border: none;
     border-radius: 3px;
-    padding: 5px;
+    padding: 8px;
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 20px;
     color: #373737;
 }
 
@@ -563,7 +558,6 @@ grisclaro #f1f7ed */
 }
 
 .title-register {
-    width: 50%;
     font-size: 20px;
     color: #373737;
     padding: 10px;
@@ -903,8 +897,9 @@ footer h1 {
         width: 70%;
     }
 
-    .form {
+    .form, .nav-form {
         width: 60%;
+        max-width: 800px;
     }
 
     .img-productDetail-1 {
