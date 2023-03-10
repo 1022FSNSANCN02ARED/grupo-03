@@ -13,11 +13,15 @@ const storage = multer.diskStorage({
 });
 const uploadFile = multer({ storage });
 
-const productController = require("../controllers/productController");
 const createCottageMiddleware = require("../middlewares/createCottageMiddleware");
+const redirectUserLoggedOut = require("../middlewares/redirectUserLoggedOut");
+const productController = require("../controllers/productController");
 const error_create_cot = require("../middlewares/error_create_cot");
 
 router.get("/details/:id", productController.productDetail);
+
+// Falta poner el middleware de "redirectUserLoggedOut"
+// no esta colocado, para poder verlo y modificarlo sin tener que iniciar sesíon.
 router.get("/cart", productController.productCart);
 
 router.get("/create", productController.showCreateForm);

@@ -3,6 +3,9 @@ const router = Router();
 const multer = require("multer");
 const path = require("path");
 
+// Controlador de usuarios.
+const usersController = require("../controllers/usersController");
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, path.join(__dirname, "../../public/images/avatars"));
@@ -13,11 +16,17 @@ const storage = multer.diskStorage({
 });
 const uploadFile = multer({ storage });
 
-const usersController = require("../controllers/usersController");
-const error_register = require("../middlewares/error_register");
-const registerMiddleware = require("../middlewares/registerMiddleware");
+// Requiere los middlewares que redireccionan al ususario
+// dependiendo si esta conectado o no.
+const redirectUserLoggedIn = require("../middlewares/redirectUserLoggedIn");
+const redirectUserLoggedOut = require("../middlewares/redirectUserLoggedOut");
 
-router.get("/register", usersController.showRegister);
+// Validador del registro.
+const registerMiddleware = require("../middlewares/registerMiddleware");
+const error_register = require("../middlewares/error_register");
+
+// Rutas
+router.get("/register", redirectUserLoggedIn, usersController.showRegister);
 router.post(
     "/register",
     uploadFile.single("file"),
@@ -25,7 +34,9 @@ router.post(
     usersController.create
 );
 
-router.get("/login", usersController.showLogin);
+router.get("/login", redirectUserLoggedIn, usersController.showLogin);
+
+router.get("/profile", redirectUserLoggedOut);
 
 router.get("/edit", usersController.showEdit);
 router.put("/edit/:id", usersController.edit);
