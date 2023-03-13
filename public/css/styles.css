@@ -262,6 +262,10 @@ grisclaro #f1f7ed */
     color: #07889b;
 }
 
+.fc-5 {
+    color:#f1f7ed;
+}
+
 /*------------------------ config navbar y header */
 
 .cart-icon{
@@ -280,7 +284,6 @@ grisclaro #f1f7ed */
 
 .user-name{
     padding: 2px 5px 2px 15px;
-    border-radius: 10px;
     border: solid 1px #07889b;
     background-color: white;
 }
@@ -309,7 +312,6 @@ grisclaro #f1f7ed */
     border-radius: 6px;
     border: none;
     box-shadow: 0 2px 4px #0e0e0e;
-    color: #f1f7ed;
     cursor: pointer;
     font-size: 0.8em;
     padding: 10px 20px;
@@ -318,10 +320,6 @@ grisclaro #f1f7ed */
 .logo-domum {
     padding: 5px;
     height: 70px;
-}
-
-.page-navbar {
-    flex-grow: 1;
 }
 
 .page-navbar ul li {
@@ -357,10 +355,9 @@ grisclaro #f1f7ed */
     justify-content: space-around;
     max-width: 500px;
 }
+
 .card-img {
-    width: 100%;
     min-height: 250px;
-    position: absolute;
 }
 
 .cottage-button {
@@ -402,8 +399,6 @@ grisclaro #f1f7ed */
 .icons-beds {
     background-color: rgba(255, 255, 255, 0.8);
     bottom: 0;
-    align-items: center;
-    justify-content: end;
 }
 
 .scroll-button {
@@ -481,7 +476,6 @@ grisclaro #f1f7ed */
 /* maps de ¿donde estamos? */
 
 .de-maps {
-    width: 80%;
     max-width: 300px;
     height: 200px;
 }
@@ -499,9 +493,6 @@ grisclaro #f1f7ed */
     border-style: none;
 }
 
-.list-click {
-    overflow: hidden;
-}
 .list-respu {
     height: 0;
     transition: height 0.5s;

@@ -6,7 +6,7 @@
             class="logo-domum"
         />
     </a>
-    <nav class="page-navbar hide">
+    <nav class="page-navbar hide grow-1">
         <ul class="flex fs-15">
             <li><a href="/">Inicio</a></li>
             <li><a href="#info-general">Nosotros</a></li>
@@ -25,14 +25,14 @@
         <a href="#" class="flex al-items pos-relative">
             <img src="/images/avatars/usuarioDefault.jpg" alt="foto de perfil" class="user-avatar pos-relative">
             <!-- Por ahora dice Carlos Santana, luego dirá el nombre del ususario. -->
-            <p class="fs-15 user-name hide">Carlos Santana</p>
+            <p class="fs-15 user-name border-rad hide">Carlos Santana</p>
         </a>
         <% } else { %>
         <a href="/user/login">
-            <button class="login-button fs-18 bg-3 hide">Ingresar</button>
+            <button class="login-button fs-18 bg-3 hide fc-5">Ingresar</button>
         </a>
         <a href="/user/register">
-            <button class="sing-in-button hide fs-18 bg-3">Crear cuenta</button>
+            <button class="sing-in-button hide fs-18 bg-3 fc-5">Crear cuenta</button>
         </a>
         <% } %>
         <i class="fa-solid fa-bars burguer-menu"></i>
