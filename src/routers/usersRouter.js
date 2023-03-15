@@ -38,7 +38,7 @@ router.get("/login", redirectUserLoggedIn, usersController.showLogin);
 
 router.get("/profile", redirectUserLoggedOut);
 
-router.get("/edit", usersController.showEdit);
+router.get("/edit/:id", usersController.showEdit);
 router.put("/edit/:id", usersController.edit);
 
 module.exports = router;
