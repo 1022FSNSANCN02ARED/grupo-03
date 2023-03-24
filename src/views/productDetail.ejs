@@ -7,31 +7,8 @@
 </head>
 
 <body>
-  <header class="main-header">
-    <div class="fixed-navbar flex pos-fixed w-100 bg-5">
-      <a href="/"> <img src="/images/logo-domum.png" alt="Logo de Domum" class="logo-domum"/> </a>
-      <nav class="page-navbar hide">
-        <ul class="flex fs-15">
-          <li><a href="/">Inicio</a></li>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Cabañas</a></li>
-          <li><a href="#">Actividades</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
-      </nav>
-      <div class="header-buttons flex">
-        <a href="/product/cart"><i class="fa-solid fa-cart-shopping cart-icon"></i></a>
-        <a href="/user/login"><button class="login-button fs-18 bg-3">Ingresar</button></a>
-        <a href="/user/register"><button class="sing-in-button hide fs-18 bg-3">Crear cuenta</button></a>
-        <i class="fa-solid fa-bars burguer-menu"></i>
-        <a href="#"><i class="fa-solid fa-user user-icon hide"></i></a>
-      </div>
-    </div>
-    
-   
 
-  </header>
-
+  <%- include("./partials/nav") %>
 
   <section class="date-select">
      <form action="" method="post" class="flex flex-wrap jc-evenly p-1rem">

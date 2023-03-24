@@ -27,5 +27,8 @@ app.use(
     })
 );
 
+const userLogMiddleware = require("./middlewares/userLogMiddleware");
+app.use(userLogMiddleware);
+
 const mainRouter = require("./routers/mainRouter");
 app.use(mainRouter);
