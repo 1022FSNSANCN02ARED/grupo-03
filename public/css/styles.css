@@ -262,6 +262,10 @@ grisclaro #f1f7ed */
     color: #07889b;
 }
 
+.fc-2{
+    color:#e37222;
+}
+
 /*------------------------ config navbar y header */
 
 .cart-icon,
@@ -289,6 +293,8 @@ grisclaro #f1f7ed */
     z-index: 1;
     top: 0;
     height: 70px;
+    box-shadow:0 2px 20px  #373737;
+    
 }
 
 .login-button,
@@ -410,7 +416,9 @@ grisclaro #f1f7ed */
     padding: 0.5rem;
     border-radius: 8px;
 }
-
+.title-carrousel {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 /*-------------- activities */
 
 #actividades {
