@@ -4,8 +4,8 @@ const router = Router();
 const mainController = require("../controllers/mainControllers");
 router.get("/", mainController.home);
 
-const productRouter = require("./productRouter");
-router.use("/product", productRouter);
+const cottagesRouter = require("./cottagesRouter");
+router.use("/product", cottagesRouter);
 
 const usersRouter = require("./usersRouter");
 router.use("/user", usersRouter);

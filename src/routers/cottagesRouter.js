@@ -15,28 +15,28 @@ const uploadFile = multer({ storage });
 
 const createCottageMiddleware = require("../middlewares/createCottageMiddleware");
 const redirectUserLoggedOut = require("../middlewares/redirectUserLoggedOut");
-const productController = require("../controllers/productController");
+const cottagesController = require("../controllers/cottagesController");
 const error_create_cot = require("../middlewares/error_create_cot");
 
-router.get("/details/:id", productController.productDetail);
+router.get("/details/:id", cottagesController.productDetail);
 
 // Falta poner el middleware de "redirectUserLoggedOut"
 // no esta colocado, para poder verlo y modificarlo sin tener que iniciar sesíon.
-router.get("/cart", productController.productCart);
+router.get("/cart", cottagesController.productCart);
 
-router.get("/create", productController.showCreateForm);
+router.get("/create", cottagesController.showCreateForm);
 router.post(
     "/create",
     uploadFile.array("image"),
     createCottageMiddleware,
     error_create_cot,
-    productController.create
+    cottagesController.create
 );
 
-router.get("/edit/:id", productController.showEditForm);
-router.put("/edit/:id", productController.update);
+router.get("/edit/:id", cottagesController.showEditForm);
+router.put("/edit/:id", cottagesController.update);
 
-router.get("/delete/:id", productController.showDeleteOption);
-router.delete("/delete/:id", productController.delete);
+router.get("/delete/:id", cottagesController.showDeleteOption);
+router.delete("/delete/:id", cottagesController.delete);
 
 module.exports = router;
