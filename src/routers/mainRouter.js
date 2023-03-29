@@ -10,4 +10,6 @@ router.use("/product", cottagesRouter);
 const usersRouter = require("./usersRouter");
 router.use("/user", usersRouter);
 
+router.get("/activities", mainController.activities);c
+
 module.exports = router;

@@ -42,4 +42,6 @@ module.exports = {
         serv.editData("users.json", req.params.id, user);
         res.redirect("/");
     },
+   
+
 };

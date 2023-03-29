@@ -7,4 +7,7 @@ module.exports = {
             activities: serv.findAll("activities.json"),
         });
     },
+    activities: (req, res) =>{
+        res.render("activities");
+    }
 };
