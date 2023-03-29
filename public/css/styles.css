@@ -312,7 +312,8 @@ grisclaro #f1f7ed */
 }
 
 .login-button,
-.sing-in-button {
+.sing-in-button,
+.more-button {
     /* padding: 0px 10px;*/
     border-radius: 6px;
     border: none;
@@ -320,7 +321,10 @@ grisclaro #f1f7ed */
     cursor: pointer;
     font-size: 0.8em;
     padding: 10px 20px;
+    color: #ffffff;
 }
+
+
 
 .logo-domum {
     padding: 5px;
