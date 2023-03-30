@@ -34,6 +34,7 @@ module.exports = (sequelize, DataTypes) => {
         //     through: "rents",
         //     foreignKey: "user_id",
         //     otherKey: "cottage_id",
+        //     as: "userRents"
         // });
     };
     return model;
