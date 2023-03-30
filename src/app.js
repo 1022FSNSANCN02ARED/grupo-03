@@ -32,3 +32,10 @@ app.use(userLogMiddleware);
 
 const mainRouter = require("./routers/mainRouter");
 app.use(mainRouter);
+
+//PRUEBA DE MODELOS DB
+
+/*const db = require("./database/models");
+db.Cottages.findAll().then((cottage) => {
+    console.log(cottage);
+});*/
