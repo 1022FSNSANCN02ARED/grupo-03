@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
     const model = sequelize.define(
-        "Rents",
+        "AcivitiesUsers",
         {
-            cottage_id: {
+            activity_id: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },
@@ -10,17 +10,17 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },
-            date_in: {
+            day: {
                 type: DataTypes.DATE,
                 allowNull: false,
             },
-            date_out: {
-                type: DataTypes.DATE,
+            quantity: {
+                type: DataTypes.INTEGER,
                 allowNull: false,
             },
         },
         {
-            tableName: "rents",
+            tableName: "activity_user",
         }
     );
     return model;
