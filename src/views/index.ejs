@@ -85,7 +85,7 @@
                                 >
                                     <img
                                         class="card-img pos-absolute w-100"
-                                        src="<%= cabana.image[0] %> "
+                                        src="<%= cabana.images[0] %> "
                                         alt="foto de cabaña"
                                     />
 
@@ -112,20 +112,7 @@
                                     >
                                         <%= cabana.description %>
                                     </p>
-                                    <h3 class="p-top-10 txt-center">
-                                        servicios principales
-                                    </h3>
 
-                                    <ul class="flex">
-                                        <% for (let i = 0; i < 4; i++) { %>
-
-                                        <li class="m-10 serv-icon">
-                                            <%= cabana.servs[i] %>
-                                        </li>
-
-                                        <% } %>
-                                    </ul>
-                                    <br>
                                     <div class="txt-center">
                                         <a href="#" class="more-button txt-center bg-3">Más información</a>
                                     </div>
@@ -188,7 +175,7 @@
                                         >
                                             <img
                                                 class="act-img pos-absolute"
-                                                src="<%= activity.img %>"
+                                                src="<%= activity.images[0] %>"
                                                 alt="Actividad"
                                             />
                                         </figure>
@@ -206,19 +193,19 @@
                                         <h2>Dias y horarios:</h2>
                                         <p class="fs-15">
                                             Días de semana: de <%=
-                                            activity.wk_open_act[0] %> a <%=
-                                            activity.wk_close_act[0] %> <%=
-                                            activity.wk_open_act[1] ? ` y de
-                                            ${activity.wk_open_act[1]} a
-                                            ${activity.wk_close_act[1]}`: ""; %>
+                                            activity.time_start[0] %> a <%=
+                                            activity.time_end[0] %> <%=
+                                            activity.time_start[1] ? ` y de
+                                            ${activity.time_start[1]} a
+                                            ${activity.time_end[1]}`: ""; %>
                                         </p>
                                         <p class="fs-15">
                                             Fines de semana: de <%=
-                                            activity.wknd_open_act[0] %> a <%=
-                                            activity.wknd_close_act[0] %> <%=
-                                            activity.wknd_open_act[1] ? ` y de
-                                            ${activity.wknd_open_act[1]} a
-                                            ${activity.wknd_close_act[1]}`: "";
+                                            activity.wknd_time_start[0] %> a <%=
+                                            activity.wknd_time_end[0] %> <%=
+                                            activity.wknd_time_start[1] ? ` y de
+                                            ${activity.wknd_time_start[1]} a
+                                            ${activity.wknd_time_end[1]}`: "";
                                             %>
                                         </p>
                                     </div>

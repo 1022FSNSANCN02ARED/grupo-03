@@ -3,13 +3,13 @@
         "id": 1,
         "name": "cabaña1",
         "price": 3009,
-        "servs": [
+        "services": [
             "wi-fi",
             "bañera"
         ],
         "email": "hbracknell0@earthlink.net",
         "description": "Displ oblique fx shaft of l femur, init for opn fx type I/2",
-        "image": [
+        "images": [
             "/images/CabañaLOSPINOS/pinos01.jpg"
         ],
         "beds": 1
@@ -18,10 +18,10 @@
         "id": 2,
         "name": "cabaña2",
         "price": 4655,
-        "servs": [],
+        "services": [],
         "email": "smcgoogan1@1688.com",
         "description": "Infantile idiopathic scoliosis, thoracic region",
-        "image": [
+        "images": [
             "/images/CabañaLOSPINOS/pinos02.jpg"
         ],
         "beds": 2
@@ -30,13 +30,13 @@
         "id": 3,
         "name": "cabaña3",
         "price": 3675,
-        "servs": [
+        "services": [
             "wi-fi",
             "bañera"
         ],
         "email": "efumagall2@discuz.net",
         "description": "Chronic gout, unspecified",
-        "image": [
+        "images": [
             "/images/CabañaLOSPINOS/pinos03.jpg"
         ],
         "beds": 3
@@ -45,12 +45,12 @@
         "id": 4,
         "name": "cabaña4",
         "price": 4699,
-        "servs": [
+        "services": [
             "wi-fi"
         ],
         "email": "bmaccaughey3@yolasite.com",
         "description": "Mech compl of cranial or spinal infusion catheter",
-        "image": [
+        "images": [
             "/images/CabañaLOSPINOS/pinos04.jpg"
         ],
         "beds": 4
@@ -59,10 +59,10 @@
         "id": 5,
         "name": "cabaña5",
         "price": 4954,
-        "servs": [],
+        "services": [],
         "email": "kfranzonello4@sohu.com",
         "description": "Melanoma in situ of scalp and neck",
-        "image": [
+        "images": [
             "/images/CabañaLOSPINOS/pinos05.jpg"
         ],
         "beds": 5

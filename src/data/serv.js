@@ -1,6 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 
+const db = require("../database/models");
+
 // Dependiendo el "nameDB" (nombre de la base de datos) que se coloque
 // al ejecutar la función "rutaDB" va a retornar la ruta hasta esa base de datos.
 // Esto nos sirve para utilizar distintas bases de datos sin necesidad
@@ -67,5 +69,18 @@ module.exports = {
         };
         // Guarda la nueva base de datos con el objeto ya modificado
         this.updateDB(nameDB, data);
+    },
+    async findAllParse(dbTable, atributesToParse) {
+        // Hace el pedido a la db, usando [dbTable], para poder utilizar distintas db con la misma función.
+        const data = await db[dbTable].findAll();
+        // hace un for con cada elemento que se guarde en "data"
+        for (let element of data) {
+            // A cada elemento, le vamos a cambiar los atributos que esten dentro del array de "atributesToParse"
+            for (let atribute of atributesToParse) {
+                // y le hace un "JSON.parse" para que pase de un json a formato JS.
+                element[atribute] = JSON.parse(element[atribute]);
+            }
+        }
+        return data;
     },
 };
