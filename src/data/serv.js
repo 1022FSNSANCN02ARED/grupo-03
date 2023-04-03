@@ -70,10 +70,12 @@ module.exports = {
         // Guarda la nueva base de datos con el objeto ya modificado
         this.updateDB(nameDB, data);
     },
-    async findAllParse(dbTable, atributesToParse) {
-        // Hace el pedido a la db, usando [dbTable], para poder utilizar distintas db con la misma función.
-        const data = await db[dbTable].findAll();
-        // hace un for con cada elemento que se guarde en "data"
+
+    // Probando para trabajar con Sequelize.
+
+    // Metodo para parsear las filas que querramos de la tabla.
+    atributeParser(data, atributesToParse) {
+        // hace un for con cada elemento que se venga desde "data"
         for (let element of data) {
             // A cada elemento, le vamos a cambiar los atributos que esten dentro del array de "atributesToParse"
             for (let atribute of atributesToParse) {
@@ -82,5 +84,23 @@ module.exports = {
             }
         }
         return data;
+    },
+
+    // Método para pedir toda la información de una tabla, con todas las filas que seleccionamos modificadas con un JSON.parse.
+    async findAllParse(dbTable, atributesToParse) {
+        // Hace el pedido a la db, usando [dbTable], para poder utilizar distintas db con la misma función.
+        const data = await db[dbTable].findAll();
+
+        // Utiliza el método "atributeParser" para transformar los valores json que queramos en formato JS.
+        const dataParser = this.atributeParser(data, atributesToParse);
+        return dataParser;
+    },
+
+    // Lo mismo que el anterior, pero para un solo elemento.
+    async findByPkParse(dbTable, id, atributesToParse) {
+        const data = await db[dbTable].findAll({ where: { id: id } });
+
+        const dataParser = this.atributeParser(data, atributesToParse);
+        return dataParser;
     },
 };

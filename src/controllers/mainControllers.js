@@ -11,11 +11,15 @@ module.exports = {
                 "images",
                 "services",
             ]);
-            activities = await serv.findAllParse("Activities", [
-                "images",
-                "services",
-            ]);
+            // activities = await serv.findAllParse("Activities", [
+            //     "images",
+            //     "services",
+            // ]);
+
+            // Esto solo por ahora, hasta tener el modelo de actividades.
+            activities = serv.findAll("activities.json");
         } catch (error) {
+            console.log(error);
             cottages = serv.findAll("productsDataBase.json");
             activities = serv.findAll("activities.json");
         }

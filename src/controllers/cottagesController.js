@@ -1,10 +1,20 @@
 const serv = require("../data/serv");
 
 module.exports = {
-    productDetail: (req, res) => {
+    productDetail: async (req, res) => {
+        let cottage = [];
+        try {
+            cottage = await serv.findByPkParse("Cottages", req.params.id, [
+                "images",
+                "services",
+            ]);
+        } catch (error) {
+            console.log(error);
+            serv.findById("productsDataBase.json", req.params.id);
+        }
         res.render("productDetail", {
             footerProductDetails: "footer-producDetail",
-            cottage: serv.findById("productsDataBase.json", req.params.id),
+            cottage: cottage,
         });
     },
     productCart: (req, res) => {
