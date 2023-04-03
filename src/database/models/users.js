@@ -22,15 +22,20 @@ module.exports = (sequelize, DataTypes) => {
     );
 
     model.associate = (db) => {
-        model.belongsTo(db.Address, {
-            as: "address",
-            foreignKey: "address_id",
-        });
-        model.belongsTo(db.Roles, {
-            as: "rol",
-            foreignKey: "rol_id",
-        });
+        // model.belongsTo(db.Address, {
+        //     as: "address",
+        //     foreignKey: "address_id",
+        // });
+        // model.belongsTo(db.Roles, {
+        //     as: "rol",
+        //     foreignKey: "rol_id",
+        // });
+        // model.belongsToMany(db.Cottages, {
+        //     through: "rents",
+        //     foreignKey: "user_id",
+        //     otherKey: "cottage_id",
+        //     as: "userRents"
+        // });
     };
-
     return model;
 };

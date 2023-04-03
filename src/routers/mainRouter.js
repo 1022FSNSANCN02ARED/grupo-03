@@ -13,5 +13,6 @@ router.use("/user", usersRouter);
 //const generalCab = require("./generalCab");
 router.get("/generalCab", mainController.generalCab);
 
+router.get("/activities", mainController.activities);
 
 module.exports = router;
