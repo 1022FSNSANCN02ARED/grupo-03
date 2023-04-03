@@ -7,4 +7,7 @@ module.exports = {
             activities: serv.findAll("activities.json"),
         });
     },
+    generalCab: (req, res) => {
+        res.render("generalCab")
+    },
 };
