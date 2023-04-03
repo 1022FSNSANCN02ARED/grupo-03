@@ -29,7 +29,8 @@ module.exports = {
         });
     },
     generalCab: (req, res) => {
-        res.render("generalCab")
+        res.render("generalCab");
+    },
     activities: (req, res) => {
         res.render("activities");
     },

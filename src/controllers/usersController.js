@@ -1,5 +1,6 @@
 const serv = require("../data/serv");
 const bcryptjs = require("bcryptjs");
+const db = require("../database/models");
 
 module.exports = {
     showLogin: (req, res) => {
@@ -10,20 +11,26 @@ module.exports = {
     },
     create: (req, res) => {
         let user = {
-            id: Date.now(),
-            name: req.body.name,
-            surname: req.body.surname,
+            first_name: req.body.name,
+            last_name: req.body.surname,
+            phone_number: req.body.phone_number,
             email: req.body.email,
             password: bcryptjs.hashSync(req.body.password, 10),
         };
-
         if (req.file) {
-            user.file = req.file.filename;
+            user.avatar = "/images/avatars/" + req.file.filename;
         } else {
-            user.file = "usuarioDefault.jpg";
+            user.avatar = "/images/avatars/usuarioDefault.jpg";
         }
-        
-        serv.uploadData("users.json", user);
+
+        try {
+            db.Users.create(user);
+            console.log(db.Users);
+        } catch (error) {
+            console.log(error);
+            serv.uploadData("users.json", user);
+        }
+
         res.redirect("/");
     },
     delete: (req, res) => {
@@ -42,6 +49,4 @@ module.exports = {
         serv.editData("users.json", req.params.id, user);
         res.redirect("/");
     },
-   
-
 };

@@ -1,51 +1,51 @@
 [
     {
         "id": 1,
-        "name": "Lizzie",
-        "surname": "Harbin",
+        "first_name": "Lizzie",
+        "last_name": "Harbin",
         "email": "lharbin0@symantec.com"
     },
     {
         "id": 2,
-        "name": "Emelita",
-        "surname": "Crystal",
+        "first_name": "Emelita",
+        "last_name": "Crystal",
         "email": "ecrystal1@ted.com"
     },
     {
         "id": 3,
-        "name": "Candice",
-        "surname": "Elven",
+        "first_name": "Candice",
+        "last_name": "Elven",
         "email": "celven2@facebook.com"
     },
     {
         "id": 4,
-        "name": "Willetta",
-        "surname": "Adam",
+        "first_name": "Willetta",
+        "last_name": "Adam",
         "email": "wadam3@epa.gov"
     },
     {
         "id": 5,
-        "name": "Ulrica",
-        "surname": "Grimsey",
+        "first_name": "Ulrica",
+        "last_name": "Grimsey",
         "email": "ugrimsey4@wisc.edu"
     },
     {
         "id": 6,
-        "name": "Patty",
-        "surname": "Inold",
+        "first_name": "Patty",
+        "last_name": "Inold",
         "email": "pinold5@w3.org"
     },
     {
         "id": 1677876718582,
-        "name": "Cosme",
-        "surname": "Fulanito",
+        "first_name": "Cosme",
+        "last_name": "Fulanito",
         "email": "consmefulanito@gmail.com",
         "password": "$2a$10$gNTvfx3LppM81kgHB4ysOeT/o79M.AA2VYSbniJRj/3BgPTgNDGqW"
     },
     {
         "id": 1678067386148,
-        "name": "cosme",
-        "surname": "fulanito",
+        "first_name": "cosme",
+        "last_name": "fulanito",
         "email": "cosme12345@gmail.copm",
         "password": "$2a$10$1dW/GgKAXHsgbOTZpF7cTuRK/RK9PlDDqSFkPIWluHyHGRJ7gAF72",
         "file": "usuarioDefault.jpg"

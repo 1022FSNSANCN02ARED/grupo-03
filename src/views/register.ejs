@@ -30,6 +30,14 @@
           </p>
         <% } %>
 
+        <input type="text" name="phone_number" id="phone_number" placeholder="número de teléfono (opcional)" class="f-input f-f"
+          value="<%= (locals.oldData && oldData.phone_number) ? oldData.phone_number : "";%>">
+        <% if (locals.errors && errors.phone_number){ %>
+          <p class="txt-error">
+            <%= errors.email.msg %>
+          </p>
+        <% } %>
+
         <input type="password" name="password" id="password" placeholder="Contraseña"  class="f-input f-f" value="<%= (locals.oldData && oldData.password) ? oldData.password : "";%>">
         <% if (locals.errors && errors.password){ %>
           <p class="txt-error">
