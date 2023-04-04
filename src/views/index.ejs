@@ -175,7 +175,7 @@
                                         >
                                             <img
                                                 class="act-img pos-absolute"
-                                                src="<%= activity.images[0] %>"
+                                                src="<%= activity.images[0].image %>"
                                                 alt="Actividad"
                                             />
                                         </figure>
@@ -193,19 +193,19 @@
                                         <h2>Dias y horarios:</h2>
                                         <p class="fs-15">
                                             Días de semana: de <%=
-                                            activity.time_start[0] %> a <%=
-                                            activity.time_end[0] %> <%=
-                                            activity.time_start[1] ? ` y de
-                                            ${activity.time_start[1]} a
-                                            ${activity.time_end[1]}`: ""; %>
+                                            activity.time_start %> a <%=
+                                            activity.time_end %> <%=
+                                            activity.time_start ? ` y de
+                                            ${activity.time_start} a
+                                            ${activity.time_end}`: ""; %>
                                         </p>
                                         <p class="fs-15">
                                             Fines de semana: de <%=
-                                            activity.wknd_time_start[0] %> a <%=
-                                            activity.wknd_time_end[0] %> <%=
-                                            activity.wknd_time_start[1] ? ` y de
-                                            ${activity.wknd_time_start[1]} a
-                                            ${activity.wknd_time_end[1]}`: "";
+                                            activity.wknd_time_start %> a <%=
+                                            activity.wknd_time_end %> <%=
+                                            activity.wknd_time_start ? ` y de
+                                            ${activity.wknd_time_start} a
+                                            ${activity.wknd_time_end}`: "";
                                             %>
                                         </p>
                                     </div>

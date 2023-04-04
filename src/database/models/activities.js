@@ -1,57 +1,52 @@
-
 module.exports = (sequelize, DataTypes) => {
-    
-    const model = sequalize.define(
-        'Activities',
+    const model = sequelize.define(
+        "Activities",
         {
-            activities_id: {
-                type: DataTypes.INTEGER,
-                allowNull: false,
-            },
             name: {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            description: { 
-                type: DataTypes.TEXT, 
+            description: {
+                type: DataTypes.TEXT,
                 allowNull: false,
             },
-            images:{
-                type: DataTypes.TEXT, 
-                allowNull: false,
-            },
-            time_start:{
+            time_start: {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            time_end:{
+            time_end: {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            assessment:{
+            assessment: {
                 type: DataTypes.DECIMAL,
                 defaultValue: 0,
                 allowNull: false,
             },
-            max_place:{
+            max_place: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },
-            wknd_time_start:{
+            wknd_time_start: {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            wknd_time_end:{
+            wknd_time_end: {
                 type: DataTypes.STRING,
                 allowNull: false,
-            }
+            },
         },
         {
             tableName: "activities",
-        },
-        
-    ); 
-    
+        }
+    );
+
+    model.associate = function (db) {
+        model.hasMany(db.Images, {
+            as: "images",
+            foreignKey: "activity_id",
+        });
+    };
+
     return model;
-    
 };
