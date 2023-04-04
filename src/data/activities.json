@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Senderismo",
-    "images": ["/images/CabañaLOSPINOS/pinos01.jpg"],
+    "images": ["/images/cottageImages/pinos01.jpg"],
     "description": "Lorem ipsum dolor",
     "time_start": ["6:00 AM", "6:30 PM"],
     "time_end": ["11:30 AM", "10:30 PM"],
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "title": "Fogata",
-    "images": ["/images/CabañaLOSPINOS/pinos02.jpg"],
+    "images": ["/images/cottageImages/pinos02.jpg"],
     "description": "Lorem ipsum dolor",
     "time_start": ["7:00 PM"],
     "time_end": ["12:00 AM"],
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "title": "Senderismo",
-    "images": ["/images/CabañaLOSPINOS/pinos03.jpg"],
+    "images": ["/images/cottageImages/pinos03.jpg"],
     "description": "Lorem ipsum dolor",
     "time_start": ["6:00 AM", "6:30 PM"],
     "time_end": ["11:30 AM", "10:30 PM"],
@@ -35,7 +35,7 @@
   {
     "id": 4,
     "title": "Senderismo",
-    "images": ["/images/CabañaLOSPINOS/pinos04.jpg"],
+    "images": ["/images/cottageImages/pinos04.jpg"],
     "description": "Lorem ipsum dolor",
     "time_start": ["6:00 AM", "6:30 PM"],
     "time_end": ["11:30 AM", "10:30 PM"],
