@@ -175,7 +175,7 @@
                                         >
                                             <img
                                                 class="act-img pos-absolute"
-                                                src="<%= activity.images[0].image %>"
+                                                src="<%= activity.images[0]?.image || activity.images[0]%>"
                                                 alt="Actividad"
                                             />
                                         </figure>
