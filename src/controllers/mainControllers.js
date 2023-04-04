@@ -1,27 +1,21 @@
 const serv = require("../data/serv");
+const db = require("../database/models");
 
 module.exports = {
     home: async (req, res) => {
-        let cottages = [];
-        let activities = [];
         // Se usa el try catch para seguir usando la base de datos en json
         // si la SQL no esta disponible.
+        let activities;
+        let cottages;
         try {
-            cottages = await serv.findAllParse("Cottages", [
-                "images",
-                "services",
-            ]);
-            // activities = await serv.findAllParse("Activities", [
-            //     "images",
-            //     "services",
-            // ]);
-
-            // Esto solo por ahora, hasta tener el modelo de actividades.
+            // En la vista "index.ejs" hay un "or" que hay que borrar cuando estemos trabajando full con la db de MySQL.
+            cottages = await db.Cottages.findAll({ include: ["images"] });
             activities = serv.findAll("activities.json");
         } catch (error) {
             console.log(error);
-            cottages = serv.findAll("productsDataBase.json");
             activities = serv.findAll("activities.json");
+
+            cottages = serv.findAll("productsDataBase.json");
         }
         res.render("index", {
             cottage: cottages,
