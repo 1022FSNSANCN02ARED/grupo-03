@@ -1,13 +1,13 @@
 const serv = require("../data/serv");
+const db = require("../database/models");
 
 module.exports = {
     productDetail: async (req, res) => {
         let cottage = [];
         try {
-            cottage = await serv.findByPkParse("Cottages", req.params.id, [
-                "images",
-                "services",
-            ]);
+            cottage = await db.Cottages.findByPk(req.params.id, {
+                include: ["images"],
+            });
         } catch (error) {
             console.log(error);
             serv.findById("productsDataBase.json", req.params.id);
