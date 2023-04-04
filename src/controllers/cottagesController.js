@@ -6,7 +6,7 @@ module.exports = {
         let cottage = [];
         try {
             cottage = await db.Cottages.findByPk(req.params.id, {
-                include: ["images"],
+                include: ["images", "services"],
             });
         } catch (error) {
             console.log(error);

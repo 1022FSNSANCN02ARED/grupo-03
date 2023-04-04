@@ -27,6 +27,10 @@ module.exports = (sequelize, DataTypes) => {
             as: "images",
             foreignKey: "cottage_id",
         });
+        model.hasMany(db.Services, {
+            as: "services",
+            foreignKey: "cottage_id",
+        });
     };
     return model;
 };
