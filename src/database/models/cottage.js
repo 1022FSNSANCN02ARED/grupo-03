@@ -11,22 +11,22 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false,
             },
             description: { type: DataTypes.TEXT, allowNull: false },
-            images: { type: DataTypes.TEXT, allowNull: true },
             beds: { type: DataTypes.INTEGER, allowNull: false },
             assessment: {
                 type: DataTypes.DECIMAL,
                 defaultValue: 0,
                 allowNull: false,
             },
-            services: { type: DataTypes.TEXT, allowNull: false },
         },
         {
             tableName: "cottages",
         }
     );
-    /*model.associate = function (db) {
-
-    };*/
-
+    model.associate = function (db) {
+        model.hasMany(db.Images, {
+            as: "images",
+            foreignKey: "cottage_id",
+        });
+    };
     return model;
 };
