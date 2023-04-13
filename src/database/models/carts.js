@@ -1,5 +1,4 @@
 module.exports = (sequelize, DataTypes) => {
-    const { DataTypes } = require("sequelize");
     const model = sequelize.define(
         "Carts",
         {

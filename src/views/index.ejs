@@ -79,8 +79,8 @@
                         <ul class="cottage-list flex of-auto">
                             <% cottage.forEach(cabana => { %>
                             <!-- trae la tarjeta de cabaña -->
-                            <%-include('./partials/cottage-card',{...cabana}) %>
-                            <% }); %>
+                            <%-include('./partials/cottage-card',{cabana}) %> <%
+                            }); %>
                         </ul>
                     </article>
                 </div>
@@ -109,7 +109,7 @@
                         <div class="w-80 of-hidden bg-5 cont-act">
                             <ul id="act-list" class="flex of-auto">
                                 <% activities.forEach(activity => { %> <%-
-                                include('./partials/activity-card',{...activity})
+                                include('./partials/activity-card',{activity})
                                 %> <% }); %>
                             </ul>
                         </div>

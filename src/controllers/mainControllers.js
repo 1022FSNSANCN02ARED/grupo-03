@@ -10,12 +10,15 @@ module.exports = {
         try {
             // En la vista "index.ejs" hay un "or" que hay que borrar cuando estemos trabajando full con la db de MySQL.
             cottages = await db.Cottages.findAll({ include: ["images"] });
-            activities = await db.Activities.findAll({ include: ["images"] });
+            activities = await db.Activities.findAll({
+                include: ["images", "hours"],
+            });
         } catch (error) {
             console.log(error);
             activities = serv.findAll("activities.json");
             cottages = serv.findAll("productsDataBase.json");
         }
+        // res.json(activities);
         res.render("index", {
             cottage: cottages,
             activities: activities,

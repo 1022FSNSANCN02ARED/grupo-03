@@ -2,7 +2,7 @@
     <figure class="pos-relative of-hidden cont-card-img flex al-items">
         <img
             class="card-img pos-absolute w-100"
-            src="<%= images[0]?.image || images[0]%> "
+            src="<%= cabana.images[0]?.image || images[0]%> "
             alt="foto de cabaña"
         />
 
@@ -17,10 +17,10 @@
         </div>
     </figure>
 
-    <h2 class="txt-center"><%= name %></h2>
+    <h2 class="txt-center"><%= cabana.name %></h2>
     <div class="info-card">
         <p class="p-top-10 txt-center cottage-description">
-            <%= description %>
+            <%= cabana.description %>
         </p>
 
         <div class="txt-center">
@@ -28,9 +28,9 @@
         </div>
         <br />
         <div class="price-res flex w-100 jc-bet al-items">
-            <h3>precio por noche: $<%= price %></h3>
+            <h3>precio por noche: $<%= cabana.price %></h3>
             <a
-                href="/product/details/<%= id  %> "
+                href="/product/details/<%= cabana.id  %> "
                 class="cottage-button txt-center bg-3"
                 >reservar</a
             >

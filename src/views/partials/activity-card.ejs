@@ -1,12 +1,12 @@
 <li class="list-card border-rad p-10px flex flex-d-column jc-bet">
     <div class="act-inf">
-        <h2 class="txt-center"><%= title %></h2>
+        <h2 class="txt-center"><%= activity.name %></h2>
         <figure
             class="cont-card-img m-auto of-hidden m-auto flex jc-center al-items pos-relative"
         >
             <img
                 class="act-img pos-absolute"
-                src="<%= images[0]?.image || images[0]%>"
+                src="<%= activity.images[0]?.image || images[0]%>"
                 alt="Actividad"
             />
         </figure>
@@ -17,16 +17,24 @@
             <i class="fa-solid fa-star"></i>
             <i class="fa-regular fa-star-half-stroke"></i>
         </div>
-        <h2>Dias y horarios:</h2>
+        <!-- Si existe una primera hora de día de semana -->
+        <% if (activity.hours.weekday_hours){ %>
+        <h4>Dias de semana:</h4>
+        <p class="fs-15"><%= activity.hours.weekday_hours %></p>
         <p class="fs-15">
-            Días de semana: de <%= time_start %> a <%= time_end %> <%=
-            time_start ? ` y de ${time_start} a ${time_end}`: ""; %>
+            <%= activity.hours.second_weekday_hours ?" y " +
+            activity.hours.second_weekday_hours : ""; %>
         </p>
+
+        <!-- Si existe una primera hora de fin de semana -->
+        <% } %> <% if (activity.hours.weekend_hours){ %>
+        <h4>Fines de semana:</h4>
+        <p class="fs-15"><%= activity.hours.weekend_hours %></p>
         <p class="fs-15">
-            Fines de semana: de <%= wknd_time_start %> a <%= wknd_time_end %>
-            <%= wknd_time_start ? ` y de ${wknd_time_start} a ${wknd_time_end}`:
-            ""; %>
+            <%= activity.hours.second_weekend_hours ?", y " +
+            activity.hours.second_weekend_hours : ""; %>
         </p>
+        <% } %>
     </div>
     <div class="flex jc-center p-10px">
         <a href="" class="cottage-button bg-3 txt-center"> Más información </a>
