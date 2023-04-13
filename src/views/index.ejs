@@ -13,7 +13,9 @@
 
             <!-- carrusel -->
             <div class="carrousel pos-relative flex m-auto of-hidden">
-                <h2 class="pos-absolute txt-center w-100 title-carrousel bg-4 fc-2">
+                <h2
+                    class="pos-absolute txt-center w-100 title-carrousel bg-4 fc-2"
+                >
                     COMO EN TU HOGAR
                 </h2>
                 <ul class="flex m-auto">
@@ -65,8 +67,6 @@
 
             <!-- apartado de cabañas -->
             <section id="cabañas">
- 
-
                 <div class="cot-nav flex m-auto">
                     <button class="scroll-button prev-button">
                         <i class="fa-solid fa-chevron-left"></i>
@@ -78,61 +78,8 @@
                     <article class="m-auto cont-cottage w-80 bg-5">
                         <ul class="cottage-list flex of-auto">
                             <% cottage.forEach(cabana => { %>
-
-                            <li class="list-card">
-                                <figure
-                                    class="pos-relative of-hidden cont-card-img flex al-items"
-                                >
-                                    <img
-                                        class="card-img pos-absolute w-100"
-                                        src="<%= cabana.images[0]?.image || cabana.images[0]%> "
-                                        alt="foto de cabaña"
-                                    />
-
-                                    <a
-                                        href="#"
-                                        class="share-button pos-absolute flex"
-                                    >
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </a>
-
-                                    <div
-                                        class="icons-beds jc-end al-items flex pos-absolute w-100"
-                                    >
-                                        <i class="fa-solid fa-bed icon-bed"></i>
-                                        <i class="fa-solid fa-bed icon-bed"></i>
-                                        <i class="fa-solid fa-bed icon-bed"></i>
-                                    </div>
-                                </figure>
-
-                                <h2 class="txt-center"><%= cabana.name %></h2>
-                                <div class="info-card">
-                                    <p
-                                        class="p-top-10 txt-center cottage-description"
-                                    >
-                                        <%= cabana.description %>
-                                    </p>
-
-                                    <div class="txt-center">
-                                        <a href="#" class="more-button txt-center bg-3">Más información</a>
-                                    </div>
-                                    <br>
-                                    <div
-                                        class="price-res flex w-100 jc-bet al-items"
-                                    >
-                                        <h3>
-                                            precio por noche: $<%= cabana.price
-                                            %>
-                                        </h3>
-                                        <a
-                                            href="/product/details/<%= cabana.id  %> "
-                                            class="cottage-button txt-center bg-3"
-                                            >reservar</a
-                                        >
-                                    </div>
-                                </div>
-                            </li>
-
+                            <!-- trae la tarjeta de cabaña -->
+                            <%-include('./partials/cottage-card',{...cabana}) %>
                             <% }); %>
                         </ul>
                     </article>
@@ -161,65 +108,9 @@
 
                         <div class="w-80 of-hidden bg-5 cont-act">
                             <ul id="act-list" class="flex of-auto">
-                                <% activities.forEach(activity => { %>
-
-                                <li
-                                    class="list-card border-rad p-10px flex flex-d-column jc-bet"
-                                >
-                                    <div class="act-inf">
-                                        <h2 class="txt-center">
-                                            <%= activity.title %>
-                                        </h2>
-                                        <figure
-                                            class="cont-card-img m-auto of-hidden m-auto flex jc-center al-items pos-relative"
-                                        >
-                                            <img
-                                                class="act-img pos-absolute"
-                                                src="<%= activity.images[0]?.image || activity.images[0]%>"
-                                                alt="Actividad"
-                                            />
-                                        </figure>
-                                        <div
-                                            class="qual-star flex jc-end m-auto p-top-10"
-                                        >
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i
-                                                class="fa-regular fa-star-half-stroke"
-                                            ></i>
-                                        </div>
-                                        <h2>Dias y horarios:</h2>
-                                        <p class="fs-15">
-                                            Días de semana: de <%=
-                                            activity.time_start %> a <%=
-                                            activity.time_end %> <%=
-                                            activity.time_start ? ` y de
-                                            ${activity.time_start} a
-                                            ${activity.time_end}`: ""; %>
-                                        </p>
-                                        <p class="fs-15">
-                                            Fines de semana: de <%=
-                                            activity.wknd_time_start %> a <%=
-                                            activity.wknd_time_end %> <%=
-                                            activity.wknd_time_start ? ` y de
-                                            ${activity.wknd_time_start} a
-                                            ${activity.wknd_time_end}`: "";
-                                            %>
-                                        </p>
-                                    </div>
-                                    <div class="flex jc-center p-10px">
-                                        <a
-                                            href=""
-                                            class="cottage-button bg-3 txt-center"
-                                        >
-                                            Más información
-                                        </a>
-                                    </div>
-                                </li>
-
-                                <% }); %>
+                                <% activities.forEach(activity => { %> <%-
+                                include('./partials/activity-card',{...activity})
+                                %> <% }); %>
                             </ul>
                         </div>
                     </div>
