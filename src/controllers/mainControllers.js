@@ -9,9 +9,13 @@ module.exports = {
         let cottages;
         try {
             // En la vista "index.ejs" hay un "or" que hay que borrar cuando estemos trabajando full con la db de MySQL.
-            cottages = await db.Cottages.findAll({ include: ["images"] });
+            cottages = await db.Cottages.findAll({
+                include: ["images"],
+                limit: 4,
+            });
             activities = await db.Activities.findAll({
                 include: ["images", "hours"],
+                limit: 4,
             });
         } catch (error) {
             console.log(error);

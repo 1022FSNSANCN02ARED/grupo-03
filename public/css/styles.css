@@ -262,22 +262,22 @@ grisclaro #f1f7ed */
     color: #07889b;
 }
 
-.fc-2{
-    color:#e37222;
+.fc-2 {
+    color: #e37222;
 }
 .fc-5 {
-    color:#f1f7ed;
+    color: #f1f7ed;
 }
 
 /*------------------------ config navbar y header */
 
-.cart-icon{
+.cart-icon {
     border: solid 1px #07889b;
     border-radius: 50%;
     padding: 6px;
 }
 
-.user-avatar{
+.user-avatar {
     border: solid 1px #07889b;
     border-radius: 50%;
     width: 34px;
@@ -285,12 +285,11 @@ grisclaro #f1f7ed */
     left: 0;
 }
 
-.user-name{
+.user-name {
     padding: 2px 5px 2px 15px;
     border: solid 1px #07889b;
     background-color: white;
 }
-
 
 .burguer-menu {
     font-size: 25px;
@@ -307,8 +306,7 @@ grisclaro #f1f7ed */
     z-index: 1;
     top: 0;
     height: 70px;
-    box-shadow:0 2px 20px  #373737;
-    
+    box-shadow: 0 2px 20px #373737;
 }
 
 .login-button,
@@ -323,8 +321,6 @@ grisclaro #f1f7ed */
     padding: 10px 20px;
     color: #ffffff;
 }
-
-
 
 .logo-domum {
     padding: 5px;
@@ -392,10 +388,6 @@ grisclaro #f1f7ed */
     border-radius: 8px;
 }
 
-.cot-nav {
-    max-width: 1800px;
-}
-
 .icon-bed {
     padding: 5px;
     font-size: 1.2rem;
@@ -423,11 +415,13 @@ grisclaro #f1f7ed */
     border-radius: 8px;
 }
 .title-carrousel {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
 }
 /*-------------- activities */
 
-#actividades {
+#activities,
+#cottages {
     max-width: 1800px;
 }
 
@@ -527,7 +521,7 @@ grisclaro #f1f7ed */
 }
 
 #arrow:hover {
-    background: #f1f7ed ;
+    background: #f1f7ed;
     color: #07889b;
     box-shadow: 0 0 14px #5f5f5f71;
 }
@@ -784,7 +778,8 @@ footer h1 {
 }
 @media (min-width: 761px) {
     /*----------- laptops */
-    .user-name, .user-avatar {
+    .user-name,
+    .user-avatar {
         display: block;
         left: 15px;
     }
@@ -908,7 +903,8 @@ footer h1 {
         width: 70%;
     }
 
-    .form, .nav-form {
+    .form,
+    .nav-form {
         width: 60%;
         max-width: 800px;
     }
@@ -942,6 +938,13 @@ footer h1 {
 }
 
 @media (min-width: 1200px) {
+    .cont-cottage,
+    .cont-activity {
+        width: 90%;
+    }
+    .scroll-button {
+        display: none;
+    }
     .list-card {
         min-width: 25%;
     }
