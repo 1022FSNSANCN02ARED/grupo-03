@@ -43,6 +43,14 @@ module.exports = {
                     };
                 })
             );
+            await db.Services.bulkCreate(
+                req.body.services.map((service) => {
+                    return {
+                        cottage_id: newCottage.id,
+                        service: service,
+                    };
+                })
+            );
         } catch (error) {
             console.log(error);
             serv.uploadData("productsDataBase.json", cottage);
