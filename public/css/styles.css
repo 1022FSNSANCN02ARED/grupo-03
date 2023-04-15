@@ -641,6 +641,7 @@ grisclaro #f1f7ed */
     border-radius: 10px;
 }
 .img-productDetail-2 {
+    width: 30%;
     border-radius: 10px;
 }
 
@@ -859,25 +860,7 @@ footer h1 {
     .aside-dias {
         padding-top: 20px;
     }
-    .aside-input {
-        background-color: white;
-        font-size: large;
-        border-top: solid 0.5px #66b9bf;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        padding: 5px;
-        width: 48%;
-    }
 
-    .aside-input-date {
-        border: none;
-        border-bottom: solid 0.5px #66b9bf;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        font-size: large;
-        padding: 5px;
-        width: 48%;
-    }
     .aside-noche {
         align-self: self-end;
         width: 50%;
@@ -912,9 +895,6 @@ footer h1 {
     .img-productDetail-1 {
         height: 400px;
         width: 90%;
-    }
-    .img-productDetail-2 {
-        height: 170.32px;
     }
 
     .selector-cabañas {
