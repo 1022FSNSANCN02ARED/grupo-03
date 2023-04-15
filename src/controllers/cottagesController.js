@@ -64,23 +64,45 @@ module.exports = {
             "productsDataBase.json",
             req.params.id
         );
-        res.render("editar-cabaña", { cottage: productToEdit });
+        res.render("crear-cabaña", { cottage: productToEdit });
     },
-    update: (req, res) => {
-        // el controlador funciona, solo que falta la vista
-        const cottageToEdit = {
+    update: async (req, res) => {
+        let cottage = {
             name: req.body.name,
             price: req.body.price,
-            huespedes: req.body.huespedes,
-            servs: req.body.servs || [],
-            dormitorios: req.body.dormitorios,
-            beds: req.body.beds,
             description: req.body.description,
-            image: req.files.map(
-                (file) => `/images/cottageImages/${file.filename}`
-            ),
+            beds: req.body.beds,
         };
-        serv.editData("productDataBase.json", req.params.id, cottageToEdit);
+        try {
+            const cottageToUpdate = await db.Cottages.getOne({
+                where: { id: req.params.id },
+                include: ["images", "services"],
+            });
+            await cottageToUpdate.update(cottage);
+            await cottageToUpdate.setImages(null);
+            await cottageToUpdate.setServices(null);
+
+            await db.Images.bulkCreate(
+                req.files.map((image) => {
+                    return {
+                        cottage_id: cottageToUpdate.id,
+                        image: `/images/cottageImages/${image.filename}`,
+                    };
+                })
+            );
+            await db.Services.bulkCreate(
+                req.body.services.map((service) => {
+                    return {
+                        cottage_id: cottageToUpdate.id,
+                        service: service,
+                    };
+                })
+            );
+            await cottageToUpdate.reload();
+        } catch (error) {
+            console.log(error);
+            serv.editData("productDataBase.json", req.params.id, cottageToEdit);
+        }
         res.redirect("/");
     },
     showDeleteOption: (req, res) => {
