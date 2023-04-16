@@ -4,6 +4,7 @@
         <%- include("./partials/head") %>
         <title>Detalle del producto</title>
         <link rel="stylesheet" href="/css/style-pd-footer.css" />
+        <script defer src="/js/cottage-detail.js"></script>
     </head>
 
     <body>
@@ -53,13 +54,13 @@
         <h1 class="w-100 p-1rem fc-37 fs-25 txt-center"><%= cottage.name %></h1>
 
         <section class="w-100 fc-37 flex">
-            <div class="ft-producto-elegido flex flex-wrap p-1rem">
+            <div class="ft-producto-elegido flex flex-wrap p-1rem jc-center">
                 <img
                     src="<%= cottage.images[0].image%>"
                     alt="foto número 1 de cabaña <%= cottage.name %>"
                     class="w-100 p-2px img-productDetail-1 box-shadow"
                 />
-                <div>
+                <div class="flex jc-bet">
                     <% for(let i = 1; i <= 3; i++){ %>
                         <% if(cottage.images[i]) { %>
                         <img
@@ -73,10 +74,21 @@
             </div>
             <aside class="p-1rem aside-prod-detail box-shadow">
                 <form action="" method="get" class="flex flex-wrap">
-                    <h3 class="aside-precio p-bot-20px">Por noche:</h3>
-                    <p class="aside-noche p-bot-20px"><%= cottage.price %></p>
+                    <h3 class="aside-precio p-bot-20px">Por noche: <%= cottage.price %> $ARS</h3>
+
+                    <div class="desde-hasta flex jc-evenly txt-center">
+                        <div class="check-info bg-4 p-5px border-rad">
+                            <h4>check-in:</h4>
+                            <p class="check-in-info">DD/MM/AAAA</p>
+                        </div>
+                        <div class="check-info bg-4 p-5px border-rad">
+                            <h4>check-out:</h4>
+                            <p class="check-out-info">DD/MM/AAAA</p>
+                        </div>
+
+                    </div>
                     <p class="w-100 aside-dias p-bot-20px">
-                        Cantidad de días: xx
+                        Cantidad de días: <span class="cantidad-dias">x</span>
                     </p>
                     <select
                         name="huespedes"
@@ -145,13 +157,13 @@
 
         <article class="fc-37 border-top bg-5 pos-fixed w-100 p-5px">
             <div class="flex flex-wrap p-2px w-100">
-                <h3 class="article-precio">$$$</h3>
+                <h3 class="article-precio"><%= cottage.price %> $ARS</h3>
                 <p class="article-x-noche">x noche</p>
                 <h3 class="article-total">Total $$$</h3>
             </div>
             <div class="flex flex-wrap p-2px w-100">
-                <h4 class="desde-hasta">Desde: dd/mm/aa Hasta: dd/mm/aa</h4>
-                <h4 class="w-100 article-fecha">Cantidad de días: xx</h4>
+                <h4 class="desde-hasta">Desde: <span class="check-in-info">DD/MM/AAAA</span> Hasta: <span class="check-out-info">DD/MM/AAAA</span></h4>
+                <h4 class="w-100">Cantidad de días: <span class="cantidad-dias">x</span></h4>
                 <div class="flex w-100">
                     <input
                         type="text"

@@ -809,10 +809,6 @@ footer h1 {
         width: 15%;
     }
 
-    .desde-hasta {
-        width: 60%;
-    }
-
     .page-navbar {
         display: block;
     }
@@ -859,11 +855,6 @@ footer h1 {
     }
     .aside-dias {
         padding-top: 20px;
-    }
-
-    .aside-noche {
-        align-self: self-end;
-        width: 50%;
     }
 
     .aside-precio {
