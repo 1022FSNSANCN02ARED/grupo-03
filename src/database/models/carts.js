@@ -1,30 +1,26 @@
 module.exports = (sequelize, DataTypes) => {
     const model = sequelize.define(
-        "Rents",
+        "Carts",
         {
-            cottage_id: {
-                type: DataTypes.INTEGER,
-                allowNull: false,
-            },
             user_id: {
                 type: DataTypes.INTEGER,
+                allowNull: true,
+            },
+            order_status: {
+                type: DataTypes.STRING,
                 allowNull: false,
             },
-            date_in: {
-                type: DataTypes.DATE,
+            payment_method: {
+                type: DataTypes.STRING,
                 allowNull: false,
             },
-            date_out: {
-                type: DataTypes.DATE,
-                allowNull: false,
-            },
-            cart_id: {
+            total_cost: {
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },
         },
         {
-            tableName: "rents",
+            tableName: "carts",
         }
     );
     return model;

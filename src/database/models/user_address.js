@@ -10,10 +10,9 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.TEXT,
                 allowNull: false,
             },
-
-                    tableName: "user_address",
-        }
+        },
+        { tableName: "user_address" }
     );
-   
+
     return model;
 };

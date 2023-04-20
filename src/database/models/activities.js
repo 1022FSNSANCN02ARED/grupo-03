@@ -10,14 +10,6 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.TEXT,
                 allowNull: false,
             },
-            time_start: {
-                type: DataTypes.STRING,
-                allowNull: false,
-            },
-            time_end: {
-                type: DataTypes.STRING,
-                allowNull: false,
-            },
             assessment: {
                 type: DataTypes.DECIMAL,
                 defaultValue: 0,
@@ -25,14 +17,6 @@ module.exports = (sequelize, DataTypes) => {
             },
             max_place: {
                 type: DataTypes.INTEGER,
-                allowNull: false,
-            },
-            wknd_time_start: {
-                type: DataTypes.STRING,
-                allowNull: false,
-            },
-            wknd_time_end: {
-                type: DataTypes.STRING,
                 allowNull: false,
             },
         },
@@ -46,7 +30,10 @@ module.exports = (sequelize, DataTypes) => {
             as: "images",
             foreignKey: "activity_id",
         });
+        model.hasOne(db.ActivitiesHours, {
+            as: "hours",
+            foreignKey: "activity_id",
+        });
     };
-
     return model;
 };

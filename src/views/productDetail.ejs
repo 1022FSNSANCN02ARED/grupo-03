@@ -1,128 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <%- include("./partials/head") %>
-  <title>Detalle del producto</title>
-  <link rel="stylesheet" href="/css/style-pd-footer.css">
-</head>
+    <head>
+        <%- include("./partials/head") %>
+        <title>Detalle del producto</title>
+        <link rel="stylesheet" href="/css/style-pd-footer.css" />
+        <script defer src="/js/cottage-detail.js"></script>
+    </head>
 
-<body>
+    <body>
+        <%- include("./partials/nav") %>
 
-  <%- include("./partials/nav") %>
+        <section class="date-select">
+            <form
+                action=""
+                method="post"
+                class="flex flex-wrap jc-evenly p-1rem"
+            >
+                <label
+                    for="check-in"
+                    class="label-check-in bg-5 txt-center fs-18 box-shadow"
+                    >Check-in</label
+                >
+                <label
+                    for="check-out"
+                    class="label-check-out bg-5 txt-center fs-18 box-shadow"
+                    >Check-out</label
+                >
+                <input
+                    type="date"
+                    name="check-in"
+                    id="check-in"
+                    class="input-check-in bg-5 txt-center article-fecha fs-18"
+                />
+                <input
+                    type="date"
+                    name="check-out"
+                    id="check-out"
+                    class="input-check-out bg-5 txt-center article-fecha fs-18"
+                />
 
-  <section class="date-select">
-     <form action="" method="post" class="flex flex-wrap jc-evenly p-1rem">
-      
-       <label for="check-in" class="label-check-in bg-5 txt-center fs-18 box-shadow">Check-in</label>
-       <label for="check-out" class="label-check-out bg-5 txt-center fs-18 box-shadow">Check-out</label>
-       <input type="date" name="check-in" id="check-in" value="2023-01-02"class="input-check-in bg-5 txt-center article-fecha fs-18" >
-       <input type="date" name="check-out" id="check-out"  class="input-check-out bg-5 txt-center  article-fecha fs-18">
-       <select name="selector" class="selector-huesped  ">
-        <option value="disabled" selected>Seleccione número de huéspes</option>
-        <option value="cabaña-1">1</option>
-        <option value="cabaña-2">2</option>
-        <option value="cabaña-2">3</option>
-        <option value="cabaña-2">4</option>
-       </select>
-       <hr class="hr">
-      
-    </form>
-  </section>
-    <h1 class="w-100 p-1rem fc-37 fs-25 txt-center "><%= cottage.name %> </h1>
+                <select name="selector" class="selector-huesped">
+                    <option selected disabled>
+                        Seleccione número de huéspes
+                    </option>
+                    <% for (let i = 1; i <= cottage.beds ; i++) { %>
+                    <option value="option<%= i %>"><%= i %></option>
+                    <% } %>
+                </select>
 
-  <section class=" w-100  fc-37 flex">
-  
-    <div class="ft-producto-elegido flex flex-wrap p-1rem">
-     <img src="/images/cottageImages/liquidambar02.jpg" alt="" class="w-100 p-2px img-productDetail-1 box-shadow">
-     <img src="/images/cottageImages/liquidambar01.jpg" alt="" class="w-33 p-2px img-productDetail-2 box-shadow ">
-     <img src="/images/cottageImages/liquidambar04.jpg" alt="" class="w-33 p-2px img-productDetail-2 box-shadow">
-     <img src="/images/cottageImages/liquidambar05.jpg" alt="" class="w-33 p-2px img-productDetail-2 box-shadow">
-    </div>
-    <aside class=" p-1rem aside-prod-detail box-shadow">
-      
-      <form action="/???????????" method="get" class="flex flex-wrap">
-        <h3 class=" aside-precio p-bot-20px">$$$</h3> 
-        <p class=" aside-noche p-bot-20px"><%= cottage.price %></p>
-        <label for="check-in" class="aside-input mr-9 ">Check-in</label>
-        <label for="check-out" class="aside-input">Check-out</label>
-        <input type="date" name="check-in" id="check-in" value="2023-01-02"class="aside-input-date mr-9 p-20px">
-        <input type="date" name="check-out" id="check-out"  class="aside-input-date p-10px">
-        <p class="w-100 aside-dias p-bot-20px ">Cantidad de días: xx</p></div>
-        <select name="selector" class="aside-selector-cabañas f-f fc-37 p-bot-20px mb">
-          <option value="disabled" selected>Seleccione una cabaña</option>
-          <option value="cabaña-1">Cabaña blanca</option>
-          <option value="cabaña-2">Cabaña xx</option>
-          <option value="cabaña-3">Cabaña xx</option>
-          <option value="cabaña-4">Cabaña xx</option>
-          <option value="cabaña-5">Cabaña xx</option>
-        </select>
-        <select name="selector" class=" aside-selector-cabañas p-bot-20px mb">
-            <option value="disabled" selected>Seleccione número de huéspes</option>
-            <option value="cabaña-1">1</option>
-            <option value="cabaña-2">2</option>
-            <option value="cabaña-2">3</option>
-            <option value="cabaña-2">4</option>
-        </select>
-            <input type="text" name="cupon" id="cupon"  class="input-cupon fc-37 bg-5 flex-grow" placeholder="¿Cupón de descuento?"><button class="input-cupon bg-5"><i class="fa-solid fa-play fc-3"></i></button>
-            <h3 class=" aside-total">Total $$$</h3>
-            
-            <a href="/product/cart" class=" aside-but fs-18">Reservar</a>
-        
-      </form>
-    </aside>
-  </section>
-  <hr class="hr">
-    <p class="txt-center fs-18 p-2px">.4 huespedes .2 dormitorios .2 camas .1 baño</p>
-    <hr class="hr">
-    <div class="flex flex-wrap  p-1rem">
-      
-      <h3 class="w-100 p-2rem-t fs-18 f-37">Características del lugar</h3>
-      
-      <h4 class="caract p-2px"><i class="fa-solid fa-fire-burner icon-servicios"></i> Cocina</h4>
-      <h4 class="caract p-2px"><i class="fa-solid fa-car icon-servicios"></i> Estacionamiento</h4>
-      <h4 class="caract p-2px"><i class="fa-solid fa-paw icon-servicios"></i> Pet-friendly</h4>
-      <h4 class="caract p-2px"><i class="fa-solid fa-wifi icon-servicios"></i> WIFI</h4>
-      <h4 class="caract p-2px"><i class="fa-solid fa-person-swimming icon-servicios"></i> Pileta de uso compartido</h4>
-      <h4 class="caract p-2px"><i class="fa-solid fa-tv icon-servicios"></i> TV</h4>
-      <h4 class="caract p-2px"><i class="fa-solid fa-fire icon-servicios"></i> Calefacción</h4>
+                <hr class="hr" />
+            </form>
+        </section>
+        <h1 class="w-100 p-1rem fc-37 fs-25 txt-center"><%= cottage.name %></h1>
 
-    </div>
-  <section class="fc-37 fs-18 marg-end">
-    
-    <h3 class="w-100 txt-center p-1rem f-f fs-18 "><i class="fa-solid fa-location-dot icon-servicios"></i> Mapa del complejo</h3>
-    <div class="flex flex-wrap jc-center f-f p-1rem ">
-     <label for="n-cabañas" class="label-selector ">Cabañas:</label>
-     <select name="selector" class="selector-cabañas fc-37 ">
-      <option value="disabled" selected>Seleccione una cabaña</option>
-      <option value="cabaña-1">Cabaña blanca</option>
-      <option value="cabaña-2">Cabaña xx</option>
-      <option value="cabaña-3">Cabaña xx</option>
-      <option value="cabaña-4">Cabaña xx</option>
-      <option value="cabaña-5">Cabaña xx</option>
-      <option value="cabaña-5">Cabaña xx</option>
-    
-     </select>
-    <img src="images/vista-aerea.jpg" alt="100px" class="w-100 p-2px  img-map-lugar box-shadow"> 
-    </div>
-  </section >
+        <section class="w-100 fc-37 flex">
+            <div class="ft-producto-elegido flex flex-wrap p-1rem jc-center">
+                <img
+                    src="<%= cottage.images[0].image%>"
+                    alt="foto número 1 de cabaña <%= cottage.name %>"
+                    class="w-100 p-2px img-productDetail-1 box-shadow"
+                />
+                <div class="flex jc-bet">
+                    <% for(let i = 1; i <= 3; i++){ %>
+                        <% if(cottage.images[i]) { %>
+                        <img
+                            src="<%= cottage.images[i].image%>"
+                            alt="foto número <%= (i + 1) %> de cabaña <%= cottage.name %>"
+                            class="p-2px img-productDetail-2 box-shadow h-100"
+                        />
+                        <% } %>
+                    <% } %>
+                </div>
+            </div>
+            <aside class="p-1rem aside-prod-detail box-shadow">
+                <form action="" method="get" class="flex flex-wrap">
+                    <h3 class="aside-precio p-bot-20px">Por noche: <%= cottage.price %> $ARS</h3>
 
-  <article class="fc-37 border-top bg-5 pos-fixed w-100 p-5px">
-    <div class="flex flex-wrap p-2px w-100">
-       <h3 class="article-precio">$$$</h3>
-       <p class="article-x-noche">x noche</p>
-       <h3 class="article-total">Total $$$</h3></div>
-    <div class= "flex flex-wrap p-2px w-100">
-        <h4 class="desde-hasta">Desde: dd/mm/aa Hasta: dd/mm/aa</h4>
-        <h4 class="w-100 article-fecha">Cantidad de días: xx</h4>
-        <div class="flex  w-100 ">
-         <input type="text" name="cupon" id="cupon"  class="input-cupon fc-37 bg-5 flex-grow" placeholder="¿Cupón de descuento?"><button class="input-cupon bg-5"><i class="fa-solid fa-play fc-3"></i></button>
-         <a href="/product/cart" class="but-reserva- fs-18">Reservar</a>
+                    <div class="desde-hasta flex jc-evenly txt-center">
+                        <div class="check-info bg-4 p-5px border-rad">
+                            <h4>check-in:</h4>
+                            <p class="check-in-info">DD/MM/AAAA</p>
+                        </div>
+                        <div class="check-info bg-4 p-5px border-rad">
+                            <h4>check-out:</h4>
+                            <p class="check-out-info">DD/MM/AAAA</p>
+                        </div>
+
+                    </div>
+                    <p class="w-100 aside-dias p-bot-20px">
+                        Cantidad de días: <span class="cantidad-dias">x</span>
+                    </p>
+                    <select
+                        name="huespedes"
+                        class="aside-selector-cabañas p-bot-20px mb"
+                    >
+                        <option selected disabled>
+                            Seleccione número de huéspes
+                        </option>
+                        <% for (let i = 1; i <= cottage.beds ; i++) { %>
+
+                        <option value="option<%= i %>"><%= i %></option>
+
+                        <% } %>
+                    </select>
+                    <input
+                        type="text"
+                        name="cupon"
+                        id="cupon"
+                        class="input-cupon fc-37 bg-5 flex-grow"
+                        placeholder="¿Cupón de descuento?"
+                    /><button class="input-cupon bg-5">
+                        <i class="fa-solid fa-play fc-3"></i>
+                    </button>
+                    <h3 class="aside-total">Total $$$</h3>
+
+                    <a href="/product/cart" class="aside-but fs-18">Reservar</a>
+                </form>
+            </aside>
+        </section>
+        <hr class="hr" />
+        <p class="txt-center fs-18 p-2px">
+            .4 huespedes .2 dormitorios .2 camas .1 baño
+        </p>
+        <hr class="hr" />
+        <div class="flex flex-wrap p-1rem">
+            <h3 class="w-100 p-2rem-t fs-18 f-37">Características del lugar</h3>
+
+            <h4 class="caract p-2px">
+                <i class="fa-solid fa-fire-burner icon-servicios"></i> Cocina
+            </h4>
+            <h4 class="caract p-2px">
+                <i class="fa-solid fa-person-swimming icon-servicios"></i>
+                Pileta de uso compartido
+            </h4>
+            <h4 class="caract p-2px">
+                <i class="fa-solid fa-tv icon-servicios"></i> TV
+            </h4>
+            <h4 class="caract p-2px">
+                <i class="fa-solid fa-fire icon-servicios"></i> Calefacción
+            </h4>
         </div>
-    </div>
-        
-  </article>
+        <section class="fc-37 fs-18 marg-end">
+            <h3 class="w-100 txt-center p-1rem f-f fs-18">
+                <i class="fa-solid fa-location-dot icon-servicios"></i> Mapa del
+                complejo
+            </h3>
+            <div class="flex flex-wrap jc-center f-f p-1rem">
+                <label for="n-cabañas" class="label-selector">Cabañas:</label>
+                <img
+                    src="images/vista-aerea.jpg"
+                    alt="100px"
+                    class="w-100 p-2px img-map-lugar box-shadow"
+                />
+            </div>
+        </section>
 
-  <%- include("./partials/footer") %>
-  
-</body>
+        <article class="fc-37 border-top bg-5 pos-fixed w-100 p-5px">
+            <div class="flex flex-wrap p-2px w-100">
+                <h3 class="article-precio"><%= cottage.price %> $ARS</h3>
+                <p class="article-x-noche">x noche</p>
+                <h3 class="article-total">Total $$$</h3>
+            </div>
+            <div class="flex flex-wrap p-2px w-100">
+                <h4 class="desde-hasta">Desde: <span class="check-in-info">DD/MM/AAAA</span> Hasta: <span class="check-out-info">DD/MM/AAAA</span></h4>
+                <h4 class="w-100">Cantidad de días: <span class="cantidad-dias">x</span></h4>
+                <div class="flex w-100">
+                    <input
+                        type="text"
+                        name="cupon"
+                        id="cupon"
+                        class="input-cupon fc-37 bg-5 flex-grow"
+                        placeholder="¿Cupón de descuento?"
+                    /><button class="input-cupon bg-5">
+                        <i class="fa-solid fa-play fc-3"></i>
+                    </button>
+                    <a href="/product/cart" class="but-reserva- fs-18"
+                        >Reservar</a
+                    >
+                </div>
+            </div>
+        </article>
+
+        <%- include("./partials/footer") %>
+    </body>
 </html>
