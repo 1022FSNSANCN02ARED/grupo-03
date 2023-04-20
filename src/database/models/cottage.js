@@ -17,6 +17,18 @@ module.exports = (sequelize, DataTypes) => {
                 defaultValue: 0,
                 allowNull: false,
             },
+            bedrooms: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+            },
+            bathrooms: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+            },
+            guest: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+            },
         },
         {
             tableName: "cottages",

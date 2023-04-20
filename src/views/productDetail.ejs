@@ -120,26 +120,19 @@
         </section>
         <hr class="hr" />
         <p class="txt-center fs-18 p-2px">
-            .4 huespedes .2 dormitorios .2 camas .1 baño
+            <%= `${cottage.guest} huespedes . ${cottage.bedrooms} dormitorios . ${cottage.beds} camas . ${cottage.bathrooms} baños` %>
         </p>
         <hr class="hr" />
+        
         <div class="flex flex-wrap p-1rem">
             <h3 class="w-100 p-2rem-t fs-18 f-37">Características del lugar</h3>
-
-            <h4 class="caract p-2px">
-                <i class="fa-solid fa-fire-burner icon-servicios"></i> Cocina
-            </h4>
-            <h4 class="caract p-2px">
-                <i class="fa-solid fa-person-swimming icon-servicios"></i>
-                Pileta de uso compartido
-            </h4>
-            <h4 class="caract p-2px">
-                <i class="fa-solid fa-tv icon-servicios"></i> TV
-            </h4>
-            <h4 class="caract p-2px">
-                <i class="fa-solid fa-fire icon-servicios"></i> Calefacción
-            </h4>
+            <% cottage.services.forEach(service =>{ %>
+                <h4 class="caract p-2px">
+                    <%= service.service %>
+                </h4>
+            <%  }) %>
         </div>
+        
         <section class="fc-37 fs-18 marg-end">
             <h3 class="w-100 txt-center p-1rem f-f fs-18">
                 <i class="fa-solid fa-location-dot icon-servicios"></i> Mapa del
