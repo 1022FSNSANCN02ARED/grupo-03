@@ -1,5 +1,10 @@
 // Capturar los inputs de date-in y date-out
+const dateIn = document.querySelector("#check-in");
+const dateOut = document.querySelector("#check-out");
 const dateInputs = document.querySelectorAll(".article-fecha");
+
+// Capturamos el elemento donde estará la cantidad de días.
+const rentalDaysInfo = document.querySelectorAll(".cantidad-dias");
 
 // Saber en que momento se actualizan
 for (const dateInput of dateInputs) {
@@ -14,10 +19,39 @@ for (const dateInput of dateInputs) {
         } else {
             validations.checkOut(dateInput, dateInInput, spansInfo);
         }
+
+        // Calcular cuantos dias hay de diferencia entre el date-in y date-out
+        if (dateIn.value && dateOut.value) {
+            // Agregar los dias de diferencia en los lugares correspondientes.
+            rentalDaysInfo.forEach((infoRentalDay) => {
+                infoRentalDay.innerText = validations.rentalDays(
+                    dateIn.value,
+                    dateOut.value
+                );
+            });
+        }
     });
 }
 
 const validations = {
+    rentalDays(dateInTime, dateOutTime) {
+        // Tomamos los milisegundos de cada día
+        const millisecondsDateIn = new Date(dateInTime).getTime();
+        const millisecondsDateOut = new Date(dateOutTime).getTime();
+        console.log(millisecondsDateIn);
+
+        // Sacamos la diferencia entre cada día
+        const diferentTime = millisecondsDateOut - millisecondsDateIn;
+
+        // Al resultado lo dividimos un día en milisegundos.
+        const milliseconsPerDay = 1000 * 60 * 60 * 24;
+        const rentalDays = diferentTime / milliseconsPerDay;
+
+        console.log(rentalDays);
+        // Retornamos el resultado
+        return rentalDays;
+    },
+
     writeSpans(dateInInput, spansInfo) {
         for (let span of spansInfo) {
             span.innerText = `${dateInInput.getDate()}/${(
@@ -63,9 +97,6 @@ const validations = {
         }
     },
 };
-
-// Calcular cuantos dias hay de diferencia entre el date-in y date-out
-// Agregar los dias de diferencia en los lugares correspondientes.
 
 // Calcular cuanto saldrá el total, días x precio por noche
 // Colocarlo en donde debe ir.

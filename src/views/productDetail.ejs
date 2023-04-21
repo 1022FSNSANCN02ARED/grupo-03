@@ -43,7 +43,7 @@
                     <option selected disabled>
                         Seleccione número de huéspes
                     </option>
-                    <% for (let i = 1; i <= cottage.beds ; i++) { %>
+                    <% for (let i = 1; i <= cottage.guest ; i++) { %>
                     <option value="option<%= i %>"><%= i %></option>
                     <% } %>
                 </select>
@@ -88,7 +88,7 @@
 
                     </div>
                     <p class="w-100 aside-dias p-bot-20px">
-                        Cantidad de días: <span class="cantidad-dias">x</span>
+                        Cantidad de días: <span class="cantidad-dias"></span>
                     </p>
                     <select
                         name="huespedes"
@@ -97,9 +97,9 @@
                         <option selected disabled>
                             Seleccione número de huéspes
                         </option>
-                        <% for (let i = 1; i <= cottage.beds ; i++) { %>
+                        <% for (let i = 1; i <= cottage.guest ; i++) { %>
 
-                        <option value="option<%= i %>"><%= i %></option>
+                        <option value="<%= i %>"><%= i %></option>
 
                         <% } %>
                     </select>
@@ -156,7 +156,7 @@
             </div>
             <div class="flex flex-wrap p-2px w-100">
                 <h4 class="desde-hasta">Desde: <span class="check-in-info">DD/MM/AAAA</span> Hasta: <span class="check-out-info">DD/MM/AAAA</span></h4>
-                <h4 class="w-100">Cantidad de días: <span class="cantidad-dias">x</span></h4>
+                <h4 class="w-100">Cantidad de días: <span class="cantidad-dias"></span></h4>
                 <div class="flex w-100">
                     <input
                         type="text"
