@@ -3,8 +3,12 @@ const dateIn = document.querySelector("#check-in");
 const dateOut = document.querySelector("#check-out");
 const dateInputs = document.querySelectorAll(".article-fecha");
 
-// Capturamos el elemento donde estará la cantidad de días.
+// Capturamos el elemento donde estará la cantidad de días y el total a pagar.
 const rentalDaysInfo = document.querySelectorAll(".cantidad-dias");
+const totalInfo = document.querySelectorAll(".total-info");
+
+// Capturar el precio
+const price = document.querySelector(".price");
 
 // Saber en que momento se actualizan
 for (const dateInput of dateInputs) {
@@ -22,13 +26,21 @@ for (const dateInput of dateInputs) {
 
         // Calcular cuantos dias hay de diferencia entre el date-in y date-out
         if (dateIn.value && dateOut.value) {
+            const rentalDays = validations.rentalDays(
+                dateIn.value,
+                dateOut.value
+            );
             // Agregar los dias de diferencia en los lugares correspondientes.
             rentalDaysInfo.forEach((infoRentalDay) => {
-                infoRentalDay.innerText = validations.rentalDays(
-                    dateIn.value,
-                    dateOut.value
-                );
+                infoRentalDay.innerText = rentalDays;
             });
+
+            // Calcular cuanto saldrá el total, días x precio por noche
+            const total = Number(price.innerText) * rentalDays;
+            // Colocarlo en donde debe ir.
+            totalInfo.forEach(
+                (totalInfo) => (totalInfo.innerText = total + " $ARS")
+            );
         }
     });
 }
@@ -97,6 +109,3 @@ const validations = {
         }
     },
 };
-
-// Calcular cuanto saldrá el total, días x precio por noche
-// Colocarlo en donde debe ir.
