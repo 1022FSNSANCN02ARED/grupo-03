@@ -10,13 +10,8 @@
         <ul class="flex fs-15">
             <li><a href="/">Inicio</a></li>
             <li><a href="#info-general">Nosotros</a></li>
-<<<<<<< HEAD
             <li><a href="/generalCab">Cabañas</a></li>
-            <li><a href="#actividades">Actividades</a></li>
-=======
-            <li><a href="#cabañas">Cabañas</a></li>
             <li><a href="/activities">Actividades</a></li>
->>>>>>> 15c3ebc49350f043af948f1880ee20dccc7076fc
             <li><a href="#footer">Contacto</a></li>
         </ul>
     </nav>
@@ -28,7 +23,11 @@
         <!-- Revisa si existe la variable local "userLog" que crea el middleware "userLogMiddleware" -->
         <% if (!!userLog) { %>
         <a href="#" class="flex al-items pos-relative">
-            <img src="/images/avatars/usuarioDefault.jpg" alt="foto de perfil" class="user-avatar pos-relative">
+            <img
+                src="/images/avatars/usuarioDefault.jpg"
+                alt="foto de perfil"
+                class="user-avatar pos-relative"
+            />
             <!-- Por ahora dice Carlos Santana, luego dirá el nombre del ususario. -->
             <p class="fs-15 user-name border-rad hide">Carlos Santana</p>
         </a>
@@ -37,7 +36,9 @@
             <button class="login-button fs-18 bg-3 hide fc-5">Ingresar</button>
         </a>
         <a href="/user/register">
-            <button class="sing-in-button hide fs-18 bg-3 fc-5">Crear cuenta</button>
+            <button class="sing-in-button hide fs-18 bg-3 fc-5">
+                Crear cuenta
+            </button>
         </a>
         <% } %>
         <i class="fa-solid fa-bars burguer-menu"></i>
