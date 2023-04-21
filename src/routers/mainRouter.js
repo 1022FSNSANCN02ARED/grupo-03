@@ -15,4 +15,8 @@ router.get("/generalCab", mainController.generalCab);
 
 router.get("/activities", mainController.activities);
 
+// API
+const mainApiRoutes = require("./api/mainApiRouter");
+router.use("/api", mainApiRoutes);
+
 module.exports = router;
