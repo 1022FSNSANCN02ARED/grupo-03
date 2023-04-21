@@ -24,7 +24,20 @@ module.exports = {
     generalCab: (req, res) => {
         res.render("generalCab");
     },
-    activities: (req, res) => {
-        res.render("activities");
+    activities:async (req, res) => {
+        let activities;
+        try {
+           
+            activities = await db.Activities.findAll({ include: ["images"] });
+        } catch (error) {
+            console.log(error);
+            activities = serv.findAll("activities.json");
+           
+        }
+        res.render("activities", {
+            activities: activities,
+        });
     },
+    
+    
 };

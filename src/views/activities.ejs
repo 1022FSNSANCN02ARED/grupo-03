@@ -5,11 +5,134 @@
     <title>Actividades</title>
 </head>
 <body>
-    <%- include("./partials/nav") %>
-    
-    <section>
-       
+   <header>
+     <!-- carrusel -->
+     <div class="carrousel pos-relative flex m-auto of-hidden">
+        <h2 class="pos-absolute txt-center w-100 title-carrousel bg-4 fc-2">
+            Actividades
+        </h2>
+        <ul class="flex m-auto">
+            <li class="of-hidden flex jc-center">
+                <img
+                    src="/images/slider-home01.jpg"
+                    alt="imagen de referencia 1"
+                />
+            </li>
+            <li class="of-hidden flex jc-center">
+                <img
+                    src="/images/slider-home02.jpg"
+                    alt="imagen de referencia 2"
+                />
+            </li>
+            <li class="of-hidden flex jc-center">
+                <img
+                    src="/images/slider-home03.jpg"
+                    alt="imagen de referencia 3"
+                />
+            </li>
+            <li class="of-hidden flex jc-center">
+                <img
+                    src="/images/slider-home04.jpg"
+                    alt="imagen de referencia 4"
+                />
+            </li>
+            <li class="of-hidden flex jc-center">
+                <img
+                    src="/images/slider-home01.jpg"
+                    alt="imagen de referencia 1"
+                />
+            </li>
+        </ul>
+    </div>
+    <!-- carrusel -->
+</header>
+ <section>
+    <section id="actividades" class="m-auto">
+        <article class="p-1rem w-80 m-auto txt-center">
+            <h2 class="">Actividades</h2>
+            <p class="p-top-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Soluta adipisci enim vel eos ullam rem eaque aliquam
+                nulla laborum possimus.
+            </p>
+        </article>
+
+        <article id="cont-act" class="flex flex-wrap">
+            <div class="act-nav flex m-auto flex w-100">
+                <button class="scroll-button prev-button">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="scroll-button order-1 next-button">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <div class="w-80 of-hidden bg-5 cont-act">
+                    <ul id="act-list" class="flex of-auto">
+                        <% activities.forEach(activity => { %>
+
+                        <li
+                            class="list-card border-rad p-10px flex flex-d-column jc-bet"
+                        >
+                            <div class="act-inf">
+                                <h2 class="txt-center">
+                                    <%= activity.title %>
+                                </h2>
+                                <figure
+                                    class="cont-card-img m-auto of-hidden m-auto flex jc-center al-items pos-relative"
+                                >
+                                    <img
+                                        class="act-img pos-absolute"
+                                        src="<%= activity.images[0]?.image || activity.images[0]%>"
+                                        alt="Actividad"
+                                    />
+                                </figure>
+                                <div
+                                    class="qual-star flex jc-end m-auto p-top-10"
+                                >
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i
+                                        class="fa-regular fa-star-half-stroke"
+                                    ></i>
+                                </div>
+                                <h2>Dias y horarios:</h2>
+                                <p class="fs-15">
+                                    Días de semana: de <%=
+                                    activity.time_start %> a <%=
+                                    activity.time_end %> <%=
+                                    activity.time_start ? ` y de
+                                    ${activity.time_start} a
+                                    ${activity.time_end}`: ""; %>
+                                </p>
+                                <p class="fs-15">
+                                    Fines de semana: de <%=
+                                    activity.wknd_time_start %> a <%=
+                                    activity.wknd_time_end %> <%=
+                                    activity.wknd_time_start ? ` y de
+                                    ${activity.wknd_time_start} a
+                                    ${activity.wknd_time_end}`: "";
+                                    %>
+                                </p>
+                            </div>
+                            <div class="flex jc-center p-10px">
+                                <a
+                                    href="/activities"
+                                    class="cottage-button bg-3 txt-center"
+                                >
+                                    Reservar
+                                </a>
+                            </div>
+                        </li>
+                        <% }); %>
+                        
+                    </ul>
+                </div>
+            </div>
+        </article>
     </section>
+ </section>
 
 
     <%- include("./partials/footer") %>
