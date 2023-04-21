@@ -110,9 +110,71 @@
                             class="of-hidden cont-activity bg-5 m-auto w-80"
                         >
                             <ul id="act-list" class="flex of-auto">
+<<<<<<< HEAD
+                                <% activities.forEach(activity => { %>
+
+                                <li
+                                    class="list-card border-rad p-10px flex flex-d-column jc-bet"
+                                >
+                                    <div class="act-inf">
+                                        <h2 class="txt-center">
+                                            <%= activity.title %>
+                                        </h2>
+                                        <figure
+                                            class="cont-card-img m-auto of-hidden m-auto flex jc-center al-items pos-relative"
+                                        >
+                                            <img
+                                                class="act-img pos-absolute"
+                                                src="<%= activity.images[0]?.image || activity.images[0]%>"
+                                                alt="Actividad"
+                                            />
+                                        </figure>
+                                        <div
+                                            class="qual-star flex jc-end m-auto p-top-10"
+                                        >
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i
+                                                class="fa-regular fa-star-half-stroke"
+                                            ></i>
+                                        </div>
+                                        <h2>Dias y horarios:</h2>
+                                        <p class="fs-15">
+                                            Días de semana: de <%=
+                                            activity.time_start %> a <%=
+                                            activity.time_end %> <%=
+                                            activity.time_start ? ` y de
+                                            ${activity.time_start} a
+                                            ${activity.time_end}`: ""; %>
+                                        </p>
+                                        <p class="fs-15">
+                                            Fines de semana: de <%=
+                                            activity.wknd_time_start %> a <%=
+                                            activity.wknd_time_end %> <%=
+                                            activity.wknd_time_start ? ` y de
+                                            ${activity.wknd_time_start} a
+                                            ${activity.wknd_time_end}`: "";
+                                            %>
+                                        </p>
+                                    </div>
+                                    <div class="flex jc-center p-10px">
+                                        <a
+                                            href="/activities"
+                                            class="cottage-button bg-3 txt-center"
+                                        >
+                                            Más información
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <% }); %>
+=======
                                 <% activities.forEach(activity => { %> <%-
                                 include('./partials/activity-card',{activity})
                                 %> <% }); %>
+>>>>>>> 15c3ebc49350f043af948f1880ee20dccc7076fc
                             </ul>
                         </article>
                     </div>
