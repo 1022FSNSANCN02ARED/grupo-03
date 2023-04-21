@@ -73,8 +73,8 @@
                 </div>
             </div>
             <aside class="p-1rem aside-prod-detail box-shadow">
-                <form action="" method="get" class="flex flex-wrap">
-                    <h3 class="aside-precio p-bot-20px">Por noche: <span class="price"><%= cottage.price %></span> $ARS</h3>
+                <div class="flex flex-wrap">
+                    <h3 class="aside-precio p-bot-20px">Por noche: $ARS <span class="price"><%= cottage.price %></span></h3>
 
                     <div class="desde-hasta flex jc-evenly txt-center">
                         <div class="check-info bg-4 p-5px border-rad">
@@ -106,16 +106,15 @@
                     <input
                         type="text"
                         name="cupon"
-                        id="cupon"
-                        class="input-cupon fc-37 bg-5 flex-grow"
+                        class="input-cupon fc-37 bg-5 flex-grow input-discount"
                         placeholder="¿Cupón de descuento?"
-                    /><button class="input-cupon bg-5">
+                    /><button class="input-cupon bg-5 discount-button">
                         <i class="fa-solid fa-play fc-3"></i>
                     </button>
-                    <h3 class="aside-total">Total: <span class="total-info"></span></h3>
+                    <h3 class="aside-total">Total: $ARS <span class="total-info">0</span> </h3>
 
                     <a href="/product/cart" class="aside-but fs-18">Reservar</a>
-                </form>
+                </div>
             </aside>
         </section>
         <hr class="hr" />
@@ -150,9 +149,9 @@
 
         <article class="fc-37 border-top bg-5 pos-fixed w-100 p-5px">
             <div class="flex flex-wrap p-2px w-100">
-                <h3 class="article-precio"><span class="price"><%= cottage.price %></span> $ARS</h3>
+                <h3 class="article-precio">$ARS <span class="price"><%= cottage.price %></span></h3>
                 <p class="article-x-noche">x noche</p>
-                <h3 class="article-total">Total <span class="total-info"></span></h3>
+                <h4 class="article-total w-100">Total: $ARS <span class="total-info">0</span></h4>
             </div>
             <div class="flex flex-wrap p-2px w-100">
                 <h4 class="desde-hasta">Desde: <span class="check-in-info">DD/MM/AAAA</span> Hasta: <span class="check-out-info">DD/MM/AAAA</span></h4>
@@ -161,10 +160,9 @@
                     <input
                         type="text"
                         name="cupon"
-                        id="cupon"
-                        class="input-cupon fc-37 bg-5 flex-grow"
+                        class="input-cupon fc-37 bg-5 flex-grow input-discount"
                         placeholder="¿Cupón de descuento?"
-                    /><button class="input-cupon bg-5">
+                    /><button class="input-cupon bg-5 discount-button">
                         <i class="fa-solid fa-play fc-3"></i>
                     </button>
                     <a href="/product/cart" class="but-reserva- fs-18"

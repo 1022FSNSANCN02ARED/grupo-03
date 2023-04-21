@@ -10,7 +10,11 @@ const totalInfo = document.querySelectorAll(".total-info");
 // Capturar el precio
 const price = document.querySelector(".price");
 
-// Saber en que momento se actualizan
+// Capturo el input de código de descuento y el botón
+const inputDiscount = document.querySelectorAll(".input-discount");
+const discountButton = document.querySelectorAll(".discount-button");
+
+// Saber en que momento se actualizan el dateIn y el dateOut
 for (const dateInput of dateInputs) {
     dateInput.addEventListener("change", (event) => {
         const dateInInput = new Date(dateInput.value);
@@ -32,25 +36,58 @@ for (const dateInput of dateInputs) {
             );
             // Agregar los dias de diferencia en los lugares correspondientes.
             rentalDaysInfo.forEach((infoRentalDay) => {
-                infoRentalDay.innerText = rentalDays;
+                infoRentalDay.innerHTML = rentalDays;
             });
 
             // Calcular cuanto saldrá el total, días x precio por noche
-            const total = Number(price.innerText) * rentalDays;
+            const total = Number(price.innerHTML) * rentalDays;
             // Colocarlo en donde debe ir.
-            totalInfo.forEach(
-                (totalInfo) => (totalInfo.innerText = total + " $ARS")
-            );
+            totalInfo.forEach((totalInfo) => (totalInfo.innerHTML = total));
         }
     });
 }
+
+// Hace un pedido asíncronico a la db con un fetch
+let discounts = null;
+
+fetch("http://localhost:3000/api/discounts")
+    .then((response) => {
+        return response.json();
+    })
+    .then((result) => {
+        discounts = result.map((discount) => {
+            return {
+                code: discount.code,
+                discount: discount.discount,
+            };
+        });
+    });
+
+// Saber en qué momento se agrega un cupon de descuento
+discountButton.forEach(async (button) => {
+    button.addEventListener("click", (e) => {
+        inputDiscount.forEach((input) => {
+            const discount = discounts.find((d) => {
+                return d.code === input.value;
+            });
+            if (totalInfo[0].innerHTML > 0 && discount) {
+                console.log("Descuento aplicado");
+                const total = totalInfo[0].innerHTML;
+                const totalWithDiscount = total - total / discount.discount;
+                totalInfo.forEach(
+                    (totalInfo) =>
+                        (totalInfo.innerHTML = `${totalWithDiscount}  <span class="fs-15"> <s class="fs-15">${total}</s> %${discount.discount}off</span>`)
+                );
+            }
+        });
+    });
+});
 
 const validations = {
     rentalDays(dateInTime, dateOutTime) {
         // Tomamos los milisegundos de cada día
         const millisecondsDateIn = new Date(dateInTime).getTime();
         const millisecondsDateOut = new Date(dateOutTime).getTime();
-        console.log(millisecondsDateIn);
 
         // Sacamos la diferencia entre cada día
         const diferentTime = millisecondsDateOut - millisecondsDateIn;
@@ -59,14 +96,13 @@ const validations = {
         const milliseconsPerDay = 1000 * 60 * 60 * 24;
         const rentalDays = diferentTime / milliseconsPerDay;
 
-        console.log(rentalDays);
         // Retornamos el resultado
         return rentalDays;
     },
 
     writeSpans(dateInInput, spansInfo) {
         for (let span of spansInfo) {
-            span.innerText = `${dateInInput.getDate()}/${(
+            span.innerHTML = `${dateInInput.getDate()}/${(
                 dateInInput.getMonth() + 1
             )
                 .toString()
