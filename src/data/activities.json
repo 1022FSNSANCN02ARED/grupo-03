@@ -1,46 +1,45 @@
 [
-  {
-    "id": 1,
-    "title": "Senderismo",
-    "images": ["/images/cottageImages/pinos01.jpg"],
-    "description": "Lorem ipsum dolor",
-    "time_start": ["6:00 AM", "6:30 PM"],
-    "time_end": ["11:30 AM", "10:30 PM"],
-    "wknd_time_start": ["11:00 AM"],
-    "wknd_time_end": ["4:00 PM"],
-    "instructor": ["Cosme Fulanito", "Carlos Santana"]
-  },
-  {
-    "id": 2,
-    "title": "Fogata",
-    "images": ["/images/cottageImages/pinos02.jpg"],
-    "description": "Lorem ipsum dolor",
-    "time_start": ["7:00 PM"],
-    "time_end": ["12:00 AM"],
-    "wknd_time_start": ["7:00 PM"],
-    "wknd_time_end": ["1:30 AM"],
-    "instructor": ["Cosme Fulanito"]
-  },
-  {
-    "id": 3,
-    "title": "Senderismo",
-    "images": ["/images/cottageImages/pinos03.jpg"],
-    "description": "Lorem ipsum dolor",
-    "time_start": ["6:00 AM", "6:30 PM"],
-    "time_end": ["11:30 AM", "10:30 PM"],
-    "wknd_time_start": ["11:00 AM"],
-    "wknd_time_end": ["4:00 PM"],
-    "instructor": ["Cosme Fulanito", "Carlos Santana"]
-  },
-  {
-    "id": 4,
-    "title": "Senderismo",
-    "images": ["/images/cottageImages/pinos04.jpg"],
-    "description": "Lorem ipsum dolor",
-    "time_start": ["6:00 AM", "6:30 PM"],
-    "time_end": ["11:30 AM", "10:30 PM"],
-    "wknd_time_start": ["11:00 AM"],
-    "wknd_time_end": ["4:00 PM"],
-    "instructor": ["Cosme Fulanito", "Carlos Santana", "Alguien más"]
-  }
+    {
+        "id": 1,
+        "title": "Senderismo",
+        "images": [{ "image": "/images/cottageImages/pinos01.jpg" }],
+        "description": "Lorem ipsum dolor",
+        "instructor": ["Cosme Fulanito", "Carlos Santana"],
+        "hours": {
+            "weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM",
+            "second_weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM",
+            "weekend_hours": "desde: 7:00 AM, hasta: 11:00 AM"
+        }
+    },
+    {
+        "id": 2,
+        "title": "Fogata",
+        "images": [{ "image": "/images/cottageImages/pinos02.jpg" }],
+        "description": "Lorem ipsum dolor",
+        "instructor": ["Cosme Fulanito"],
+        "hours": {
+            "weekday_hours": "algdesde: 7:00 AM, hasta: 11:00 AMo",
+            "weekend_hours": "desde: 7:00 AM, hasta: 11:00 AM"
+        }
+    },
+    {
+        "id": 3,
+        "title": "Senderismo",
+        "images": [{ "image": "/images/cottageImages/pinos03.jpg" }],
+        "description": "Lorem ipsum dolor",
+        "instructor": ["Cosme Fulanito", "Carlos Santana"],
+        "hours": { "weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM" }
+    },
+    {
+        "id": 4,
+        "title": "Senderismo",
+        "images": [{ "image": "/images/cottageImages/pinos04.jpg" }],
+        "description": "Lorem ipsum dolor",
+        "instructor": ["Cosme Fulanito", "Carlos Santana", "Alguien más"],
+        "hours": {
+            "weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM",
+            "second_weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM",
+            "weekend_hours": "desde: 7:00 AM, hasta: 11:00 AM"
+        }
+    }
 ]

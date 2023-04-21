@@ -1,14 +1,20 @@
 const { body } = require("express-validator");
+const { Users } = require("../database/models");
 
 module.exports = [
     body("name").notEmpty().withMessage("Debe introducir un nombre."),
     body("surname").notEmpty().withMessage("Debe introducir un apellido."),
     body("email")
-        .notEmpty()
-        .withMessage("Debe introducir un correo electrónico.")
-        .bail()
         .isEmail()
-        .withMessage("Debe introducir un correo electrónico valido."),
+        .withMessage("Debe introducir un correo electrónico valido.")
+        .bail()
+        .custom(async (value) => {
+            const emailExist = await Users.findOne({ where: { email: value } });
+            if (emailExist) {
+                throw new Error("Este email ya existe");
+            }
+            return true;
+        }),
     body("password")
         .notEmpty()
         .withMessage("Debe introducir una contraseña.")

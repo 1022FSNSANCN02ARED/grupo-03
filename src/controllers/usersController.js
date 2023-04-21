@@ -14,7 +14,7 @@ module.exports = {
             first_name: req.body.name,
             last_name: req.body.surname,
             phone_number: req.body.phone_number,
-            email: req.body.email,
+            email: req.body.email.toLowerCase(),
             password: bcryptjs.hashSync(req.body.password, 10),
         };
         if (req.file) {
