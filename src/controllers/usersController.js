@@ -1,7 +1,6 @@
 const serv = require("../data/serv");
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
-
 module.exports = {
     showLogin: (req, res) => {
         res.render("login");
@@ -25,7 +24,6 @@ module.exports = {
 
         try {
             db.Users.create(user);
-            console.log(db.Users);
         } catch (error) {
             console.log(error);
             serv.uploadData("users.json", user);
@@ -39,14 +37,46 @@ module.exports = {
     },
     showEdit: (req, res) => {
         // en la variable "user" estará guardada la información del usuario que este en línea en ese momento.
-        res.render("edit-user", { user: req.session.userLog });
+        const errores = req.session.errores;
+        const oldData = req.session.oldData;
+        req.session.errores = null;
+        req.session.oldData = null;
+        res.render("edit-user", {
+            user: req.session.userLog,
+            errores,
+            oldData,
+        });
     },
     edit: (req, res) => {
-        const user = {
-            name: req.body.name,
-            surname: req.body.surname,
+        let user = {
+            ...req.session.userLog,
+            first_name: req.body.name,
+            last_name: req.body.surname,
+            phone_number: req.body.phone_number,
+            email: req.body.email.toLowerCase(),
         };
-        serv.editData("users.json", req.params.id, user);
+        if (req.file) {
+            user.avatar = "/images/avatars/" + req.file.filename;
+        } else {
+            user.avatar = "/images/avatars/usuarioDefault.jpg";
+        }
+
+        try {
+            db.Users.update(
+                {
+                    ...user,
+                },
+                {
+                    where: {
+                        id: req.params.id,
+                    },
+                }
+            );
+            req.session.userLog = user;
+        } catch (error) {
+            console.log(error);
+        }
+        // serv.editData("users.json", req.params.id, user);
         res.redirect("/");
     },
 };

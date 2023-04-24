@@ -1,33 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <%- include("./partials/head") %>
+        <title>Editar perfil</title>
+    </head>
 
-<head>
-  <%- include("./partials/head") %>
-    <title>Editar perfil</title>
-</head>
+    <body>
+        <%- include("./partials/nav-login-register", {title: "Editar usuario"})
+        %>
 
-<body>
-  <%- include("./partials/nav-login-register", {title: "Editar usuario"}) %>
-    <div class="flex jc-center f-f">
-      <h1 class="title-register txt-center">Editar información personal</h1>
-      <button class="but-back bg-3"><a href="/"><i class="fa-solid fa-arrow-left" id="arrow"></i></a></button>
-    </div>
+        <div class="f-f">
+            <form
+                action="/user/edit/<%= user.id %>?_method=PUT"
+                method="post"
+                class="form bg-4 box-shadow"
+            >
+                <div>
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Nombre"
+                        class="f-input f-f"
+                        value="<%= locals.errores?.name ? oldData.name : user.first_name; %>"
+                    />
+                    <% if (locals.errores?.name){ %>
+                    <p class="txt-error"><%= errores.name.msg %></p>
+                    <% }%>
+                    <input
+                        type="text"
+                        name="surname"
+                        id="surname"
+                        placeholder="Apellido"
+                        class="f-input f-f"
+                        value="<%= locals.errores?.surname ? oldData.surname : user.last_name; %>"
+                    />
+                    <% if (locals.errores?.surname){ %>
+                    <p class="txt-error"><%= errores.surname.msg %></p>
+                    <% }%>
+                    <input
+                        type="text"
+                        name="email"
+                        id="email"
+                        placeholder="Email"
+                        class="f-input f-f"
+                        value="<%= locals.errores?.email ? oldData.email : user.email; %>"
+                    />
+                    <% if (locals.errores?.email){ %>
+                    <p class="txt-error"><%= errores.email.msg %></p>
+                    <% }%>
+                    <input
+                        type="text"
+                        name="phone_number"
+                        id="phone_number"
+                        placeholder="número de teléfono"
+                        class="f-input f-f"
+                        value="<%= locals.errores?.phone_number ? oldData.phone_number : user.phone_number; %>"
+                    />
+                    <input
+                        type="file"
+                        name="file"
+                        id="file"
+                        class="f-input f-f"
+                        accept=".jpg, .png, .jpeg"
+                    />
 
-
-    <div class="f-f">
-      <form action="/user/edit/<%= user.id %>?_method=PUT" method="post" class="form bg-4 box-shadow">
-        <div>
-          <input type="text" name="name" id="name" placeholder="Nombre" class=" f-input f-f" value="<%= user.name %>">
-          <input type="text" name="surname" id="surname" placeholder="Apellido" class="f-input f-f" value="<%= user.surname %>">
-          <div class="flex flex-wrap jc-center ">
-            <input type="submit" id="register" class="f-submit bg-2 f-f" value="Editar">
-          </div>
+                    <div class="flex flex-wrap jc-center">
+                        <input
+                            type="submit"
+                            id="register"
+                            class="f-submit bg-2 f-f"
+                            value="Editar"
+                        />
+                    </div>
+                </div>
+            </form>
         </div>
-      </form>
-    </div>
 
-    <%- include("./partials/footer") %>
-
-</body>
-
+        <%- include("./partials/footer") %>
+    </body>
 </html>
