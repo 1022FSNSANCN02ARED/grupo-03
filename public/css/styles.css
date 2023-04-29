@@ -54,6 +54,10 @@ body {
     border-radius: 10px;
 }
 
+.border-none {
+    border: none;
+}
+
 .box-shadow {
     box-shadow: 0px 0px 10px rgb(137, 137, 137);
 }
@@ -117,6 +121,10 @@ body {
 
 .al-items {
     align-items: center;
+}
+
+.m-5 {
+    margin: 5px;
 }
 
 .m-10 {
@@ -253,6 +261,9 @@ grisclaro #f1f7ed */
 }
 .bg-5 {
     background-color: #f1f7ed;
+}
+.bg-6 {
+    background-color: #ffffff;
 }
 
 .fc-37 {
