@@ -60,7 +60,6 @@ addHours.forEach((addButton) => {
 
 // Cuando se deje de tener el foco en estos inputs, van a ver si mostrar o no el botón de "Agregar horario"
 firstHoursInputs.forEach((input) => {
-    console.log(input);
     input.addEventListener("blur", (e) => {
         // Definimos si es un input de "weekday" o de "weekend".
         const day = input.id.includes("weekday") ? "weekday" : "weekend";

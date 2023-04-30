@@ -1,0 +1,44 @@
+<div id="<%= day %>-hours">
+  <h3 class="m-auto"><%= title %></h3>
+  <div id="first-<%= day %>-hours">
+    <div class="flex flex-wrap">
+      <p class="fs-18 w-100">
+        Desde:
+        <label for="<%= day %>-in" class="label-hours pointer">
+          _ _ _ _
+        </label>
+        , Hasta:
+        <label for="<%= day %>-out" class="label-hours pointer">
+          _ _ _ _
+        </label>
+      </p>
+      <p id="add-second-<%= day %>-hours" class="add-hours fs-15 p-2px m-5 pointer hide">
+        <i class="fa-solid fa-plus"></i>
+        Agregar horario
+      </p>
+    </div>
+    <div class="first-hours-inputs flex jc-center">
+      <input type="time" name="<%= day %>-in" id="<%= day %>-in" class="first-hours-input border-none input-hours p-5px border-rad hide" />
+      <input type="time" name="<%= day %>-out" id="<%= day %>-out" class="first-hours-input border-none input-hours p-5px border-rad hide" />
+    </div>
+  </div>
+
+  <div id="second-<%= day %>-hours" class="hide">
+    <div class="flex flex-wrap">
+      <p class="fs-18 w-100">
+        y Desde:
+        <label for="second-<%= day %>-in" class="label-hours pointer">
+          _ _ _ _
+        </label>
+        , Hasta:
+        <label for="second-<%= day %>-out" class="label-hours pointer">
+          _ _ _ _
+        </label>
+      </p>
+    </div>
+    <div class="second-hours-inputs flex jc-center">
+      <input type="time" name="second-<%= day %>-in" id="second-<%= day %>-in" class="border-none input-hours p-5px border-rad hide" />
+      <input type="time" name="second-<%= day %>-out" id="second-<%= day %>-out" class="border-none input-hours p-5px border-rad hide" />
+    </div>
+  </div>
+</div>
