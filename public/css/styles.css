@@ -203,6 +203,10 @@ body {
     position: relative;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .title {
     font-size: 2rem;
 }
@@ -759,6 +763,13 @@ footer h1 {
 .ul-footer {
     margin: 10px 30px 10px 30px;
     width: 100%;
+}
+
+/*-------------- forms */
+
+.add-hours {
+    color: #044a55;
+    font-weight: bold;
 }
 
 /*-------------- media queries */

@@ -32,28 +32,72 @@
 
     <div id="activity-hours" class="">
         <h2 class="m-auto txt-center">Horarios</h2>
-        <h4 class="m-auto">Día de semana:</h4>
-        <div id="first_hours" class="flex flex-wrap">
-            <p>
-                Desde:
-                <label for="weekday-in" class="label-hours">_ _ _ _</label>
-                , Hasta:
-                <label for="weekday-out" class="label-hours">_ _ _ _</label>
-            </p>
-            <input
-                type="time"
-                name="weekday-in"
-                id="weekday-in"
-                class="bg-6 border-none input-hours hide"
-            />
-            <input
-                type="time"
-                name="weekday-out"
-                id="weekday-out"
-                class="bg-6 border-none input-hours hide"
-            />
+        <h3 class="m-auto">Día de semana:</h3>
+
+        <div id="first-weekday-hours">
+            <div class="flex flex-wrap">
+                <p class="fs-18 w-100">
+                    Desde:
+                    <label for="weekday-in" class="label-hours pointer">
+                        _ _ _ _
+                    </label>
+                    , Hasta:
+                    <label for="weekday-out" class="label-hours pointer">
+                        _ _ _ _
+                    </label>
+                </p>
+                <p
+                    id="add-second-weekday-hours"
+                    class="add-hours fs-15 p-2px m-5 pointer"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Agregar horario
+                </p>
+            </div>
+            <div class="first-hours-inputs flex jc-center">
+                <input
+                    type="time"
+                    name="weekday-in"
+                    id="weekday-in"
+                    class="border-none input-hours p-5px border-rad hide"
+                />
+                <input
+                    type="time"
+                    name="weekday-out"
+                    id="weekday-out"
+                    class="border-none input-hours p-5px border-rad hide"
+                />
+            </div>
         </div>
-        <a class="">agregar segundo horario</a>
+
+        <div id="second-weekday-hours" class="hide">
+            <div class="flex flex-wrap">
+                <p class="fs-18 w-100">
+                    y Desde:
+                    <label for="second-weekday-in" class="label-hours pointer">
+                        _ _ _ _
+                    </label>
+                    , Hasta:
+                    <label for="second-weekday-out" class="label-hours pointer">
+                        _ _ _ _
+                    </label>
+                </p>
+            </div>
+            <div class="second-hours-inputs flex jc-center">
+                <input
+                    type="time"
+                    name="second-weekday-in"
+                    id="second-weekday-in"
+                    class="border-none input-hours p-5px border-rad hide"
+                />
+                <input
+                    type="time"
+                    name="second-weekday-out"
+                    id="second-weekday-out"
+                    class="border-none input-hours p-5px border-rad hide"
+                />
+            </div>
+        </div>
     </div>
 
     <label for="images"></label>
