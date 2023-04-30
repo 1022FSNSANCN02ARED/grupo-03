@@ -7,6 +7,9 @@ const inputsHours = document.querySelectorAll(".input-hours");
 // Capturamos los "Agregar horario"
 const addHours = document.querySelectorAll(".add-hours");
 
+// Capturamos los inputs de horarios, solo los primeros de "weekday" y "weekend".
+const firstHoursInputs = document.querySelectorAll(".first-hours-input");
+
 // Cuando se precione un label, mostraremos uno de los inputs.
 labelsHours.forEach((labelHours) => {
     labelHours.addEventListener("click", (e) => {
@@ -44,15 +47,33 @@ addHours.forEach((addButton) => {
         // Eliminando los primeros 4 caracteres, ya que empiezan "add-..."
         const idButton = addButton.id.slice(4);
 
-        console.log(idButton);
         // Capturamos el div que se tendrá que mostrar, para que se muestren esos 2 inputs.
         const divInputs = document.getElementById(idButton);
-        console.log(divInputs);
 
         // Quitamos la clase "hide" del div.
         divInputs.classList.remove("hide");
 
         // Ocultamos el botón de "Agregar horario"
         addButton.classList.add("hide");
+    });
+});
+
+// Cuando se deje de tener el foco en estos inputs, van a ver si mostrar o no el botón de "Agregar horario"
+firstHoursInputs.forEach((input) => {
+    console.log(input);
+    input.addEventListener("blur", (e) => {
+        // Definimos si es un input de "weekday" o de "weekend".
+        const day = input.id.includes("weekday") ? "weekday" : "weekend";
+
+        // Capturamos los input de "in" y "out".
+        const inputIn = document.getElementById(`${day}-in`);
+        const inputOut = document.getElementById(`${day}-out`);
+
+        // Si ambos tienen valores, se mostrará el botón de "Agregar horario"
+        if (Boolean(inputIn.value) && Boolean(inputOut.value)) {
+            // Captura el botón de "Agregar horario", ya sea de "weekday" o de "weekend".
+            const button = document.getElementById(`add-second-${day}-hours`);
+            button.classList.remove("hide");
+        }
     });
 });
