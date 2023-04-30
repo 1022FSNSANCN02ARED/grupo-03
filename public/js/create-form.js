@@ -10,6 +10,9 @@ const addHours = document.querySelectorAll(".add-hours");
 // Capturamos los inputs de horarios, solo los primeros de "weekday" y "weekend".
 const firstHoursInputs = document.querySelectorAll(".first-hours-input");
 
+// Capturamos los botones para mostrar el apartado de agregar horarios
+const addHoursButtons = document.querySelectorAll(".select-hours-button");
+
 // Cuando se precione un label, mostraremos uno de los inputs.
 labelsHours.forEach((labelHours) => {
     labelHours.addEventListener("click", (e) => {
@@ -73,6 +76,34 @@ firstHoursInputs.forEach((input) => {
             // Captura el botón de "Agregar horario", ya sea de "weekday" o de "weekend".
             const button = document.getElementById(`add-second-${day}-hours`);
             button.classList.remove("hide");
+        }
+    });
+});
+
+// Cuando se aprete uno de los botones, se va a mostrar el div correspondiente.
+
+addHoursButtons.forEach((hoursButton) => {
+    hoursButton.addEventListener("click", (e) => {
+        // Guardamos el id del botón
+        // Sin los 5 primeros caracteres, que sería "show-"
+        const idButton = hoursButton.id.slice(5);
+
+        // Capturamos el div que corresponde al botón. Y lo mostramos
+        const divHours = document.getElementById(idButton);
+        divHours.classList.remove("hide");
+
+        // Ocultamos el botón que apretamos
+        hoursButton.classList.add("hide");
+
+        // Si ambos botones estan ocultos, ocultamos también la sección.
+        const weekDayHide = addHoursButtons[0].classList.contains("hide");
+        const weekEndHide = addHoursButtons[1].classList.contains("hide");
+
+        if (weekDayHide && weekEndHide) {
+            const sectionAddHours =
+                document.getElementById("add-hours-buttons");
+
+            sectionAddHours.classList.add("hide");
         }
     });
 });

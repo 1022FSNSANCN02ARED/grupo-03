@@ -772,6 +772,11 @@ footer h1 {
     font-weight: bold;
 }
 
+.select-hours-button {
+    background-color: #f1f7ed;
+    border: #044a55 2px solid;
+}
+
 /*-------------- media queries */
 @media (min-width: 488px) {
     .article-precio {

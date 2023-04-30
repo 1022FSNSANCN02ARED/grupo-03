@@ -9,14 +9,15 @@
   <input type="number" name="max-place" id="max-place" class="f-input" placeholder="Cantidad máxima de personas" />
 
   <div id="activity-hours">
-    <h2 class="m-auto txt-center">
-      Horarios
-    </h2>
+    <h2 class="m-auto txt-center">Horarios</h2>
 
     <!-- Días de semana -->
     <%- include('./hours-section', {day: "weekday", title: "Día de semana:"}) %>
     <!-- Días de fin semana -->
-    <%- include('./hours-section', {day: "weekend", title: "Día de fin de semana"}) %>
+    <%- include('./hours-section', {day: "weekend", title: "Fin de semana"}) %>
+
+    <!-- botones para mostrar cada horario -->
+    <%- include('./add-hours-buttons') %>
   </div>
 
   <label for="images"></label>
