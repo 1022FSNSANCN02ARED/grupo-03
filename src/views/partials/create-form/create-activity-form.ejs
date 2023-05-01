@@ -1,32 +1,37 @@
-<form action="/activities/create" method="post" class="flex flex-d-column w-90 m-auto p-10px bg-4 border-rad">
-  <label for="name"></label>
-  <input type="text" name="name" id="name" class="f-input" placeholder="Nombre" />
+<form action="/activities/create" method="post" id="activity-form" class="flex flex-wrap jc-evenly w-90 m-auto p-10px bg-4 border-rad">
+  <div class="first-section-form flex flex-d-column w-100">
 
-  <label for="price"></label>
-  <input type="number" name="price" id="price" class="f-input" placeholder="Precio" />
+    <h2 class="form-section-title m-10 p-5px txt-center">General</h2>
 
-  <label for="max-place"></label>
-  <input type="number" name="max-place" id="max-place" class="f-input" placeholder="Cantidad máxima de personas" />
+    <label for="name"></label>
+    <input type="text" name="name" id="name" class="f-input" placeholder="Nombre" />
 
-  <div id="activity-hours">
-    <h2 class="m-auto txt-center">Horarios</h2>
+    <label for="price"></label>
+    <input type="number" name="price" id="price" class="f-input" placeholder="Precio" />
 
-    <!-- Días de semana -->
-    <%- include("./hours-section", {day: "weekday", title: "Día de semana:"}) %>
-    <!-- Días de fin semana -->
-    <%- include("./hours-section", {day: "weekend", title: "Fin de semana"}) %>
+    <label for="max-place"></label>
+    <input type="number" name="max-place" id="max-place" class="f-input" placeholder="Cantidad máxima de personas" />
 
-    <!-- botones para mostrar cada horario -->
-    <%- include("./add-hours-buttons") %>
+    <div id="activity-hours">
+      <h2 class="form-section-title m-10 p-5px txt-center">Horarios</h2>
+      <!-- Días de semana -->
+      <%- include("./hours-section", {day: "weekday", title: "Día de semana:"}) %>
+      <!-- Días de fin semana -->
+      <%- include("./hours-section", {day: "weekend", title: "Fin de semana"}) %>
+      <!-- botones para mostrar cada horario -->
+      <%- include("./add-hours-buttons") %>
+    </div>
   </div>
 
-  <!-- input para imágenes y previsualización de imágenes -->
-  <%- include("./img-section") %>
+  <div class="second-section-form flex flex-d-column w-100">
+    <!-- input para imágenes y previsualización de imágenes -->
+    <%- include("./img-section") %>
+    <h2 class="form-section-title m-10 p-5px txt-center">Descripción</h2>
+    <label for="description"></label>
+    <textarea name="description" id="description" placeholder="descripción" class="m-10 p-10px"></textarea>
+  </div>
 
-
-  <div id="prev-images"></div>
-
-  <label for="description"></label>
-  <textarea name="description" id="description" placeholder="descripción" class="m-10 p-10px"></textarea>
-  <button type="submit">Crear</button>
+  <div class="w-100 txt-center">
+    <button type="submit">Crear</button>
+  </div>
 </form>
