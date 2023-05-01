@@ -13,6 +13,10 @@ const firstHoursInputs = document.querySelectorAll(".first-hours-input");
 // Capturamos los botones para mostrar el apartado de agregar horarios
 const addHoursButtons = document.querySelectorAll(".select-hours-button");
 
+// Capturamos el input que carga imágenes, y sus img de previsualización
+const imagesInput = document.getElementById("images-input");
+const previewImages = document.querySelectorAll(".preview-img");
+
 // Cuando se precione un label, mostraremos uno de los inputs.
 labelsHours.forEach((labelHours) => {
     labelHours.addEventListener("click", (e) => {
@@ -106,4 +110,19 @@ addHoursButtons.forEach((hoursButton) => {
             sectionAddHours.classList.add("hide");
         }
     });
+});
+
+// Cuando se agregan imágenes, se muestran en los espacios.
+imagesInput.addEventListener("change", () => {
+    for (let i = 0; i < imagesInput.files.length; i++) {
+        const file = imagesInput.files[i];
+        const reader = new FileReader();
+
+        reader.addEventListener("load", () => {
+            previewImages[i].src = reader.result;
+        });
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
 });

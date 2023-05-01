@@ -774,7 +774,22 @@ footer h1 {
 
 .select-hours-button {
     background-color: #f1f7ed;
-    border: #044a55 2px solid;
+    border: #07889b 2px solid;
+}
+
+.preview-img-containter {
+    position: relative;
+    background-color: #f1f7ed;
+    border: #0e0e0e solid 1px;
+    width: 35%;
+    min-height: 70px;
+    overflow: hidden;
+}
+
+.preview-img {
+    position: absolute;
+    max-width: 200%;
+    max-height: 200%;
 }
 
 /*-------------- media queries */

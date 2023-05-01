@@ -12,16 +12,17 @@
     <h2 class="m-auto txt-center">Horarios</h2>
 
     <!-- Días de semana -->
-    <%- include('./hours-section', {day: "weekday", title: "Día de semana:"}) %>
+    <%- include("./hours-section", {day: "weekday", title: "Día de semana:"}) %>
     <!-- Días de fin semana -->
-    <%- include('./hours-section', {day: "weekend", title: "Fin de semana"}) %>
+    <%- include("./hours-section", {day: "weekend", title: "Fin de semana"}) %>
 
     <!-- botones para mostrar cada horario -->
-    <%- include('./add-hours-buttons') %>
+    <%- include("./add-hours-buttons") %>
   </div>
 
-  <label for="images"></label>
-  <input type="file" name="images" id="images" multiple />
+  <!-- input para imágenes y previsualización de imágenes -->
+  <%- include("./img-section") %>
+
 
   <div id="prev-images"></div>
 
