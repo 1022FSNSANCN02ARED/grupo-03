@@ -3,7 +3,7 @@
 -   Más de:
     dailys.
     constancia.
-    más comunicación.
+    más comunicación
 
 -   Seguir haciendo:
     separar las tareas en el Trello.
