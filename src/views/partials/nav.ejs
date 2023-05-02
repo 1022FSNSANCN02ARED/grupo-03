@@ -1,46 +1,38 @@
 <div class="fixed-navbar flex pos-fixed w-100 bg-5">
-    <a href="/">
-        <img
-            src="/images/logo-domum.png"
-            alt="Logo de Domum"
-            class="logo-domum"
-        />
+  <a href="/">
+    <img src="/images/logo-domum.png" alt="Logo de Domum" class="logo-domum" />
+  </a>
+  <nav class="page-navbar hide grow-1">
+    <ul class="flex fs-15">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="#info-general">Nosotros</a></li>
+      <li><a href="#cottages">Cabañas</a></li>
+      <li><a href="#activities">Actividades</a></li>
+      <li><a href="#footer">Contacto</a></li>
+    </ul>
+  </nav>
+  <div class="header-buttons flex al-items">
+    <a href="/product/cart" class="r">
+      <i class="fa-solid fa-cart-shopping cart-icon"></i>
     </a>
-    <nav class="page-navbar hide grow-1">
-        <ul class="flex fs-15">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="#info-general">Nosotros</a></li>
-            <li><a href="/generalCab">Cabañas</a></li>
-            <li><a href="/activities">Actividades</a></li>
-            <li><a href="#footer">Contacto</a></li>
-        </ul>
-    </nav>
-    <div class="header-buttons flex al-items">
-        <a href="/product/cart" class="r">
-            <i class="fa-solid fa-cart-shopping cart-icon"></i>
-        </a>
 
-        <!-- Revisa si existe la variable local "userLog" que crea el middleware "userLogMiddleware" -->
-        <% if (!!userLog) { %>
-        <a href="#" class="flex al-items pos-relative">
-            <img
-                src="/images/avatars/usuarioDefault.jpg"
-                alt="foto de perfil"
-                class="user-avatar pos-relative"
-            />
-            <!-- Por ahora dice Carlos Santana, luego dirá el nombre del ususario. -->
-            <p class="fs-15 user-name border-rad hide">Carlos Santana</p>
-        </a>
-        <% } else { %>
-        <a href="/user/login">
-            <button class="login-button fs-18 bg-3 hide fc-5">Ingresar</button>
-        </a>
-        <a href="/user/register">
-            <button class="sing-in-button hide fs-18 bg-3 fc-5">
-                Crear cuenta
-            </button>
-        </a>
-        <% } %>
-        <i class="fa-solid fa-bars burguer-menu"></i>
-    </div>
+    <!-- Revisa si existe la variable local "userLog" que crea el middleware "userLogMiddleware" -->
+    <% if (!!userLog) { %>
+    <a href="#" class="flex al-items pos-relative">
+      <img src="/images/avatars/usuarioDefault.jpg" alt="foto de perfil" class="user-avatar pos-relative" />
+      <!-- Por ahora dice Carlos Santana, luego dirá el nombre del ususario. -->
+      <p class="fs-15 user-name border-rad hide">Carlos Santana</p>
+    </a>
+    <% } else { %>
+    <a href="/user/login">
+      <button class="login-button fs-18 bg-3 hide fc-5">Ingresar</button>
+    </a>
+    <a href="/user/register">
+      <button class="sing-in-button hide fs-18 bg-3 fc-5">
+        Crear cuenta
+      </button>
+    </a>
+    <% } %>
+    <i class="fa-solid fa-bars burguer-menu"></i>
+  </div>
 </div>
