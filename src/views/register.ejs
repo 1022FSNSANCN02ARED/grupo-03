@@ -9,12 +9,13 @@
   <%- include("./partials/nav-login-register", {title: "Regístrate"})  %>
 
   <div class="f-f">
-    <form action="/user/register" method="post" enctype="multipart/form-data" class="form bg-4 box-shadow">
+    <form action="/user/register" method="post" enctype="multipart/form-data" class="form bg-4 box-shadow" id="form-register">
       <div>
         <input type="text" name="name" id="name" placeholder="Nombre"  class=" f-input f-f" value="<%= (locals.oldData && oldData.name) ? oldData.name : "";%>">
         <% if (locals.errors && errors.name){ %>
           <p class="txt-error"><%= errors.name.msg %></p>
         <% } %>
+        <p class="errorFrontName error-front">El nombre debe ser mayor a 2 caracteres y no permite signos ni números</p>
 
         <input type="text" name="surname" id="surname" placeholder="Apellido"  class="f-input f-f" value="<%= (locals.oldData && oldData.surname) ? oldData.surname : "";%>">
         <% if (locals.errors && errors.surname){ %>
@@ -22,21 +23,24 @@
             <%= errors.surname.msg %>
           </p>
         <% } %>
-
+        <p class="errorFrontSurname error-front">El apellido debe ser mayor a 2 caracteres y no permite signos ni números</p>
+        
         <input type="text" name="email" id="email" placeholder="Email" class="f-input f-f" value="<%= (locals.oldData && oldData.email) ? oldData.email : "";%>">
         <% if (locals.errors && errors.email){ %>
           <p class="txt-error">
             <%= errors.email.msg %>
           </p>
         <% } %>
-
-        <input type="text" name="phone_number" id="phone_number" placeholder="número de teléfono (opcional)" class="f-input f-f"
+        <p class="errorFrontEmail error-front">El email no tiene un formato valido</p>
+        
+        <input type="text" name="phone_number" id="phone_number" placeholder="Número de teléfono (opcional)" class="f-input f-f"
           value="<%= (locals.oldData && oldData.phone_number) ? oldData.phone_number : "";%>">
         <% if (locals.errors && errors.phone_number){ %>
           <p class="txt-error">
             <%= errors.email.msg %>
           </p>
         <% } %>
+        <p class="errorFrontPhone error-front">El número de teléfono debe ser mayor a 7 caracteres. El número de teléfono no tiene un formato valido</p>
 
         <input type="password" name="password" id="password" placeholder="Contraseña"  class="f-input f-f" value="<%= (locals.oldData && oldData.password) ? oldData.password : "";%>">
         <% if (locals.errors && errors.password){ %>
@@ -44,6 +48,7 @@
             <%= errors.password.msg %>
           </p>
         <% } %>
+        <p class="errorFrontPassword error-front">La contraseña debe ser mayor a 6 caracteres</p>
 
         <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirmar contraseña" class="f-input f-f" value="<%= (locals.oldData && oldData.confirmPassword) ? oldData.confirmPassword : "";%>">
         <% if (locals.errors && errors.confirmPassword){ %>
@@ -51,6 +56,7 @@
             <%= errors.confirmPassword.msg %>
           </p>
         <% } %>
+        <p class="errorFrontPassword2 error-front">La contraseña y la confirmación de la contraseña deben ser iguales</p>
 
         <input type="file" name="file" id="file" class="f-input f-f" accept=".jpg, .png, .jpeg">
         
@@ -60,6 +66,7 @@
         </div>
 
       </div>
+      <hr>
 
         <div class="p-1rem">
           <button type="submit" class="f-input f-f">
@@ -73,11 +80,12 @@
            Regístrate con twitter</button>
           <p class="txt-center p-top-10 f-f">¿Ya tenés una cuenta?<a href="/user/login" class="f-f">  Iniciar sesion</a></p>
         </div>
-        <hr>
+        
     </form>
   </div>
 
     <%- include("./partials/footer") %>
    
 </body>
+<script src="/js/form-register.js"></script>
 </html>
