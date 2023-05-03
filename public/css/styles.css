@@ -786,14 +786,40 @@ footer h1 {
 
 /*-------------- forms */
 
+#activity-form,
+#cottage-form {
+    max-width: 800px;
+}
+
+.form-section-title {
+    border-bottom: #044a55 solid 2px;
+    border-top: #044a55 solid 2px;
+}
+
 .add-hours {
     color: #044a55;
     font-weight: bold;
 }
 
-.select-hours-button {
+.select-hours-button,
+.add-images-button {
     background-color: #f1f7ed;
-    border: #044a55 2px solid;
+    border: #07889b 2px solid;
+}
+
+.preview-img-containter {
+    position: relative;
+    background-color: #f1f7ed;
+    border: #0e0e0e solid 1px;
+    width: 35%;
+    min-height: 70px;
+    overflow: hidden;
+}
+
+.preview-img {
+    position: absolute;
+    max-width: 200%;
+    max-height: 200%;
 }
 
 /*-------------- media queries */
@@ -880,6 +906,12 @@ footer h1 {
 
     .li-qs {
         display: inline;
+    }
+
+    /*---------------------forms*/
+    .first-section-form,
+    .second-section-form {
+        width: 45%;
     }
 }
 
