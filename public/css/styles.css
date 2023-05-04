@@ -583,6 +583,25 @@ grisclaro #f1f7ed */
     padding: 10px;
 }
 
+.form-fail{
+    border: solid 3px #e00031;
+    
+}
+
+.form-success{
+    border: 3px solid rgb(9, 226, 9);
+    
+}
+
+.error-front-success{
+    margin: 0;
+    color: #e00031;
+    font-weight: bolder;
+}
+
+.error-front{
+    display: none;
+}
 /*-------------------------Detalles del producto*/
 
 .article-fecha {
