@@ -20,17 +20,19 @@ module.exports = {
 
     async findActivity(req, res) {
         const activity = await Activities.findByPk(req.params.id, {
-            include: ["images"],
+            include: ["images", "hours"],
         });
         console.log(activity.images);
 
         const urlImages = activity.images.map((img) => {
             return img.image;
         });
+        
         // Objeto que devuelve la API
         res.json({
             activity: activity.dataValues,
-            urlImages
+            urlImages,
+            hours: activity.hours
         });
     },
 };
