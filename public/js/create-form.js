@@ -44,6 +44,7 @@ inputsHours.forEach((inputHours) => {
         }
         // y se dejará de mostrar el input.
         inputHours.classList.add("hide");
+        label.classList.remove("label-hours");
     });
 });
 

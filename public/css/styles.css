@@ -803,6 +803,13 @@ footer h1 {
     max-height: 200%;
 }
 
+.label-hours {
+    background-color: #f1f7ed;
+    margin: 5px;
+    padding: 2px 20px;
+    border-radius: 3px;
+}
+
 /*-------------- media queries */
 @media (min-width: 488px) {
     .article-precio {
