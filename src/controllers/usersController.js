@@ -79,4 +79,30 @@ module.exports = {
         // serv.editData("users.json", req.params.id, user);
         res.redirect("/");
     },
+
+    /** Login del usuario 
+    proccesLogin: async (req,res) => {
+        const userLog=users.findOne({where:{email:req,res}})
+
+        // Se verifica que el email ingresado exista en nuestra base de datos 
+
+       if(!userLog){
+           res.render("login",{errors:{
+          return res.render("login",{errors:{
+               email:{msg:"Credenciales inválidas"}},registro: registro})               
+       }else{
+
+
+        //Si el email existe se verifica el password
+
+       if(!bscryptjs.compareSync(req.body.password,userLog.password)){
+          res.render("login",{errors:{
+               email:{msg:"Credenciales inválidas"}},registro: registro})
+           }
+       }
+       delete userLog.password;
+       req.session.userLog=userLog;
+       res.redirect("/");
+
+}, **/
 };
