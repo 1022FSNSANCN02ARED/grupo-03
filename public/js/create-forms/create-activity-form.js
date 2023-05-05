@@ -41,6 +41,7 @@ inputsHours.forEach((inputHours) => {
         // Le agregamos el valor del input, si es que tiene un valor
         if (inputHours.value) {
             label.innerText = inputHours.value;
+            label.classList.remove("label-hours");
         }
         // y se dejará de mostrar el input.
         inputHours.classList.add("hide");

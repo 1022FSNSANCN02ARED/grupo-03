@@ -1,0 +1,42 @@
+<form action="/cottages/create" method="post" id="cottage-form" class="flex flex-wrap jc-evenly w-90 m-auto p-10px bg-4 border-rad box-shadow">
+  <div class="first-section-form flex flex-d-column w-100">
+
+    <h2 class="form-section-title m-10 p-5px txt-center">General</h2>
+
+    <label for="name"></label>
+    <input type="text" name="name" id="name" class="f-input" placeholder="Nombre" />
+
+    <label for="price"></label>
+    <input type="number" name="price" id="price" class="f-input" placeholder="Precio por noche" />
+
+    <label for="price"></label>
+    <input type="number" name="price" id="price" class="f-input" placeholder="Cantidad máxima de huespedes" />
+
+    <label for="bedrooms"></label>
+    <input type="number" name="bedrooms" id="bedrooms" class="f-input" placeholder="Habitaciones" />
+
+    <label for="beds"></label>
+    <input type="number" name="beds" id="beds" class="f-input" placeholder="Camas" />
+
+    <label for="bathrooms"></label>
+    <input type="number" name="bathrooms" id="bathrooms" class="f-input" placeholder="Baños" />
+
+  </div>
+
+  <div class="second-section-form flex flex-d-column w-100">
+
+    <%- include('./services-section') %>
+
+
+    <!-- input para imágenes y previsualización de imágenes -->
+    <%- include("../img-section") %>
+    <h2 class="form-section-title m-10 p-5px txt-center">Descripción</h2>
+
+    <label for="description"></label>
+    <textarea name="description" id="description" placeholder="descripción" class="m-10 p-10px border-none border-rad"></textarea>
+  </div>
+
+  <div class="w-100 txt-center">
+    <button type="submit" class="f-submit bg-2">Crear actividad</button>
+  </div>
+</form>

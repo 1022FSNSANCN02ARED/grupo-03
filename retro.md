@@ -1,3 +1,23 @@
+# retro - sprint 7 -----------------------------
+
+-   Más de:
+    dailys.
+    constancia.
+    más comunicación
+
+-   Seguir haciendo:
+    separar las tareas en el Trello.
+    consultar por cualquier duda.
+    trabajar diario en el proyecto.
+    planificar reuniones.
+
+-   Menos de:
+    sobrecargar las tareas.
+
+-   Dejas de hacer:
+    dejar de postergar tareas importantes.
+
+
 # retro - sprint 5 -----------------------------
 
 -   Comenzar a hacer:
