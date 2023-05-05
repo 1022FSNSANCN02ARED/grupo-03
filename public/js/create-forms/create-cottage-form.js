@@ -21,7 +21,7 @@ selectServices.addEventListener("change", (e) => {
     selectServices.remove(selectServices.selectedIndex);
 
     // Agrega un elemento al listado de "show-services"
-    servicesList.innerHTML += `<li>${valueSelected}</li>`;
+    servicesList.innerHTML += `<li class="w-50"><div class="selected-service">${valueSelected}<i class="fa-solid fa-xmark"></i></div></li>`;
 
     // Vuelve al valor "servicio"
     selectServices.value = "servicios";

@@ -827,6 +827,17 @@ footer h1 {
     border-radius: 3px;
 }
 
+.selected-service {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f1f7ed;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 15px;
+}
+
 /*-------------- media queries */
 @media (min-width: 488px) {
     .article-precio {
