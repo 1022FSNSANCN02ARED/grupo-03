@@ -784,7 +784,7 @@ footer h1 {
 
 /*-------------- forms */
 
-#forms-create-product {
+#forms-create-products {
     max-width: 800px;
 }
 
@@ -850,10 +850,12 @@ footer h1 {
     margin: 10px;
     font-size: large;
     font-weight: bold;
+    transition: 0.5s;
 }
 .show-form-button-active {
     background-color: #07889b;
     color: #ffffff;
+    transition: 0.5s;
 }
 
 /*-------------- media queries */
