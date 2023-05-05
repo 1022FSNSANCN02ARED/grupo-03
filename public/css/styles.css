@@ -838,6 +838,14 @@ footer h1 {
     font-size: 15px;
 }
 
+.delete-service-button {
+    background-color: #e37222;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
 /*-------------- media queries */
 @media (min-width: 488px) {
     .article-precio {
