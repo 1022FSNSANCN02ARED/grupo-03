@@ -784,8 +784,7 @@ footer h1 {
 
 /*-------------- forms */
 
-#activity-form,
-#cottage-form {
+#forms-create-product {
     max-width: 800px;
 }
 
@@ -844,6 +843,17 @@ footer h1 {
     border-radius: 5px;
     cursor: pointer;
     padding: 5px;
+}
+
+.show-form-button {
+    background-color: #66b9bf;
+    margin: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+.show-form-button-active {
+    background-color: #07889b;
+    color: #ffffff;
 }
 
 /*-------------- media queries */

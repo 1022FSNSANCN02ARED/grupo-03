@@ -21,7 +21,7 @@ module.exports = {
         res.render("productCart");
     },
     showCreateForm: (req, res) => {
-        res.render("crear-cabaña");
+        res.render("create-product-form");
     },
     create: async (req, res) => {
         let cottage = {
@@ -64,7 +64,7 @@ module.exports = {
             "productsDataBase.json",
             req.params.id
         );
-        res.render("crear-cabaña", { cottage: productToEdit });
+        res.render("create-product-form", { cottage: productToEdit });
     },
     update: async (req, res) => {
         let cottage = {
