@@ -14,8 +14,10 @@ const firstHoursInputs = document.querySelectorAll(".first-hours-input");
 const addHoursButtons = document.querySelectorAll(".select-hours-button");
 
 // Capturamos el input que carga imágenes, y sus img de previsualización
-const imagesInput = document.getElementById("images-input");
-const previewImages = document.querySelectorAll(".preview-img");
+const activityImagesInput = document.getElementById("activity-images-input");
+const activityPreviewImages = document.querySelectorAll(
+    ".activity-preview-img"
+);
 
 // Cuando se precione un label, mostraremos uno de los inputs.
 labelsHours.forEach((labelHours) => {
@@ -114,13 +116,13 @@ addHoursButtons.forEach((hoursButton) => {
 });
 
 // Cuando se agregan imágenes, se muestran en los espacios.
-imagesInput.addEventListener("change", () => {
-    for (let i = 0; i < imagesInput.files.length; i++) {
-        const file = imagesInput.files[i];
+activityImagesInput.addEventListener("change", () => {
+    for (let i = 0; i < activityImagesInput.files.length; i++) {
+        const file = activityImagesInput.files[i];
         const reader = new FileReader();
 
         reader.addEventListener("load", () => {
-            previewImages[i].src = reader.result;
+            activityPreviewImages[i].src = reader.result;
         });
         if (file) {
             reader.readAsDataURL(file);

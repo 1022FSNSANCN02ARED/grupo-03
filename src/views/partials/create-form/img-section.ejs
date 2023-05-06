@@ -1,16 +1,16 @@
   <h2 class="form-section-title m-10 p-5px txt-center">Imágenes</h2>
 
-  <label for="images-input" class="add-images-button pointer border-rad p-10px m-auto">Agregar imágenes</label>
-  <input type="file" name="images" id="images-input" accept="image/*" multiple class="hide" />
+  <label for="<%= type %>-images-input" class="add-images-button pointer border-rad p-10px m-auto">Agregar imágenes</label>
+  <input type="file" name="<%= type %>_images" id="<%= type %>-images-input" multiple class="hide" />
 
   <div class="flex jc-evenly p-5px m-10">
     <div class="preview-img-containter flex al-items jc-center">
-      <img src="" class="preview-img">
+      <img src="" class="<%= type %>-preview-img">
     </div>
     <div class="preview-img-containter flex al-items jc-center">
-      <img src="" class="preview-img">
+      <img src="" class="<%= type %>-preview-img">
     </div>
     <div class="preview-img-containter flex al-items jc-center">
-      <img src="" class="preview-img">
+      <img src="" class="<%= type %>-preview-img">
     </div>
   </div>

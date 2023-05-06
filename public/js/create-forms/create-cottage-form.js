@@ -6,6 +6,11 @@ const selectedServices = document.getElementById("services-selected");
 // Captura el ul donde se mostrarán los servicios.
 const servicesList = document.getElementById("show-services");
 
+// Capturamos el input que carga imágenes, y sus img de previsualización
+const cottageImagesInput = document.getElementById("cottage-images-input");
+const cottagePreviewImages = document.querySelectorAll(".cottage-preview-img");
+console.log(activityPreviewImages);
+
 // Cuando seleccionemos una opción en "selectServices"
 // la vamos a borrar y agregarla al "selectedServices"
 
@@ -61,4 +66,19 @@ selectServices.addEventListener("change", (e) => {
     });
 
     // Lo volvemos a agregar al selected de "selectServices".
+});
+
+// Cuando se agregan imágenes, se muestran en los espacios.
+cottageImagesInput.addEventListener("change", () => {
+    for (let i = 0; i < cottageImagesInput.files.length; i++) {
+        const file = cottageImagesInput.files[i];
+        const reader = new FileReader();
+
+        reader.addEventListener("load", () => {
+            cottagePreviewImages[i].src = reader.result;
+        });
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
 });

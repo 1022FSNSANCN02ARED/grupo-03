@@ -813,7 +813,8 @@ footer h1 {
     overflow: hidden;
 }
 
-.preview-img {
+.cottage-preview-img,
+.activity-preview-img {
     position: absolute;
     max-width: 200%;
     max-height: 200%;
