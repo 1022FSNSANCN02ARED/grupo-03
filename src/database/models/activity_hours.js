@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
             },
             weekday_hours: {
                 type: DataTypes.STRING,
-                allowNull: false,
+                allowNull: true,
             },
             second_weekday_hours: {
                 type: DataTypes.STRING,
