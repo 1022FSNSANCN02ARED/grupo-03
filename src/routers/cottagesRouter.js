@@ -16,7 +16,7 @@ const uploadFile = multer({ storage });
 const createCottageMiddleware = require("../middlewares/createCottageMiddleware");
 const redirectUserLoggedOut = require("../middlewares/redirectUserLoggedOut");
 const cottagesController = require("../controllers/cottagesController");
-const error_create_cot = require("../middlewares/error_create_cot");
+const error_product_form = require("../middlewares/error_product_form");
 
 router.get("/details/:id", cottagesController.productDetail);
 
@@ -29,7 +29,7 @@ router.post(
     "/create",
     uploadFile.array("image"),
     createCottageMiddleware,
-    error_create_cot,
+    error_product_form,
     cottagesController.create
 );
 
