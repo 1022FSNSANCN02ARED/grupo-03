@@ -8,7 +8,7 @@ module.exports = [
         .withMessage("Debes agregar la cantidad máxima de personas"),
     body("description")
         .notEmpty()
-        .withMessage("Campo requerido")
+        .withMessage("Debe agregar una descripción")
         .bail()
         .isLength({ max: 70 })
         .withMessage("La descripción debe tener como máximo 70 caracteres"),
@@ -60,9 +60,9 @@ module.exports = [
         }
         return true;
     }),
-    body("acitivty_images").custom((value, { req }) => {
+    body("activity_images").custom((value, { req }) => {
         if (req.files.length < 3) {
-            throw new Error("Debe subir como mínimo 3 fotos de la cabaña");
+            throw new Error("Debe subir como mínimo 3 fotos de la actividad");
         }
         return true;
     }),

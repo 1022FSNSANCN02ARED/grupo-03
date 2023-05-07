@@ -7,19 +7,19 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
     <h2 class="form-section-title m-10 p-5px txt-center">General</h2>
 
     <label for="activity_name"></label>
-    <input type="text" name="name" id="activity_name" class="f-input" placeholder="Nombre" />
+    <input type="text" name="name" id="activity_name" class="f-input" placeholder="Nombre" value="<%= isActivity && locals.oldData?.name ? oldData.name : ""; %>" />
     <% if ( isActivity && locals.errors?.name){ %>
     <p class="txt-error"><%= errors.name.msg %></p>
     <% } %>
 
     <label for="activity_price"></label>
-    <input type="number" name="price" id="activity_price" class="f-input" placeholder="Precio" />
+    <input type="number" name="price" id="activity_price" class="f-input" placeholder="Precio" value="<%= isActivity && locals.oldData?.price ? oldData.price : ""; %>" />
     <% if ( isActivity && locals.errors?.price){ %>
     <p class="txt-error"><%= errors.price.msg %></p>
     <% } %>
 
     <label for="activity_max-place"></label>
-    <input type="number" name="max_place" id="activity_max-place" class="f-input" placeholder="Cantidad máxima de personas" />
+    <input type="number" name="max_place" id="activity_max-place" class="f-input" placeholder="Cantidad máxima de personas" value="<%= isActivity && locals.oldData?.max_place ? oldData.max_place : ""; %>" />
     <% if ( isActivity && locals.errors?.max_place){ %>
     <p class="txt-error"><%= errors.max_place.msg %></p>
     <% } %>
@@ -43,9 +43,9 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
     <%- include("../img-section", {type: "activity"}) %>
     <h2 class="form-section-title m-10 p-5px txt-center">Descripción</h2>
     <label for="activity_description"></label>
-    <textarea name="description" id="activity_description" placeholder="descripción" class="m-10 p-10px border-none border-rad"></textarea>
+    <textarea name="description" id="activity_description" placeholder="descripción" class="m-10 p-10px border-none border-rad"><%= isActivity && locals.oldData?.description ? oldData.description : ""%></textarea>
     <% if ( isActivity && locals.errors?.description){ %>
-    <p class="txt-error"><%= errors.description.msg %></p>
+    <p class=" txt-error"><%= errors.description.msg %></p>
     <% } %>
   </div>
 

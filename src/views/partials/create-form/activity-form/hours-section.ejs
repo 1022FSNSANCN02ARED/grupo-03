@@ -20,8 +20,10 @@
       </p>
     </div>
     <div class="first-hours-inputs flex jc-center">
-      <input type="time" name="<%= day %>_in" id="<%= day %>-in" class="first-hours-input m-5  border-none input-hours p-5px border-rad hide" />
-      <input type="time" name="<%= day %>_out" id="<%= day %>-out" class="first-hours-input m-5  border-none input-hours p-5px border-rad hide" />
+      <input type="time" name="<%= day %>_in" id="<%= day %>-in" class="first-hours-input m-5  border-none input-hours p-5px border-rad hide" value="<%= isActivity && locals.oldData && oldData[`${day}_in`] ? oldData[`${day}_in`] : "";%>" />
+
+      <input type="time" name="<%= day %>_out" id="<%= day %>-out" class="first-hours-input m-5  border-none input-hours p-5px border-rad hide" value="<%= isActivity && locals.oldData && oldData[`${day}_out`] ? oldData[`${day}_out`] : "";%>" />
+
     </div>
     <% if ( isActivity && locals.errors && locals.errors[`${day}_in`]) { %>
     <p class="txt-error"><%= errors[`${day}_in`].msg %></p>
@@ -42,8 +44,8 @@
       </p>
     </div>
     <div class="second-hours-inputs flex jc-center">
-      <input type="time" name="second_<%= day %>_in" id="second_<%= day %>_in" class="border-none m-5 input-hours p-5px border-rad hide" />
-      <input type="time" name="second_<%= day %>_out" id="second_<%= day %>_out" class="border-none m-5 input-hours p-5px border-rad hide" />
+      <input type="time" name="second_<%= day %>_in" id="second_<%= day %>_in" class="border-none m-5 input-hours p-5px border-rad hide" value="<%= isActivity && locals.oldData && oldData[`second_${day}_in`] ? oldData[`second_${day}_in`] : "";%>" />
+      <input type="time" name="second_<%= day %>_out" id="second_<%= day %>_out" class="border-none m-5 input-hours p-5px border-rad hide" value="<%= isActivity && locals.oldData && oldData[`second_${day}_out`] ? oldData[`second_${day}_out`] : "";%>" />
     </div>
   </div>
 </div>

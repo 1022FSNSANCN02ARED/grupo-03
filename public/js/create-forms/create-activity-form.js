@@ -29,6 +29,17 @@ labelsHours.forEach((labelHours) => {
         const input = document.getElementById(labelFor);
         input.classList.remove("hide");
     });
+
+    // Lo mismo, pero cuando se carga la vista.
+    // para los casos de error en el formulario.
+
+    const labelFor = labelHours.htmlFor;
+    const input = document.getElementById(labelFor);
+    if (input.value) {
+        console.log(input.value);
+        labelHours.classList.remove("label-hours");
+        labelHours.innerText = input.value;
+    }
 });
 
 // Cuando se cambie el input que se esta mostrando, se actualizará el label
@@ -85,6 +96,18 @@ firstHoursInputs.forEach((input) => {
             button.classList.remove("hide");
         }
     });
+
+    // Lo mismo, pero cuando se carga la vista.
+    // para los casos de error en el formulario.
+    const day = input.id.includes("weekday") ? "weekday" : "weekend";
+
+    const inputIn = document.getElementById(`${day}-in`);
+    const inputOut = document.getElementById(`${day}-out`);
+
+    if (Boolean(inputIn.value) && Boolean(inputOut.value)) {
+        const button = document.getElementById(`add-second-${day}-hours`);
+        button.classList.remove("hide");
+    }
 });
 
 // Cuando se aprete uno de los botones, se va a mostrar el div correspondiente.

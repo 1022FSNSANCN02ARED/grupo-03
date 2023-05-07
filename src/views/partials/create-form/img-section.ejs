@@ -14,3 +14,6 @@
       <img src="" class="<%= type %>-preview-img">
     </div>
   </div>
+  <% if(locals.errors?.activity_images){ %>
+  <p class="txt-error"><%= errors.activity_images.msg %></p>
+  <% } %>

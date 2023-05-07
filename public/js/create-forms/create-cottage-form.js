@@ -9,7 +9,6 @@ const servicesList = document.getElementById("show-services");
 // Capturamos el input que carga imágenes, y sus img de previsualización
 const cottageImagesInput = document.getElementById("cottage-images-input");
 const cottagePreviewImages = document.querySelectorAll(".cottage-preview-img");
-console.log(activityPreviewImages);
 
 // Cuando seleccionemos una opción en "selectServices"
 // la vamos a borrar y agregarla al "selectedServices"

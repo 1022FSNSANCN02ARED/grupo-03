@@ -1,10 +1,10 @@
-    <section id="add-hours-buttons" class="txt-center">
+    <section id="add-hours-buttons" class="txt-center <%= locals.oldData?.weekday_in && locals.oldData?.weekend_in ? "hide" : ""; %> ">
       <h3 class="txt-center">Agregar horario:</h3>
       <div class="flex jc-evenly al-items">
-        <a id="show-weekday-hours" class="select-hours-button pointer flex al-items p-10px m-5 border-rad fc-37">
+        <a id="show-weekday-hours" class="select-hours-button pointer flex al-items p-10px m-5 border-rad fc-37 <%= locals.oldData?.weekday_in ? "hide" : ""; %> ">
           Día de semana
         </a>
-        <a id="show-weekend-hours" class="select-hours-button pointer flex al-items p-10px m-5 border-rad fc-37">
+        <a id="show-weekend-hours" class="select-hours-button pointer flex al-items p-10px m-5 border-rad fc-37 <%= locals.oldData?.weekend_in ? "hide" : ""; %> ">
           Fin de semana
         </a>
       </div>
