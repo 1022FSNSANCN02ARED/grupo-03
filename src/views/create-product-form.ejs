@@ -14,8 +14,15 @@
 
   <main id="forms-create-products" class="w-90 m-auto ">
     <div class="flex jc-evenly">
-      <p id="show-create-cottage-form" class="show-form-button show-form-button-active w-50 txt-center p-10px pointer border-rad box-shadow">Cabañas</p>
-      <p id="show-create-activity-form" class="show-form-button w-50 txt-center p-10px pointer border-rad box-shadow">Actividades</p>
+      <p id="show-create-cottage-form" class="
+      show-form-button <%= isActivity ? "":"show-form-button-active"; %> w-50 txt-center p-10px pointer border-rad box-shadow">
+        Cabañas
+      </p>
+
+      <p id="show-create-activity-form" class="
+      show-form-button <%= isActivity ? "show-form-button-active":""; %> w-50 txt-center p-10px pointer border-rad box-shadow">
+        Actividades
+      </p>
     </div>
     <section>
       <%- include('./partials/create-form/cottage-form/create-cottage-form') %>

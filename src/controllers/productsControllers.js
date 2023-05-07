@@ -10,9 +10,6 @@ module.exports = {
         const isActivity = formType == "activity";
         const isCottage = formType == "cottage";
 
-        console.log("activity ", isActivity);
-        console.log("cottage ", isCottage);
-
         res.render("create-product-form", {
             isActivity,
             isCottage,
