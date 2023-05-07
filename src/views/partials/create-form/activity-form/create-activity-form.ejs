@@ -6,12 +6,21 @@
 
     <label for="activity_name"></label>
     <input type="text" name="name" id="activity_name" class="f-input" placeholder="Nombre" />
+    <% if ( isActivity && locals.errors?.name){ %>
+    <p class="txt-error"><%= errors.name.msg %></p>
+    <% } %>
 
     <label for="activity_price"></label>
     <input type="number" name="price" id="activity_price" class="f-input" placeholder="Precio" />
+    <% if ( isActivity && locals.errors?.price){ %>
+    <p class="txt-error"><%= errors.price.msg %></p>
+    <% } %>
 
     <label for="activity_max-place"></label>
     <input type="number" name="max_place" id="activity_max-place" class="f-input" placeholder="Cantidad máxima de personas" />
+    <% if ( isActivity && locals.errors?.max_place){ %>
+    <p class="txt-error"><%= errors.max_place.msg %></p>
+    <% } %>
 
     <div id="activity-hours">
       <h2 class="form-section-title m-10 p-5px txt-center">Horarios</h2>
@@ -21,6 +30,9 @@
       <%- include("./hours-section", {day: "weekend", title: "Fin de semana"}) %>
       <!-- botones para mostrar cada horario -->
       <%- include("./add-hours-buttons") %>
+      <% if ( isActivity && locals.errors?.some_selected_hours){ %>
+      <p class="txt-error"><%= errors.some_selected_hours.msg %></p>
+      <% } %>
     </div>
   </div>
 
@@ -30,6 +42,9 @@
     <h2 class="form-section-title m-10 p-5px txt-center">Descripción</h2>
     <label for="activity_description"></label>
     <textarea name="description" id="activity_description" placeholder="descripción" class="m-10 p-10px border-none border-rad"></textarea>
+    <% if ( isActivity && locals.errors?.description){ %>
+    <p class="txt-error"><%= errors.description.msg %></p>
+    <% } %>
   </div>
 
   <div class="w-100 txt-center">

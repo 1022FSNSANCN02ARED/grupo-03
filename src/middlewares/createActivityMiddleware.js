@@ -13,9 +13,10 @@ module.exports = [
         .isLength({ max: 70 })
         .withMessage("La descripción debe tener como máximo 70 caracteres"),
     body("some_selected_hours").custom((value, { req }) => {
-        if (!req.body.weekday_in || !req.body.weekend_in) {
+        if (!req.body.weekday_in && !req.body.weekend_in) {
             throw new Error("No a seleccionado ningun horario");
         }
+        return true;
     }),
     body("weekday_in").custom((value, { req }) => {
         if (value) {

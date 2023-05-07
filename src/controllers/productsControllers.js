@@ -1,14 +1,23 @@
 module.exports = {
     showForm: (req, res) => {
         const formType = req.session.formType;
-        const errores = req.session.errores;
+        const errors = req.session.errors;
         const oldData = req.session.oldData;
         req.session.formType = null;
-        req.session.errores = null;
+        req.session.errors = null;
         req.session.oldData = null;
 
-        console.log(formType);
+        const isActivity = formType == "activity";
+        const isCottage = formType == "cottage";
 
-        res.render("create-product-form", { formType, errores, oldData });
+        console.log("activity ", isActivity);
+        console.log("cottage ", isCottage);
+
+        res.render("create-product-form", {
+            isActivity,
+            isCottage,
+            errors,
+            oldData,
+        });
     },
 };

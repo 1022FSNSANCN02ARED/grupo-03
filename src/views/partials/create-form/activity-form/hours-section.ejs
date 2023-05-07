@@ -1,4 +1,6 @@
-<div id="<%= day %>-hours" class="hide">
+<div id="<%= day %>-hours" class="
+  <%= isActivity && (locals.errors && locals.errors[`${day}_in`] || oldData && oldData[`${day}_in`])  ? "" : "hide" %>">
+
   <h3 class="m-auto"><%= title %></h3>
   <div id="first-<%= day %>-hours">
     <div class="flex flex-wrap">
@@ -21,10 +23,13 @@
       <input type="time" name="<%= day %>_in" id="<%= day %>-in" class="first-hours-input m-5  border-none input-hours p-5px border-rad hide" />
       <input type="time" name="<%= day %>_out" id="<%= day %>-out" class="first-hours-input m-5  border-none input-hours p-5px border-rad hide" />
     </div>
+    <% if ( isActivity && locals.errors && locals.errors[`${day}_in`]) { %>
+    <p class="txt-error"><%= errors[`${day}_in`].msg %></p>
+    <% } %>
   </div>
 
-  <div id="second-<%= day %>-hours" class="hide">
-    <div class="flex flex-wrap">
+  <div id="second-<%= day %>-hours" class="<%= isActivity && (locals.errors && locals.errors[`second_${day}_in`] || oldData && oldData[`second_${day}_in`])  ? "" : "hide" %>">
+    <div class=" flex flex-wrap">
       <p class="fs-18 w-100">
         y Desde:
         <label for="second_<%= day %>_in" class="label-hours pointer">
