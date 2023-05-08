@@ -109,7 +109,7 @@ CREATE TABLE `activity_hours` (
 
 LOCK TABLES `activity_hours` WRITE;
 /*!40000 ALTER TABLE `activity_hours` DISABLE KEYS */;
-INSERT INTO `activity_hours` VALUES (1,1,'desde: 7:00 AM, hasta: 11:00 AM','desde 7:00 PM, hasta 11:00 PM','desde: 11:00 AM, hasta: 13:00 PM',NULL,'2023-04-13 18:43:34','2023-04-13 19:07:20'),(2,2,'desde: 8:00 PM, hasta: 11:30 PM','','desde: 6:00 PM, hasta: 10:00 PM',NULL,'2023-04-13 18:45:42','2023-04-13 18:45:42'),(3,3,'desde: 10:00 AM, hasta: 3:00 PM','desde 7:00 PM, hasta 11:00 PM','desde: 11:00 AM, hasta: 13:00 PM',NULL,'2023-04-13 18:47:09','2023-04-13 18:47:09'),(4,4,'desde: 9:00 AM, hasta: 1:00 PM',NULL,NULL,NULL,'2023-04-13 18:47:09','2023-04-13 18:47:09'),(5,5,'desde: 7:00 AM, hasta: 8:00 PM',NULL,'desde: 8:00 AM, hasta: 4:00 PM',NULL,'2023-04-13 18:48:18','2023-04-13 18:48:18');
+INSERT INTO `activity_hours` VALUES (1,1,'desde: 7:00, hasta: 11:00','desde 7:00, hasta 11:00','desde: 11:00, hasta: 13:00',NULL,'2023-04-13 18:43:34','2023-04-13 19:07:20'),(2,2,'desde: 8:00, hasta: 11:30','','desde: 6:00, hasta: 10:00',NULL,'2023-04-13 18:45:42','2023-04-13 18:45:42'),(3,3,'desde: 10:00, hasta: 3:00','desde 7:00, hasta 11:00','desde: 11:00, hasta: 13:00',NULL,'2023-04-13 18:47:09','2023-04-13 18:47:09'),(4,4,'desde: 9:00, hasta: 1:00',NULL,NULL,NULL,'2023-04-13 18:47:09','2023-04-13 18:47:09'),(5,5,'desde: 7:00, hasta: 8:00',NULL,'desde: 8:00, hasta: 4:00',NULL,'2023-04-13 18:48:18','2023-04-13 18:48:18');
 /*!40000 ALTER TABLE `activity_hours` ENABLE KEYS */;
 UNLOCK TABLES;
 
