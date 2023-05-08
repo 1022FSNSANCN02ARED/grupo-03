@@ -17,6 +17,16 @@
 
   <select name="services" id="services-selected" multiple class="hide">
     <!-- Acá se irán sumando los servicios que eligamos de arriba -->
+    <% if (isCottage && typeof locals.oldData?.services == "string") { %>
+    <option value="<%= oldData.services %>" selected></option>
+    <% } %>
+
+    <% if (isCottage && typeof locals.oldData?.services == "object") { %>
+    <% oldData.services.forEach(service =>{ %>
+    <option value="<%= service %>" selected></option>
+    <%}) %>
+    <% } %>
+
   </select>
 
   <!-- Sección para mostrar los servicios seleccionados -->

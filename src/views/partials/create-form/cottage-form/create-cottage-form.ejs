@@ -8,37 +8,37 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
     <h2 class="form-section-title m-10 p-5px txt-center">General</h2>
 
     <label for="cottage_name"></label>
-    <input type="text" name="name" id="cottage_name" class="f-input" placeholder="Nombre" />
+    <input type="text" name="name" id="cottage_name" class="f-input" placeholder="Nombre" value="<%= isCottage && locals.oldData?.name ? oldData.name : ""; %>" />
     <% if ( isCottage && locals.errors?.name){ %>
     <p class="txt-error"><%= errors.name.msg %></p>
     <% } %>
 
     <label for="cottage_price"></label>
-    <input type="number" name="price" id="cottage_price" class="f-input" placeholder="Precio por noche" />
+    <input type="number" name="price" id="cottage_price" class="f-input" placeholder="Precio por noche" value="<%= isCottage && locals.oldData?.price ? oldData.price : ""; %>" />
     <% if ( isCottage && locals.errors?.price){ %>
     <p class="txt-error"><%= errors.price.msg %></p>
     <% } %>
 
     <label for="cottage_guest"></label>
-    <input type="number" name="guest" id="cottage_guest" class="f-input" placeholder="Cantidad máxima de huespedes" />
+    <input type="number" name="guest" id="cottage_guest" class="f-input" placeholder="Cantidad máxima de huespedes" value="<%= isCottage && locals.oldData?.guest ? oldData.guest : ""; %>" />
     <% if ( isCottage && locals.errors?.guest){ %>
     <p class="txt-error"><%= errors.guest.msg %></p>
     <% } %>
 
     <label for="cottage_bedrooms"></label>
-    <input type="number" name="bedrooms" id="cottage_bedrooms" class="f-input" placeholder="Habitaciones" />
+    <input type="number" name="bedrooms" id="cottage_bedrooms" class="f-input" placeholder="Habitaciones" value="<%= isCottage && locals.oldData?.bedrooms ? oldData.bedrooms : ""; %>" />
     <% if ( isCottage && locals.errors?.bedrooms){ %>
     <p class="txt-error"><%= errors.bedrooms.msg %></p>
     <% } %>
 
     <label for="cottage_beds"></label>
-    <input type="number" name="beds" id="cottage_beds" class="f-input" placeholder="Camas" />
+    <input type="number" name="beds" id="cottage_beds" class="f-input" placeholder="Camas" value="<%= isCottage && locals.oldData?.beds ? oldData.beds : ""; %>" />
     <% if ( isCottage && locals.errors?.beds){ %>
     <p class="txt-error"><%= errors.beds.msg %></p>
     <% } %>
 
     <label for="cottage_bathrooms"></label>
-    <input type="number" name="bathrooms" id="cottage_bathrooms" class="f-input" placeholder="Baños" />
+    <input type="number" name="bathrooms" id="cottage_bathrooms" class="f-input" placeholder="Baños" value="<%= isCottage && locals.oldData?.bathrooms ? oldData.bathrooms : ""; %>" />
     <% if ( isCottage && locals.errors?.bathrooms){ %>
     <p class="txt-error"><%= errors.bathrooms.msg %></p>
     <% } %>
@@ -56,7 +56,7 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
     <h2 class="form-section-title m-10 p-5px txt-center">Descripción</h2>
 
     <label for="cottage_description"></label>
-    <textarea name="description" id="description" placeholder="descripción" class="m-10 p-10px border-none border-rad"></textarea>
+    <textarea name="description" id="description" placeholder="descripción" class="m-10 p-10px border-none border-rad"><%= isCottage && locals.oldData?.description ? oldData.description : "";%></textarea>
     <% if ( isCottage && locals.errors?.description){ %>
     <p class="txt-error"><%= errors.description.msg %></p>
     <% } %>

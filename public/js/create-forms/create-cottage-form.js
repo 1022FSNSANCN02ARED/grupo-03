@@ -57,15 +57,67 @@ selectServices.addEventListener("change", (e) => {
 
             // Eliminamos ambos.
             servicesList.removeChild(liToDelete);
-            selectedServices.remove(optionToEliminate.selectedIndex);
+            selectedServices.removeChild(optionToEliminate);
+
+            // Agregamos nuevamente la opción a "selectServices"
+            selectServices.innerHTML += `<option value="${valueLi}">${valueLi}</option>`;
+        });
+    });
+});
+
+// Cuando hay un error en el formulario, se guardan los servicios seleccionados en "selectedServices"
+for (let i = 0; i < selectedServices.length; i++) {
+    let nameService = selectedServices[i].value;
+    console.log(selectedServices[i].index);
+
+    // Agrega el servicio a la lista que el usuario puede ver.
+    servicesList.innerHTML += `
+    <li class="w-50">
+        <div class="selected-service">
+            ${nameService}
+            <i 
+                id= "${nameService}"
+                class="delete-service-button fa-solid fa-xmark"
+            >
+            </i>
+        </div>
+    </li>`;
+
+    // Capturamos los botones para eliminar un servicio ya seleccionado
+    const deleteServiceButtons = document.querySelectorAll(
+        ".delete-service-button"
+    );
+
+    // Le agregamos un evento a cada botón de eliminar.
+    deleteServiceButtons.forEach((deleteButton) => {
+        deleteButton.addEventListener("click", (e) => {
+            // Tomamos el li que queremos eliminar de "servicesList"
+            const liToDelete = deleteButton.parentElement.parentElement;
+            // Tomamos el id del botón, que es lo mismo que tiene el "value" del option que apretamos.
+            const valueLi = deleteButton.id;
+            // capturamos el option que estamos buscando
+            const optionToEliminate = document.querySelector(
+                `option[value="${valueLi}"]`
+            );
+
+            // Eliminamos ambos.
+            servicesList.removeChild(liToDelete);
+            selectedServices.removeChild(optionToEliminate);
 
             // Agregamos nuevamente la opción a "selectServices"
             selectServices.innerHTML += `<option value="${valueLi}">${valueLi}</option>`;
         });
     });
 
-    // Lo volvemos a agregar al selected de "selectServices".
-});
+    const serviceSelected = document.querySelector(
+        `#services-select option[value="${nameService}"]`
+    );
+
+    // console.log(serviceSelected);
+
+    // Elimina la opción en "selectServices"
+    selectServices.remove(serviceSelected.index);
+}
 
 // Cuando se agregan imágenes, se muestran en los espacios.
 cottageImagesInput.addEventListener("change", () => {
