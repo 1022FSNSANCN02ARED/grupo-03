@@ -28,4 +28,6 @@ router.post(
     activitiesController.create
 );
 
+router.get("/edit/:id", activitiesController.showEditForm);
+
 module.exports = router;

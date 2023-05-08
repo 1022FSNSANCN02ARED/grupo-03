@@ -36,7 +36,6 @@ labelsHours.forEach((labelHours) => {
     const labelFor = labelHours.htmlFor;
     const input = document.getElementById(labelFor);
     if (input.value) {
-        console.log(input.value);
         labelHours.classList.remove("label-hours");
         labelHours.innerText = input.value;
     }
