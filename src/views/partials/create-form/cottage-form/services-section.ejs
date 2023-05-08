@@ -22,4 +22,7 @@
   <!-- Sección para mostrar los servicios seleccionados -->
   <ul id="show-services" class="flex flex-wrap jc-bet">
   </ul>
+  <% if ( isCottage && locals.errors?.services){ %>
+  <p class="txt-error"><%= errors.services.msg %></p>
+  <% } %>
 </div>

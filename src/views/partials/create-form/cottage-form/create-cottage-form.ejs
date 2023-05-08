@@ -9,21 +9,39 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
 
     <label for="cottage_name"></label>
     <input type="text" name="name" id="cottage_name" class="f-input" placeholder="Nombre" />
+    <% if ( isCottage && locals.errors?.name){ %>
+    <p class="txt-error"><%= errors.name.msg %></p>
+    <% } %>
 
     <label for="cottage_price"></label>
     <input type="number" name="price" id="cottage_price" class="f-input" placeholder="Precio por noche" />
+    <% if ( isCottage && locals.errors?.price){ %>
+    <p class="txt-error"><%= errors.price.msg %></p>
+    <% } %>
 
     <label for="cottage_guest"></label>
     <input type="number" name="guest" id="cottage_guest" class="f-input" placeholder="Cantidad máxima de huespedes" />
+    <% if ( isCottage && locals.errors?.guest){ %>
+    <p class="txt-error"><%= errors.guest.msg %></p>
+    <% } %>
 
     <label for="cottage_bedrooms"></label>
     <input type="number" name="bedrooms" id="cottage_bedrooms" class="f-input" placeholder="Habitaciones" />
+    <% if ( isCottage && locals.errors?.bedrooms){ %>
+    <p class="txt-error"><%= errors.bedrooms.msg %></p>
+    <% } %>
 
     <label for="cottage_beds"></label>
     <input type="number" name="beds" id="cottage_beds" class="f-input" placeholder="Camas" />
+    <% if ( isCottage && locals.errors?.beds){ %>
+    <p class="txt-error"><%= errors.beds.msg %></p>
+    <% } %>
 
     <label for="cottage_bathrooms"></label>
     <input type="number" name="bathrooms" id="cottage_bathrooms" class="f-input" placeholder="Baños" />
+    <% if ( isCottage && locals.errors?.bathrooms){ %>
+    <p class="txt-error"><%= errors.bathrooms.msg %></p>
+    <% } %>
 
   </div>
 
@@ -34,10 +52,14 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
 
     <!-- input para imágenes y previsualización de imágenes -->
     <%- include("../img-section", {type: "cottage"}) %>
+
     <h2 class="form-section-title m-10 p-5px txt-center">Descripción</h2>
 
     <label for="cottage_description"></label>
-    <textarea name="description" id="description" placeholder="cottage_descripción" class="m-10 p-10px border-none border-rad"></textarea>
+    <textarea name="description" id="description" placeholder="descripción" class="m-10 p-10px border-none border-rad"></textarea>
+    <% if ( isCottage && locals.errors?.description){ %>
+    <p class="txt-error"><%= errors.description.msg %></p>
+    <% } %>
   </div>
 
   <div class="w-100 txt-center">

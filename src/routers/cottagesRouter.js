@@ -27,7 +27,7 @@ router.get("/cart", cottagesController.productCart);
 router.get("/create", cottagesController.showCreateForm);
 router.post(
     "/create",
-    uploadFile.array("image"),
+    uploadFile.array("cottage_images"),
     createCottageMiddleware,
     error_product_form,
     cottagesController.create
