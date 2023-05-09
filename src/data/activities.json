@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "Senderismo",
-        "images": [{ "image": "/images/cottageImages/pinos01.jpg" }],
+        "images": [{ "image": "/images/activity/senderismo.jpg" }],
         "description": "Lorem ipsum dolor",
         "instructor": ["Cosme Fulanito", "Carlos Santana"],
         "hours": {
@@ -14,7 +14,7 @@
     {
         "id": 2,
         "title": "Fogata",
-        "images": [{ "image": "/images/cottageImages/pinos02.jpg" }],
+        "images": [{ "image": "/images/activity/fogata.jpg" }],
         "description": "Lorem ipsum dolor",
         "instructor": ["Cosme Fulanito"],
         "hours": {
@@ -24,16 +24,74 @@
     },
     {
         "id": 3,
-        "title": "Senderismo",
-        "images": [{ "image": "/images/cottageImages/pinos03.jpg" }],
+        "title": "Cabalgata",
+        "images": [{ "image": "/images/activity/calbalgata.jpg" }],
         "description": "Lorem ipsum dolor",
         "instructor": ["Cosme Fulanito", "Carlos Santana"],
         "hours": { "weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM" }
     },
     {
+        
         "id": 4,
-        "title": "Senderismo",
-        "images": [{ "image": "/images/cottageImages/pinos04.jpg" }],
+        "title": "Bicicletas Familiar",
+        "images": [{ "image": "/images/activity/bici.jpg" }],
+        "description": "Lorem ipsum dolor",
+        "instructor": ["Cosme Fulanito", "Carlos Santana"],
+        "hours": { "weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM" }
+
+    },
+    {
+        "id": 5,
+        "title": "Spa",
+        "images": [{ "image": "/images/activity/SPA.jpg" }],
+        "description": "Lorem ipsum dolor",
+        "instructor": ["Cosme Fulanito", "Carlos Santana", "Alguien más"],
+        "hours": {
+            "weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM",
+            "second_weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM",
+            "weekend_hours": "desde: 7:00 AM, hasta: 11:00 AM"
+        }
+    },
+    {
+        "id": 6,
+        "title": "Piscina",
+        "images": [{ "image": "/images/activity/piscina.ok.jpg" }],
+        "description": "Lorem ipsum dolor",
+        "instructor": ["Cosme Fulanito", "Carlos Santana", "Alguien más"],
+        "hours": {
+            "weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM",
+            "second_weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM",
+            "weekend_hours": "desde: 7:00 AM, hasta: 11:00 AM"
+        }
+    },
+    {
+        "id": 7,
+        "title": "Pisina Climatizada",
+        "images": [{ "image": "/images/activity/piscina climatizada.jpg" }],
+        "description": "Lorem ipsum dolor",
+        "instructor": ["Cosme Fulanito", "Carlos Santana", "Alguien más"],
+        "hours": {
+            "weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM",
+            "second_weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM",
+            "weekend_hours": "desde: 7:00 AM, hasta: 11:00 AM"
+        }
+    },
+    {
+        "id": 8,
+        "title": "Acuagym",
+        "images": [{ "image": "/images/activity/aquagym.jpg" }],
+        "description": "Lorem ipsum dolor",
+        "instructor": ["Cosme Fulanito", "Carlos Santana", "Alguien más"],
+        "hours": {
+            "weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM",
+            "second_weekday_hours": "desde: 7:00 AM, hasta: 11:00 AM",
+            "weekend_hours": "desde: 7:00 AM, hasta: 11:00 AM"
+        }
+    },
+    {
+        "id": 9,
+        "title": "Kayak",
+        "images": [{ "image": "/images/activity/kayak..jpg" }],
         "description": "Lorem ipsum dolor",
         "instructor": ["Cosme Fulanito", "Carlos Santana", "Alguien más"],
         "hours": {

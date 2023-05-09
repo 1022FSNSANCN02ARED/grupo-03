@@ -22,8 +22,7 @@
                   y un sin fin de actividades para que disfrutes como más te guste.
             </p>
         </article>
-    
-        
+
     
     </section>
 
@@ -32,8 +31,8 @@
         <article id="cont-act" class="flex flex-wrap">
 
                 <div class="w-80 of-hidden bg-5 cont-act border p-8px pos-relative flex flex-wrap">
-                    <ul id="act-list" class="flex of-auto">
                         <% activities.forEach(activity => { %>
+                            
 
                         <li
                             class="list-card border-rad p-10px flex flex-d-column jc-bet"
@@ -89,15 +88,15 @@
                                     Reservar
                                 </a>
                             </div>
-                        </li>
-                        <% }); %>
+                        <% {activity, activities} });  %>
                         
-                    </ul>
+        
                 </div>
             
         </article>
     </section>
- </section>
+
+ 
 
 
     <%- include("./partials/footer") %>
