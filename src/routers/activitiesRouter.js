@@ -20,6 +20,7 @@ const createActivityMiddleware = require("../middlewares/createActivityMiddlewar
 const activitiesController = require("../controllers/activitiesControllers");
 const error_create_act = require("../middlewares/error_product_form");
 
+
 router.post(
     "/create",
     uploadFile.array("activity_images"),
@@ -28,6 +29,7 @@ router.post(
     activitiesController.create
 );
 
+router.get("/",activitiesController.activities)
 router.get("/edit/:id", activitiesController.showEditForm);
 
 module.exports = router;

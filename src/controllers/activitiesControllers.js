@@ -114,4 +114,17 @@ module.exports = {
             },
         });
     },
+    activities:async (req, res) => {
+        let activities;
+        try {
+           
+            activities = await db.Activities.findAll({ include: ["images", "hours"] });
+        } catch (error) {
+            console.log(error);
+            
+        }
+        res.render("activities", {
+            activities: activities,
+        });
+    },
 };

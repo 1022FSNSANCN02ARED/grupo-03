@@ -24,75 +24,13 @@
         </article>
     </section>
 
-    <section  class="p-8px flex flex-wrap gap">
-
-        <article id="cont-act" class="flex flex-wrap">
-
-                <div class="w-80 of-hidden bg-5 cont-act border p-8px pos-relative flex flex-wrap">
-                        <% activities.forEach(activity => { %>
-                            
-
-                        <li
-                            class="list-card border-rad p-10px flex flex-d-column jc-bet"
-                        >
-                            <div class="act-inf">
-                                <h2 class="txt-center">
-                                    <%= activity.title %>
-                                </h2>
-                                <figure
-                                    class="cont-card-img m-auto of-hidden m-auto flex jc-center al-items pos-relative"
-                                >
-                                    <img
-                                        class="act-img pos-absolute"
-                                        src="<%= activity.images[0]?.image || activity.images[0]%>"
-                                        alt="Actividad"
-                                    />
-                                </figure>
-                                <div
-                                    class="qual-star flex jc-end m-auto p-top-10"
-                                >
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i
-                                        class="fa-regular fa-star-half-stroke"
-                                    ></i>
-                                </div>
-                                <h2>Dias y horarios:</h2>
-                                <p class="fs-15">
-                                    Días de semana: de <%=
-                                    activity.time_start %> a <%=
-                                    activity.time_end %> <%=
-                                    activity.time_start ? ` y de
-                                    ${activity.time_start} a
-                                    ${activity.time_end}`: ""; %>
-                                </p>
-                                <p class="fs-15">
-                                    Fines de semana: de <%=
-                                    activity.wknd_time_start %> a <%=
-                                    activity.wknd_time_end %> <%=
-                                    activity.wknd_time_start ? ` y de
-                                    ${activity.wknd_time_start} a
-                                    ${activity.wknd_time_end}`: "";
-                                    %>
-                                </p>
-                            </div>
-                            <div class="flex jc-center p-10px">
-                                <a
-                                    href="/activities"
-                                    class="cottage-button bg-3 txt-center"
-                                >
-                                    Reservar
-                                </a>
-                            </div>
-                        <% {activity, activities} });  %>
-                        
-        
-                </div>
-            
-        </article>
-    </section>
+    <section class="p-8px flex flex-wrap gap">
+        <ul>
+          <% activities.forEach(activity => { %>
+          <%- include('./partials/activity-card', {activity: activity}) %>
+          <% }) %>
+        </ul>
+      </section>
 
  
 

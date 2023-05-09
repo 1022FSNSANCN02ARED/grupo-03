@@ -45,7 +45,13 @@ CREATE TABLE `activities` (
 
 LOCK TABLES `activities` WRITE;
 /*!40000 ALTER TABLE `activities` DISABLE KEYS */;
-INSERT INTO `activities` VALUES (1,'Senderismo','Lorem ipsum dolor',400,0,7,'2023-03-27 16:34:44','2023-04-03 00:28:05'),(2,'Fogata','Lorem ipsum dolor',450,0,4,'2023-03-27 16:34:44','2023-04-03 00:28:05'),(3,'Senderismo','Lorem ipsum dolor',380,0,8,'2023-03-27 16:34:44','2023-04-03 00:28:05'),(4,'Senderismo','Lorem ipsum dolor',520,0,2,'2023-03-27 16:34:44','2023-04-03 00:28:05'),(5,'Actividad','lorem impus dolor',370,0,5,'2023-04-04 00:14:00','2023-04-04 00:18:27');
+INSERT INTO `activities` (`id`, `name`, `description`, `price`, `assessment`, `max_place`, `createdAt`, `updatedAt`) VALUES
+(1, 'Senderismo', 'Lorem ipsum dolor', 400, '0', 7, '2023-03-27 16:34:44', '2023-04-03 00:28:05'),
+(2, 'Fogata', 'Lorem ipsum dolor', 450, '0', 4, '2023-03-27 16:34:44', '2023-04-03 00:28:05'),
+(3, 'Senderismo', 'Lorem ipsum dolor', 380, '0', 8, '2023-03-27 16:34:44', '2023-04-03 00:28:05'),
+(4, 'Senderismo', 'Lorem ipsum dolor', 520, '0', 2, '2023-03-27 16:34:44', '2023-04-03 00:28:05'),
+(5, 'Actividad', 'lorem impus dolor', 370, '0', 5, '2023-04-04 00:14:00', '2023-04-04 00:18:27'),
+(6, 'Senderismo', 'Caminata por senderos o veredas para disfrutar espacios naturales.', 2500, '0', 10, '2023-05-09 07:55:57', '2023-05-09 07:55:57');
 /*!40000 ALTER TABLE `activities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,7 +115,14 @@ CREATE TABLE `activity_hours` (
 
 LOCK TABLES `activity_hours` WRITE;
 /*!40000 ALTER TABLE `activity_hours` DISABLE KEYS */;
-INSERT INTO `activity_hours` VALUES (1,1,'desde: 7:00, hasta: 11:00','desde 7:00, hasta 11:00','desde: 11:00, hasta: 13:00',NULL,'2023-04-13 18:43:34','2023-04-13 19:07:20'),(2,2,'desde: 8:00, hasta: 11:30','','desde: 6:00, hasta: 10:00',NULL,'2023-04-13 18:45:42','2023-04-13 18:45:42'),(3,3,'desde: 10:00, hasta: 3:00','desde 7:00, hasta 11:00','desde: 11:00, hasta: 13:00',NULL,'2023-04-13 18:47:09','2023-04-13 18:47:09'),(4,4,'desde: 9:00, hasta: 1:00',NULL,NULL,NULL,'2023-04-13 18:47:09','2023-04-13 18:47:09'),(5,5,'desde: 7:00, hasta: 8:00',NULL,'desde: 8:00, hasta: 4:00',NULL,'2023-04-13 18:48:18','2023-04-13 18:48:18');
+INSERT INTO `activity_hours` (`id`, `activity_id`, `weekday_hours`, `second_weekday_hours`, `weekend_hours`, `second_weekend_hours`, `createdAt`, `updatedAt`) VALUES
+(1, 1, 'desde: 7:00, hasta: 11:00', 'desde 7:00, hasta 11:00', 'desde: 11:00, hasta: 13:00', NULL, '2023-04-13 18:43:34', '2023-04-13 19:07:20'),
+(2, 2, 'desde: 8:00, hasta: 11:30', '', 'desde: 6:00, hasta: 10:00', NULL, '2023-04-13 18:45:42', '2023-04-13 18:45:42'),
+(3, 3, 'desde: 10:00, hasta: 3:00', 'desde 7:00, hasta 11:00', 'desde: 11:00, hasta: 13:00', NULL, '2023-04-13 18:47:09', '2023-04-13 18:47:09'),
+(4, 4, 'desde: 9:00, hasta: 1:00', NULL, NULL, NULL, '2023-04-13 18:47:09', '2023-04-13 18:47:09'),
+(5, 5, 'desde: 7:00, hasta: 8:00', NULL, 'desde: 8:00, hasta: 4:00', NULL, '2023-04-13 18:48:18', '2023-04-13 18:48:18'),
+(6, 6, 'desde: 08:00, hasta 16:00', NULL, 'desde: 09:30, hasta 16:00', NULL, '2023-05-09 07:55:58', '2023-05-09 07:55:58');
+
 /*!40000 ALTER TABLE `activity_hours` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -298,7 +311,43 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,1,'/images/cottageImages/liquidambar01.jpg',NULL,'2023-04-03 22:51:41','2023-04-03 22:51:41'),(2,1,'/images/cottageImages/liquidambar02.jpg',NULL,'2023-04-03 22:51:59','2023-04-03 22:51:59'),(3,1,'/images/cottageImages/liquidambar03.jpg',NULL,'2023-04-03 22:52:19','2023-04-03 22:52:19'),(4,1,'/images/cottageImages/liquidambar04.jpg',NULL,'2023-04-03 22:53:23','2023-04-03 22:53:23'),(5,1,'/images/cottageImages/liquidambar05.jpg',NULL,'2023-04-03 22:53:23','2023-04-03 22:53:23'),(6,2,'/images/cottageImages/naranjos01.jpg',NULL,'2023-04-03 22:53:24','2023-04-03 22:53:24'),(7,2,'/images/cottageImages/naranjos02.jpg',NULL,'2023-04-03 22:54:32','2023-04-03 22:55:44'),(8,2,'/images/cottageImages/naranjos03.jpg',NULL,'2023-04-03 22:54:32','2023-04-03 22:55:39'),(9,2,'/images/cottageImages/naranjos04.jpg',NULL,'2023-04-03 22:54:32','2023-04-03 22:55:33'),(10,2,'/images/cottageImages/naranjos05.jpg',NULL,'2023-04-03 22:54:32','2023-04-03 22:55:29'),(11,2,'/images/cottageImages/naranjos06.jpg',NULL,'2023-04-03 22:54:32','2023-04-03 22:55:22'),(12,3,'/images/cottageImages/pinos01.jpg',NULL,'2023-04-03 22:54:57','2023-04-03 22:54:57'),(13,3,'/images/cottageImages/pinos02.jpg',NULL,'2023-04-03 22:56:02','2023-04-03 22:56:02'),(14,4,'/images/cottageImages/pinos03.jpg',NULL,'2023-04-03 22:57:28','2023-04-03 22:57:28'),(15,4,'/images/cottageImages/pinos04.jpg',NULL,'2023-04-03 22:57:28','2023-04-03 22:57:28'),(16,5,'/images/cottageImages/pinos05.jpg',NULL,'2023-04-03 22:58:17','2023-04-03 22:58:17'),(17,5,'/images/cottageImages/pinos06.jpg',NULL,'2023-04-03 22:59:07','2023-04-03 22:59:07'),(18,NULL,'/images/cottageImages/pinos02.jpg',1,'2023-04-04 00:12:55','2023-04-04 00:15:17'),(19,NULL,'/images/cottageImages/naranjos02.jpg',1,'2023-04-04 00:12:55','2023-04-04 00:15:56'),(20,NULL,'/images/cottageImages/liquidambar02.jpg',1,'2023-04-04 00:12:55','2023-04-04 00:15:56'),(21,NULL,'/images/cottageImages/liquidambar03.jpg',2,'2023-04-04 00:12:55','2023-04-04 00:23:41'),(22,NULL,'/images/cottageImages/naranjos04.jpg',2,'2023-04-04 00:12:55','2023-04-04 00:15:56'),(23,NULL,'/images/cottageImages/pinos05.jpg',2,'2023-04-04 00:12:55','2023-04-04 00:15:56'),(24,NULL,'/images/cottageImages/pinos06.jpg',3,'2023-04-04 00:12:55','2023-04-04 00:15:56'),(25,NULL,'/images/cottageImages/liquidambar04.jpg',3,'2023-04-04 00:12:55','2023-04-04 00:15:56'),(26,NULL,'/images/cottageImages/naranjos01.jpg',3,'2023-04-04 00:12:55','2023-04-04 00:15:56'),(27,NULL,'/images/cottageImages/pinos04.jpg',4,'2023-04-04 00:12:55','2023-04-04 00:15:56'),(28,NULL,'/images/cottageImages/liquidambar01.jpg',4,'2023-04-04 00:12:55','2023-04-04 00:15:57'),(29,NULL,'/images/cottageImages/naranjos03.jpg',4,'2023-04-04 00:12:56','2023-04-04 00:15:57'),(30,NULL,'/images/cottageImages/naranjos05.jpg',5,'2023-04-04 00:14:26','2023-04-04 00:15:57'),(31,NULL,'/images/cottageImages/naranjos06.jpg',5,'2023-04-04 00:14:26','2023-04-04 00:15:57'),(32,NULL,'/images/cottageImages/pinos05.jpg',5,'2023-04-04 00:14:26','2023-04-04 00:15:57');
+INSERT INTO `images` (`id`, `cottage_id`, `image`, `activity_id`, `createdAt`, `updatedAt`) VALUES
+(1, 1, '/images/cottageImages/liquidambar01.jpg', NULL, '2023-04-03 22:51:41', '2023-04-03 22:51:41'),
+(2, 1, '/images/cottageImages/liquidambar02.jpg', NULL, '2023-04-03 22:51:59', '2023-04-03 22:51:59'),
+(3, 1, '/images/cottageImages/liquidambar03.jpg', NULL, '2023-04-03 22:52:19', '2023-04-03 22:52:19'),
+(4, 1, '/images/cottageImages/liquidambar04.jpg', NULL, '2023-04-03 22:53:23', '2023-04-03 22:53:23'),
+(5, 1, '/images/cottageImages/liquidambar05.jpg', NULL, '2023-04-03 22:53:23', '2023-04-03 22:53:23'),
+(6, 2, '/images/cottageImages/naranjos01.jpg', NULL, '2023-04-03 22:53:24', '2023-04-03 22:53:24'),
+(7, 2, '/images/cottageImages/naranjos02.jpg', NULL, '2023-04-03 22:54:32', '2023-04-03 22:55:44'),
+(8, 2, '/images/cottageImages/naranjos03.jpg', NULL, '2023-04-03 22:54:32', '2023-04-03 22:55:39'),
+(9, 2, '/images/cottageImages/naranjos04.jpg', NULL, '2023-04-03 22:54:32', '2023-04-03 22:55:33'),
+(10, 2, '/images/cottageImages/naranjos05.jpg', NULL, '2023-04-03 22:54:32', '2023-04-03 22:55:29'),
+(11, 2, '/images/cottageImages/naranjos06.jpg', NULL, '2023-04-03 22:54:32', '2023-04-03 22:55:22'),
+(12, 3, '/images/cottageImages/pinos01.jpg', NULL, '2023-04-03 22:54:57', '2023-04-03 22:54:57'),
+(13, 3, '/images/cottageImages/pinos02.jpg', NULL, '2023-04-03 22:56:02', '2023-04-03 22:56:02'),
+(14, 4, '/images/cottageImages/pinos03.jpg', NULL, '2023-04-03 22:57:28', '2023-04-03 22:57:28'),
+(15, 4, '/images/cottageImages/pinos04.jpg', NULL, '2023-04-03 22:57:28', '2023-04-03 22:57:28'),
+(16, 5, '/images/cottageImages/pinos05.jpg', NULL, '2023-04-03 22:58:17', '2023-04-03 22:58:17'),
+(17, 5, '/images/cottageImages/pinos06.jpg', NULL, '2023-04-03 22:59:07', '2023-04-03 22:59:07'),
+(18, NULL, '/images/cottageImages/pinos02.jpg', 1, '2023-04-04 00:12:55', '2023-04-04 00:15:17'),
+(19, NULL, '/images/cottageImages/naranjos02.jpg', 1, '2023-04-04 00:12:55', '2023-04-04 00:15:56'),
+(20, NULL, '/images/cottageImages/liquidambar02.jpg', 1, '2023-04-04 00:12:55', '2023-04-04 00:15:56'),
+(21, NULL, '/images/cottageImages/liquidambar03.jpg', 2, '2023-04-04 00:12:55', '2023-04-04 00:23:41'),
+(22, NULL, '/images/cottageImages/naranjos04.jpg', 2, '2023-04-04 00:12:55', '2023-04-04 00:15:56'),
+(23, NULL, '/images/cottageImages/pinos05.jpg', 2, '2023-04-04 00:12:55', '2023-04-04 00:15:56'),
+(24, NULL, '/images/cottageImages/pinos06.jpg', 3, '2023-04-04 00:12:55', '2023-04-04 00:15:56'),
+(25, NULL, '/images/cottageImages/liquidambar04.jpg', 3, '2023-04-04 00:12:55', '2023-04-04 00:15:56'),
+(26, NULL, '/images/cottageImages/naranjos01.jpg', 3, '2023-04-04 00:12:55', '2023-04-04 00:15:56'),
+(27, NULL, '/images/cottageImages/pinos04.jpg', 4, '2023-04-04 00:12:55', '2023-04-04 00:15:56'),
+(28, NULL, '/images/cottageImages/liquidambar01.jpg', 4, '2023-04-04 00:12:55', '2023-04-04 00:15:57'),
+(29, NULL, '/images/cottageImages/naranjos03.jpg', 4, '2023-04-04 00:12:56', '2023-04-04 00:15:57'),
+(30, NULL, '/images/cottageImages/naranjos05.jpg', 5, '2023-04-04 00:14:26', '2023-04-04 00:15:57'),
+(31, NULL, '/images/cottageImages/naranjos06.jpg', 5, '2023-04-04 00:14:26', '2023-04-04 00:15:57'),
+(32, NULL, '/images/cottageImages/pinos05.jpg', 5, '2023-04-04 00:14:26', '2023-04-04 00:15:57'),
+(39, NULL, '/images/activityImages/1683618957213_img_activity.jpg', 6, '2023-05-09 07:55:57', '2023-05-09 07:55:57'),
+(40, NULL, '/images/activityImages/1683618957306_img_activity.jpg', 6, '2023-05-09 07:55:57', '2023-05-09 07:55:57'),
+(41, NULL, '/images/activityImages/1683618957355_img_activity.jpg', 6, '2023-05-09 07:55:57', '2023-05-09 07:55:57');
+
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
