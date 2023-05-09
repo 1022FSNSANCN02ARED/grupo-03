@@ -5,68 +5,33 @@
     <title>Actividades</title>
 </head>
 <body>
-   <header>
-     <!-- carrusel -->
-     <div class="carrousel pos-relative flex m-auto of-hidden">
-        <h2 class="pos-absolute txt-center w-100 title-carrousel bg-4 fc-2">
-            Actividades
-        </h2>
-        <ul class="flex m-auto">
-            <li class="of-hidden flex jc-center">
-                <img
-                    src="/images/slider-home01.jpg"
-                    alt="imagen de referencia 1"
-                />
-            </li>
-            <li class="of-hidden flex jc-center">
-                <img
-                    src="/images/slider-home02.jpg"
-                    alt="imagen de referencia 2"
-                />
-            </li>
-            <li class="of-hidden flex jc-center">
-                <img
-                    src="/images/slider-home03.jpg"
-                    alt="imagen de referencia 3"
-                />
-            </li>
-            <li class="of-hidden flex jc-center">
-                <img
-                    src="/images/slider-home04.jpg"
-                    alt="imagen de referencia 4"
-                />
-            </li>
-            <li class="of-hidden flex jc-center">
-                <img
-                    src="/images/slider-home01.jpg"
-                    alt="imagen de referencia 1"
-                />
-            </li>
-        </ul>
-    </div>
-    <!-- carrusel -->
-</header>
+   
+    <header>
+        <!-- nav fijo -->
+        <%- include("./partials/nav") %>
+        <!-- nav fijo -->
+   </header>
+
  <section>
-    <section id="actividades" class="m-auto">
-        <article class="p-1rem w-80 m-auto txt-center">
-            <h2 class="">Actividades</h2>
-            <p class="p-top-10">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Soluta adipisci enim vel eos ullam rem eaque aliquam
-                nulla laborum possimus.
+    <section class="p-1 flex flex-wrap gap">
+        <article class="w-80 m-30 txt-center">
+            <h2 class="m-30 p-top-10">Actividades</h2>
+            <p class="p-top-10 txt-center">
+                En nuestro pueblo podrás ocupar tu tiempo de la manera que más te guste.
+                 Descanso y relajación, senderismo, fogatas, cabalgatas, bicicletas
+                  y un sin fin de actividades para que disfrutes como más te guste.
             </p>
         </article>
+    
+        
+    
+    </section>
+
+    <section  class="p-8px flex flex-wrap gap">
 
         <article id="cont-act" class="flex flex-wrap">
-            <div class="act-nav flex m-auto flex w-100">
-                <button class="scroll-button prev-button">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <button class="scroll-button order-1 next-button">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
 
-                <div class="w-80 of-hidden bg-5 cont-act">
+                <div class="w-80 of-hidden bg-5 cont-act border p-8px pos-relative flex flex-wrap">
                     <ul id="act-list" class="flex of-auto">
                         <% activities.forEach(activity => { %>
 
@@ -129,7 +94,7 @@
                         
                     </ul>
                 </div>
-            </div>
+            
         </article>
     </section>
  </section>
