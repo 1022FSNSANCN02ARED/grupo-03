@@ -56,62 +56,69 @@ module.exports = {
         res.redirect("/");
     },
     showEditForm: async (req, res) => {
-        const productToEdit = await db.Activities.findByPk(req.params.id, {
-            include: ["images", "hours"],
-        });
+        const errors = req.session.errors;
+        let oldData = req.session.oldData;
+        req.session.formType = null;
+        req.session.errors = null;
+        req.session.oldData = null;
 
-        // Función para obtener la hora de inicio
-        function getHoursIn(string) {
-            // Genera un array desde el string
-            let arrayOfString = string.split(" ");
-            // Toma el horario de salida
-            let hourOut = arrayOfString[3];
-            // Si el string resultante no es "xx:xx", le agrega un "0" al comienzo.
-            // Así, esto: "1:30", será esto: "01:30"
-            hourOut = hourOut.length < 5 ? "0" + hourOut : hourOut;
-            return hourOut;
+        if (!oldData) {
+            const productToEdit = await db.Activities.findByPk(req.params.id, {
+                include: ["images", "hours"],
+            });
+
+            // Función para obtener la hora de inicio
+            function getHoursIn(string) {
+                // Genera un array desde el string
+                let arrayOfString = string.split(" ");
+                // Toma el horario de salida
+                let hourOut = arrayOfString[3];
+                // Si el string resultante no es "xx:xx", le agrega un "0" al comienzo.
+                // Así, esto: "1:30", será esto: "01:30"
+                hourOut = hourOut.length < 5 ? "0" + hourOut : hourOut;
+                return hourOut;
+            }
+
+            // Función para obtener la hora de fin
+            function getHoursOut(string) {
+                // Genera un array desde el string
+                let arrayOfString = string.split(" ");
+                // Toma el horario de entrada, sacandole la coma.
+                let hourIn = arrayOfString[1].replace(",", "");
+                // Si el string resultante no es "xx:xx", le agrega un "0" al comienzo.
+                // Así, esto: "1:30", será esto: "01:30"
+                hourIn = hourIn.length < 5 ? "0" + hourIn : hourIn;
+                return hourIn;
+            }
+
+            // Arma un nuevo objeto con los horarios.
+            // Porque en la db se guardan como strings.
+            const hours = productToEdit.hours;
+            const hoursToEdit = {
+                weekday_in: getHoursIn(hours.weekday_hours),
+                weekday_out: getHoursOut(hours.weekday_hours),
+
+                secont_weekday_in: getHoursIn(hours.weekday_hours),
+                secont_weekday_out: getHoursOut(hours.weekday_hours),
+
+                weekend_in: getHoursIn(hours.weekday_hours),
+                weekend_out: getHoursOut(hours.weekday_hours),
+
+                secont_weekend_in: getHoursIn(hours.weekday_hours),
+                secont_weekend_out: getHoursOut(hours.weekday_hours),
+            };
+
+            oldData = {
+                ...productToEdit.dataValues,
+                ...hoursToEdit,
+            };
         }
-
-        // Función para obtener la hora de fin
-        function getHoursOut(string) {
-            // Genera un array desde el string
-            let arrayOfString = string.split(" ");
-            // Toma el horario de entrada, sacandole la coma.
-            let hourIn = arrayOfString[1].replace(",", "");
-            // Si el string resultante no es "xx:xx", le agrega un "0" al comienzo.
-            // Así, esto: "1:30", será esto: "01:30"
-            hourIn = hourIn.length < 5 ? "0" + hourIn : hourIn;
-            return hourIn;
-        }
-
-        // Arma un nuevo objeto con los horarios.
-        // Porque en la db se guardan como strings.
-        const hours = productToEdit.hours;
-        const hoursToEdit = {
-            weekday_in: getHoursIn(hours.weekday_hours),
-            weekday_out: getHoursOut(hours.weekday_hours),
-
-            secont_weekday_in: getHoursIn(hours.weekday_hours),
-            secont_weekday_out: getHoursOut(hours.weekday_hours),
-
-            weekend_in: getHoursIn(hours.weekday_hours),
-            weekend_out: getHoursOut(hours.weekday_hours),
-
-            secont_weekend_in: getHoursIn(hours.weekday_hours),
-            secont_weekend_out: getHoursOut(hours.weekday_hours),
-        };
-        // res.json({
-        //     oldData: {
-        //         ...hoursToEdit,
-        //     },
-        // });
         res.render("create-product-form", {
             isCottage: false,
             isActivity: true,
-            oldData: {
-                ...productToEdit.dataValues,
-                ...hoursToEdit,
-            },
+            oldData,
+            errors,
         });
     },
+    editActivity: async (req, res) => {},
 };
