@@ -1,6 +1,5 @@
 <div id="<%= day %>-hours" class="
-  <%= isActivity && (locals.errors && locals.errors[`${day}_in`] || oldData && oldData[`${day}_in`])  ? "" : "hide" %>">
-
+  <%= isActivity && locals.oldData && ((oldData[`${day}_in`] || oldData[`${day}_out`]) || (oldData[`second_${day}_in`] || oldData[`second_${day}_out`]))  ? "" : "hide" %>">
   <h3 class="m-auto"><%= title %></h3>
   <div id="first-<%= day %>-hours">
     <div class="flex flex-wrap">
@@ -14,7 +13,8 @@
           <i class="fa-solid fa-plus"></i>
         </label>
       </p>
-      <p id="add-second-<%= day %>-hours" class="add-hours fs-15 p-2px m-5 pointer hide">
+      <p id="add-second-<%= day %>-hours" class="add-hours fs-15 p-2px m-5 pointer
+        <%= isActivity && locals.oldData && (oldData[`${day}_in`] && oldData[`${day}_out`]) ? "" : "hide" %>">
         <i class="fa-solid fa-plus"></i>
         Agregar horario
       </p>
@@ -28,9 +28,15 @@
     <% if ( isActivity && locals.errors && locals.errors[`${day}_in`]) { %>
     <p class="txt-error"><%= errors[`${day}_in`].msg %></p>
     <% } %>
+    <% if ( isActivity && locals.errors && locals.errors[`${day}_out`]) { %>
+    <p class="txt-error"><%= errors[`${day}_out`].msg %></p>
+    <% } %>
   </div>
 
-  <div id="second-<%= day %>-hours" class="<%= isActivity && (locals.errors && locals.errors[`second_${day}_in`] || oldData && oldData[`second_${day}_in`])  ? "" : "hide" %>">
+  <div id="second-<%= day %>-hours" class="
+    <%= isActivity && locals.oldData && (oldData[`second_${day}_in`] || oldData[`second_${day}_out`])
+    ? ""
+    : "hide" %>">
     <div class=" flex flex-wrap">
       <p class="fs-18 w-100">
         y Desde:
@@ -44,8 +50,14 @@
       </p>
     </div>
     <div class="second-hours-inputs flex jc-center">
-      <input type="time" name="second_<%= day %>_in" id="second_<%= day %>_in" class="border-none m-5 input-hours p-5px border-rad hide" value="<%= isActivity && locals.oldData && oldData[`second_${day}_in`] ? oldData[`second_${day}_in`] : "";%>" />
-      <input type="time" name="second_<%= day %>_out" id="second_<%= day %>_out" class="border-none m-5 input-hours p-5px border-rad hide" value="<%= isActivity && locals.oldData && oldData[`second_${day}_out`] ? oldData[`second_${day}_out`] : "";%>" />
+      <input type="time" name="second_<%= day %>_in" id="second_<%= day %>_in" class="second-hours-input border-none m-5 input-hours p-5px border-rad hide" value="<%= isActivity && locals.oldData && oldData[`second_${day}_in`] ? oldData[`second_${day}_in`] : "";%>" />
+      <input type="time" name="second_<%= day %>_out" id="second_<%= day %>_out" class="second-hours-input border-none m-5 input-hours p-5px border-rad hide" value="<%= isActivity && locals.oldData && oldData[`second_${day}_out`] ? oldData[`second_${day}_out`] : "";%>" />
     </div>
+    <% if ( isActivity && locals.errors && locals.errors[`second_${day}_in`]) { %>
+    <p class="txt-error"><%= errors[`second_${day}_in`].msg %></p>
+    <% } %>
+    <% if ( isActivity && locals.errors && locals.errors[`second_${day}_out`]) { %>
+    <p class="txt-error"><%= errors[`second_${day}_out`].msg %></p>
+    <% } %>
   </div>
 </div>

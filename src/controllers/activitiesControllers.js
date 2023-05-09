@@ -98,14 +98,14 @@ module.exports = {
                 weekday_in: getHoursIn(hours.weekday_hours),
                 weekday_out: getHoursOut(hours.weekday_hours),
 
-                secont_weekday_in: getHoursIn(hours.weekday_hours),
-                secont_weekday_out: getHoursOut(hours.weekday_hours),
+                second_weekday_in: getHoursIn(hours.weekday_hours),
+                second_weekday_out: getHoursOut(hours.weekday_hours),
 
                 weekend_in: getHoursIn(hours.weekday_hours),
                 weekend_out: getHoursOut(hours.weekday_hours),
 
-                secont_weekend_in: getHoursIn(hours.weekday_hours),
-                secont_weekend_out: getHoursOut(hours.weekday_hours),
+                second_weekend_in: getHoursIn(hours.weekday_hours),
+                second_weekend_out: getHoursOut(hours.weekday_hours),
             };
 
             oldData = {
