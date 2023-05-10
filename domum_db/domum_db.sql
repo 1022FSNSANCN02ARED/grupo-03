@@ -269,7 +269,12 @@ CREATE TABLE `cottages` (
 
 LOCK TABLES `cottages` WRITE;
 /*!40000 ALTER TABLE `cottages` DISABLE KEYS */;
-INSERT INTO `cottages` VALUES (1,'cabaña 1',3009,'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore',3,0,'2023-03-27 15:58:56','2023-04-20 18:25:51',4,2,1),(2,'cabaña 2',3009,'Displ oblique fx shaft of l femur, init for opn fx type I/2',3,0,'2023-03-27 16:05:38','2023-04-20 18:25:51',3,3,1),(3,'cabaña 3',4655,'Infantile idiopathic scoliosis, thoracic region',5,0,'2023-03-27 16:05:38','2023-04-20 18:25:51',6,3,2),(4,'cabaña 4',3675,'Chronic gout, unspecified',3,0,'2023-03-27 16:05:38','2023-04-20 18:25:51',3,2,1),(5,'cabaña 5',4699,'Mech compl of cranial or spinal infusion catheter',2,0,'2023-03-27 16:05:38','2023-04-20 18:25:51',3,3,1);
+INSERT INTO `cottages` (`id`, `name`, `price`, `description`, `beds`, `assessment`, `createdAt`, `updatedAt`, `guest`, `bedrooms`, `bathrooms`) VALUES
+(1, 'Los Pinos', 9000, 'Patagónica, sobre los árboles.', 3, '0', '2023-03-27 15:58:56', '2023-05-10 14:49:45', 4, 2, 1),
+(2, 'El Granero', 8500, 'Típico americano, en 2 plantas con el dormitorio en el altillo, un gran hogar a leña y baño característico del campo.', 3, '0', '2023-03-27 16:05:38', '2023-05-10 14:50:12', 3, 3, 1),
+(3, 'Los Naranjos', 9500, 'Moderna, en 2 plantas con camas extragrandes, y un reconfortante jacuzzi doble.', 5, '0', '2023-03-27 16:05:38', '2023-05-10 14:51:23', 6, 3, 2),
+(4, 'Los Liquidámbar', 12000, 'Sobre los árboles ambientada a lo María Antonieta.', 3, '0', '2023-03-27 16:05:38', '2023-05-10 14:50:53', 3, 2, 1),
+
 /*!40000 ALTER TABLE `cottages` ENABLE KEYS */;
 UNLOCK TABLES;
 
