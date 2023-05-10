@@ -51,7 +51,16 @@ INSERT INTO `activities` (`id`, `name`, `description`, `price`, `assessment`, `m
 (3, 'Senderismo', 'Lorem ipsum dolor', 380, '0', 8, '2023-03-27 16:34:44', '2023-04-03 00:28:05'),
 (4, 'Senderismo', 'Lorem ipsum dolor', 520, '0', 2, '2023-03-27 16:34:44', '2023-04-03 00:28:05'),
 (5, 'Actividad', 'lorem impus dolor', 370, '0', 5, '2023-04-04 00:14:00', '2023-04-04 00:18:27'),
-(6, 'Senderismo', 'Caminata por senderos o veredas para disfrutar espacios naturales.', 2500, '0', 10, '2023-05-09 07:55:57', '2023-05-09 07:55:57');
+(6, 'Senderismo', 'Caminata por senderos o veredas para disfrutar espacios naturales.', 2500, '0', 10, '2023-05-09 07:55:57', '2023-05-09 07:55:57'),
+(7, 'Fogata', 'Elemento natural que nos arropa, nos da calor y luz por las noches.', 1000, '0', 30, '2023-05-10 07:11:48', '2023-05-10 07:11:48'),
+(8, 'Cabalgata', 'Disfrutar de la naturaleza a caballo', 1500, '0', 1, '2023-05-10 07:17:58', '2023-05-10 07:17:58'),
+(9, 'Bicicletas Familiar', 'Paseo en bicicletas para toda la familia', 600, '0', 1, '2023-05-10 07:19:40', '2023-05-10 07:19:40'),
+(10, 'Spa', 'El Spa cuenta con Masajes, Jacuzzi y Sauna para que te relarte', 2000, '0', 1, '2023-05-10 07:24:15', '2023-05-10 07:24:15'),
+(11, 'Piscina', 'piscina para disfrutar con toda la familia', 1200, '0', 1, '2023-05-10 07:26:20', '2023-05-10 07:26:20'),
+(12, 'Piscina Climatizada', 'Piscina Climatizada ideal para distar en familia', 1500, '0', 1, '2023-05-10 07:28:09', '2023-05-10 07:28:09'),
+(13, 'Acuagym', 'Acuagym con los profes del complejo Domun ', 1000, '0', 1, '2023-05-10 07:30:23', '2023-05-10 07:30:23'),
+(14, 'Kayak', 'Paseo por el lago en kayak duracion de 30min', 700, '0', 1, '2023-05-10 07:32:20', '2023-05-10 07:32:20');
+
 /*!40000 ALTER TABLE `activities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +130,15 @@ INSERT INTO `activity_hours` (`id`, `activity_id`, `weekday_hours`, `second_week
 (3, 3, 'desde: 10:00, hasta: 3:00', 'desde 7:00, hasta 11:00', 'desde: 11:00, hasta: 13:00', NULL, '2023-04-13 18:47:09', '2023-04-13 18:47:09'),
 (4, 4, 'desde: 9:00, hasta: 1:00', NULL, NULL, NULL, '2023-04-13 18:47:09', '2023-04-13 18:47:09'),
 (5, 5, 'desde: 7:00, hasta: 8:00', NULL, 'desde: 8:00, hasta: 4:00', NULL, '2023-04-13 18:48:18', '2023-04-13 18:48:18'),
-(6, 6, 'desde: 08:00, hasta 16:00', NULL, 'desde: 09:30, hasta 16:00', NULL, '2023-05-09 07:55:58', '2023-05-09 07:55:58');
+(6, 6, 'desde: 08:00, hasta 16:00', NULL, 'desde: 09:30, hasta 16:00', NULL, '2023-05-09 07:55:58', '2023-05-09 07:55:58'),
+(7, 7, 'desde: 20:00, hasta 22:00', NULL, 'desde: 20:00, hasta 00:00', NULL, '2023-05-10 07:11:56', '2023-05-10 07:11:56'),
+(8, 8, 'desde: 10:00, hasta 16:00', NULL, 'desde: 10:00, hasta 17:00', NULL, '2023-05-10 07:17:59', '2023-05-10 07:17:59'),
+(9, 9, 'desde: 10:00, hasta 17:00', NULL, 'desde: 10:00, hasta 18:00', NULL, '2023-05-10 07:19:42', '2023-05-10 07:19:42'),
+(10, 10, 'desde: 08:00, hasta 16:00', NULL, 'desde: 09:00, hasta 17:00', NULL, '2023-05-10 07:24:16', '2023-05-10 07:24:16'),
+(11, 11, 'desde: 10:00, hasta 19:00', NULL, 'desde: 10:00, hasta 20:00', NULL, '2023-05-10 07:26:21', '2023-05-10 07:26:21'),
+(12, 12, 'desde: 10:00, hasta 19:00', NULL, 'desde: 10:00, hasta 19:00', NULL, '2023-05-10 07:28:10', '2023-05-10 07:28:10'),
+(13, 13, 'desde: 14:00, hasta 17:00', NULL, 'desde: 13:00, hasta 17:00', NULL, '2023-05-10 07:30:24', '2023-05-10 07:30:24'),
+(14, 14, 'desde: 09:00, hasta 17:00', NULL, 'desde: 10:00, hasta 17:00', NULL, '2023-05-10 07:32:21', '2023-05-10 07:32:21');
 
 /*!40000 ALTER TABLE `activity_hours` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -346,7 +363,31 @@ INSERT INTO `images` (`id`, `cottage_id`, `image`, `activity_id`, `createdAt`, `
 (32, NULL, '/images/cottageImages/pinos05.jpg', 5, '2023-04-04 00:14:26', '2023-04-04 00:15:57'),
 (39, NULL, '/images/activityImages/1683618957213_img_activity.jpg', 6, '2023-05-09 07:55:57', '2023-05-09 07:55:57'),
 (40, NULL, '/images/activityImages/1683618957306_img_activity.jpg', 6, '2023-05-09 07:55:57', '2023-05-09 07:55:57'),
-(41, NULL, '/images/activityImages/1683618957355_img_activity.jpg', 6, '2023-05-09 07:55:57', '2023-05-09 07:55:57');
+(41, NULL, '/images/activityImages/1683618957355_img_activity.jpg', 6, '2023-05-09 07:55:57', '2023-05-09 07:55:57'),
+(42, NULL, '/images/activityImages/1683702708479_img_activity.jpg', 7, '2023-05-10 07:11:56', '2023-05-10 07:11:56'),
+(43, NULL, '/images/activityImages/1683702708480_img_activity.jpg', 7, '2023-05-10 07:11:56', '2023-05-10 07:11:56'),
+(44, NULL, '/images/activityImages/1683702708481_img_activity.jpg', 7, '2023-05-10 07:11:56', '2023-05-10 07:11:56'),
+(45, NULL, '/images/activityImages/1683703078787_img_activity.jpg', 8, '2023-05-10 07:17:58', '2023-05-10 07:17:58'),
+(46, NULL, '/images/activityImages/1683703078796_img_activity.jpg', 8, '2023-05-10 07:17:58', '2023-05-10 07:17:58'),
+(47, NULL, '/images/activityImages/1683703078810_img_activity.jpg', 8, '2023-05-10 07:17:58', '2023-05-10 07:17:58'),
+(48, NULL, '/images/activityImages/1683703180721_img_activity.jpg', 9, '2023-05-10 07:19:42', '2023-05-10 07:19:42'),
+(49, NULL, '/images/activityImages/1683703180774_img_activity.jpg', 9, '2023-05-10 07:19:42', '2023-05-10 07:19:42'),
+(50, NULL, '/images/activityImages/1683703180784_img_activity.jpg', 9, '2023-05-10 07:19:42', '2023-05-10 07:19:42'),
+(51, NULL, '/images/activityImages/1683703455667_img_activity.jpg', 10, '2023-05-10 07:24:16', '2023-05-10 07:24:16'),
+(52, NULL, '/images/activityImages/1683703455667_img_activity.jpg', 10, '2023-05-10 07:24:16', '2023-05-10 07:24:16'),
+(53, NULL, '/images/activityImages/1683703455845_img_activity.jpg', 10, '2023-05-10 07:24:16', '2023-05-10 07:24:16'),
+(54, NULL, '/images/activityImages/1683703579732_img_activity.jpg', 11, '2023-05-10 07:26:21', '2023-05-10 07:26:21'),
+(55, NULL, '/images/activityImages/1683703579835_img_activity.jpg', 11, '2023-05-10 07:26:21', '2023-05-10 07:26:21'),
+(56, NULL, '/images/activityImages/1683703580521_img_activity.jpg', 11, '2023-05-10 07:26:21', '2023-05-10 07:26:21'),
+(57, NULL, '/images/activityImages/1683703689482_img_activity.jpg', 12, '2023-05-10 07:28:10', '2023-05-10 07:28:10'),
+(58, NULL, '/images/activityImages/1683703689488_img_activity.jpg', 12, '2023-05-10 07:28:10', '2023-05-10 07:28:10'),
+(59, NULL, '/images/activityImages/1683703689499_img_activity.jpg', 12, '2023-05-10 07:28:10', '2023-05-10 07:28:10'),
+(60, NULL, '/images/activityImages/1683703823245_img_activity.jpg', 13, '2023-05-10 07:30:23', '2023-05-10 07:30:23'),
+(61, NULL, '/images/activityImages/1683703823273_img_activity.jpg', 13, '2023-05-10 07:30:23', '2023-05-10 07:30:23'),
+(62, NULL, '/images/activityImages/1683703823503_img_activity.jpg', 13, '2023-05-10 07:30:23', '2023-05-10 07:30:23'),
+(63, NULL, '/images/activityImages/1683703940719_img_activity.jpg', 14, '2023-05-10 07:32:20', '2023-05-10 07:32:20'),
+(64, NULL, '/images/activityImages/1683703940725_img_activity.jpg', 14, '2023-05-10 07:32:20', '2023-05-10 07:32:20'),
+(65, NULL, '/images/activityImages/1683703940745_img_activity.jpg', 14, '2023-05-10 07:32:20', '2023-05-10 07:32:20');
 
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
