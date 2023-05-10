@@ -7,8 +7,9 @@ const inputsHours = document.querySelectorAll(".input-hours");
 // Capturamos los "Agregar horario"
 const addHours = document.querySelectorAll(".add-hours");
 
-// Capturamos los inputs de horarios, solo los primeros de "weekday" y "weekend".
+// Capturamos los inputs de horarios, de "weekday" y "weekend".
 const firstHoursInputs = document.querySelectorAll(".first-hours-input");
+const secondHoursInputs = document.querySelectorAll(".second-hours-input");
 
 // Capturamos los botones para mostrar el apartado de agregar horarios
 const addHoursButtons = document.querySelectorAll(".select-hours-button");
@@ -49,11 +50,15 @@ inputsHours.forEach((inputHours) => {
 
         // Encontramos el label que tenga el "for" igual al id.
         const label = document.querySelector(`label[for="${idInput}"]`);
-
         // Le agregamos el valor del input, si es que tiene un valor
         if (inputHours.value) {
             label.innerText = inputHours.value;
             label.classList.remove("label-hours");
+        }
+        if (!inputHours.value) {
+            label.innerHTML = `<i class="fa-solid fa-plus"></i>`;
+            label.classList.add("label-hours");
+            inputHours.value = "";
         }
         // y se dejará de mostrar el input.
         inputHours.classList.add("hide");
@@ -103,9 +108,23 @@ firstHoursInputs.forEach((input) => {
     const inputIn = document.getElementById(`${day}-in`);
     const inputOut = document.getElementById(`${day}-out`);
 
-    if (Boolean(inputIn.value) && Boolean(inputOut.value)) {
+    if (!Boolean(inputIn.value) || !Boolean(inputOut.value)) {
         const button = document.getElementById(`add-second-${day}-hours`);
-        button.classList.remove("hide");
+        button.classList.add("hide");
+    }
+});
+
+// Si existen valores en los segundos inputs cuando se carga la página,
+// el botón de "agregar horario" no se mostrará.
+secondHoursInputs.forEach((input) => {
+    const day = input.id.includes("weekday") ? "weekday" : "weekend";
+
+    const inputIn = document.getElementById(`second_${day}_in`);
+    const inputOut = document.getElementById(`second_${day}_out`);
+
+    if (Boolean(inputIn.value) || Boolean(inputOut.value)) {
+        const button = document.getElementById(`add-second-${day}-hours`);
+        button.classList.add("hide");
     }
 });
 
@@ -135,6 +154,15 @@ addHoursButtons.forEach((hoursButton) => {
             sectionAddHours.classList.add("hide");
         }
     });
+    // Si ambos botones estan ocultos, ocultamos también la sección.
+    const weekDayHide = addHoursButtons[0].classList.contains("hide");
+    const weekEndHide = addHoursButtons[1].classList.contains("hide");
+
+    if (weekDayHide && weekEndHide) {
+        const sectionAddHours = document.getElementById("add-hours-buttons");
+
+        sectionAddHours.classList.add("hide");
+    }
 });
 
 // Cuando se agregan imágenes, se muestran en los espacios.
