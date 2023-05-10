@@ -12,25 +12,32 @@
         <!-- nav fijo -->
    </header>
 
- <section>
-    <section class="p-1 m-30 flex flex-wrap gap">
-        <article class="w-80 m-30 txt-center">
-            <h2 class="m-30 p-top-10">Actividades</h2>
-            <p class="p-top-10 txt-center">
-                En nuestro pueblo podrás ocupar tu tiempo de la manera que más te guste.
-                 Descanso y relajación, senderismo, fogatas, cabalgatas, bicicletas
-                  y un sin fin de actividades para que disfrutes como más te guste.
-            </p>
-        </article>
-    </section>
+   <section class="p-1 m-30 flex flex-wrap gap">
+    <article class="w-80 m-30 txt-center">
+        <h2 class="m-30 p-top-10">Actividades</h2>
+        <p class="p-top-10 txt-center">
+            En nuestro complejo podrás ocupar tu tiempo de la manera que más te guste.
+             Descanso y relajación, senderismo, fogatas, cabalgatas, bicicletas
+              y un sin fin de actividades para que disfrutes como más te guste.
+        </p>
+    </article>
+</section>
 
-    <section class="p-8px flex flex-wrap gap">
-        <ul>
-          <% activities.forEach(activity => { %>
-          <%- include('./partials/activity-card', {activity: activity}) %>
-          <% }) %>
-        </ul>
-      </section>
+    
+<main class="vw-90 ">
+        <section class="p-8px flex flex-wrap">
+            <div class="m-top-10 mb flex-d-column jc-bet ">
+                <ul class=" pos-relative flex flex-wrap  w-50 w-25">
+                    <% activities.forEach(activity => { %>
+                    <%- include('./partials/activity-card', {activity: activity}) %>
+                    <% }) %>
+                  </ul>
+    
+            </div>
+           
+          
+        </section>
+    </main>
 
  
 

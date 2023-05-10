@@ -68,10 +68,14 @@ body {
 
 .flex-d-column {
     flex-direction: column;
+    
 }
 
 .flex-wrap {
     flex-wrap: wrap;
+}
+.grap{
+    gap: 10px;
 }
 
 .fs-15 {
@@ -147,6 +151,9 @@ body {
 }
 .mb {
     margin-bottom: 20px;
+}
+.m-top-10 {
+    margin-top: 10px;
 }
 .mr-9 {
     margin-right: 9px;
@@ -244,6 +251,10 @@ ul {
 }
 .w-100 {
     width: 100%;
+}
+
+.vw-90 {
+    width: 90vw;
 }
 
 /*----------------------------- config navbar y header */
@@ -864,12 +875,13 @@ footer h1 {
 
 /*-------------- media queries */
 @media (min-width: 488px) {
+    .w-50 {
+        width: 48%;
+    }
     .article-precio {
         margin-right: 10px;
     }
-    .article-x-noche {
-        width: 45%;
-    }
+    
 
     .but-reserva- {
         margin-left: 140px;
@@ -887,6 +899,9 @@ footer h1 {
 }
 @media (min-width: 761px) {
     /*----------- laptops */
+    .w-25 {
+        width: 20%;
+    }
     .user-name,
     .user-avatar {
         display: block;
@@ -953,6 +968,7 @@ footer h1 {
     .second-section-form {
         width: 45%;
     }
+    
 }
 
 @media (min-width: 1024px) {
@@ -1020,6 +1036,7 @@ footer h1 {
     .border-top {
         display: none;
     }
+    
 }
 
 @media (min-width: 1200px) {
@@ -1033,6 +1050,7 @@ footer h1 {
     .list-card {
         min-width: 25%;
     }
+    
 }
 
 @media (min-width: 1440px) {
