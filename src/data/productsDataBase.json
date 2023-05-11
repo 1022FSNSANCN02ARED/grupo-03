@@ -3,10 +3,17 @@
         "id": 1,
         "name": "cabaña1",
         "price": 3009,
-        "services": ["wi-fi", "bañera"],
+        "services": [
+            "wi-fi",
+            "bañera"
+        ],
         "email": "hbracknell0@earthlink.net",
         "description": "Displ oblique fx shaft of l femur, init for opn fx type I/2",
-        "images": [{ "image": "/images/cottageImages/pinos01.jpg" }],
+        "images": [
+            {
+                "image": "/images/cottageImages/pinos01.jpg"
+            }
+        ],
         "beds": 1
     },
     {
@@ -16,27 +23,44 @@
         "services": [],
         "email": "smcgoogan1@1688.com",
         "description": "Infantile idiopathic scoliosis, thoracic region",
-        "images": [{ "image": "/images/cottageImages/pinos02.jpg" }],
+        "images": [
+            {
+                "image": "/images/cottageImages/pinos02.jpg"
+            }
+        ],
         "beds": 2
     },
     {
         "id": 3,
         "name": "cabaña3",
         "price": 3675,
-        "services": ["wi-fi", "bañera"],
+        "services": [
+            "wi-fi",
+            "bañera"
+        ],
         "email": "efumagall2@discuz.net",
         "description": "Chronic gout, unspecified",
-        "images": [{ "image": "/images/cottageImages/pinos03.jpg" }],
+        "images": [
+            {
+                "image": "/images/cottageImages/pinos03.jpg"
+            }
+        ],
         "beds": 3
     },
     {
         "id": 4,
         "name": "cabaña4",
         "price": 4699,
-        "services": ["wi-fi"],
+        "services": [
+            "wi-fi"
+        ],
         "email": "bmaccaughey3@yolasite.com",
         "description": "Mech compl of cranial or spinal infusion catheter",
-        "images": [{ "image": "/images/cottageImages/pinos04.jpg" }],
+        "images": [
+            {
+                "image": "/images/cottageImages/pinos04.jpg"
+            }
+        ],
         "beds": 4
     },
     {
@@ -46,7 +70,23 @@
         "services": [],
         "email": "kfranzonello4@sohu.com",
         "description": "Melanoma in situ of scalp and neck",
-        "images": [{ "image": "/images/cottageImages/pinos05.jpg" }],
+        "images": [
+            {
+                "image": "/images/cottageImages/pinos05.jpg"
+            }
+        ],
         "beds": 5
+    },
+    {
+        "name": "Los Pinos",
+        "price": "12000",
+        "description": "Patagónica, sobre los árboles.",
+        "beds": "4"
+    },
+    {
+        "name": "Los Naranjos",
+        "price": "9500",
+        "description": "Moderna,en 2 plantas con camas extragrandes y jacuzzi",
+        "beds": "4"
     }
 ]

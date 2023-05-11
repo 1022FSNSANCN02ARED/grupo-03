@@ -360,6 +360,19 @@ grisclaro #f1f7ed */
     margin: 0px 4px;
 }
 
+/*-------album cabañas------*/
+.album-cottage {
+    max-width: 800px;
+    margin: 0 auto; /* Para centrar el contenedor */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .album-cottage img {
+    max-width: calc(33.33% - 10px); /* Restamos 10px para dejar un espacio entre las imágenes */
+    margin-bottom: 10px;
+  }
 /*----------------------- config para el carrucel */
 
 .carrousel {
