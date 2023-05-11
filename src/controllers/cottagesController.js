@@ -15,18 +15,15 @@ module.exports = {
             cottage: cottage,
         });
     },
-    productCart: (req, res) => {
-        res.render("productCart");
-    },
-    showCreateForm: (req, res) => {
-        res.render("create-product-form");
-    },
     create: async (req, res) => {
         let cottage = {
             name: req.body.name,
-            price: req.body.price,
+            price: Number(req.body.price),
             description: req.body.description,
-            beds: req.body.beds,
+            beds: Number(req.body.beds),
+            guest: Number(req.body.guest),
+            bedrooms: Number(req.body.bedrooms),
+            bathrooms: Number(req.body.bathrooms),
         };
         try {
             // Crea la cabaña en la db, y a su vez la guarda en "newCottage", para poder saber su id
@@ -55,29 +52,57 @@ module.exports = {
 
         res.redirect("/");
     },
-    showEditForm: (req, res) => {
-        // el controlador funciona, solo que falta la vista
-        const productToEdit = serv.findById(
-            "productsDataBase.json",
-            req.params.id
-        );
-        res.render("create-product-form", { cottage: productToEdit });
-    },
-    update: async (req, res) => {
-        let cottage = {
-            name: req.body.name,
-            price: req.body.price,
-            description: req.body.description,
-            beds: req.body.beds,
-        };
-        try {
-            const cottageToUpdate = await db.Cottages.getOne({
-                where: { id: req.params.id },
+    showEditForm: async (req, res) => {
+        const errors = req.session.errors;
+        let oldData = req.session.oldData;
+        req.session.formType = null;
+        req.session.errors = null;
+        req.session.oldData = null;
+
+        if (!oldData) {
+            const productToEdit = await db.Cottages.findByPk(req.params.id, {
                 include: ["images", "services"],
             });
-            await cottageToUpdate.update(cottage);
-            await cottageToUpdate.setImages(null);
-            await cottageToUpdate.setServices(null);
+            const services = productToEdit.services.map(
+                (service) => service.service
+            );
+            // res.json(services);
+            oldData = {
+                ...productToEdit.dataValues,
+                services,
+            };
+            // res.json(oldData);
+        }
+        res.render("create-product-form", {
+            isCottage: true,
+            isActivity: false,
+            oldData,
+            errors,
+        });
+    },
+    update: async (req, res) => {
+        let newDataCottage = {
+            name: req.body.name,
+            price: Number(req.body.price),
+            description: req.body.description,
+            beds: Number(req.body.beds),
+            guest: Number(req.body.guest),
+            bedrooms: Number(req.body.bedrooms),
+            bathrooms: Number(req.body.bathrooms),
+        };
+        try {
+            const cottageToUpdate = await db.Cottages.findByPk(req.params.id, {
+                include: ["images", "services"],
+            });
+
+            await cottageToUpdate.update(newDataCottage);
+
+            await cottageToUpdate.services.map((service) => {
+                return service.destroy();
+            });
+            await cottageToUpdate.images.map((image) => {
+                return image.destroy();
+            });
 
             await db.Images.bulkCreate(
                 req.files.map((image) => {
@@ -87,6 +112,11 @@ module.exports = {
                     };
                 })
             );
+
+            req.body.services =
+                typeof req.body.services == "string"
+                    ? [req.body.services]
+                    : req.body.services;
             await db.Services.bulkCreate(
                 req.body.services.map((service) => {
                     return {

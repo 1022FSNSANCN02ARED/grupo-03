@@ -1,7 +1,7 @@
-<form action="/products/activities/<%= locals.oldData?.id ? `edit/${oldData.id}?_method=PUT` : "create" %>" method="post" enctype="multipart/form-data" id="activity-form" class="
+<form action="/products/activities/<%= ( isActivity && locals.oldData?.id) ? `edit/${oldData.id}?_method=PUT` : "create" %>" method="post" enctype="multipart/form-data" id="activity-form" class="
 flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
 <%= isActivity ? "" : "hide" %>">
-  <h2 class="txt-center w-100"><%= locals.oldData?.id ? "Actualizar actividad" : "Crear actividad" %></h2>
+  <h2 class="txt-center w-100"><%= isActivity && locals.oldData?.id ? "Actualizar actividad" : "Crear actividad" %></h2>
   <div class="first-section-form flex flex-d-column w-100">
 
     <h2 class="form-section-title m-10 p-5px txt-center">General</h2>
@@ -50,6 +50,6 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
   </div>
 
   <div class="w-100 txt-center">
-    <button type="submit" form="activity-form" class="f-submit bg-2"><%= locals.oldData?.id ? "Actualizar actividad" : "Crear actividad" %></button>
+    <button type="submit" form="activity-form" class="f-submit bg-2"><%= isActivity && locals.oldData?.id ? "Actualizar actividad" : "Crear actividad" %></button>
   </div>
 </form>

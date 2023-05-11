@@ -17,14 +17,10 @@ const createCottageMiddleware = require("../middlewares/createCottageMiddleware"
 const redirectUserLoggedOut = require("../middlewares/redirectUserLoggedOut");
 const cottagesController = require("../controllers/cottagesController");
 const error_product_form = require("../middlewares/error_product_form");
+const error_product_edit_form = require("../middlewares/error_product_edit_form");
 
 router.get("/details/:id", cottagesController.productDetail);
 
-// Falta poner el middleware de "redirectUserLoggedOut"
-// no esta colocado, para poder verlo y modificarlo sin tener que iniciar sesíon.
-router.get("/cart", cottagesController.productCart);
-
-router.get("/create", cottagesController.showCreateForm);
 router.post(
     "/create",
     uploadFile.array("cottage_images"),
@@ -34,7 +30,13 @@ router.post(
 );
 
 router.get("/edit/:id", cottagesController.showEditForm);
-router.put("/edit/:id", cottagesController.update);
+router.put(
+    "/edit/:id",
+    uploadFile.array("cottage_images"),
+    createCottageMiddleware,
+    error_product_edit_form,
+    cottagesController.update
+);
 
 router.get("/delete/:id", cottagesController.showDeleteOption);
 router.delete("/delete/:id", cottagesController.delete);
