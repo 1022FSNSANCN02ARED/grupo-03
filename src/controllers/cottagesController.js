@@ -2,7 +2,7 @@ const serv = require("../data/serv");
 const db = require("../database/models");
 
 module.exports = {
-    productDetail: async (req, res) => {
+    showBookingForm: async (req, res) => {
         let cottage = [];
         try {
             cottage = await db.Cottages.findByPk(req.params.id, {
@@ -16,6 +16,18 @@ module.exports = {
             footerProductDetails: "footer-producDetail",
             cottage: cottage,
         });
+    },
+    showDetails: async (req, res) => {
+        try {
+            const cottage = await db.Cottages.findByPk(req.params.id, {
+                include: ["images", "services"],
+            });
+            res.render("generalCab", {
+                cottage: cottage,
+            });
+        } catch (error) {
+            console.log(error);
+        }
     },
     productCart: (req, res) => {
         res.render("productCart");

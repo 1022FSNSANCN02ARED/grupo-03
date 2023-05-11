@@ -7,15 +7,15 @@
 
     <body>
         <%- include("./partials/nav") %>
-
+<main class="top-70">
         <div class="album-cottage">
-            <img src="/images/cottageImages/pinos01.jpg" alt="Pino01" />
-            <img src="/images/cottageImages/pinos02.jpg" alt="Pino02" />
-            <img src="/images/cottageImages/pinos03.jpg" alt="Pino03" />
-            <img src="/images/cottageImages/pinos04.jpg" alt="Pino04"/>
-            <img src="/images/cottageImages/pinos05.jpg" alt="Pino05"/>
-            <img src="/images/cottageImages/pinos06.jpg" alt="Pino06"/>
+            <% cottage.images.forEach(image => { %> <img src="<%= image.image %>" alt="<%= cottage.name %>" />
+             
+            <% }) %>
+           
+
         </div>
+    </main>
 
       </div>
       <iframe title="vimeo-player" src="https://player.vimeo.com/video/657637618?h=eb42b3d9ef" width="640" height="360" frameborder="0" allowfullscreen jc-center></iframe>

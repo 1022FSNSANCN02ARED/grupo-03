@@ -18,7 +18,7 @@ const redirectUserLoggedOut = require("../middlewares/redirectUserLoggedOut");
 const cottagesController = require("../controllers/cottagesController");
 const error_product_form = require("../middlewares/error_product_form");
 
-router.get("/details/:id", cottagesController.productDetail);
+router.get("/details/:id", cottagesController.showDetails);
 
 // Falta poner el middleware de "redirectUserLoggedOut"
 // no esta colocado, para poder verlo y modificarlo sin tener que iniciar sesíon.
