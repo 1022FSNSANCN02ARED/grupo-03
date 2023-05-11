@@ -1,4 +1,3 @@
-const serv = require("../data/serv");
 const db = require("../database/models");
 
 module.exports = {
@@ -10,7 +9,6 @@ module.exports = {
             });
         } catch (error) {
             console.log(error);
-            serv.findById("productsDataBase.json", req.params.id);
         }
         res.render("productDetail", {
             footerProductDetails: "footer-producDetail",
@@ -53,7 +51,6 @@ module.exports = {
             );
         } catch (error) {
             console.log(error);
-            serv.uploadData("productsDataBase.json", cottage);
         }
 
         res.redirect("/");
@@ -101,19 +98,14 @@ module.exports = {
             await cottageToUpdate.reload();
         } catch (error) {
             console.log(error);
-            serv.editData("productDataBase.json", req.params.id, cottageToEdit);
         }
         res.redirect("/");
     },
-    showDeleteOption: (req, res) => {
-        const cottageToDelete = serv.findById(
-            "productsDataBase.json",
-            req.params.id
-        );
+    showDeleteOption: async (req, res) => {
+        const cottageToDelete = await db.Cottages.findByPk(req.params.id);
         res.render("delete-detail", { product: cottageToDelete });
     },
     delete: (req, res) => {
-        serv.delete("productsDataBase.json", req.params.id);
         res.redirect("/");
     },
 };
