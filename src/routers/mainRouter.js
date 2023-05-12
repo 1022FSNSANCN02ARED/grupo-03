@@ -13,8 +13,6 @@ router.use("/user", usersRouter);
 //const generalCab = require("./generalCab");
 router.get("/generalCab", mainController.generalCab);
 
-
-
 // API
 const mainApiRoutes = require("./api/mainApiRouter");
 router.use("/api", mainApiRoutes);

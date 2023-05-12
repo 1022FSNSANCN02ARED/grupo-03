@@ -21,7 +21,6 @@ const activitiesController = require("../controllers/activitiesControllers");
 const error_create_act = require("../middlewares/error_product_form");
 const error_edit_act = require("../middlewares/error_product_edit_form");
 
-
 router.post(
     "/create",
     uploadFile.array("activity_images"),
@@ -30,14 +29,15 @@ router.post(
     activitiesController.create
 );
 
-router.get("/",activitiesController.activities)
+router.get("/", activitiesController.activities);
+
 router.get("/edit/:id", activitiesController.showEditForm);
 router.put(
     "/edit/:id",
     uploadFile.array("activity_images"),
     createActivityMiddleware,
     error_edit_act,
-    activitiesController.editActivity
+    activitiesController.update
 );
 
 module.exports = router;

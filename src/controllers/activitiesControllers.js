@@ -20,24 +20,28 @@ module.exports = {
             description: req.body.description,
         };
         const hours = {
-            weekday_hours: req.body.weekday_in
-                ? `desde: ${req.body.weekday_in}, hasta ${req.body.weekday_out}`
-                : null,
-            second_weekday_hours: req.body.second_weekday_in
-                ? `desde: ${req.body.second_weekday_in}, hasta ${req.body.second_weekday_out}`
-                : null,
-            weekend_hours: req.body.weekend_in
-                ? `desde: ${req.body.weekend_in}, hasta ${req.body.weekend_out}`
-                : null,
-            second_weekend_hours: req.body.second_weekend_in
-                ? `desde: ${req.body.second_weekend_in}, hasta ${req.body.second_weekend_out}`
-                : null,
+            weekday_hours:
+                req.body.weekday_in && req.body.weekday_out
+                    ? `desde: ${req.body.weekday_in}, hasta ${req.body.weekday_out}`
+                    : null,
+            second_weekday_hours:
+                req.body.second_weekday_in && req.body.second_weekday_out
+                    ? `desde: ${req.body.second_weekday_in}, hasta ${req.body.second_weekday_out}`
+                    : null,
+            weekend_hours:
+                req.body.weekend_in && req.body.weekend_out
+                    ? `desde: ${req.body.weekend_in}, hasta ${req.body.weekend_out}`
+                    : null,
+            second_weekend_hours:
+                req.body.second_weekend_in && req.body.second_weekend_out
+                    ? `desde: ${req.body.second_weekend_in}, hasta ${req.body.second_weekend_out}`
+                    : null,
         };
         try {
-            // Crea la cabaña en la db, y a su vez la guarda en "newActivity", para poder saber su id
+            // Crea la actividad en la db, y a su vez la guarda en "newActivity", para poder saber su id
             // para agregarle las imágenes y servicios
             const newActivity = await db.Activities.create(activity);
-            // Sube las "imágenes" en la db, usando el id de la cabaña recien creada.
+            // Sube las "imágenes" en la db, usando el id de la actividad recien creada.
             await db.Images.bulkCreate(
                 req.files.map((image) => {
                     return {
@@ -46,6 +50,7 @@ module.exports = {
                     };
                 })
             );
+            // Crea el horario.
             await db.ActivitiesHours.create({
                 activity_id: newActivity.id,
                 ...hours,
@@ -67,28 +72,34 @@ module.exports = {
                 include: ["images", "hours"],
             });
 
-            // Función para obtener la hora de inicio
+            // Función para obtener la hora de fin
             function getHoursIn(string) {
-                // Genera un array desde el string
-                let arrayOfString = string.split(" ");
-                // Toma el horario de salida
-                let hourOut = arrayOfString[3];
-                // Si el string resultante no es "xx:xx", le agrega un "0" al comienzo.
-                // Así, esto: "1:30", será esto: "01:30"
-                hourOut = hourOut.length < 5 ? "0" + hourOut : hourOut;
-                return hourOut;
+                if (string) {
+                    // Genera un array desde el string
+                    let arrayOfString = string.split(" ");
+                    // Toma el horario de entrada, sacandole la coma.
+                    let hourIn = arrayOfString[1].replace(",", "");
+                    // Si el string resultante no es "xx:xx", le agrega un "0" al comienzo.
+                    // Así, esto: "1:30", será esto: "01:30"
+                    hourIn = hourIn.length < 5 ? "0" + hourIn : hourIn;
+                    return hourIn;
+                }
+                return null;
             }
 
-            // Función para obtener la hora de fin
+            // Función para obtener la hora de inicio
             function getHoursOut(string) {
-                // Genera un array desde el string
-                let arrayOfString = string.split(" ");
-                // Toma el horario de entrada, sacandole la coma.
-                let hourIn = arrayOfString[1].replace(",", "");
-                // Si el string resultante no es "xx:xx", le agrega un "0" al comienzo.
-                // Así, esto: "1:30", será esto: "01:30"
-                hourIn = hourIn.length < 5 ? "0" + hourIn : hourIn;
-                return hourIn;
+                if (string) {
+                    // Genera un array desde el string
+                    let arrayOfString = string.split(" ");
+                    // Toma el horario de salida
+                    let hourOut = arrayOfString[3];
+                    // Si el string resultante no es "xx:xx", le agrega un "0" al comienzo.
+                    // Así, esto: "1:30", será esto: "01:30"
+                    hourOut = hourOut.length < 5 ? "0" + hourOut : hourOut;
+                    return hourOut;
+                }
+                return null;
             }
 
             // Arma un nuevo objeto con los horarios.
@@ -98,14 +109,14 @@ module.exports = {
                 weekday_in: getHoursIn(hours.weekday_hours),
                 weekday_out: getHoursOut(hours.weekday_hours),
 
-                second_weekday_in: getHoursIn(hours.weekday_hours),
-                second_weekday_out: getHoursOut(hours.weekday_hours),
+                second_weekday_in: getHoursIn(hours.second_weekday_hours),
+                second_weekday_out: getHoursOut(hours.second_weekday_hours),
 
-                weekend_in: getHoursIn(hours.weekday_hours),
-                weekend_out: getHoursOut(hours.weekday_hours),
+                weekend_in: getHoursIn(hours.weekend_hours),
+                weekend_out: getHoursOut(hours.weekend_hours),
 
-                second_weekend_in: getHoursIn(hours.weekday_hours),
-                second_weekend_out: getHoursOut(hours.weekday_hours),
+                second_weekend_in: getHoursIn(hours.second_weekend_hours),
+                second_weekend_out: getHoursOut(hours.second_weekend_hours),
             };
 
             oldData = {
@@ -120,7 +131,67 @@ module.exports = {
             errors,
         });
     },
-    editActivity: async (req, res) => {},
+
+    update: async (req, res) => {
+        let newDataActivity = {
+            name: req.body.name,
+            price: Number(req.body.price),
+            max_place: Number(req.body.max_place),
+            description: req.body.description,
+        };
+        try {
+            const activityToUpdate = await db.Activities.findByPk(
+                req.params.id,
+                {
+                    include: ["images", "hours"],
+                }
+            );
+            await activityToUpdate.update(newDataActivity);
+
+            await activityToUpdate.hours.destroy();
+
+            await activityToUpdate.images.map((image) => {
+                return image.destroy();
+            });
+
+            await db.Images.bulkCreate(
+                req.files.map((image) => {
+                    return {
+                        activity_id: activityToUpdate.id,
+                        image: `/images/activityImages/${image.filename}`,
+                    };
+                })
+            );
+
+            const hours = {
+                weekday_hours:
+                    req.body.weekday_in && req.body.weekday_out
+                        ? `desde: ${req.body.weekday_in}, hasta ${req.body.weekday_out}`
+                        : null,
+                second_weekday_hours:
+                    req.body.second_weekday_in && req.body.second_weekday_out
+                        ? `desde: ${req.body.second_weekday_in}, hasta ${req.body.second_weekday_out}`
+                        : null,
+                weekend_hours:
+                    req.body.weekend_in && req.body.weekend_out
+                        ? `desde: ${req.body.weekend_in}, hasta ${req.body.weekend_out}`
+                        : null,
+                second_weekend_hours:
+                    req.body.second_weekend_in && req.body.second_weekend_out
+                        ? `desde: ${req.body.second_weekend_in}, hasta ${req.body.second_weekend_out}`
+                        : null,
+            };
+            await db.ActivitiesHours.create({
+                activity_id: activityToUpdate.id,
+                ...hours,
+            });
+
+            await activityToUpdate.reload();
+        } catch (error) {
+            console.log(error);
+        }
+        res.redirect("/");
+    },
     activities: async (req, res) => {
         let activities;
         try {

@@ -1,4 +1,3 @@
-const serv = require("../data/serv");
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
 module.exports = {
@@ -26,13 +25,11 @@ module.exports = {
             db.Users.create(user);
         } catch (error) {
             console.log(error);
-            serv.uploadData("users.json", user);
         }
 
         res.redirect("/");
     },
     delete: (req, res) => {
-        serv.delete("users.json", req.params.id);
         res.redirect("/");
     },
     showEdit: (req, res) => {
@@ -76,33 +73,47 @@ module.exports = {
         } catch (error) {
             console.log(error);
         }
-        // serv.editData("users.json", req.params.id, user);
         res.redirect("/");
     },
 
-    /** Login del usuario 
-    proccesLogin: async (req,res) => {
-        const userLog=users.findOne({where:{email:req,res}})
+    // Login del usuario
+    proccesLogin: async (req, res) => {
+        try {
+            const userLog = await db.Users.findOne({
+                where: { email: req.body.email },
+            });
+            if (
+                userLog &&
+                bcryptjs.compareSync(req.body.password, userLog.password)
+            ) {
+                delete userLog.password;
+                req.session.userLog = userLog;
 
-        // Se verifica que el email ingresado exista en nuestra base de datos 
+                if (!!req.body.recordame) {
+                    // código para que se guarde una cookie
+                    var cookieName = "userLogInCookie";
+                    var cookieValue = userLog.email;
+                    var cookieExpiration = new Date();
+                    cookieExpiration.setDate(cookieExpiration.getDate() + 30); // La cookie expira en 30 días
+                    document.cookie =
+                        cookieName +
+                        "=" +
+                        cookieValue +
+                        ";expires=" +
+                        cookieExpiration.toUTCString() +
+                        ";path=/";
+                }
 
-       if(!userLog){
-           res.render("login",{errors:{
-          return res.render("login",{errors:{
-               email:{msg:"Credenciales inválidas"}},registro: registro})               
-       }else{
-
-
-        //Si el email existe se verifica el password
-
-       if(!bscryptjs.compareSync(req.body.password,userLog.password)){
-          res.render("login",{errors:{
-               email:{msg:"Credenciales inválidas"}},registro: registro})
-           }
-       }
-       delete userLog.password;
-       req.session.userLog=userLog;
-       res.redirect("/");
-
-}, **/
+    //             res.redirect("/");
+    //         } else {
+    //             res.render("login", {
+    //                 errors: {
+    //                     email: { msg: "Credenciales inválidas" },
+    //                 },
+    //             });
+    //         }
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // },
 };

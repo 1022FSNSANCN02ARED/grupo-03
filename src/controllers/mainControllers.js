@@ -1,4 +1,3 @@
-const serv = require("../data/serv");
 const db = require("../database/models");
 
 module.exports = {
@@ -19,8 +18,6 @@ module.exports = {
             });
         } catch (error) {
             console.log(error);
-            activities = serv.findAll("activities.json");
-            cottages = serv.findAll("productsDataBase.json");
         }
         // res.json(activities);
         res.render("index", {
@@ -31,20 +28,15 @@ module.exports = {
     generalCab: (req, res) => {
         res.render("generalCab");
     },
-    activities:async (req, res) => {
+    activities: async (req, res) => {
         let activities;
         try {
-           
             activities = await db.Activities.findAll({ include: ["images"] });
         } catch (error) {
             console.log(error);
-            activities = serv.findAll("activities.json");
-           
         }
         res.render("activities", {
             activities: activities,
         });
     },
-    
-    
 };
