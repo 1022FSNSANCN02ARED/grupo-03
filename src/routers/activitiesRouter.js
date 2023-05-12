@@ -40,4 +40,7 @@ router.put(
     activitiesController.update
 );
 
+router.get("/delete/:id", activitiesController.showDeleteOption);
+router.delete("/delete/:id", activitiesController.delete);
+
 module.exports = router;

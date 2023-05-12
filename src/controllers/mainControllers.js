@@ -2,41 +2,25 @@ const db = require("../database/models");
 
 module.exports = {
     home: async (req, res) => {
-        // Se usa el try catch para seguir usando la base de datos en json
-        // si la SQL no esta disponible.
-        let activities;
-        let cottages;
         try {
-            // En la vista "index.ejs" hay un "or" que hay que borrar cuando estemos trabajando full con la db de MySQL.
-            cottages = await db.Cottages.findAll({
+            const cottages = await db.Cottages.findAll({
                 include: ["images"],
                 limit: 4,
             });
-            activities = await db.Activities.findAll({
+            const activities = await db.Activities.findAll({
                 include: ["images", "hours"],
                 limit: 4,
+            });
+
+            res.render("index", {
+                cottage: cottages,
+                activities: activities,
             });
         } catch (error) {
             console.log(error);
         }
-        // res.json(activities);
-        res.render("index", {
-            cottage: cottages,
-            activities: activities,
-        });
     },
     generalCab: (req, res) => {
         res.render("generalCab");
-    },
-    activities: async (req, res) => {
-        let activities;
-        try {
-            activities = await db.Activities.findAll({ include: ["images"] });
-        } catch (error) {
-            console.log(error);
-        }
-        res.render("activities", {
-            activities: activities,
-        });
     },
 };

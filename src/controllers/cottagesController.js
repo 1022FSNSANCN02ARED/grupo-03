@@ -1,4 +1,6 @@
 const db = require("../database/models");
+const fs = require("fs");
+const path = require("path");
 
 module.exports = {
     productDetail: async (req, res) => {
@@ -59,26 +61,33 @@ module.exports = {
         req.session.errors = null;
         req.session.oldData = null;
 
-        if (!oldData) {
-            const productToEdit = await db.Cottages.findByPk(req.params.id, {
-                include: ["images", "services"],
+        try {
+            if (!oldData) {
+                const productToEdit = await db.Cottages.findByPk(
+                    req.params.id,
+                    {
+                        include: ["images", "services"],
+                    }
+                );
+                const services = productToEdit.services.map(
+                    (service) => service.service
+                );
+                // res.json(services);
+                oldData = {
+                    ...productToEdit.dataValues,
+                    services,
+                };
+                // res.json(oldData);
+            }
+            res.render("create-product-form", {
+                isCottage: true,
+                isActivity: false,
+                oldData,
+                errors,
             });
-            const services = productToEdit.services.map(
-                (service) => service.service
-            );
-            // res.json(services);
-            oldData = {
-                ...productToEdit.dataValues,
-                services,
-            };
-            // res.json(oldData);
+        } catch (error) {
+            console.log(error);
         }
-        res.render("create-product-form", {
-            isCottage: true,
-            isActivity: false,
-            oldData,
-            errors,
-        });
     },
     update: async (req, res) => {
         let newDataCottage = {
@@ -100,9 +109,19 @@ module.exports = {
             await cottageToUpdate.services.map((service) => {
                 return service.destroy();
             });
-            await cottageToUpdate.images.map((image) => {
-                return image.destroy();
-            });
+
+            if (cottageToUpdate.images) {
+                for (const image of cottageToUpdate.images) {
+                    // Crea la ruta hacia el archivo de imágen.
+                    const imagePath = path.join(
+                        __dirname,
+                        `../../public/${image.image}`
+                    );
+                    // lo elimina
+                    await fs.promises.unlink(imagePath);
+                    await image.destroy();
+                }
+            }
 
             await db.Images.bulkCreate(
                 req.files.map((image) => {
@@ -133,9 +152,56 @@ module.exports = {
     },
     showDeleteOption: async (req, res) => {
         const cottageToDelete = await db.Cottages.findByPk(req.params.id);
-        res.render("delete-detail", { product: cottageToDelete });
+        res.render("delete-detail", {
+            product: cottageToDelete,
+            productType: "cottages",
+        });
     },
-    delete: (req, res) => {
-        res.redirect("/");
+    delete: async (req, res) => {
+        try {
+            const cottageToDelete = await db.Cottages.findByPk(req.params.id, {
+                include: ["images", "services", "assessments"],
+            });
+
+            if (cottageToDelete.images) {
+                for (const image of cottageToDelete.images) {
+                    // Crea la ruta hacia el archivo de imágen.
+                    const imagePath = path.join(
+                        __dirname,
+                        `../../public/${image.image}`
+                    );
+                    // lo elimina
+                    await fs.promises.unlink(imagePath);
+                    await image.destroy();
+                }
+            }
+
+            if (cottageToDelete.assessments) {
+                if (cottageToDelete.assessments.length == 1) {
+                    await cottageToDelete.assessments.destroy();
+                }
+                if (cottageToDelete.assessments.length > 1) {
+                    for (const assessment of cottageToDelete.assessments) {
+                        await assessment.destroy();
+                    }
+                }
+            }
+
+            if (cottageToDelete.services) {
+                if (cottageToDelete.services.length == 1) {
+                    await cottageToDelete.services.destroy();
+                }
+                if (cottageToDelete.services.length > 1) {
+                    for (const service of cottageToDelete.services) {
+                        await service.destroy();
+                    }
+                }
+            }
+
+            await cottageToDelete.destroy();
+            res.redirect("/");
+        } catch (error) {
+            console.log(error);
+        }
     },
 };

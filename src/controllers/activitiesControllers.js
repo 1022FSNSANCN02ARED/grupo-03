@@ -1,4 +1,6 @@
 const db = require("../database/models");
+const fs = require("fs");
+const path = require("path");
 
 module.exports = {
     activityDetail: async (req, res) => {
@@ -61,75 +63,82 @@ module.exports = {
         res.redirect("/");
     },
     showEditForm: async (req, res) => {
-        const errors = req.session.errors;
-        let oldData = req.session.oldData;
-        req.session.formType = null;
-        req.session.errors = null;
-        req.session.oldData = null;
+        try {
+            const errors = req.session.errors;
+            let oldData = req.session.oldData;
+            req.session.formType = null;
+            req.session.errors = null;
+            req.session.oldData = null;
 
-        if (!oldData) {
-            const productToEdit = await db.Activities.findByPk(req.params.id, {
-                include: ["images", "hours"],
+            if (!oldData) {
+                const productToEdit = await db.Activities.findByPk(
+                    req.params.id,
+                    {
+                        include: ["images", "hours"],
+                    }
+                );
+
+                // Función para obtener la hora de fin
+                function getHoursIn(string) {
+                    if (string) {
+                        // Genera un array desde el string
+                        let arrayOfString = string.split(" ");
+                        // Toma el horario de entrada, sacandole la coma.
+                        let hourIn = arrayOfString[1].replace(",", "");
+                        // Si el string resultante no es "xx:xx", le agrega un "0" al comienzo.
+                        // Así, esto: "1:30", será esto: "01:30"
+                        hourIn = hourIn.length < 5 ? "0" + hourIn : hourIn;
+                        return hourIn;
+                    }
+                    return null;
+                }
+
+                // Función para obtener la hora de inicio
+                function getHoursOut(string) {
+                    if (string) {
+                        // Genera un array desde el string
+                        let arrayOfString = string.split(" ");
+                        // Toma el horario de salida
+                        let hourOut = arrayOfString[3];
+                        // Si el string resultante no es "xx:xx", le agrega un "0" al comienzo.
+                        // Así, esto: "1:30", será esto: "01:30"
+                        hourOut = hourOut.length < 5 ? "0" + hourOut : hourOut;
+                        return hourOut;
+                    }
+                    return null;
+                }
+
+                // Arma un nuevo objeto con los horarios.
+                // Porque en la db se guardan como strings.
+                const hours = productToEdit.hours;
+                const hoursToEdit = {
+                    weekday_in: getHoursIn(hours.weekday_hours),
+                    weekday_out: getHoursOut(hours.weekday_hours),
+
+                    second_weekday_in: getHoursIn(hours.second_weekday_hours),
+                    second_weekday_out: getHoursOut(hours.second_weekday_hours),
+
+                    weekend_in: getHoursIn(hours.weekend_hours),
+                    weekend_out: getHoursOut(hours.weekend_hours),
+
+                    second_weekend_in: getHoursIn(hours.second_weekend_hours),
+                    second_weekend_out: getHoursOut(hours.second_weekend_hours),
+                };
+
+                oldData = {
+                    ...productToEdit.dataValues,
+                    ...hoursToEdit,
+                };
+            }
+            res.render("create-product-form", {
+                isCottage: false,
+                isActivity: true,
+                oldData,
+                errors,
             });
-
-            // Función para obtener la hora de fin
-            function getHoursIn(string) {
-                if (string) {
-                    // Genera un array desde el string
-                    let arrayOfString = string.split(" ");
-                    // Toma el horario de entrada, sacandole la coma.
-                    let hourIn = arrayOfString[1].replace(",", "");
-                    // Si el string resultante no es "xx:xx", le agrega un "0" al comienzo.
-                    // Así, esto: "1:30", será esto: "01:30"
-                    hourIn = hourIn.length < 5 ? "0" + hourIn : hourIn;
-                    return hourIn;
-                }
-                return null;
-            }
-
-            // Función para obtener la hora de inicio
-            function getHoursOut(string) {
-                if (string) {
-                    // Genera un array desde el string
-                    let arrayOfString = string.split(" ");
-                    // Toma el horario de salida
-                    let hourOut = arrayOfString[3];
-                    // Si el string resultante no es "xx:xx", le agrega un "0" al comienzo.
-                    // Así, esto: "1:30", será esto: "01:30"
-                    hourOut = hourOut.length < 5 ? "0" + hourOut : hourOut;
-                    return hourOut;
-                }
-                return null;
-            }
-
-            // Arma un nuevo objeto con los horarios.
-            // Porque en la db se guardan como strings.
-            const hours = productToEdit.hours;
-            const hoursToEdit = {
-                weekday_in: getHoursIn(hours.weekday_hours),
-                weekday_out: getHoursOut(hours.weekday_hours),
-
-                second_weekday_in: getHoursIn(hours.second_weekday_hours),
-                second_weekday_out: getHoursOut(hours.second_weekday_hours),
-
-                weekend_in: getHoursIn(hours.weekend_hours),
-                weekend_out: getHoursOut(hours.weekend_hours),
-
-                second_weekend_in: getHoursIn(hours.second_weekend_hours),
-                second_weekend_out: getHoursOut(hours.second_weekend_hours),
-            };
-
-            oldData = {
-                ...productToEdit.dataValues,
-                ...hoursToEdit,
-            };
+        } catch (error) {
+            console.log();
         }
-        res.render("create-product-form", {
-            isCottage: false,
-            isActivity: true,
-            oldData,
-            errors,
-        });
     },
 
     update: async (req, res) => {
@@ -150,9 +159,18 @@ module.exports = {
 
             await activityToUpdate.hours.destroy();
 
-            await activityToUpdate.images.map((image) => {
-                return image.destroy();
-            });
+            if (activityToUpdate.images) {
+                for (const image of activityToUpdate.images) {
+                    // Crea la ruta hacia el archivo de imágen.
+                    const imagePath = path.join(
+                        __dirname,
+                        `../../public/${image.image}`
+                    );
+                    // lo elimina
+                    await fs.promises.unlink(imagePath);
+                    await image.destroy();
+                }
+            }
 
             await db.Images.bulkCreate(
                 req.files.map((image) => {
@@ -204,5 +222,53 @@ module.exports = {
         res.render("activities", {
             activities: activities,
         });
+    },
+    showDeleteOption: async (req, res) => {
+        const activityToDelete = await db.Activities.findByPk(req.params.id);
+        res.render("delete-detail", {
+            product: activityToDelete,
+            productType: "activities",
+        });
+    },
+    delete: async (req, res) => {
+        try {
+            const activityToDelete = await db.Activities.findByPk(
+                req.params.id,
+                {
+                    include: ["images", "hours", "assessments"],
+                }
+            );
+            if (activityToDelete.images) {
+                for (const image of activityToDelete.images) {
+                    // Crea la ruta hacia el archivo de imágen.
+                    const imagePath = path.join(
+                        __dirname,
+                        `../../public/${image.image}`
+                    );
+                    // lo elimina
+                    await fs.promises.unlink(imagePath);
+                    await image.destroy();
+                }
+            }
+            if (activityToDelete.assessments) {
+                if (activityToDelete.assessments.length == 1) {
+                    await activityToDelete.assessments.destroy();
+                }
+                if (activityToDelete.assessments.length > 1) {
+                    for (const assessment of activityToDelete.assessments) {
+                        await assessment.destroy();
+                    }
+                }
+            }
+            if (activityToDelete.hours) {
+                await activityToDelete.hours.destroy();
+            }
+
+            await activityToDelete.destroy();
+
+            res.redirect("/");
+        } catch (error) {
+            console.log(error);
+        }
     },
 };
