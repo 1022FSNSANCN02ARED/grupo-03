@@ -108,4 +108,10 @@ module.exports = {
             console.log(error);
         }
     },
+    processLogOut: (req, res) => {
+        res.clearCookie("userLogInCookie");
+        req.session.userLog = null;
+        res.locals.userLog = null;
+        res.redirect("/");
+    },
 };
