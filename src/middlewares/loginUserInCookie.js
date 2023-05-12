@@ -7,6 +7,7 @@ module.exports = async (req, res, next) => {
             where: {
                 email: emailUserInCookie,
             },
+            include: ["rol"],
         });
         req.session.userLog = userLog;
         // Vuelve a "crear" la cookie, para reiniciar su tiempo de vida.

@@ -26,10 +26,10 @@ module.exports = (sequelize, DataTypes) => {
         //     as: "address",
         //     foreignKey: "address_id",
         // });
-        // model.belongsTo(db.Roles, {
-        //     as: "rol",
-        //     foreignKey: "rol_id",
-        // });
+        model.belongsTo(db.Roles, {
+            as: "rol",
+            foreignKey: "rol_id",
+        });
         // model.belongsToMany(db.Cottages, {
         //     through: "rents",
         //     foreignKey: "user_id",

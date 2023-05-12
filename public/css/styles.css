@@ -68,13 +68,12 @@ body {
 
 .flex-d-column {
     flex-direction: column;
-    
 }
 
 .flex-wrap {
     flex-wrap: wrap;
 }
-.grap{
+.grap {
     gap: 10px;
 }
 
@@ -138,7 +137,7 @@ body {
     margin: 20px;
 }
 .m-30 {
-    margin: 30px
+    margin: 30px;
 }
 .m-auto {
     margin: auto;
@@ -368,12 +367,14 @@ grisclaro #f1f7ed */
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 70px;
-  }
-  
-  .album-cottage img {
-    max-width: calc(33.33% - 10px); /* Restamos 10px para dejar un espacio entre las imágenes */
+}
+
+.album-cottage img {
+    max-width: calc(
+        33.33% - 10px
+    ); /* Restamos 10px para dejar un espacio entre las imágenes */
     margin-bottom: 10px;
-  }
+}
 /*----------------------- config para el carrucel */
 
 .carrousel {
@@ -461,6 +462,7 @@ grisclaro #f1f7ed */
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
         "Lucida Sans", Arial, sans-serif;
 }
+
 /*-------------- activities */
 
 #activities,
@@ -471,6 +473,35 @@ grisclaro #f1f7ed */
 .act-img {
     width: 550px;
     height: 325px;
+}
+
+/*-------------- botónes para editar y borrar */
+
+.admin-button {
+    font-size: 25px;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 5px;
+    transition: 0.3s;
+    &:hover {
+        box-shadow: 0px 0px 10px rgb(137, 137, 137);
+    }
+}
+
+.edit-button {
+    background-color: #66b9bf;
+    color: #ffffff;
+    &:active {
+        background-color: #479398;
+    }
+}
+
+.delete-button {
+    background-color: #e00031;
+    color: #ffffff;
+    &:active {
+        background-color: #bb0028;
+    }
 }
 
 /* animación para el carrusel del inicio. */
@@ -895,7 +926,6 @@ footer h1 {
     .article-precio {
         margin-right: 10px;
     }
-    
 
     .but-reserva- {
         margin-left: 140px;
@@ -982,7 +1012,6 @@ footer h1 {
     .second-section-form {
         width: 45%;
     }
-    
 }
 
 @media (min-width: 1024px) {
@@ -1050,7 +1079,6 @@ footer h1 {
     .border-top {
         display: none;
     }
-    
 }
 
 @media (min-width: 1200px) {
@@ -1064,7 +1092,6 @@ footer h1 {
     .list-card {
         min-width: 25%;
     }
-    
 }
 
 @media (min-width: 1440px) {

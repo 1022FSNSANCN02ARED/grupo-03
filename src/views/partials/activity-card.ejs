@@ -33,4 +33,10 @@
   <div class="flex jc-center p-10px">
     <a href="" class="cottage-button bg-3 txt-center"> Más información </a>
   </div>
+  <% if (userLog?.rol.name == "admin") { %>
+  <div class="section-admin-buttons flex jc-evenly">
+    <a class="admin-button edit-button" href="/products/cottages/edit/<%= activity.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
+    <a class="admin-button delete-button" href="/products/cottages/delete/<%= activity.id %>"><i class=" fa-solid fa-trash"></i></a>
+  </div>
+  <% } %>
 </li>

@@ -80,6 +80,7 @@ module.exports = {
         try {
             const userLog = await db.Users.findOne({
                 where: { email: req.body.email },
+                include: ["rol"],
             });
 
             if (

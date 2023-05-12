@@ -21,6 +21,8 @@ const error_product_edit_form = require("../middlewares/error_product_edit_form"
 
 router.get("/details/:id", cottagesController.showDetails);
 
+router.get("/booking/:id", cottagesController.showBookingForm);
+
 router.post(
     "/create",
     uploadFile.array("cottage_images"),
