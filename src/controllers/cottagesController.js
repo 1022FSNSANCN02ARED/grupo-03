@@ -11,7 +11,7 @@ module.exports = {
             console.log(error);
         }
         res.render("productDetail", {
-            footerProductDetails: "footer-producDetail",
+          //  footerProductDetails: "footer-producDetail",
             cottage: cottage,
         });
     },
@@ -31,7 +31,12 @@ module.exports = {
         let cottage = {
             name: req.body.name,
             price: Number(req.body.price),
+            price: Number(req.body.price),
             description: req.body.description,
+            beds: Number(req.body.beds),
+            guest: Number(req.body.guest),
+            bedrooms: Number(req.body.bedrooms),
+            bathrooms: Number(req.body.bathrooms),
             beds: Number(req.body.beds),
             guest: Number(req.body.guest),
             bedrooms: Number(req.body.bedrooms),
@@ -91,12 +96,45 @@ module.exports = {
             oldData,
             errors,
         });
+    showEditForm: async (req, res) => {
+        const errors = req.session.errors;
+        let oldData = req.session.oldData;
+        req.session.formType = null;
+        req.session.errors = null;
+        req.session.oldData = null;
+
+        if (!oldData) {
+            const productToEdit = await db.Cottages.findByPk(req.params.id, {
+                include: ["images", "services"],
+            });
+            const services = productToEdit.services.map(
+                (service) => service.service
+            );
+            // res.json(services);
+            oldData = {
+                ...productToEdit.dataValues,
+                services,
+            };
+            // res.json(oldData);
+        }
+        res.render("create-product-form", {
+            isCottage: true,
+            isActivity: false,
+            oldData,
+            errors,
+        });
     },
     update: async (req, res) => {
         let newDataCottage = {
+        let newDataCottage = {
             name: req.body.name,
             price: Number(req.body.price),
+            price: Number(req.body.price),
             description: req.body.description,
+            beds: Number(req.body.beds),
+            guest: Number(req.body.guest),
+            bedrooms: Number(req.body.bedrooms),
+            bathrooms: Number(req.body.bathrooms),
             beds: Number(req.body.beds),
             guest: Number(req.body.guest),
             bedrooms: Number(req.body.bedrooms),
@@ -104,7 +142,17 @@ module.exports = {
         };
         try {
             const cottageToUpdate = await db.Cottages.findByPk(req.params.id, {
+            const cottageToUpdate = await db.Cottages.findByPk(req.params.id, {
                 include: ["images", "services"],
+            });
+
+            await cottageToUpdate.update(newDataCottage);
+
+            await cottageToUpdate.services.map((service) => {
+                return service.destroy();
+            });
+            await cottageToUpdate.images.map((image) => {
+                return image.destroy();
             });
 
             await cottageToUpdate.update(newDataCottage);
@@ -129,6 +177,11 @@ module.exports = {
                 typeof req.body.services == "string"
                     ? [req.body.services]
                     : req.body.services;
+
+            req.body.services =
+                typeof req.body.services == "string"
+                    ? [req.body.services]
+                    : req.body.services;
             await db.Services.bulkCreate(
                 req.body.services.map((service) => {
                     return {
@@ -143,6 +196,8 @@ module.exports = {
         }
         res.redirect("/");
     },
+    showDeleteOption: async (req, res) => {
+        const cottageToDelete = await db.Cottages.findByPk(req.params.id);
     showDeleteOption: async (req, res) => {
         const cottageToDelete = await db.Cottages.findByPk(req.params.id);
         res.render("delete-detail", { product: cottageToDelete });
