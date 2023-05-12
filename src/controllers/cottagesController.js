@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 module.exports = {
-    productDetail: async (req, res) => {
+    showBookingForm: async (req, res) => {
         let cottage = [];
         try {
             cottage = await db.Cottages.findByPk(req.params.id, {
@@ -13,9 +13,20 @@ module.exports = {
             console.log(error);
         }
         res.render("productDetail", {
-            footerProductDetails: "footer-producDetail",
             cottage: cottage,
         });
+    },
+    showDetails: async (req, res) => {
+        try {
+            const cottage = await db.Cottages.findByPk(req.params.id, {
+                include: ["images", "services"],
+            });
+            res.render("generalCab", {
+                cottage: cottage,
+            });
+        } catch (error) {
+            console.log(error);
+        }
     },
     create: async (req, res) => {
         let cottage = {
@@ -104,6 +115,19 @@ module.exports = {
                 include: ["images", "services"],
             });
 
+            if (cottageToUpdate.images) {
+                for (const image of cottageToUpdate.images) {
+                    // Crea la ruta hacia el archivo de imágen.
+                    const imagePath = path.join(
+                        __dirname,
+                        `../../public/${image.image}`
+                    );
+                    // lo elimina
+                    await fs.promises.unlink(imagePath);
+                    await image.destroy();
+                }
+            }
+
             await cottageToUpdate.update(newDataCottage);
 
             await cottageToUpdate.services.map((service) => {
@@ -136,6 +160,7 @@ module.exports = {
                 typeof req.body.services == "string"
                     ? [req.body.services]
                     : req.body.services;
+
             await db.Services.bulkCreate(
                 req.body.services.map((service) => {
                     return {
@@ -144,6 +169,7 @@ module.exports = {
                     };
                 })
             );
+
             await cottageToUpdate.reload();
         } catch (error) {
             console.log(error);

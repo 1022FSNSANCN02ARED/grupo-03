@@ -273,7 +273,7 @@ INSERT INTO `cottages` (`id`, `name`, `price`, `description`, `beds`, `assessmen
 (1, 'Los Pinos', 9000, 'Patagónica, sobre los árboles.', 3, '0', '2023-03-27 15:58:56', '2023-05-10 14:49:45', 4, 2, 1),
 (2, 'El Granero', 8500, 'Típico americano, en 2 plantas con el dormitorio en el altillo, un gran hogar a leña y baño característico del campo.', 3, '0', '2023-03-27 16:05:38', '2023-05-10 14:50:12', 3, 3, 1),
 (3, 'Los Naranjos', 9500, 'Moderna, en 2 plantas con camas extragrandes, y un reconfortante jacuzzi doble.', 5, '0', '2023-03-27 16:05:38', '2023-05-10 14:51:23', 6, 3, 2),
-(4, 'Los Liquidámbar', 12000, 'Sobre los árboles ambientada a lo María Antonieta.', 3, '0', '2023-03-27 16:05:38', '2023-05-10 14:50:53', 3, 2, 1),
+(4, 'Los Liquidámbar', 12000, 'Sobre los árboles ambientada a lo María Antonieta.', 3, '0', '2023-03-27 16:05:38', '2023-05-10 14:50:53', 3, 2, 1);
 
 /*!40000 ALTER TABLE `cottages` ENABLE KEYS */;
 UNLOCK TABLES;

@@ -19,7 +19,7 @@ const cottagesController = require("../controllers/cottagesController");
 const error_product_form = require("../middlewares/error_product_form");
 const error_product_edit_form = require("../middlewares/error_product_edit_form");
 
-router.get("/details/:id", cottagesController.productDetail);
+router.get("/details/:id", cottagesController.showDetails);
 
 router.post(
     "/create",
