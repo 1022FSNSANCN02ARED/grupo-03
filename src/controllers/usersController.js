@@ -75,13 +75,13 @@ module.exports = {
         }
         res.redirect("/");
     },
-
     // Login del usuario
     proccesLogin: async (req, res) => {
         try {
             const userLog = await db.Users.findOne({
                 where: { email: req.body.email },
             });
+
             if (
                 userLog &&
                 bcryptjs.compareSync(req.body.password, userLog.password)
@@ -91,29 +91,21 @@ module.exports = {
 
                 if (!!req.body.recordame) {
                     // código para que se guarde una cookie
-                    var cookieName = "userLogInCookie";
-                    var cookieValue = userLog.email;
-                    var cookieExpiration = new Date();
-                    cookieExpiration.setDate(cookieExpiration.getDate() + 30); // La cookie expira en 30 días
-                    document.cookie =
-                        cookieName +
-                        "=" +
-                        cookieValue +
-                        ";expires=" +
-                        cookieExpiration.toUTCString() +
-                        ";path=/";
+                    res.cookie("userLogInCookie", userLog.email, {
+                        maxAge: 7 * 24 * 60 * 60 * 1000,
+                    });
                 }
 
-    //             res.redirect("/");
-    //         } else {
-    //             res.render("login", {
-    //                 errors: {
-    //                     email: { msg: "Credenciales inválidas" },
-    //                 },
-    //             });
-    //         }
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // },
+                res.redirect("/");
+            } else {
+                res.render("login", {
+                    errors: {
+                        email: { msg: "Credenciales inválidas" },
+                    },
+                });
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    },
 };

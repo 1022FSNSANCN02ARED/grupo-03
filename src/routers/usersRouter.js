@@ -37,7 +37,7 @@ router.post(
 );
 
 router.get("/login", redirectUserLoggedIn, usersController.showLogin);
-// router.post("/login", redirectUserLoggedIn, usersController.proccesLogin);
+router.post("/login", redirectUserLoggedIn, usersController.proccesLogin);
 
 router.get("/profile", redirectUserLoggedOut);
 
