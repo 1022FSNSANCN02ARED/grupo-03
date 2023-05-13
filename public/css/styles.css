@@ -352,6 +352,10 @@ grisclaro #f1f7ed */
     color: #ffffff;
 }
 
+.rememberMe-check{
+    margin: 10px 10px 10px 0px;
+}
+
 .logo-domum {
     padding: 5px;
     height: 70px;

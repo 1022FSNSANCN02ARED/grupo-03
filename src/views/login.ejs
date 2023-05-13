@@ -8,12 +8,14 @@
 <body>
   <%- include("./partials/nav-login-register", {title: "Iniciar sesión"})  %>
 
-    <form action="/user/login" method="post" class="form bg-4 box-shadow">
+    <form id="from-login" action="/user/login" method="post" class="form bg-4 box-shadow">
 
       <input type="text" name="email" id="email" placeholder="Email" class=" f-input">
+      <p class="errorFrontEmail error-front">El email no tiene un formato valido</p>
       <input type="password" name="password" id="password" placeholder="Contraseña" class="f-input">
+      <p class="errorFrontPassword error-front">La contraseña debe ser mayor a 6 caracteres</p>
       <label for="recordame">Recordame</label>
-      <input type="checkbox" name="recordame" id="recordame">
+      <input class="rememberMe-check" type="checkbox" name="recordame" id="recordame">
       
       
       <div class="flex flex-wrap jc-center ">
@@ -29,8 +31,7 @@
         Ingresar con Facebook</button>
       <button type="submit" class="f-input">
         <i class="fa-brands fa-twitter"></i>
-        Ingresar con Twitter ::</button>
-      
+        Ingresar con Twitter</button>
       <hr>
     </form>
   </div>
@@ -38,5 +39,5 @@
   <%- include("./partials/footer") %>
 
 </body>
-
+<script src="/js/form-login.js"></script>
 </html>
