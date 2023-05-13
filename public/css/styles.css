@@ -73,8 +73,13 @@ body {
 .flex-wrap {
     flex-wrap: wrap;
 }
+
 .grap {
     gap: 10px;
+}
+
+.gap-y-10 {
+    gap: 10px 0;
 }
 
 .fs-15 {
@@ -511,6 +516,7 @@ grisclaro #f1f7ed */
 
 .list-card {
     min-width: 100%;
+    width: 100%;
     padding: 0 5px;
 }
 
@@ -783,6 +789,12 @@ grisclaro #f1f7ed */
     bottom: 0;
 }
 
+.border-xy {
+    border-top: solid 2px #07889b;
+    border-bottom: solid 2px #07889b;
+    padding: 5px;
+}
+
 .but-reserva- {
     padding: 5px;
     margin: 5px;
@@ -933,6 +945,12 @@ footer h1 {
     width: 100%;
 }
 
+/*-------------- product list */
+
+#product-list-contain {
+    max-width: 1800px;
+}
+
 /*-------------- forms */
 
 #forms-create-products {
@@ -1032,6 +1050,10 @@ footer h1 {
     .stats-cmts {
         flex-wrap: nowrap;
     }
+
+    .list-show-button {
+        width: auto;
+    }
 }
 @media (min-width: 761px) {
     /*----------- laptops */
@@ -1044,6 +1066,11 @@ footer h1 {
 
     .list-card {
         min-width: 50%;
+        width: 50%;
+    }
+
+    .card-products-list {
+        width: 50%;
     }
 
     .act-img {
@@ -1181,6 +1208,11 @@ footer h1 {
     }
     .list-card {
         min-width: 25%;
+        width: 25%;
+    }
+
+    .card-products-list {
+        width: 25%;
     }
 }
 

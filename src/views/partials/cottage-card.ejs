@@ -28,13 +28,12 @@
       <h3>precio por noche: $<%= cabana.price %></h3>
       <a href="/products/cottages/booking/<%= cabana.id  %> " class="cottage-button txt-center bg-3">reservar</a>
     </div>
+    <% if (userLog?.rol.name == "admin") { %>
+    <div class="section-admin-buttons flex jc-evenly">
+      <a class="admin-button edit-button" href="/products/cottages/edit/<%= cabana.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
+      <a class="admin-button delete-button" href="/products/cottages/delete/<%= cabana.id %>"><i class=" fa-solid fa-trash"></i></a>
+    </div>
+    <% } %>
   </div>
-
-  <% if (userLog?.rol.name == "admin") { %>
-  <div class="section-admin-buttons flex jc-evenly">
-    <a class="admin-button edit-button" href="/products/cottages/edit/<%= cabana.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
-    <a class="admin-button delete-button" href="/products/cottages/delete/<%= cabana.id %>"><i class=" fa-solid fa-trash"></i></a>
-  </div>
-  <% } %>
 
 </li>

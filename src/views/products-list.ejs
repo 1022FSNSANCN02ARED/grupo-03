@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head') %>
+  <title>Listado de productos</title>
+</head>
+
+<body>
+  <%- include('./partials/nav') %>
+
+  <main id="product-list-contain" class="w-80 m-auto top-70 bg-5">
+
+    <section class="p-10px">
+      <ul class=" flex flex-wrap p-10px border-rad">
+        <li class="list-show-button m-5 w-100"><a class="border-rad p-5px <%= (!showCottages && !showActivities) ? "box-shadow bg-4 fc-5" : "" %>" href="/products/list">Todos los productos</a></li>
+        <li class="list-show-button m-5 w-100"><a class="border-rad p-5px <%= (!showCottages && showActivities) ? "box-shadow bg-4 fc-5" : "" %>" href="/products/list?show=activities">Actividades</a></li>
+        <li class="list-show-button m-5 w-100"><a class="border-rad p-5px <%= (showCottages && !showActivities) ? "box-shadow bg-4 fc-5" : "" %>" href="/products/list?show=cottages">Cabañas</a></li>
+      </ul>
+    </section>
+
+    <% if (showCottages || (!showCottages && !showActivities)) { %>
+    <section class="p-10px">
+      <h2 class="txt-center border-xy  m-10">Cabañas</h2>
+      <ul class="flex flex-wrap gap-y-10">
+        <% cottages.forEach(cabana => { %>
+        <%-include('./partials/cottage-card',{cabana}) %>
+        <% }); %>
+      </ul>
+    </section>
+    <% } %>
+
+    <% if (showActivities || (!showCottages && !showActivities)) { %>
+    <section class="p-10px">
+      <h2 class="txt-center m-10 border-xy">Acvitidades</h2>
+      <ul class="flex flex-wrap gap-y-10">
+        <% activities.forEach(activity => { %>
+        <%-include('./partials/activity-card',{activity}) %>
+        <% }); %>
+      </ul>
+    </section>
+    <% } %>
+
+  </main>
+
+  <%- include('./partials/footer') %>
+</body>
+
+</html>
