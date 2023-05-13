@@ -1,11 +1,3 @@
-/*let nameUser = document.querySelector("#name")
-let surname = document.querySelector("#surname")
-let email = document.querySelector("#email");
-let phoneNumber = document.querySelector("#phone_number")
-let password = document.querySelector("#password")
-let password2 = document.querySelector("#confirmPassword")
-let file = document.querySelector("#file")*/
-
 const expresiones = {
     nameUser: /^[a-zA-ZÀ-ÿ\s]{2,40}$/,
     surname: /^[a-zA-ZÀ-ÿ\s]{2,40}$/,
@@ -20,7 +12,6 @@ console.log(inputs)
 const validation = (e) => {
     switch (e.target.name) {
         case "name":
-            //console.log("usuario")
             if (expresiones.nameUser.test(e.target.value)) {
                 console.log("todo ok name");
                 document.querySelector("#name").classList.add("form-success");
@@ -37,7 +28,6 @@ const validation = (e) => {
             }
             break;
         case "surname":
-            //console.log("surname");
             if (expresiones.surname.test(e.target.value)) {
                 console.log("todo ok surname");
                 document.querySelector("#surname").classList.add("form-success");
@@ -53,7 +43,6 @@ const validation = (e) => {
             }
             break;
         case "email":
-            //console.log("email");
             if (expresiones.email.test(e.target.value)) {
                 console.log("todo ok email");
                 document.querySelector("#email").classList.add("form-success");
@@ -69,7 +58,6 @@ const validation = (e) => {
             }
             break;
         case "password":
-            //console.log("password");
             if (expresiones.password.test(e.target.value)) {
                 console.log("todo ok password");
                 document.querySelector("#password").classList.add("form-success");
