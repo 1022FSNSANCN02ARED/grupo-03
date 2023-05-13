@@ -1,0 +1,48 @@
+    <section class="fs-15">
+      <i class="burguer-menu fa-solid fa-bars fs-25"></i>
+      <!-- burguer menu nav -->
+      <div class="burguer-menu-options">
+        <!-- Revisa si existe la variable local "userLog" que crea el middleware "userLogMiddleware" -->
+        <% if (!!userLog) { %>
+        <section class="burguer-user-menu">
+          <figure class="flex al-items pos-relative jc-center">
+            <img src="<%= userLog.avatar %>" alt="foto de perfil" class="user-avatar pos-relative" />
+            <!-- Por ahora dice Carlos Santana, luego dirá el nombre del ususario. -->
+            <p class="user-name border-rad"><%= userLog.first_name %> <%= userLog.last_name %>
+              <i class="fa-solid fa-angle-down"></i>
+            </p>
+          </figure>
+          <ul class="burguer-user-menu-options">
+            <li class="burguer-user-menu-li"><a href="/user/profile">Perfil</a></li>
+            <li class="burguer-user-menu-li"><a href="/user/logout">Cerrar sesión</a></li>
+            <% if (userLog.rol.name == "admin") { %>
+            <h3 class="txt-center">Admin</h3>
+            <li class="burguer-user-menu-li"><a href="/products/create">Crear producto</a></li>
+            <% } %>
+          </ul>
+        </section>
+        <% } else { %>
+        <section class="flex flex-wrap jc-evenly m-10">
+          <h3 class="w-100 txt-center m-10">No ah iniciado sesión</h3>
+          <a href="/user/login">
+            <button class="login-button fs-18 bg-3 fc-5">Ingresar</button>
+          </a>
+          <a href="/user/register">
+            <button class="sing-in-button fs-18 bg-3 fc-5">
+              Crear cuenta
+            </button>
+          </a>
+        </section>
+        <% } %>
+        <nav>
+          <h3 class="txt-center">general</h3>
+          <ul>
+            <li class="burguer-menu-li"><a href="/">Inicio</a></li>
+            <li class="burguer-menu-li"><a href="#info-general">Nosotros</a></li>
+            <li class="burguer-menu-li"><a href="#cottages">Cabañas</a></li>
+            <li class="burguer-menu-li"><a href="#activities">Actividades</a></li>
+            <li class="burguer-menu-li"><a href="#footer">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>

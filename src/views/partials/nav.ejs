@@ -18,11 +18,11 @@
 
     <!-- Revisa si existe la variable local "userLog" que crea el middleware "userLogMiddleware" -->
     <% if (!!userLog) { %>
-    <section class="user-menu">
+    <section class="user-menu hide">
       <figure class="flex al-items pos-relative pointer">
         <img src="<%= userLog.avatar %>" alt="foto de perfil" class="user-avatar pos-relative" />
         <!-- Por ahora dice Carlos Santana, luego dirá el nombre del ususario. -->
-        <p class="fs-15 user-name border-rad hide"><%= userLog.first_name %> <%= userLog.last_name %>
+        <p class="fs-15 user-name border-rad"><%= userLog.first_name %> <%= userLog.last_name %>
           <i class="fa-solid fa-angle-down"></i>
         </p>
       </figure>
@@ -45,6 +45,8 @@
       </button>
     </a>
     <% } %>
-    <i class="fa-solid fa-bars burguer-menu"></i>
+
+    <%- include('./burguer-nav') %>
+
   </div>
 </div>

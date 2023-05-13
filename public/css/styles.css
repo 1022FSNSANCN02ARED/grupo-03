@@ -310,7 +310,7 @@ grisclaro #f1f7ed */
     border-radius: 50%;
     width: 34px;
     height: 34px;
-    left: 0;
+    left: 15px;
 }
 
 .user-name {
@@ -318,10 +318,6 @@ grisclaro #f1f7ed */
     border: solid 1px #07889b;
     background-color: white;
     transition: 0.2s;
-}
-
-.burguer-menu {
-    font-size: 25px;
 }
 
 .header-buttons {
@@ -380,6 +376,75 @@ grisclaro #f1f7ed */
 }
 
 .user-menu-li {
+    padding: 10px;
+    &:hover {
+        background-color: #e1ebeb;
+    }
+}
+
+.burguer-menu {
+    width: 100%;
+}
+
+.burguer-menu-options {
+    position: absolute;
+    overflow-y: hidden;
+    background-color: #f1f7ed;
+    top: 0;
+    left: 0;
+    /* height: 0px; */
+    width: 100%;
+    margin-top: 70px;
+}
+
+.burguer-menu-li {
+    padding: 10px;
+    &:hover {
+        background-color: #e1ebeb;
+    }
+}
+
+.burguer-menu {
+    width: 100%;
+}
+
+.burguer-menu-options {
+    position: absolute;
+    overflow-y: hidden;
+    background-color: #f1f7ed;
+    top: 0;
+    left: 0;
+    height: 0px;
+    width: 100%;
+    margin-top: 70px;
+}
+
+.burguer-menu-li {
+    padding: 10px;
+    &:hover {
+        background-color: #e1ebeb;
+    }
+}
+/* a */
+
+.burguer-user-menu {
+    width: 100%;
+
+    &:hover .user-name {
+        background-color: #66b9bf;
+        color: #ffffff;
+    }
+}
+
+.burguer-user-menu-options {
+    overflow-y: hidden;
+    background-color: #f1f7ed;
+    border-radius: 10px;
+    height: 0px;
+    width: 100%;
+}
+
+.burguer-user-menu-li {
     padding: 10px;
     &:hover {
         background-color: #e1ebeb;
@@ -973,10 +1038,8 @@ footer h1 {
     .w-25 {
         width: 20%;
     }
-    .user-name,
-    .user-avatar {
+    .user-menu {
         display: block;
-        left: 15px;
     }
 
     .list-card {
