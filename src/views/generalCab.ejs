@@ -1,26 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <%- include("./partials/head") %>
+        <title>Cabañas</title>
+    </head>
 
-<head>
-  <%- include("./partials/head") %>
-  <title>Cabañas</title>
-</head>
+    <body>
+        <%- include("./partials/nav") %>
+        <main class="top-70">
+            <div class="album-cottage">
+                <% cottage.images.forEach(image => { %>
+                <img src="<%= image.image %>" alt="<%= cottage.name %>" />
 
-<body>
-  <%- include("./partials/nav") %>
-  <main class="top-70">
-    <div class="album-cottage">
-      <% cottage.images.forEach(image => { %> <img src="<%= image.image %>" alt="<%= cottage.name %>" />
+                <% }) %>
+            </div>
+        </main>
 
-      <% }) %>
-    </div>
-  </main>
+        <!--</div>  <iframe title="vimeo-player" src="https://player.vimeo.com/video/657637618?h=eb42b3d9ef" width="640" height="360" frameborder="0" allowfullscreen jc-center></iframe></div> -->
 
-  </div>
-  <iframe title="vimeo-player" src="https://player.vimeo.com/video/657637618?h=eb42b3d9ef" width="640" height="360" frameborder="0" allowfullscreen jc-center></iframe>
-  </div>
-
-  <%- include("./partials/footer") %>
-</body>
-
+        <%- include("./partials/footer") %>
+    </body>
 </html>
