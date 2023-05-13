@@ -18,12 +18,19 @@ const redirectUserLoggedOut = require("../middlewares/redirectUserLoggedOut");
 const cottagesController = require("../controllers/cottagesController");
 const error_product_form = require("../middlewares/error_product_form");
 const error_product_edit_form = require("../middlewares/error_product_edit_form");
+const bookingMiddleware = require("../middlewares/bookingMiddleware");
+const error_booking_form = require("../middlewares/error_booking_form");
 
 router.get("/details/:id", cottagesController.showDetails);
 
 router.get("/booking/:id", cottagesController.showBookingForm);
 
-router.post("/booking/:id", cottagesController.bookingCottage);
+router.post(
+    "/booking/:id",
+    bookingMiddleware,
+    error_booking_form,
+    cottagesController.bookingCottage
+);
 
 router.post(
     "/create",

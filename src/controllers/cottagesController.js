@@ -4,17 +4,24 @@ const path = require("path");
 
 module.exports = {
     showBookingForm: async (req, res) => {
-        let cottage = [];
         try {
-            cottage = await db.Cottages.findByPk(req.params.id, {
+            const errors = req.session.errores;
+            const oldData = req.session.oldData;
+            req.session.errores = null;
+            req.session.oldData = null;
+
+            const cottage = await db.Cottages.findByPk(req.params.id, {
                 include: ["images", "services"],
+            });
+
+            res.render("cottage-booking-form", {
+                cottage: cottage,
+                errors,
+                oldData,
             });
         } catch (error) {
             console.log(error);
         }
-        res.render("cottage-booking-form", {
-            cottage: cottage,
-        });
     },
     showDetails: async (req, res) => {
         try {
