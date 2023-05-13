@@ -4,7 +4,6 @@
 <head>
   <%- include("./partials/head") %>
   <title>Crear</title>
-  <link rel="stylesheet" href="/css/style-pd-footer.css">
   <script defer src="/js/create-forms/create-activity-form.js"></script>
   <script defer src="/js/create-forms/create-cottage-form.js"></script>
   <script defer src="/js/create-forms/show-create-form.js"></script>
@@ -12,7 +11,9 @@
 
 <body>
 
-  <main id="forms-create-products" class="w-90 m-auto ">
+  <%- include("./partials/nav") %>
+
+  <main id="forms-create-products" class="w-90 m-auto top-70">
     <div class="flex jc-evenly">
       <p id="show-create-cottage-form" class="
       show-form-button <%= isActivity ? "":"show-form-button-active"; %> w-50 txt-center p-10px pointer border-rad box-shadow">
@@ -29,6 +30,7 @@
       <%- include('./partials/create-form/activity-form/create-activity-form') %>
     </section>
   </main>
+  <%- include("./partials/footer") %>
 </body>
 
 </html>
