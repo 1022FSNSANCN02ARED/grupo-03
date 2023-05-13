@@ -38,4 +38,7 @@ module.exports = {
             console.log(error);
         }
     },
+    productCart: async (req, res) => {
+        res.render("productCart");
+    },
 };

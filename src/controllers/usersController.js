@@ -112,6 +112,8 @@ module.exports = {
     processLogOut: (req, res) => {
         res.clearCookie("userLogInCookie");
         req.session.userLog = null;
+        req.session.cottagesInCart = null;
+        req.session.activitiesInCart = null;
         res.locals.userLog = null;
         res.redirect("/");
     },

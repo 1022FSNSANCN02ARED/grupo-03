@@ -163,6 +163,10 @@ body {
     margin-right: 9px;
 }
 
+.max-w-1 {
+    max-width: 1200px;
+}
+
 .of-auto {
     overflow: auto;
 }
@@ -1180,10 +1184,6 @@ footer h1 {
 
     .selector-cabañas {
         width: 30%;
-    }
-
-    .selector-huesped {
-        display: none;
     }
 
     .title-register {

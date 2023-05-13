@@ -43,45 +43,12 @@ for (const dateInput of dateInputs) {
             const total = Number(price.innerHTML) * rentalDays;
             // Colocarlo en donde debe ir.
             totalInfo.forEach((totalInfo) => (totalInfo.innerHTML = total));
+
+            // Agregamos el resultado al valor del input de "total"
+            document.getElementById("total").value = total;
         }
     });
 }
-
-// Hace un pedido asíncronico a la db con un fetch
-let discounts = null;
-
-fetch("http://localhost:3000/api/discounts")
-    .then((response) => {
-        return response.json();
-    })
-    .then((result) => {
-        discounts = result.map((discount) => {
-            return {
-                code: discount.code,
-                discount: discount.discount,
-            };
-        });
-    });
-
-// Saber en qué momento se agrega un cupon de descuento
-discountButton.forEach(async (button) => {
-    button.addEventListener("click", (e) => {
-        inputDiscount.forEach((input) => {
-            const discount = discounts.find((d) => {
-                return d.code === input.value;
-            });
-            if (totalInfo[0].innerHTML > 0 && discount) {
-                console.log("Descuento aplicado");
-                const total = totalInfo[0].innerHTML;
-                const totalWithDiscount = total - total / discount.discount;
-                totalInfo.forEach(
-                    (totalInfo) =>
-                        (totalInfo.innerHTML = `${totalWithDiscount}  <span class="fs-15"> <s class="fs-15">${total}</s> %${discount.discount}off</span>`)
-                );
-            }
-        });
-    });
-});
 
 const validations = {
     rentalDays(dateInTime, dateOutTime) {

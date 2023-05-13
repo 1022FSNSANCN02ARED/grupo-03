@@ -12,7 +12,7 @@ module.exports = {
         } catch (error) {
             console.log(error);
         }
-        res.render("productDetail", {
+        res.render("cottage-booking-form", {
             cottage: cottage,
         });
     },
@@ -229,5 +229,23 @@ module.exports = {
         } catch (error) {
             console.log(error);
         }
+    },
+    bookingCottage: async (req, res) => {
+        const rent = {
+            cottage_id: req.params.id,
+            user_id: req.session.userLog.id,
+            date_in: req.body.check_in,
+            date_out: req.body.check_out,
+            cart_id: null,
+            total: Number(req.body.total),
+        };
+
+        if (!req.session.cottagesInCart) {
+            req.session.cottagesInCart = [rent];
+        } else {
+            req.session.cottagesInCart.push(rent);
+        }
+        console.log(req.session.cottagesInCart);
+        res.redirect("/products/cart");
     },
 };

@@ -6,6 +6,8 @@ router.get("/create", productsControllers.showForm);
 
 router.get("/list", productsControllers.productsList);
 
+router.get("/cart", productsControllers.productCart);
+
 const cottagesRouter = require("./cottagesRouter");
 router.use("/cottages", cottagesRouter);
 

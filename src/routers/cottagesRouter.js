@@ -23,6 +23,8 @@ router.get("/details/:id", cottagesController.showDetails);
 
 router.get("/booking/:id", cottagesController.showBookingForm);
 
+router.post("/booking/:id", cottagesController.bookingCottage);
+
 router.post(
     "/create",
     uploadFile.array("cottage_images"),
