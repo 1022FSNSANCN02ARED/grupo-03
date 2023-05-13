@@ -256,7 +256,7 @@ ul {
     width: 90vw;
 }
 
-/*----------------------------- config navbar y header */
+/*----------------------------- config colors */
 
 /* Paleta de colores: 
 gris oscuro #373737
@@ -317,6 +317,7 @@ grisclaro #f1f7ed */
     padding: 2px 5px 2px 15px;
     border: solid 1px #07889b;
     background-color: white;
+    transition: 0.2s;
 }
 
 .burguer-menu {
@@ -357,6 +358,32 @@ grisclaro #f1f7ed */
 
 .page-navbar ul li {
     margin: 0px 4px;
+}
+
+.user-menu {
+    position: relative;
+    width: 100%;
+    &:hover .user-name {
+        background-color: #66b9bf;
+        color: #ffffff;
+    }
+}
+
+.user-menu-options {
+    position: absolute;
+    overflow-y: hidden;
+    background-color: #f1f7ed;
+    border-radius: 10px;
+    height: 0px;
+    width: 100%;
+    margin: 10px;
+}
+
+.user-menu-li {
+    padding: 10px;
+    &:hover {
+        background-color: #e1ebeb;
+    }
 }
 
 /*-------album cabañas------*/
