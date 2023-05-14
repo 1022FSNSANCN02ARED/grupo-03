@@ -57,6 +57,9 @@ body {
 .border-none {
     border: none;
 }
+.border-solid{
+    border: solid 1px #ccc;
+}
 
 .box-shadow {
     box-shadow: 0px 0px 10px rgb(137, 137, 137);
@@ -95,7 +98,9 @@ body {
 .grow-1 {
     flex-grow: 1;
 }
-
+.h-auto{
+    height: auto;
+}
 .h-20rem {
     height: 150px;
 }
@@ -130,7 +135,9 @@ body {
 .al-items {
     align-items: center;
 }
-
+.m-1rem{
+    margin: 1rem ;
+}
 .m-5 {
     margin: 5px;
 }
@@ -173,6 +180,9 @@ body {
 
 .max-w-4 {
     max-width: 200px;
+}
+.max-w-100{
+max-width: 100%;
 }
 
 .of-auto {
@@ -239,6 +249,9 @@ body {
 
 .top-70 {
     padding-top: 70px;
+}
+.top-100{
+    padding-top: 100px;
 }
 
 .txt-center {
@@ -852,33 +865,11 @@ grisclaro #f1f7ed */
     border-radius: 10px;
 }
 
-.input-check-in {
-    border: 1px solid #373737;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    color: #373737;
-    height: 30px;
-    margin-right: 1px;
-    margin-top: 5px;
-    width: 40%;
-}
 
-.input-check-out {
-    border: 1px solid #373737;
-    border-radius: 10px;
-    height: 30px;
-    margin-bottom: 10px;
-    margin-right: 1px;
-    margin-top: 5px;
-    width: 40%;
-}
 
-.label-check-in {
-    border: 1px solid #07889b;
+.label-check {
     border-radius: 10px;
-    box-shadow: 0px 0px 10px #525252;
-    color: #07889b;
-    height: 25;
+    height: 25px;
     margin-right: 5px;
     width: 35%;
 }
@@ -887,16 +878,6 @@ grisclaro #f1f7ed */
     border-radius: 10px;
     border: solid 0.5px #66b9bf;
     padding: 8px;
-}
-
-.label-check-out {
-    border: 1px solid #07889b;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px #525252;
-    color: #07889b;
-    height: 25px;
-    margin-left: 5px;
-    width: 35%;
 }
 
 .label-selector {
@@ -921,12 +902,7 @@ grisclaro #f1f7ed */
     border: solid 0.5px #66b9bf;
 }
 
-.selector-huespedes {
-    padding: 8px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    border: solid 0.5px #66b9bf;
-}
+
 
 /* -------------------footer */
 
@@ -1106,6 +1082,9 @@ footer h1 {
     .sing-in-button {
         display: block;
     }
+    .flexhiden{
+        display: flex;
+    }
 
     /*---------------footer */
     .ul-footer {
@@ -1225,3 +1204,17 @@ footer h1 {
         height: 40px;
     }
 }
+/*carrito*/
+
+  .item-details {
+    flex-grow: 1;
+  }
+  .item-remove button {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+  }
+  .cart-total button:hover {
+    background-color:  #66b9bf;
+  }
