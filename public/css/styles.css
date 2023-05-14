@@ -205,6 +205,9 @@ body {
 .p-10px {
     padding: 10px;
 }
+.p-20px {
+    padding: 20px;
+}
 .p-top-10 {
     padding-top: 10px;
 }
@@ -397,6 +400,7 @@ grisclaro #f1f7ed */
 }
 
 .user-menu-li {
+    display: flex;
     padding: 10px;
     &:hover {
         background-color: #e1ebeb;
@@ -441,12 +445,12 @@ grisclaro #f1f7ed */
 }
 
 .burguer-menu-li {
+    display: flex;
     padding: 10px;
     &:hover {
         background-color: #e1ebeb;
     }
 }
-/* a */
 
 .burguer-user-menu {
     width: 100%;
@@ -466,6 +470,7 @@ grisclaro #f1f7ed */
 }
 
 .burguer-user-menu-li {
+    display: flex;
     padding: 10px;
     &:hover {
         background-color: #e1ebeb;
@@ -1044,6 +1049,19 @@ footer h1 {
     transition: 0.5s;
 }
 
+/*----------------------- profile */
+
+.profile-user-avatar {
+    width: 50%;
+    max-width: 250px;
+}
+
+.option-profile {
+    padding: 10px;
+    border-top: #07889b 1px solid;
+    border-bottom: #07889b 1px solid;
+}
+
 /*-------------- media queries */
 @media (min-width: 488px) {
     .w-50 {
@@ -1133,6 +1151,19 @@ footer h1 {
     .first-section-form,
     .second-section-form {
         width: 45%;
+    }
+
+    /*---------------------profile */
+    .left-profile-section {
+        width: 30%;
+        padding: 10px;
+        margin-top: 30px;
+    }
+
+    .right-profile-seciton {
+        width: 70%;
+        padding: 10px;
+        margin-top: 30px;
     }
 }
 
