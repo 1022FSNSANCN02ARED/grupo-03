@@ -39,6 +39,6 @@ module.exports = {
         }
     },
     productCart: async (req, res) => {
-        res.render("productCart");
+        res.render("product-cart");
     },
 };

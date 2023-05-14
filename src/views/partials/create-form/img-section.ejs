@@ -15,8 +15,9 @@
     </div>
   </div>
   <% if(locals.errors?.activity_images){ %>
-  <p class="txt-error"><%= errors.activity_images.msg %></p>
+  <p class="txt-error txt-center"><%= errors.activity_images.msg %></p>
   <% } %>
   <% if(locals.errors?.cottage_images){ %>
-  <p class="txt-error"><%= errors.cottage_images.msg %></p>
+  <p class="txt-error txt-center"><%= errors.cottage_images.msg %></p>
   <% } %>
+  <p class="errorFrontImg error-front txt-center">Debe subir como mínimo 3 fotos de la cabaña</p>

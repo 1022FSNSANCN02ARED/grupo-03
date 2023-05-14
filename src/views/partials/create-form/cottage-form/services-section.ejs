@@ -16,7 +16,7 @@
   </label>
 
   <select name="services" id="services-selected" multiple class="hide">
-    <!-- Acá se irán sumando los servicios que eligamos de arriba -->
+    <!-- Acá se irán sumando los servicios que elijamos de arriba -->
     <% if (isCottage && typeof locals.oldData?.services == "string") { %>
     <option value="<%= oldData.services %>" selected></option>
     <% } %>
@@ -33,6 +33,7 @@
   <ul id="show-services" class="flex flex-wrap jc-bet">
   </ul>
   <% if ( isCottage && locals.errors?.services){ %>
-  <p class="txt-error"><%= errors.services.msg %></p>
+  <p class="txt-error txt-center"><%= errors.services.msg %></p>
   <% } %>
+  <p class="errorFrontSelection error-front">Debe agregar mínimo un servicio</p>
 </div>

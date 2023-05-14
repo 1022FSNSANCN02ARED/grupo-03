@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("./partials/head") %>
+  <title>Carrito</title>
+</head>
+
+<body>
+  <%- include("./partials/nav") %>
+
+    <main class="w-80 m-auto top-100 mb">
+      <section class="border-solid m-1rem p-1rem bg-5">
+        <h2 class="txt-center fc-37">Tu carrito</h2>
+        <ul>
+          <li class="border-solid m-1rem p-1rem flexhiden bg-6">
+            <div class="m-10">
+              <img src="https://via.placeholder.com/150x150" >
+            </div>
+            <div class="item-details m-10 fc-37">
+              <h3>Cabaña </h3>
+              <p>Precio por noche: $100.00</p>
+              <p>Check In: </p> <p>Check Out:</p>
+              <p>Cantidad huespedes: 1</p>
+              <p>Noches: 1</p>
+            </div>
+            <div class="item-remove ">
+              <button>Quitar</button>
+            </div>
+          </li>
+          <li class="border-solid m-1rem p-1rem bg-6 bg-6 flexhiden">
+            <div class="m-10 ">
+              <img src="https://via.placeholder.com/150x150" >
+            </div>
+            <div class="item-details m-10 fc-37">
+              <h3>Cabaña 4</h3>
+              <p>Precio por noche: $100.00</p>
+              <p>Check In: </p> <p>Check Out:</p>
+              <p>Cantidad huespedes: 1</p>
+              <p>Noches: 1</p>
+            </div>
+            <div class="item-remove">
+              <button>Quitar</button>
+            </div>
+          </li>
+        </ul>
+        <div class="cart-total m-10 jc-bet al-items flex">
+          <h3 class="fc-37">Total: $40.00</h3>
+          <button class="login-button  bg-3">Finalizar compra</button>
+        </div>
+      </section>
+    </main>
+
+
+  <%- include("./partials/footer") %>
+
+</body>
+
+</html>

@@ -7,7 +7,7 @@ module.exports = [
 
     body("guest")
         .notEmpty()
-        .withMessage("Debes agregar la cantidad de huespedes"),
+        .withMessage("Debes agregar la cantidad de huéspedes"),
 
     body("beds").notEmpty().withMessage("Debes agregar la cantidad de camas"),
 
@@ -28,7 +28,7 @@ module.exports = [
 
     body("services").custom((value, { req }) => {
         if (!value) {
-            throw new Error("Debes agregar minímo un servicio");
+            throw new Error("Debes agregar mínimo un servicio");
         }
         return true;
     }),

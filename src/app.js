@@ -39,6 +39,9 @@ app.use(userLogMiddleware);
 const mainRouter = require("./routers/mainRouter");
 app.use(mainRouter);
 
+const productsRouter = require("./routers/productsRouter");
+app.use(productsRouter);
+
 //PRUEBA DE MODELOS DB
 
 /*const db = require("./database/models");

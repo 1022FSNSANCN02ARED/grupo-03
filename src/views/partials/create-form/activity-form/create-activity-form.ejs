@@ -11,18 +11,21 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
     <% if ( isActivity && locals.errors?.name){ %>
     <p class="txt-error"><%= errors.name.msg %></p>
     <% } %>
+    <p class="errorFrontActName error-front">El nombre de la actividad debe ser mayor a 2 caracteres y no permite signos ni números</p>
 
     <label for="activity_price"></label>
     <input type="number" name="price" id="activity_price" class="f-input" placeholder="Precio" value="<%= isActivity && locals.oldData?.price ? oldData.price : ""; %>" />
     <% if ( isActivity && locals.errors?.price){ %>
     <p class="txt-error"><%= errors.price.msg %></p>
     <% } %>
+    <p class="errorFrontActPrice error-front">Debe indicar un precio</p>
 
     <label for="activity_max-place"></label>
     <input type="number" name="max_place" id="activity_max-place" class="f-input" placeholder="Cantidad máxima de personas" value="<%= isActivity && locals.oldData?.max_place ? oldData.max_place : ""; %>" />
     <% if ( isActivity && locals.errors?.max_place){ %>
     <p class="txt-error"><%= errors.max_place.msg %></p>
     <% } %>
+    <p class="errorFrontActPlace error-front">Debe indicar un precio</p>
 
     <div id="activity-hours">
       <h2 class="form-section-title m-10 p-5px txt-center">Horarios</h2>
@@ -33,7 +36,7 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
       <!-- botones para mostrar cada horario -->
       <%- include("./add-hours-buttons") %>
       <% if ( isActivity && locals.errors?.some_selected_hours){ %>
-      <p class="txt-error"><%= errors.some_selected_hours.msg %></p>
+      <p class="txt-error txt-center"><%= errors.some_selected_hours.msg %></p>
       <% } %>
     </div>
   </div>
@@ -45,11 +48,13 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
     <label for="activity_description"></label>
     <textarea name="description" id="activity_description" placeholder="descripción" class="m-10 p-10px border-none border-rad"><%= isActivity && locals.oldData?.description ? oldData.description : ""%></textarea>
     <% if ( isActivity && locals.errors?.description){ %>
-    <p class=" txt-error"><%= errors.description.msg %></p>
+    <p class=" txt-error txt-center"><%= errors.description.msg %></p>
     <% } %>
+    <p class="errorFrontActDescription error-front txt-center">Debe completar la descripción de la cabaña (mínimo 10 caracteres, máximo 500 caracteres)</p>
   </div>
 
   <div class="w-100 txt-center">
     <button type="submit" form="activity-form" class="f-submit bg-2"><%= isActivity && locals.oldData?.id ? "Actualizar actividad" : "Crear actividad" %></button>
   </div>
 </form>
+<script src="/js/create-forms/validation-create-activity.js"></script>
