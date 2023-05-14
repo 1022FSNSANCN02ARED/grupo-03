@@ -41,7 +41,7 @@ router.post("/login", redirectUserLoggedIn, usersController.proccesLogin);
 
 router.get("/logout", redirectUserLoggedOut, usersController.processLogOut);
 
-router.get("/profile", redirectUserLoggedOut);
+router.get("/profile", redirectUserLoggedOut, usersController.showProfile);
 
 router.get("/edit", redirectUserLoggedOut, usersController.showEdit);
 router.put(
