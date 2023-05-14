@@ -1,0 +1,20 @@
+      <article class="profile-article information-profile">
+        <h2 class="txt-center border-xy">Información</h2>
+        <div class="p-20px">
+          <p class="p-10px"><b>Nombre:</b> <%= userLog.first_name %> <%= userLog.last_name %></p>
+
+          <p class="p-10px"><b>Email:</b> <%= userLog.email %></p>
+
+          <p class="p-10px"><b>Teléfono:</b> <%= userLog.phone_number ? userLog.phone_number : "No ha puesto un número de teléfono" %></p>
+
+          <!-- toma los 10 primeros carácteres de la hora de creación del usuario
+          y los separa por los guiones que hay en medio "aaaa-mm-dd" -->
+          <% const dateArray = userLog.createdAt.slice(0, 10).split("-") %>
+
+          <!-- crea nuego string con la fecha estandar de Argentina -->
+          <% const createdDate = `${dateArray[2]} / ${dateArray[1]} / ${dateArray[0]}` %>
+
+          <p class="p-10px"><b>Te has unido el:</b> <%= createdDate %></p>
+
+        </div>
+      </article>

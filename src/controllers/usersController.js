@@ -109,6 +109,9 @@ module.exports = {
             console.log(error);
         }
     },
+    showProfile: (req, res) => {
+        res.render("user-profile");
+    },
     processLogOut: (req, res) => {
         res.clearCookie("userLogInCookie");
         req.session.userLog = null;
