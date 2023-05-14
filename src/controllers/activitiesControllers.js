@@ -291,4 +291,28 @@ module.exports = {
             console.log(error);
         }
     },
+    addTicketsToCart: async (req, res) => {
+        try {
+            const activityToAddCart = {
+                activity_id: req.params.id,
+                user_id: req.session.userLog.id,
+                day: req.body.day,
+                quantity: req.body.quantity,
+                cart_id: null,
+                hour: req.body.hour,
+                total: req.body.total,
+            };
+
+            if (!req.session.activitiesInCart) {
+                req.session.activitiesInCart = [activityToAddCart];
+            } else {
+                req.session.activitiesInCart.push(activityToAddCart);
+            }
+            console.log(req.session.activitiesInCart);
+
+            res.redirect("/products/cart");
+        } catch (error) {
+            console.log(error);
+        }
+    },
 };

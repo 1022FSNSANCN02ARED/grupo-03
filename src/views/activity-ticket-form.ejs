@@ -61,6 +61,7 @@
           <% } %>
         </div>
 
+        <p class="p-10px w-100 txt-center"><b>Cantidad maxima de boletos:</b> <%= activity.max_place %></span></p>
 
         <p class="p-10px w-100 txt-center"><b>precio x boleto:</b> $ARS <span id="price-activity"><%= activity.price %></span></p>
       </article>
@@ -73,7 +74,7 @@
     <form action="/products/activities/tickets/<%= activity.id %>" method="post" class="w-80 max-w-2 m-auto flex flex-wrap p-10px">
       <label for="input-date" class="p-10px w-100">
         Día:
-        <input type="date" name="day" id="input-date" class="p-10px border-rad border-none">
+        <input type="date" name="day" id="input-date" class="p-10px border-rad border-none" value="<%= oldData?.day ? oldData.day : ""; %>">
       </label>
 
       <p id="whatDaySelect" class="fs-15 p-10px">Todavia no a seleccionado un día</p>
@@ -81,22 +82,22 @@
         Horario:
 
         <select name="hour" id="hour" class="p-10px border-rad border-none">
-          <option value="default" selected disabled>Selecciona horario:</option>
+          <option value="default" disabled <%= oldData?.hour ? "" : "selected" %>>Selecciona horario:</option>
 
           <% if (activity.hours.weekday_hours) { %>
-          <option value="weekday_hours" class="weekday-option hide"><%= activity.hours.weekday_hours %></option>
+          <option value="weekday_hours" class="weekday-option hide" <%= (oldData?.hour == "weekday_hours") ? "selected" : "" %>><%= activity.hours.weekday_hours %></option>
           <% } %>
 
           <% if (activity.hours.second_weekday_hours) { %>
-          <option value="second_weekday_hours" class="weekday-option hide"><%= activity.hours.second_weekday_hours %></option>
+          <option value="second_weekday_hours" class="weekday-option hide" <%= (oldData?.hour == "second_weekday_hours") ? "selected" : "" %>><%= activity.hours.second_weekday_hours %></option>
           <% } %>
 
           <% if (activity.hours.weekend_hours) { %>
-          <option value="weekend_hours" class="weekend-option hide"><%= activity.hours.weekend_hours %></option>
+          <option value="weekend_hours" class="weekend-option hide" <%= (oldData?.hour == "weekend_hours") ? "selected" : "" %>><%= activity.hours.weekend_hours %></option>
           <% } %>
 
           <% if (activity.hours.second_weekend_hours) { %>
-          <option value="second_weekend_hours" class="weekend-option hide"><%= activity.hours.second_weekend_hours %></option>
+          <option value="second_weekend_hours" class="weekend-option hide" <%= (oldData?.hour == "second_weekend_hours") ? "selected" : "" %>><%= activity.hours.second_weekend_hours %></option>
           <% } %>
 
         </select>
@@ -106,8 +107,8 @@
       <label for="quantity" class="p-10px w-100">
         Cantidad de boletos:
         <select name="quantity" id="quantity" class="p-10px border-rad border-none">
-          <% for( let i = 1; i <= 10; i++ ) { %>
-          <option value="<%= i %>"><%= i %></option>
+          <% for( let i = 1; i <= activity.max_place; i++ ) { %>
+          <option value="<%= i %>" <%= (oldData?.quantity == i) ? "selected" : ""; %>><%= i %></option>
           <% } %>
         </select>
       </label>

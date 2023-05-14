@@ -20,6 +20,8 @@ const createActivityMiddleware = require("../middlewares/createActivityMiddlewar
 const activitiesController = require("../controllers/activitiesControllers");
 const error_create_act = require("../middlewares/error_product_form");
 const error_edit_act = require("../middlewares/error_product_edit_form");
+const activityTicketsMiddleware = require("../middlewares/activityTicketsMiddleware");
+const error_activity_tickets = require("../middlewares/error_activity_tickets");
 
 router.post(
     "/create",
@@ -41,6 +43,12 @@ router.put(
 );
 
 router.get("/tickets/:id", activitiesController.showTicketsShop);
+router.post(
+    "/tickets/:id",
+    activityTicketsMiddleware,
+    error_activity_tickets,
+    activitiesController.addTicketsToCart
+);
 
 router.get("/delete/:id", activitiesController.showDeleteOption);
 router.delete("/delete/:id", activitiesController.delete);
