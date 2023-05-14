@@ -40,6 +40,8 @@ router.put(
     activitiesController.update
 );
 
+router.get("/tickets/:id", activitiesController.showTicketsShop);
+
 router.get("/delete/:id", activitiesController.showDeleteOption);
 router.delete("/delete/:id", activitiesController.delete);
 

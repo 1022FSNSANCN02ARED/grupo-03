@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/head') %>
+  <script defer src="/js/activity-tickets-form.js"></script>
+  <title>comprar ticket</title>
+</head>
+
+<body>
+  <%- include('./partials/nav') %>
+
+  <main class="w-90 top-70 m-auto max-m-1 bg-5">
+
+    <h2 class="txt-center border-xy m-10"><%= activity.name %></h2>
+
+    <!-- images -->
+    <section class="p-10px">
+      <ul class="flex flex-wrap gap-y-10 w-90 m-auto ">
+        <% activity.images.forEach((image, i) => { %>
+        <li class="list-card">
+          <figure class="cont-card-img of-hidden pos-relative flex al-items">
+            <img src=" <%= image.image %>" alt="imágen de <%= activity.name %> numero <%= i %>" class="card-img pos-absolute w-100">
+          </figure>
+        </li>
+        <% }) %>
+      </ul>
+    </section>
+
+    <!-- info -->
+    <section>
+      <p class="p-10px txt-center border-top w-90 m-auto m-10"><%= activity.description %></p>
+      <h3 class="txt-center border-xy m-10">información</h3>
+
+      <article class="w-80 m-auto">
+        <h3 class="p-top-10">horarios</h3>
+        <% if (activity.hours?.weekday_hours){ %>
+        <h4 class="p-top-10">Dias de semana:</h4>
+        <p class="fs-15"><%= activity.hours.weekday_hours %></p>
+        <p class="fs-15">
+          <%= activity.hours.second_weekday_hours ?" y " +
+            activity.hours.second_weekday_hours : ""; %>
+        </p>
+        <% } else { %>
+        <p>Esta actividad no cuenta con horario de día de semana</p>
+        <% } %>
+
+        <!-- Si existe una primera hora de fin de semana -->
+        <% if (activity.hours?.weekend_hours){ %>
+        <h4 class="p-top-10">Fines de semana:</h4>
+        <p class="fs-15"><%= activity.hours.weekend_hours %></p>
+        <p class="fs-15">
+          <%= activity.hours.second_weekend_hours ?", y " +
+            activity.hours.second_weekend_hours : ""; %>
+        </p>
+        <% } else { %>
+        <p>Esta actividad no cuenta con horario de fin de semana</p>
+        <% } %>
+
+
+        <p class="p-top-10 w-100"><b>precio x boleto:</b> $ARS <%= activity.price %></p>
+      </article>
+
+    </section>
+
+    <!-- form -->
+
+    <h3 class=" txt-center m-10 border-xy">formulario</h3>
+    <form action="/products/activities/tickets/<%= activity.id %>" method="post" class="w-80 m-auto flex flex-wrap p-10px">
+      <label for="input-date" class="p-10px w-100">
+        Día:
+        <input type="date" name="day" id="input-date" class="p-10px border-rad border-none">
+      </label>
+
+      <label for="hour" class="p-10px w-100">
+        Horario:
+        <select name="hour" id="hour" class="p-10px border-rad border-none">
+          <option selected disabled>Selecciona horario:</option>
+        </select>
+      </label>
+
+      <label for="quantity" class="p-10px w-100">
+        Cantidad de boletos:
+        <select name="quantity" id="quantity" class="p-10px border-rad border-none">
+          <% for( let i = 1; i <= 10; i++ ) { %>
+          <option value="i"><%= i %></option>
+          <% } %>
+        </select>
+      </label>
+      <div class="w-100 flex jc-center">
+        <button type="submit" class="but-reserva- border-none">Comprar tickets</button>
+      </div>
+    </form>
+  </main>
+
+  <%- include('./partials/footer') %>
+
+</body>
+
+</html>

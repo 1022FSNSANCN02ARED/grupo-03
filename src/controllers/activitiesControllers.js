@@ -271,4 +271,24 @@ module.exports = {
             console.log(error);
         }
     },
+    showTicketsShop: async (req, res) => {
+        try {
+            const activity = await db.Activities.findByPk(req.params.id, {
+                include: ["images", "hours", "assessments"],
+            });
+            const errors = req.session.errors;
+            const oldData = req.session.oldData;
+
+            req.session.errors = null;
+            req.session.oldData = null;
+
+            res.render("activity-ticket-form", {
+                activity,
+                errors,
+                oldData,
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    },
 };

@@ -30,16 +30,18 @@ burguerMenu.addEventListener("click", function () {
 
 const burguerUserMenu = document.querySelector(".burguer-user-menu");
 
-burguerUserMenu.addEventListener("click", function () {
-    const burguerUserMenuOptions = document.querySelector(
-        ".burguer-user-menu-options"
-    );
-    if (
-        burguerUserMenuOptions.style.height == "0px" ||
-        !burguerUserMenuOptions.style.height
-    ) {
-        burguerUserMenuOptions.style.height = "auto";
-    } else {
-        burguerUserMenuOptions.style.height = "0";
-    }
-});
+if (burguerUserMenu) {
+    burguerUserMenu.addEventListener("click", function () {
+        const burguerUserMenuOptions = document.querySelector(
+            ".burguer-user-menu-options"
+        );
+        if (
+            burguerUserMenuOptions.style.height == "0px" ||
+            !burguerUserMenuOptions.style.height
+        ) {
+            burguerUserMenuOptions.style.height = "auto";
+        } else {
+            burguerUserMenuOptions.style.height = "0";
+        }
+    });
+}
