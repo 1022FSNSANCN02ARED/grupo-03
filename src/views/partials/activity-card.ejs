@@ -2,7 +2,7 @@
   <div class="act-inf">
     <h2 class="txt-center"><%= activity.name %></h2>
     <figure class="cont-card-img m-auto of-hidden m-auto flex jc-center al-items pos-relative">
-      <img class="act-img" src="<%= activity.images[0].image%>" alt="Actividad" />
+      <img class="act-img " src="<%= activity.images[0].image%>" alt="Actividad" />
     </figure>
     <div class="qual-star flex jc-end m-auto p-top-10">
       <i class="fa-solid fa-star"></i>
@@ -31,9 +31,9 @@
     <% } %>
   </div>
   <div class="flex flex-wrap p-10px">
-    <a href="" class="cottage-button bg-3 txt-center w-100"> Más información </a>
+    <!--<a href="" class="cottage-button bg-3 txt-center w-100"> Más información </a>-->
 
-    <div class="price-res flex w-100 jc-bet al-items m-top-10">
+    <div class="price-res flex w-100 jc-bet al-items">
       <h3>precio x ticket: $<%= activity.price %></h3>
       <a href="/products/activities/tickets/<%= activity.id  %> " class="cottage-button txt-center bg-3">Comprar</a>
     </div>
