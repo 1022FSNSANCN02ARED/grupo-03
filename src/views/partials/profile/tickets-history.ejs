@@ -1,0 +1,29 @@
+      <article class="profile-article tickets-profile">
+        <h2 class="txt-center border-xy">Boletos de actividades</h2>
+        <table class="w-100 fs-15 txt-center p-top-10">
+
+          <tr class="flex">
+            <th class="w-100 column-profile-table flex al-items jc-center">actividad</th>
+            <th class="w-100 column-profile-table flex al-items jc-center">día</th>
+            <th class="w-100 column-profile-table flex al-items jc-center">boletos</th>
+            <th class="w-100 column-profile-table flex al-items jc-center">horario</th>
+            <th class="w-100 column-profile-table flex al-items jc-center">total</th>
+          </tr>
+
+          <% if (tickets) { %>
+          <% tickets.forEach((ticket, i) => { %>
+          <tr class="flex">
+            <td class="w-100 column-profile-table flex al-items jc-center"><%= ticket.activity.name %></td>
+            <td class="w-100 column-profile-table flex al-items jc-center"><%= ticket.day %></td>
+            <td class="w-100 column-profile-table flex al-items jc-center"><%= ticket.quantity %></td>
+            <td class="w-100 column-profile-table flex al-items jc-center"><%= ticket.hour %></td>
+            <td class="w-100 column-profile-table flex al-items jc-center"><%= ticket.total_cost %></td>
+          </tr>
+          <% }) %>
+          <% } %>
+        </table>
+
+        <% if (!tickets) { %>
+        <h3 class="txt-center p-20px">Todavía no ha alquilado ninguna cabaña...</h3>
+        <% } %>
+      </article>

@@ -141,8 +141,12 @@ module.exports = {
                 include: ["user", "cottage", "cart"],
                 where: { user_id: req.session.userLog.id },
             });
+            const tickets = await db.AcivitiesUsers.findAll({
+                include: ["user", "activity", "cart"],
+                where: { user_id: req.session.userLog.id },
+            });
 
-            res.render("user-profile", { rents });
+            res.render("user-profile", { rents, tickets });
         } catch (error) {
             console.log(error);
         }
