@@ -27,7 +27,7 @@ module.exports = {
             console.log(error);
         }
 
-        res.redirect("/");
+        res.redirect("/user/login");
     },
     delete: (req, res) => {
         res.redirect("/");

@@ -90,10 +90,10 @@ selection.addEventListener("click", validationSelect);
 //----------------- validación img----------------
 
 // Obtener el elemento input de tipo file
-const fileInput = document.querySelector(".hide");
+const fileInput = document.getElementById("cottage-images-input");
 
 // Escuchar el evento change en el elemento input
-fileInput.addEventListener('click', () => {
+fileInput.addEventListener('change', () => {
   // Obtener la lista de archivos seleccionados
   const selectedFiles = fileInput.files;
 
@@ -101,5 +101,18 @@ fileInput.addEventListener('click', () => {
   const numSelectedFiles = selectedFiles.length;
 
   // Mostrar la cantidad de archivos seleccionados en la consola
-  console.log(`Se seleccionaron ${numSelectedFiles} archivos.`);
+  //console.log(`Se seleccionaron ${numSelectedFiles} archivos.`);
+  if(numSelectedFiles < 3){
+    console.log("todo mal img");
+            //document.querySelector("#services-selected").classList.remove("form-success");
+            //document.querySelector("#services-selected").classList.add("form-fail");
+            document.querySelector(".errorFrontImg").classList.remove("error-front");
+            document.querySelector(".errorFrontImg").classList.add("error-front-success");
+  }else{
+    console.log("todo ok img");
+    document.querySelector("#services-selected").classList.add("form-success");
+
+    document.querySelector(".errorFrontImg").classList.remove("error-front-success");
+    document.querySelector(".errorFrontImg").classList.add("error-front");
+  }
 });
