@@ -226,7 +226,10 @@ module.exports = {
         });
     },
     showDeleteOption: async (req, res) => {
-        const activityToDelete = await db.Activities.findByPk(req.params.id);
+        const activityToDelete = await db.Activities.findByPk(req.params.id, {
+            include: ["images", "hours", "assessments"],
+        });
+        //res.json(activityToDelete)
         res.render("delete-detail", {
             product: activityToDelete,
             productType: "activities",

@@ -186,7 +186,9 @@ module.exports = {
         res.redirect("/");
     },
     showDeleteOption: async (req, res) => {
-        const cottageToDelete = await db.Cottages.findByPk(req.params.id);
+        const cottageToDelete = await db.Cottages.findByPk(req.params.id, {
+            include: ["images", "assessments"],
+        });
         res.render("delete-detail", {
             product: cottageToDelete,
             productType: "cottages",

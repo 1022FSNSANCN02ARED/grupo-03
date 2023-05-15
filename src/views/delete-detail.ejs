@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confirmación para borrar</title>
-</head>
+    <head>
+        <%- include("./partials/head") %>
+        <title>Confirmación para borrar</title>
+    </head>
 
 <body>
-  <h1>¿Seguro que quieres borrar <%= product.name %>?</h1>
+  <%- include("./partials/nav-login-register", {title: "Confirmación para borrar"})  %>
+
+  <h1 class="txt-center">¿Seguro que quieres borrar <%= product.name %>?</h1>
+  <figure class="txt-center"><img class="img-delete" src="<%= product.images[0].image %>" alt=""></figure>
+  
 
   <form action="/products/<%= productType %>/delete/<%= product.id %>?_method=delete" method="post">
-    <input type="submit" value="borrar">
+    <div class="txt-center m-10">
+    <input type="submit" value="Borrar" class="boton-delete">
+  </div>
   </form>
 </body>
 
