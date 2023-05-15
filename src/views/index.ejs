@@ -58,7 +58,7 @@
           <i class="fa-solid fa-chevron-right"></i>
         </button>
 
-        <article class="m-auto cont-cottage w-80 bg-5 of-auto">
+        <article class="m-auto cont-cottage w-80 bg-5 of-auto border-rad">
           <ul id="cottage-list" class="flex">
             <% cottage.forEach(cabana => { %>
             <!-- trae la tarjeta de cabaña -->
@@ -89,7 +89,7 @@
             <i class="fa-solid fa-chevron-right"></i>
           </button>
 
-          <article class="cont-activity bg-5 m-auto w-80 of-auto">
+          <article class="cont-activity bg-5 m-auto w-80 of-auto  border-rad">
             <ul id="activity-list" class="flex">
               <% activities.forEach(activity => { %> <%-
                 include('./partials/activity-card',{activity}) %>
