@@ -1032,6 +1032,12 @@ footer h1 {
     padding: 10px;
     border-top: #07889b 1px solid;
     border-bottom: #07889b 1px solid;
+    transition: 0.5s;
+}
+
+.option-profile-selected {
+    background-color: #66b9bf;
+    color: #f1f7ed;
 }
 
 .column-profile-table {
@@ -1138,12 +1144,14 @@ footer h1 {
         width: 30%;
         padding: 10px;
         margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     .right-profile-seciton {
         width: 70%;
         padding: 10px;
         margin-top: 30px;
+        margin-bottom: 30px;
     }
 }
 

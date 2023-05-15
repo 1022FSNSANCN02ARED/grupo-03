@@ -36,7 +36,7 @@ CREATE TABLE `activities` (
   `createdAt` datetime DEFAULT current_timestamp(),
   `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,16 +45,7 @@ CREATE TABLE `activities` (
 
 LOCK TABLES `activities` WRITE;
 /*!40000 ALTER TABLE `activities` DISABLE KEYS */;
-INSERT INTO `activities` VALUES (6,'Senderismo','Caminata por senderos o veredas para disfrutar espacios naturales.',2500,0,10,'2023-05-09 07:55:57','2023-05-09 07:55:57'),
-(7,'Fogata','Elemento natural que nos arropa, nos da calor y luz por las noches.',1000,0,30,'2023-05-10 07:11:48','2023-05-10 07:11:48'),
-(8,'Cabalgata','Disfrutar de la naturaleza a caballo',1500,0,1,'2023-05-10 07:17:58','2023-05-10 07:17:58'),
-(9,'Bicicletas Familiar','Paseo en bicicletas para toda la familia',600,0,1,'2023-05-10 07:19:40','2023-05-10 07:19:40'),
-(10,'Spa','El Spa cuenta con Masajes, Jacuzzi y Sauna para que te relarte',2000,0,1,'2023-05-10 07:24:15','2023-05-10 07:24:15'),
-(11,'Piscina','piscina para disfrutar con toda la familia',1200,0,1,'2023-05-10 07:26:20','2023-05-10 07:26:20'),
-(12,'Piscina Climatizada','Piscina Climatizada ideal para distar en familia',1500,0,1,'2023-05-10 07:28:09','2023-05-10 07:28:09'),
-(13,'Acuagym','Acuagym con los profes del complejo Domun ',1000,0,1,'2023-05-10 07:30:23','2023-05-10 07:30:23'),
-(14,'Kayak','Paseo por el lago en kayak duracion de 30min',700,0,1,'2023-05-10 07:32:20','2023-05-10 07:32:20');
-
+INSERT INTO `activities` VALUES (6,'Senderismo','Caminata por senderos o veredas para disfrutar espacios naturales.',2500,0,10,'2023-05-09 07:55:57','2023-05-09 07:55:57'),(7,'Fogata','Elemento natural que nos arropa, nos da calor y luz por las noches.',1000,0,30,'2023-05-10 07:11:48','2023-05-10 07:11:48'),(8,'Cabalgata','Disfrutar de la naturaleza a caballo',1500,0,1,'2023-05-10 07:17:58','2023-05-10 07:17:58'),(9,'Bicicletas Familiar','Paseo en bicicletas para toda la familia',600,0,1,'2023-05-10 07:19:40','2023-05-10 07:19:40'),(10,'Spa','El Spa cuenta con Masajes, Jacuzzi y Sauna para que te relarte',2000,0,1,'2023-05-10 07:24:15','2023-05-10 07:24:15'),(11,'Piscina','piscina para disfrutar con toda la familia',1200,0,1,'2023-05-10 07:26:20','2023-05-10 07:26:20'),(12,'Piscina Climatizada','Piscina Climatizada ideal para distar en familia',1500,0,1,'2023-05-10 07:28:09','2023-05-10 07:28:09'),(13,'Acuagym','Acuagym con los profes del complejo Domun ',1000,0,1,'2023-05-10 07:30:23','2023-05-10 07:30:23'),(14,'Kayak','Paseo por el lago en kayak duracion de 30min',700,0,1,'2023-05-10 07:32:20','2023-05-10 07:32:20');
 /*!40000 ALTER TABLE `activities` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,7 +100,7 @@ CREATE TABLE `activity_hours` (
   PRIMARY KEY (`id`),
   KEY `activity_hours_FK` (`activity_id`),
   CONSTRAINT `activity_hours_FK` FOREIGN KEY (`activity_id`) REFERENCES `activities` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,17 +109,7 @@ CREATE TABLE `activity_hours` (
 
 LOCK TABLES `activity_hours` WRITE;
 /*!40000 ALTER TABLE `activity_hours` DISABLE KEYS */;
-INSERT INTO `activity_hours` VALUES (7,7,'desde: 20:00, hasta 22:00',NULL,'desde: 20:00, hasta 00:00',NULL,'2023-05-10 07:11:56','2023-05-10 07:11:56'),
-(8,8,'desde: 10:00, hasta 16:00',NULL,'desde: 10:00, hasta 17:00',NULL,'2023-05-10 07:17:59','2023-05-10 07:17:59'),
-(9,9,'desde: 10:00, hasta 17:00',NULL,'desde: 10:00, hasta 18:00',NULL,'2023-05-10 07:19:42','2023-05-10 07:19:42'),
-(10,10,'desde: 08:00, hasta 16:00',NULL,'desde: 09:00, hasta 17:00',NULL,'2023-05-10 07:24:16','2023-05-10 07:24:16'),
-(11,11,'desde: 10:00, hasta 19:00',NULL,'desde: 10:00, hasta 20:00',NULL,'2023-05-10 07:26:21','2023-05-10 07:26:21'),
-(12,12,'desde: 10:00, hasta 19:00',NULL,'desde: 10:00, hasta 19:00',NULL,'2023-05-10 07:28:10','2023-05-10 07:28:10'),
-(13,13,'desde: 14:00, hasta 17:00',NULL,'desde: 13:00, hasta 17:00',NULL,'2023-05-10 07:30:24','2023-05-10 07:30:24'),
-(14,14,'desde: 09:00, hasta 17:00',NULL,'desde: 10:00, hasta 17:00',NULL,'2023-05-10 07:32:21','2023-05-10 07:32:21'),
-(15,6,'desde: 08:00, hasta 16:00',NULL,'desde: 09:30, hasta 16:00',NULL,'2023-05-15 06:02:11','2023-05-15 06:02:11');
-
-
+INSERT INTO `activity_hours` VALUES (7,7,'desde: 20:00, hasta 22:00',NULL,'desde: 20:00, hasta 00:00',NULL,'2023-05-10 07:11:56','2023-05-10 07:11:56'),(8,8,'desde: 10:00, hasta 16:00',NULL,'desde: 10:00, hasta 17:00',NULL,'2023-05-10 07:17:59','2023-05-10 07:17:59'),(9,9,'desde: 10:00, hasta 17:00',NULL,'desde: 10:00, hasta 18:00',NULL,'2023-05-10 07:19:42','2023-05-10 07:19:42'),(10,10,'desde: 08:00, hasta 16:00',NULL,'desde: 09:00, hasta 17:00',NULL,'2023-05-10 07:24:16','2023-05-10 07:24:16'),(11,11,'desde: 10:00, hasta 19:00',NULL,'desde: 10:00, hasta 20:00',NULL,'2023-05-10 07:26:21','2023-05-10 07:26:21'),(12,12,'desde: 10:00, hasta 19:00',NULL,'desde: 10:00, hasta 19:00',NULL,'2023-05-10 07:28:10','2023-05-10 07:28:10'),(13,13,'desde: 14:00, hasta 17:00',NULL,'desde: 13:00, hasta 17:00',NULL,'2023-05-10 07:30:24','2023-05-10 07:30:24'),(14,14,'desde: 09:00, hasta 17:00',NULL,'desde: 10:00, hasta 17:00',NULL,'2023-05-10 07:32:21','2023-05-10 07:32:21'),(15,6,'desde: 08:00, hasta 16:00',NULL,'desde: 09:30, hasta 16:00',NULL,'2023-05-15 06:02:11','2023-05-15 06:02:11');
 /*!40000 ALTER TABLE `activity_hours` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,6 +129,8 @@ CREATE TABLE `activity_user` (
   `createdAt` datetime DEFAULT current_timestamp(),
   `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `cart_id` int(11) NOT NULL,
+  `hour` varchar(100) NOT NULL,
+  `total_cost` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `activity_user_FK` (`activity_id`),
   KEY `activity_user_FK_1` (`user_id`),
@@ -249,7 +232,7 @@ CREATE TABLE `cottages` (
   `bedrooms` int(11) NOT NULL,
   `bathrooms` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -258,12 +241,7 @@ CREATE TABLE `cottages` (
 
 LOCK TABLES `cottages` WRITE;
 /*!40000 ALTER TABLE `cottages` DISABLE KEYS */;
-INSERT INTO `cottages` (`id`, `name`, `price`, `description`, `beds`, `assessment`, `createdAt`, `updatedAt`, `guest`, `bedrooms`, `bathrooms`) VALUES
-(15, 'El Granero', 9000, 'Típico americano,el dormitorio en el altillo, un gran hogar a leña.', 4, '0', '2023-05-13 23:58:43', '2023-05-13 23:58:43', 4, 2, 1),
-(16, 'Los Pinos', 8500, 'Patagónica, sobre los árboles.', 3, '0', '2023-05-14 00:06:49', '2023-05-14 00:06:49', 4, 2, 1),
-(17, 'Los Liquidámbar', 12000, 'Sobre los árboles ambientada a lo María Antonieta.', 3, '0', '2023-05-14 00:10:05', '2023-05-14 00:10:05', 4, 3, 2),
-(18, 'Los Naranjos', 11000, 'Moderna,con cama extragrande, y un reconfortante jacuzzi doble.', 3, '0', '2023-05-14 00:22:36', '2023-05-14 00:22:36', 5, 2, 1);
-
+INSERT INTO `cottages` VALUES (15,'El Granero',9000,'Típico americano,el dormitorio en el altillo, un gran hogar a leña.',4,0,'2023-05-13 23:58:43','2023-05-13 23:58:43',4,2,1),(16,'Los Pinos',8500,'Patagónica, sobre los árboles.',3,0,'2023-05-14 00:06:49','2023-05-14 00:06:49',4,2,1),(17,'Los Liquidámbar',12000,'Sobre los árboles ambientada a lo María Antonieta.',3,0,'2023-05-14 00:10:05','2023-05-14 00:10:05',4,3,2),(18,'Los Naranjos',11000,'Moderna,con cama extragrande, y un reconfortante jacuzzi doble.',3,0,'2023-05-14 00:22:36','2023-05-14 00:22:36',5,2,1);
 /*!40000 ALTER TABLE `cottages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -313,7 +291,7 @@ CREATE TABLE `images` (
   KEY `images_FK_1` (`activity_id`),
   CONSTRAINT `images_FK` FOREIGN KEY (`cottage_id`) REFERENCES `cottages` (`id`),
   CONSTRAINT `images_FK_1` FOREIGN KEY (`activity_id`) REFERENCES `activities` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -322,47 +300,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (19,NULL,'/images/cottageImages/naranjos02.jpg',7,'2023-04-04 00:12:55','2023-05-15 02:58:37'),
-(20,NULL,'/images/cottageImages/liquidambar02.jpg',8,'2023-04-04 00:12:55','2023-05-15 02:58:37'),
-(21,NULL,'/images/cottageImages/liquidambar03.jpg',9,'2023-04-04 00:12:55','2023-05-15 02:58:37'),
-(22,NULL,'/images/cottageImages/naranjos04.jpg',10,'2023-04-04 00:12:55','2023-05-15 02:58:37'),
-(23,NULL,'/images/cottageImages/pinos05.jpg',11,'2023-04-04 00:12:55','2023-05-15 02:58:37'),
-(24,NULL,'/images/cottageImages/pinos06.jpg',12,'2023-04-04 00:12:55','2023-05-15 02:58:37'),
-(25,NULL,'/images/cottageImages/liquidambar04.jpg',13,'2023-04-04 00:12:55','2023-05-15 02:58:37'),
-(26,NULL,'/images/cottageImages/naranjos01.jpg',14,'2023-04-04 00:12:55','2023-05-15 02:58:37'),
-(28,NULL,'/images/cottageImages/liquidambar01.jpg',7,'2023-04-04 00:12:55','2023-05-15 02:58:37'),
-(29,NULL,'/images/cottageImages/naranjos03.jpg',8,'2023-04-04 00:12:56','2023-05-15 02:58:37'),
-(30,NULL,'/images/cottageImages/naranjos05.jpg',9,'2023-04-04 00:14:26','2023-05-15 02:58:37'),
-(31,NULL,'/images/cottageImages/naranjos06.jpg',10,'2023-04-04 00:14:26','2023-05-15 02:58:37'),
-(32,NULL,'/images/cottageImages/pinos05.jpg',11,'2023-04-04 00:14:26','2023-05-15 02:58:37'),
-(45,15,'/images/cottageImages/1684022323671_img_cottage.jpg',NULL,'2023-05-13 23:58:44','2023-05-13 23:58:44'),
-(46,15,'/images/cottageImages/1684022323674_img_cottage.jpg',NULL,'2023-05-13 23:58:44','2023-05-13 23:58:44'),
-(47,15,'/images/cottageImages/1684022323687_img_cottage.jpg',NULL,'2023-05-13 23:58:44','2023-05-13 23:58:44'),
-(48,15,'/images/cottageImages/1684022323692_img_cottage.jpg',NULL,'2023-05-13 23:58:44','2023-05-13 23:58:44'),
-(49,15,'/images/cottageImages/1684022323804_img_cottage.jpg',NULL,'2023-05-13 23:58:44','2023-05-13 23:58:44'),
-(50,15,'/images/cottageImages/1684022323827_img_cottage.jpg',NULL,'2023-05-13 23:58:44','2023-05-13 23:58:44'),
-(51,16,'/images/cottageImages/1684022809649_img_cottage.jpg',NULL,'2023-05-14 00:06:50','2023-05-14 00:06:50'),
-(52,16,'/images/cottageImages/1684022809655_img_cottage.jpg',NULL,'2023-05-14 00:06:50','2023-05-14 00:06:50'),
-(53,16,'/images/cottageImages/1684022809677_img_cottage.jpg',NULL,'2023-05-14 00:06:50','2023-05-14 00:06:50'),
-(54,16,'/images/cottageImages/1684022809678_img_cottage.jpg',NULL,'2023-05-14 00:06:50','2023-05-14 00:06:50'),
-(55,16,'/images/cottageImages/1684022809682_img_cottage.jpg',NULL,'2023-05-14 00:06:50','2023-05-14 00:06:50'),
-(56,16,'/images/cottageImages/1684022809684_img_cottage.jpg',NULL,'2023-05-14 00:06:50','2023-05-14 00:06:50'),
-(57,17,'/images/cottageImages/1684023004872_img_cottage.jpg',NULL,'2023-05-14 00:10:05','2023-05-14 00:10:05'),
-(58,17,'/images/cottageImages/1684023004874_img_cottage.jpg',NULL,'2023-05-14 00:10:05','2023-05-14 00:10:05'),
-(59,17,'/images/cottageImages/1684023004878_img_cottage.jpg',NULL,'2023-05-14 00:10:05','2023-05-14 00:10:05'),
-(60,17,'/images/cottageImages/1684023004895_img_cottage.jpg',NULL,'2023-05-14 00:10:05','2023-05-14 00:10:05'),
-(61,17,'/images/cottageImages/1684023004902_img_cottage.jpg',NULL,'2023-05-14 00:10:05','2023-05-14 00:10:05'),
-(62,17,'/images/cottageImages/1684023004934_img_cottage.jpg',NULL,'2023-05-14 00:10:05','2023-05-14 00:10:05'),
-(63,18,'/images/cottageImages/1684023756774_img_cottage.jpg',NULL,'2023-05-14 00:22:37','2023-05-14 00:22:37'),
-(64,18,'/images/cottageImages/1684023756846_img_cottage.jpg',NULL,'2023-05-14 00:22:37','2023-05-14 00:22:37'),
-(65,18,'/images/cottageImages/1684023756861_img_cottage.jpg',NULL,'2023-05-14 00:22:37','2023-05-14 00:22:37'),
-(66,18,'/images/cottageImages/1684023756874_img_cottage.jpg',NULL,'2023-05-14 00:22:37','2023-05-14 00:22:37'),
-(67,18,'/images/cottageImages/1684023756898_img_cottage.jpg',NULL,'2023-05-14 00:22:37','2023-05-14 00:22:37'),
-(68,18,'/images/cottageImages/1684023756905_img_cottage.jpg',NULL,'2023-05-14 00:22:37','2023-05-14 00:22:37'),
-(69,NULL,'/images/activityImages/1684130531441_img_activity.jpg',6,'2023-05-15 06:02:11','2023-05-15 06:02:11'),
-(70,NULL,'/images/activityImages/1684130531473_img_activity.jpg',6,'2023-05-15 06:02:11','2023-05-15 06:02:11'),
-(71,NULL,'/images/activityImages/1684130531541_img_activity.jpg',6,'2023-05-15 06:02:11','2023-05-15 06:02:11');
-
+INSERT INTO `images` VALUES (19,NULL,'/images/cottageImages/naranjos02.jpg',7,'2023-04-04 00:12:55','2023-05-15 02:58:37'),(20,NULL,'/images/cottageImages/liquidambar02.jpg',8,'2023-04-04 00:12:55','2023-05-15 02:58:37'),(21,NULL,'/images/cottageImages/liquidambar03.jpg',9,'2023-04-04 00:12:55','2023-05-15 02:58:37'),(22,NULL,'/images/cottageImages/naranjos04.jpg',10,'2023-04-04 00:12:55','2023-05-15 02:58:37'),(23,NULL,'/images/cottageImages/pinos05.jpg',11,'2023-04-04 00:12:55','2023-05-15 02:58:37'),(24,NULL,'/images/cottageImages/pinos06.jpg',12,'2023-04-04 00:12:55','2023-05-15 02:58:37'),(25,NULL,'/images/cottageImages/liquidambar04.jpg',13,'2023-04-04 00:12:55','2023-05-15 02:58:37'),(26,NULL,'/images/cottageImages/naranjos01.jpg',14,'2023-04-04 00:12:55','2023-05-15 02:58:37'),(28,NULL,'/images/cottageImages/liquidambar01.jpg',7,'2023-04-04 00:12:55','2023-05-15 02:58:37'),(29,NULL,'/images/cottageImages/naranjos03.jpg',8,'2023-04-04 00:12:56','2023-05-15 02:58:37'),(30,NULL,'/images/cottageImages/naranjos05.jpg',9,'2023-04-04 00:14:26','2023-05-15 02:58:37'),(31,NULL,'/images/cottageImages/naranjos06.jpg',10,'2023-04-04 00:14:26','2023-05-15 02:58:37'),(32,NULL,'/images/cottageImages/pinos05.jpg',11,'2023-04-04 00:14:26','2023-05-15 02:58:37'),(45,15,'/images/cottageImages/1684022323671_img_cottage.jpg',NULL,'2023-05-13 23:58:44','2023-05-13 23:58:44'),(46,15,'/images/cottageImages/1684022323674_img_cottage.jpg',NULL,'2023-05-13 23:58:44','2023-05-13 23:58:44'),(47,15,'/images/cottageImages/1684022323687_img_cottage.jpg',NULL,'2023-05-13 23:58:44','2023-05-13 23:58:44'),(48,15,'/images/cottageImages/1684022323692_img_cottage.jpg',NULL,'2023-05-13 23:58:44','2023-05-13 23:58:44'),(49,15,'/images/cottageImages/1684022323804_img_cottage.jpg',NULL,'2023-05-13 23:58:44','2023-05-13 23:58:44'),(50,15,'/images/cottageImages/1684022323827_img_cottage.jpg',NULL,'2023-05-13 23:58:44','2023-05-13 23:58:44'),(51,16,'/images/cottageImages/1684022809649_img_cottage.jpg',NULL,'2023-05-14 00:06:50','2023-05-14 00:06:50'),(52,16,'/images/cottageImages/1684022809655_img_cottage.jpg',NULL,'2023-05-14 00:06:50','2023-05-14 00:06:50'),(53,16,'/images/cottageImages/1684022809677_img_cottage.jpg',NULL,'2023-05-14 00:06:50','2023-05-14 00:06:50'),(54,16,'/images/cottageImages/1684022809678_img_cottage.jpg',NULL,'2023-05-14 00:06:50','2023-05-14 00:06:50'),(55,16,'/images/cottageImages/1684022809682_img_cottage.jpg',NULL,'2023-05-14 00:06:50','2023-05-14 00:06:50'),(56,16,'/images/cottageImages/1684022809684_img_cottage.jpg',NULL,'2023-05-14 00:06:50','2023-05-14 00:06:50'),(57,17,'/images/cottageImages/1684023004872_img_cottage.jpg',NULL,'2023-05-14 00:10:05','2023-05-14 00:10:05'),(58,17,'/images/cottageImages/1684023004874_img_cottage.jpg',NULL,'2023-05-14 00:10:05','2023-05-14 00:10:05'),(59,17,'/images/cottageImages/1684023004878_img_cottage.jpg',NULL,'2023-05-14 00:10:05','2023-05-14 00:10:05'),(60,17,'/images/cottageImages/1684023004895_img_cottage.jpg',NULL,'2023-05-14 00:10:05','2023-05-14 00:10:05'),(61,17,'/images/cottageImages/1684023004902_img_cottage.jpg',NULL,'2023-05-14 00:10:05','2023-05-14 00:10:05'),(62,17,'/images/cottageImages/1684023004934_img_cottage.jpg',NULL,'2023-05-14 00:10:05','2023-05-14 00:10:05'),(63,18,'/images/cottageImages/1684023756774_img_cottage.jpg',NULL,'2023-05-14 00:22:37','2023-05-14 00:22:37'),(64,18,'/images/cottageImages/1684023756846_img_cottage.jpg',NULL,'2023-05-14 00:22:37','2023-05-14 00:22:37'),(65,18,'/images/cottageImages/1684023756861_img_cottage.jpg',NULL,'2023-05-14 00:22:37','2023-05-14 00:22:37'),(66,18,'/images/cottageImages/1684023756874_img_cottage.jpg',NULL,'2023-05-14 00:22:37','2023-05-14 00:22:37'),(67,18,'/images/cottageImages/1684023756898_img_cottage.jpg',NULL,'2023-05-14 00:22:37','2023-05-14 00:22:37'),(68,18,'/images/cottageImages/1684023756905_img_cottage.jpg',NULL,'2023-05-14 00:22:37','2023-05-14 00:22:37'),(69,NULL,'/images/activityImages/1684130531441_img_activity.jpg',6,'2023-05-15 06:02:11','2023-05-15 06:02:11'),(70,NULL,'/images/activityImages/1684130531473_img_activity.jpg',6,'2023-05-15 06:02:11','2023-05-15 06:02:11'),(71,NULL,'/images/activityImages/1684130531541_img_activity.jpg',6,'2023-05-15 06:02:11','2023-05-15 06:02:11');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -382,6 +320,8 @@ CREATE TABLE `rents` (
   `createdAt` datetime DEFAULT current_timestamp(),
   `updatedAt` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `cart_id` int(11) NOT NULL,
+  `total_cost` int(11) NOT NULL,
+  `guests` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `rents_FK` (`cottage_id`),
   KEY `rents_FK_1` (`user_id`),
@@ -443,7 +383,7 @@ CREATE TABLE `services` (
   PRIMARY KEY (`id`),
   KEY `services_FK` (`cottage_id`),
   CONSTRAINT `services_FK` FOREIGN KEY (`cottage_id`) REFERENCES `cottages` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -452,23 +392,7 @@ CREATE TABLE `services` (
 
 LOCK TABLES `services` WRITE;
 /*!40000 ALTER TABLE `services` DISABLE KEYS */;
-INSERT INTO `services` (`id`, `cottage_id`, `service`, `createdAt`, `updatedAt`) VALUES
-(20, 15, 'Wi-fi', '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
-(21, 15, 'Calefacción', '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
-(22, 15, 'Aire acondicionado', '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
-(23, 15, 'Cocina', '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
-(24, 16, 'Wi-fi', '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
-(25, 16, 'Calefacción', '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
-(26, 16, 'Cocina', '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
-(27, 16, 'Jacuzzi', '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
-(28, 17, 'Wi-fi', '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
-(29, 17, 'Calefacción', '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
-(30, 17, 'Cocina', '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
-(31, 17, 'Jacuzzi', '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
-(32, 18, 'Wi-fi', '2023-05-14 00:22:37', '2023-05-14 00:22:37'),
-(33, 18, 'Calefacción', '2023-05-14 00:22:37', '2023-05-14 00:22:37'),
-(34, 18, 'Cocina', '2023-05-14 00:22:37', '2023-05-14 00:22:37');
-
+INSERT INTO `services` VALUES (20,15,'Wi-fi','2023-05-13 23:58:44','2023-05-13 23:58:44'),(21,15,'Calefacción','2023-05-13 23:58:44','2023-05-13 23:58:44'),(22,15,'Aire acondicionado','2023-05-13 23:58:44','2023-05-13 23:58:44'),(23,15,'Cocina','2023-05-13 23:58:44','2023-05-13 23:58:44'),(24,16,'Wi-fi','2023-05-14 00:06:50','2023-05-14 00:06:50'),(25,16,'Calefacción','2023-05-14 00:06:50','2023-05-14 00:06:50'),(26,16,'Cocina','2023-05-14 00:06:50','2023-05-14 00:06:50'),(27,16,'Jacuzzi','2023-05-14 00:06:50','2023-05-14 00:06:50'),(28,17,'Wi-fi','2023-05-14 00:10:05','2023-05-14 00:10:05'),(29,17,'Calefacción','2023-05-14 00:10:05','2023-05-14 00:10:05'),(30,17,'Cocina','2023-05-14 00:10:05','2023-05-14 00:10:05'),(31,17,'Jacuzzi','2023-05-14 00:10:05','2023-05-14 00:10:05'),(32,18,'Wi-fi','2023-05-14 00:22:37','2023-05-14 00:22:37'),(33,18,'Calefacción','2023-05-14 00:22:37','2023-05-14 00:22:37'),(34,18,'Cocina','2023-05-14 00:22:37','2023-05-14 00:22:37');
 /*!40000 ALTER TABLE `services` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -522,7 +446,7 @@ CREATE TABLE `users` (
   KEY `users_address_id_IDX` (`address_id`) USING BTREE,
   CONSTRAINT `users_FK` FOREIGN KEY (`address_id`) REFERENCES `user_address` (`id`),
   CONSTRAINT `users_FK_1` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -531,7 +455,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'para@probar.com','123456','123456','un','usuario','/images/avatars/usuarioDefault.jpg',NULL,1,'2023-03-27 15:49:13','2023-03-27 16:41:15'),(2,'cosme@gmail.com','123456','123456','cosme','fulanito','/images/avatars/usuarioDefault.jpg',NULL,1,'2023-04-21 20:41:32','2023-04-21 20:41:32'),(3,'usuario@hotmail.com','123456','Contraseña','Carlos','Santana','/images/avatars/usuarioDefault.jpg',NULL,1,'2023-04-21 20:42:39','2023-04-21 20:42:39');
+INSERT INTO `users` VALUES (1,'para@probar.com','123456','123456','un','usuario','/images/avatars/usuarioDefault.jpg',NULL,1,'2023-03-27 15:49:13','2023-03-27 16:41:15'),(2,'cosme@gmail.com','123456','123456','cosme','fulanito','/images/avatars/usuarioDefault.jpg',NULL,1,'2023-04-21 20:41:32','2023-04-21 20:41:32'),(3,'usuario@hotmail.com','123456','Contraseña','Carlos','Santana','/images/avatars/usuarioDefault.jpg',NULL,1,'2023-04-21 20:42:39','2023-04-21 20:42:39'),(4,'federico@domum.com','1234567','$2a$10$0RM1eYWw7Z/KXTEKYOJPBOjw3XswnOdNZzsbxvXnmfFXMwaf.8LLS','Federico','Vazquez','/images/avatars/usuarioDefault.jpg',NULL,1,'2023-05-15 06:14:39','2023-05-15 06:14:39');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -548,4 +472,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-21 20:53:58
+-- Dump completed on 2023-05-15  3:20:04
