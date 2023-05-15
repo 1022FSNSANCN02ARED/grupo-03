@@ -18,6 +18,7 @@
             <% if (userLog.rol.name == "admin") { %>
             <h3 class="txt-center">Admin</h3>
             <li class="burguer-user-menu-li"><a class="w-100" href="/products/create">Crear producto</a></li>
+            <li class="burguer-user-menu-li"><a class="w-100" href="/products/list">Lista de productos</a></li>
             <% } %>
           </ul>
         </section>
@@ -39,8 +40,8 @@
           <ul>
             <li class="burguer-menu-li"><a class="w-100" href="/">Inicio</a></li>
             <li class="burguer-menu-li"><a class="w-100" href="#info-general">Nosotros</a></li>
-            <li class="burguer-menu-li"><a class="w-100" href="#cottages">Cabañas</a></li>
-            <li class="burguer-menu-li"><a class="w-100" href="#activities">Actividades</a></li>
+            <li class="burguer-menu-li"><a class="w-100" href="/products/list?show=cottages">Cabañas</a></li>
+            <li class="burguer-menu-li"><a class="w-100" href="/products/list?show=activities">Actividades</a></li>
             <li class="burguer-menu-li"><a class="w-100" href="#footer">Contacto</a></li>
           </ul>
         </nav>
