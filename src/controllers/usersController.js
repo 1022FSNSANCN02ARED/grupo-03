@@ -135,8 +135,17 @@ module.exports = {
             console.log(error);
         }
     },
-    showProfile: (req, res) => {
-        res.render("user-profile");
+    showProfile: async (req, res) => {
+        try {
+            const rents = await db.Rents.findAll({
+                include: ["user", "cottage", "cart"],
+                where: { user_id: req.session.userLog.id },
+            });
+
+            res.render("user-profile", { rents });
+        } catch (error) {
+            console.log(error);
+        }
     },
     processLogOut: (req, res) => {
         res.clearCookie("userLogInCookie");

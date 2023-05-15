@@ -248,8 +248,8 @@ module.exports = {
             user_id: req.session.userLog.id,
             date_in: req.body.check_in,
             date_out: req.body.check_out,
-            total: Number(req.body.total),
-            guest: Number(req.body.guest),
+            total_cost: Number(req.body.total),
+            guests: Number(req.body.guest),
             cart_id: null,
         };
 

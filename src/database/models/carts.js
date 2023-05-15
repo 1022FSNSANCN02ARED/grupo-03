@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
             },
         },
         {
-            tableName: "carts",
+            tableName: "cart",
         }
     );
     return model;
