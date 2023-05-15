@@ -243,8 +243,9 @@ module.exports = {
             user_id: req.session.userLog.id,
             date_in: req.body.check_in,
             date_out: req.body.check_out,
-            cart_id: null,
             total: Number(req.body.total),
+            guest: Number(req.body.guest),
+            cart_id: null,
         };
 
         if (!req.session.cottagesInCart) {
