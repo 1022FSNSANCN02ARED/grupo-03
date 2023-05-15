@@ -7,7 +7,7 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
     <h2 class="form-section-title m-10 p-5px txt-center">General</h2>
 
     <label for="activity_name"></label>
-    <input type="text" name="name" id="activity_name" class="f-input" placeholder="Nombre" value="<%= isActivity && locals.oldData?.name ? oldData.name : ""; %>" />
+    <input type="text" name="name" id="activity_name" class="f-input" placeholder="Nombre de la actividad" value="<%= isActivity && locals.oldData?.name ? oldData.name : ""; %>" />
     <% if ( isActivity && locals.errors?.name){ %>
     <p class="txt-error"><%= errors.name.msg %></p>
     <% } %>

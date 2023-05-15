@@ -20,4 +20,8 @@
   <% if(locals.errors?.cottage_images){ %>
   <p class="txt-error txt-center"><%= errors.cottage_images.msg %></p>
   <% } %>
-  <p class="errorFrontImg error-front txt-center">Debe subir como mínimo 3 fotos de la cabaña</p>
+  <% if(type == "cottage"){ %>
+    <p class="errorFrontImg error-front txt-center">Debe subir como mínimo 3 fotos de la cabaña</p>
+  <%} else{ %>
+    <p class="errorFrontImgAct error-front txt-center">Debe subir como mínimo 3 fotos de la actividad</p>
+  <% } %>
