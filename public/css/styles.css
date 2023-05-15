@@ -595,6 +595,17 @@ grisclaro #f1f7ed */
         "Lucida Sans", Arial, sans-serif;
 }
 
+.cont-cottage,
+.cont-activity {
+    scrollbar-width: none; /* Desactiva el scrollbar en navegadores basados en WebKit */
+    -ms-overflow-style: none; /* Desactiva el scrollbar en Internet Explorer y Edge */
+}
+
+.cont-cottage::-webkit-scrollbar,
+.cont-activity::-webkit-scrollbar {
+    display: none; /* Desactiva el scrollbar en navegadores basados en WebKit */
+}
+
 /*-------------- activities */
 
 #activities,

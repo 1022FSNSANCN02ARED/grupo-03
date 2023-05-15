@@ -1,0 +1,46 @@
+<li class="list-card flex flex-d-column jc-bet">
+    <div class="act-inf">
+      <h2 class="txt-center"><%= activity.name %></h2>
+      <figure class="cont-card-img m-auto of-hidden m-auto flex jc-center al-items pos-relative">
+        <img class="act-img" src="<%= activity.images[0].image%>" alt="Actividad" />
+      </figure>
+      <div class="qual-star flex jc-end m-auto p-top-10">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-regular fa-star-half-stroke"></i>
+      </div>
+      <!-- Si existe una primera hora de día de semana -->
+      <% if (activity.hours?.weekday_hours){ %>
+      <h4>Dias de semana:</h4>
+      <p class="fs-15"><%= activity.hours.weekday_hours %></p>
+      <p class="fs-15">
+        <%= activity.hours.second_weekday_hours ?" y " +
+              activity.hours.second_weekday_hours : ""; %>
+      </p>
+  
+      <!-- Si existe una primera hora de fin de semana -->
+      <% } %> <% if (activity.hours?.weekend_hours){ %>
+      <h4>Fines de semana:</h4>
+      <p class="fs-15"><%= activity.hours.weekend_hours %></p>
+      <p class="fs-15">
+        <%= activity.hours.second_weekend_hours ?", y " +
+              activity.hours.second_weekend_hours : ""; %>
+      </p>
+      <% } %>
+    </div>
+    <div class="flex flex-wrap p-10px">
+      <a href="" class="cottage-button bg-3 txt-center w-100"> Reservar </a>
+      <div class="price-res flex w-100 jc-bet al-items m-top-10">
+        <h3>precio x ticket: $<%= activity.price %></h3>
+        <a href="/products/activities/tickets/<%= activityid  %> " class="cottage-button txt-center bg-3">reservar</a>
+      </div>
+      <% if (userLog?.rol.name == "admin") { %>
+      <div class="section-admin-buttons flex jc-evenly w-100">
+        <a class="admin-button edit-button" href="/products/activities/edit/<%= activity.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a class="admin-button delete-button" href="/products/activities/delete/<%= activity.id %>"><i class=" fa-solid fa-trash"></i></a>
+      </div>
+      <% } %>
+    </div>
+  </li>

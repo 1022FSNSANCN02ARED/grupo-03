@@ -32,6 +32,12 @@
   </div>
   <div class="flex flex-wrap p-10px">
     <a href="" class="cottage-button bg-3 txt-center w-100"> Más información </a>
+
+    <div class="price-res flex w-100 jc-bet al-items m-top-10">
+      <h3>precio x ticket: $<%= activity.price %></h3>
+      <a href="/products/activities/tickets/<%= activity.id  %> " class="cottage-button txt-center bg-3">Comprar</a>
+    </div>
+
     <% if (userLog?.rol.name == "admin") { %>
     <div class="section-admin-buttons flex jc-evenly w-100">
       <a class="admin-button edit-button" href="/products/activities/edit/<%= activity.id %>"><i class="fa-solid fa-pen-to-square"></i></a>
