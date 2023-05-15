@@ -1,7 +1,7 @@
 const expresionesActivities = {
     title: /^[a-zA-ZÀ-ÿ\s]{2,40}$/,
     numberForm: /^[1-9][0-9]*$/,
-    description: /^[a-zA-ZÀ-ÿ\s]{10,500}$/,
+    description: /^[a-zA-Z0-9.,!?¡¿ ]{10,500}$/,
 };
 
 const inputsActivities = document.querySelectorAll("#activity-form input");
