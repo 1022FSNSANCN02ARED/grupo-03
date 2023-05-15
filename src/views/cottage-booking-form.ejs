@@ -14,24 +14,27 @@
     <section class="date-select">
 
       <form id="form" action="/products/cottages/booking/<%= cottage.id %>" method="post" class="flex flex-wrap jc-evenly p-1rem">
-        <label for="check-in" class="label-check bg-5 txt-center fs-18  border-solid w-50 m-10">Check-in</label>
-        <label for="check-out" class="label-check bg-5 txt-center fs-18 border-solid w-50 m-10">Check-out</label>
 
-        <input type="date" name="check_in" id="check-in" class="input-check-in bg-4 fc-37 txt-center article-fecha fs-18 w-50 border-rad p-10px " value="<%= oldData?.check_in ? oldData.check_in : "" ; %>" />
+        <div class="w-100 flex space-around">
+        <label for="check-in" class="label-check bg-5 txt-center fs-18  border-solid m-10">Check-in</label>
+        <label for="check-out" class="label-check bg-5 txt-center fs-18 border-solid m-10">Check-out</label>
+        </div>
 
+        <div class="w-100 flex space-around">
+        <input type="date" name="check_in" id="check-in" class="input-check-in bg-4 fc-37 txt-center article-fecha fs-18 border-rad p-10px w-34-especial" value="<%= oldData?.check_in ? oldData.check_in : "" ; %>" />
+        <input type="date" name="check_out" id="check-out" class="input-check-out bg-4 fc-37 txt-center article-fecha fs-18 border-rad p-10px w-34-especial" value="<%= oldData?.check_out ? oldData.check_out : "" ; %>" />
+        </div>
 
-        <input type="date" name="check_out" id="check-out" class="input-check-out bg-4 fc-37 txt-center article-fecha fs-18 w-50 border-rad p-10px " value="<%= oldData?.check_out ? oldData.check_out : "" ; %>" />
-
-
-        <select name="guest" class="selector-huesped flex m-10">
+        <center class="w-100">
+          <select name="guest" class="selector-huesped flex m-10">
           <option selected disabled>
             Cantidad de huéspedes
           </option>
           <% for (let i = 1; i <= cottage.guest ; i++) { %>
           <option value="<%= i %>" <%= (oldData?.guest == i) ? "selected" : "" %>><%= i %></option>
           <% } %>
-        </select>
-
+          </select>
+        </center>
 
         <input type="number" name="total" id="total" class="hide">
 
@@ -39,19 +42,19 @@
       </form>
       <section class="">
         <% if (errors?.check_in) { %>
-        <p class="txt-error"><%= errors.check_in.msg %></p>
+        <p class="txt-error txt-center"><%= errors.check_in.msg %></p>
         <% } %>
 
         <% if (errors?.check_out) { %>
-        <p class="txt-error"><%= errors.check_out.msg %></p>
+        <p class="txt-error txt-center"><%= errors.check_out.msg %></p>
         <% } %>
 
         <% if (errors?.guest) { %>
-        <p class="txt-error"><%= errors.guest.msg %></p>
+        <p class="txt-error txt-center"><%= errors.guest.msg %></p>
         <% } %>
 
         <% if (errors?.total && !errors.check_in && !errors.check_out) { %>
-        <p class="txt-error"><%= errors.total.msg %></p>
+        <p class="txt-error txt-center"><%= errors.total.msg %></p>
         <% } %>
       </section>
 
@@ -141,5 +144,4 @@
 
   <%- include("./partials/footer") %>
 </body>
-
 </html>

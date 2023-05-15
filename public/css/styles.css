@@ -870,13 +870,23 @@ grisclaro #f1f7ed */
     border-radius: 10px;
 }
 
+.div-text-center{
+    text-align: -webkit-center;
+}
 
+.space-around{
+    justify-content: space-around;
+}
+
+.w-34-especial{
+    width: 34%;
+}
 
 .label-check {
     border-radius: 10px;
     height: 25px;
     margin-right: 5px;
-    width: 35%;
+    width: 30%;
 }
 
 .input-cupon {
