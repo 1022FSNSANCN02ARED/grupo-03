@@ -3,29 +3,34 @@
 
 <head>
   <%- include('./partials/head') %>
+  <script defer src="/js/profile.js"></script>
   <title>DOMUM - <%= userLog.first_name %> <%= userLog.last_name %></title>
 </head>
 
 <body>
   <%- include('./partials/nav') %>
-  <main class="top-70 flex flex-wrap m-auto w-90 max-w-1">
-    <section class="left-profile-section bg-5 w-100 p-20px">
-      <figure class="txt-center">
-        <img class="profile-user-avatar" src="<%= userLog.avatar %>" alt="foto de <%= userLog.first_name %> <%= userLog.last_name %>">
-        <h3 class="txt-center p-10px"><%= userLog.first_name %> <%= userLog.last_name %></h3>
-      </figure>
-      <ul class="options-profile txt-center ">
-        <li class="option-profile">Información</li>
-        <li class="option-profile">Alquileres</li>
-        <li class="option-profile">Tickets</li>
-        <li class="option-profile flex"><a href="/user/edit" class="fc-37 w-100">Editar perfil</a></li>
-      </ul>
-    </section>
+  <main class="bg-5 m-auto w-90 max-w-1">
+    <div class="top-70 flex flex-wrap">
+      <section class="left-profile-section w-100 p-20px">
+        <figure class="txt-center">
+          <img class="profile-user-avatar" src="<%= userLog.avatar %>" alt="foto de <%= userLog.first_name %> <%= userLog.last_name %>">
+          <h3 class="txt-center p-10px"><%= userLog.first_name %> <%= userLog.last_name %></h3>
+        </figure>
+        <ul class="options-profile txt-center ">
+          <li class="option-profile option-profile-selected" id="information-profile">Información</li>
+          <li class="option-profile" id="rents-profile">Alquileres</li>
+          <li class="option-profile" id="tickets-profile">Tickets</li>
+          <li class="option-profile flex"><a href="/user/edit" class="fc-37 w-100">Editar perfil</a></li>
+        </ul>
+      </section>
 
-    <section class="right-profile-seciton bg-5 w-100 p-20px">
-      <%- include('./partials/profile/info-profile') %>
-    </section>
+      <section class="right-profile-seciton w-100 p-20px">
+        <%- include('./partials/profile/info-profile') %>
+        <%- include('./partials/profile/rents-history') %>
+        <%- include('./partials/profile/tickets-history') %>
+      </section>
 
+    </div>
   </main>
   <%- include('./partials/footer') %>
 </body>

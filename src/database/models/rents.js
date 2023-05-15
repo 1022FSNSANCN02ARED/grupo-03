@@ -22,10 +22,33 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
                 allowNull: false,
             },
+            total_cost: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+            },
+            guests: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+            },
         },
         {
             tableName: "rents",
         }
     );
+
+    model.associate = (db) => {
+        model.belongsTo(db.Users, {
+            as: "user",
+            foreignKey: "user_id",
+        });
+        model.belongsTo(db.Cottages, {
+            as: "cottage",
+            foreignKey: "cottage_id",
+        });
+        model.belongsTo(db.Carts, {
+            as: "cart",
+            foreignKey: "cart_id",
+        });
+    };
     return model;
 };

@@ -1,12 +1,15 @@
 const { validationResult } = require("express-validator");
+const fs = require("fs");
 
-module.exports = (req, res, next) => {
-    let errores = validationResult(req);
-    if (!errores.isEmpty()) {
-        res.render("register", {
-            errors: errores.mapped(),
-            oldData: req.body,
-        });
+module.exports = async (req, res, next) => {
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        if (req.file) {
+            await fs.promises.unlink(req.file.path);
+        }
+        req.session.errors = errors.mapped();
+        req.session.oldData = req.body;
+        res.redirect("/user/register");
     } else {
         next();
     }

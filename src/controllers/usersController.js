@@ -1,13 +1,19 @@
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
+const fs = require("fs");
+const path = require("path");
 module.exports = {
     showLogin: (req, res) => {
         res.render("login");
     },
     showRegister: (req, res) => {
-        res.render("register");
+        const errors = req.session.errors;
+        const oldData = req.session.oldData;
+        req.session.errors = null;
+        req.session.oldData = null;
+        res.render("register", { errors, oldData });
     },
-    create: (req, res) => {
+    create: async (req, res) => {
         let user = {
             first_name: req.body.name,
             last_name: req.body.surname,
@@ -22,12 +28,12 @@ module.exports = {
         }
 
         try {
-            db.Users.create(user);
+            await db.Users.create(user);
         } catch (error) {
             console.log(error);
         }
 
-        res.redirect("/");
+        res.redirect("/user/login");
     },
     delete: (req, res) => {
         res.redirect("/");
@@ -44,7 +50,7 @@ module.exports = {
             oldData,
         });
     },
-    edit: (req, res) => {
+    edit: async (req, res) => {
         let user = {
             ...req.session.userLog,
             first_name: req.body.name,
@@ -52,28 +58,48 @@ module.exports = {
             phone_number: req.body.phone_number,
             email: req.body.email.toLowerCase(),
         };
+
+        // Elimina la imágen del usuario, a menos que sea la imágen default.
+        if (
+            user.avatar &&
+            user.avatar != "/images/avatars/usuarioDefault.jpg"
+        ) {
+            const imagePath = path.join(
+                __dirname,
+                `../../public/${user.avatar}`
+            );
+            // Si la imágen existe en el proyecto, la eliminamos
+            if (fs.existsSync(imagePath)) {
+                await fs.promises.unlink(imagePath);
+            }
+        }
+
         if (req.file) {
             user.avatar = "/images/avatars/" + req.file.filename;
         } else {
             user.avatar = "/images/avatars/usuarioDefault.jpg";
         }
-
         try {
-            db.Users.update(
+            await db.Users.update(
                 {
                     ...user,
                 },
                 {
                     where: {
-                        id: req.params.id,
+                        id: req.session.userLog.id,
                     },
                 }
             );
             req.session.userLog = user;
+
+            // Actualiza la cookie, por si se modifica el email.
+            res.cookie("userLogInCookie", userLog.email, {
+                maxAge: 7 * 24 * 60 * 60 * 1000,
+            });
         } catch (error) {
             console.log(error);
         }
-        res.redirect("/");
+        res.redirect("/user/profile");
     },
     // Login del usuario
     proccesLogin: async (req, res) => {
@@ -109,8 +135,21 @@ module.exports = {
             console.log(error);
         }
     },
-    showProfile: (req, res) => {
-        res.render("user-profile");
+    showProfile: async (req, res) => {
+        try {
+            const rents = await db.Rents.findAll({
+                include: ["user", "cottage", "cart"],
+                where: { user_id: req.session.userLog.id },
+            });
+            const tickets = await db.AcivitiesUsers.findAll({
+                include: ["user", "activity", "cart"],
+                where: { user_id: req.session.userLog.id },
+            });
+
+            res.render("user-profile", { rents, tickets });
+        } catch (error) {
+            console.log(error);
+        }
     },
     processLogOut: (req, res) => {
         res.clearCookie("userLogInCookie");

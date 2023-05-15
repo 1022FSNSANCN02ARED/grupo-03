@@ -1,353 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <%- include("./partials/head") %>
-        <title>Domum</title>
-    </head>
 
-    <body>
-        <header class="main-header bg-5">
-            <!-- nav fijo -->
-            <%- include("./partials/nav") %>
-            <!-- nav fijo -->
+<head>
+  <%- include("./partials/head") %>
+  <script defer src="/js/next-prev-buttons.js"></script>
+  <title>Domum</title>
+</head>
 
-            <!-- carrusel -->
-            <div class="carrousel pos-relative flex m-auto of-hidden">
-                <h2 class="pos-absolute txt-center w-100 title-carrousel bg-4 fc-2 p-10px">COMO EN TU HOGAR</h2>
-                <ul class="flex m-auto">
-                    <li class="of-hidden flex jc-center">
-                        <img
-                            src="/images/slider-home01.jpg"
-                            alt="imagen de referencia 1"
-                        />
-                    </li>
-                    <li class="of-hidden flex jc-center">
-                        <img
-                            src="/images/slider-home02.jpg"
-                            alt="imagen de referencia 2"
-                        />
-                    </li>
-                    <li class="of-hidden flex jc-center">
-                        <img
-                            src="/images/slider-home03.jpg"
-                            alt="imagen de referencia 3"
-                        />
-                    </li>
-                    <li class="of-hidden flex jc-center">
-                        <img
-                            src="/images/slider-home04.jpg"
-                            alt="imagen de referencia 4"
-                        />
-                    </li>
-                    <li class="of-hidden flex jc-center">
-                        <img
-                            src="/images/slider-home01.jpg"
-                            alt="imagen de referencia 1"
-                        />
-                    </li>
-                </ul>
+<body>
+  <header class="main-header bg-5">
+    <!-- nav fijo -->
+    <%- include("./partials/nav") %>
+    <!-- nav fijo -->
+
+    <!-- carrusel -->
+    <div class="carrousel pos-relative flex m-auto of-hidden">
+      <h2 class="pos-absolute txt-center w-100 title-carrousel bg-4 fc-2 p-10px">COMO EN TU HOGAR</h2>
+      <ul class="flex m-auto">
+        <li class="of-hidden flex jc-center">
+          <img src="/images/slider-home01.jpg" alt="imagen de referencia 1" />
+        </li>
+        <li class="of-hidden flex jc-center">
+          <img src="/images/slider-home02.jpg" alt="imagen de referencia 2" />
+        </li>
+        <li class="of-hidden flex jc-center">
+          <img src="/images/slider-home03.jpg" alt="imagen de referencia 3" />
+        </li>
+        <li class="of-hidden flex jc-center">
+          <img src="/images/slider-home04.jpg" alt="imagen de referencia 4" />
+        </li>
+        <li class="of-hidden flex jc-center">
+          <img src="/images/slider-home01.jpg" alt="imagen de referencia 1" />
+        </li>
+      </ul>
+    </div>
+    <!-- carrusel -->
+  </header>
+
+  <main>
+    <!-- breve descripción -->
+    <section id="info-domum" class="p-1rem">
+      <h1 class="txt-center title">Complejo de cabañas Domum</h1>
+
+      <p class="txt-center p-top-10">
+        Nuestros alojamientos, buscan superar las expectativas de
+        nuestros clientes, mejorando constantemente.
+      </p>
+    </section>
+
+    <!-- apartado de cabañas -->
+    <section id="cottages" class="m-auto">
+      <div class="flex m-auto">
+        <button id="prev-btn-cottage" class="scroll-button prev-button">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="next-btn-cottage" class="scroll-button order-1 next-button">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <article class="m-auto cont-cottage w-80 bg-5 of-auto border-rad">
+          <ul id="cottage-list" class="flex">
+            <% cottage.forEach(cabana => { %>
+            <!-- trae la tarjeta de cabaña -->
+            <%-include('./partials/cottage-card',{cabana}) %>
+            <%  }); %>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- apartado de actividades -->
+    <section id="activities" class="m-auto">
+      <article class="p-1rem w-80 m-auto txt-center">
+        <h2 class="">Actividades</h2>
+        <p class="p-top-10">
+          En nuestro complejo podrás ocupar tu tiempo de la manera que más te guste.
+          Descanso, Relajación, Senderismo, Fogatas, Cabalgatas, Bicicletas
+          y un sin fin de actividades para que disfrutes como más te guste.
+        </p>
+      </article>
+
+      <article id="cont-act" class="flex flex-wrap">
+        <div class="flex m-auto flex w-100">
+          <button id="prev-btn-activity" class="scroll-button prev-button">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button id="next-btn-activity" class="scroll-button order-1 next-button">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+
+          <article class="cont-activity bg-5 m-auto w-80 of-auto  border-rad">
+            <ul id="activity-list" class="flex">
+              <% activities.forEach(activity => { %> <%-
+                include('./partials/activity-card',{activity}) %>
+              <% }); %>
+            </ul>
+          </article>
+        </div>
+      </article>
+    </section>
+
+    <!-- apartado información general-->
+    <section class="info-general flex flex-wrap jc-center">
+      <!--botones-->
+      <article class="Flex flex-wrap w-100">
+        <h2 class="txt-center p-1rem w-100">Información general</h2>
+
+        <ul class="flex w-100 jc-center m-auto p-1rem flex-wrap" id="info-general">
+          <li class="p-1rem">
+            <a href="#location" class="cottage-button bg-3 box-shadow"><i class="fa-solid fa-location-dot"></i></a>
+          </li>
+          <li class="p-1rem">
+            <a href="#preguntasFrecunetes" class="cottage-button bg-3 box-shadow"><i class="fa-solid fa-question"></i></a>
+          </li>
+          <li class="p-1rem">
+            <a href="#quienesSomos" class="cottage-button bg-3 box-shadow"><i class="fa-solid fa-users"></i></a>
+          </li>
+        </ul>
+      </article>
+
+      <!--donde estamos-->
+      <article class="flex flex-d-column al-items bg-5 border-rad m-20" id="location">
+        <h1 class="m-10">¿Donde estamos?</h1>
+        <iframe class="de-maps w-80" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d297036.76031724334!2d-58.60718037547631!3d-34.659158741183155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb14540715555%3A0x95502fb2a3baf427!2sDomun!5e0!3m2!1ses-419!2sar!4v1673106916534!5m2!1ses-419!2sar" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p class="m-20">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Vero ratione nobis quia magnam odio quaerat numquam
+          libero distinctio, harum nesciunt animi dicta voluptates
+          porro corporis illum eum a autem qui?
+        </p>
+      </article>
+
+      <!--preguntas frecuentes-->
+      <div class="preguntas-frecuentes flex flex-d-column al-items bg-5 border-rad m-20" id="preguntasFrecunetes">
+        <h3 class="txt-center p-top-10 w-100" id="preguntasFrecuntes">
+          Preguntas Frecuentes
+        </h3>
+        <div class="input-preguntas">
+          <nav class="Flex p-1rem nav-lista">
+            <ul>
+              <hr />
+              <li class="list-click of-hidden">
+                <div class="list-preg p-10px flex flex-wrap">
+                  <h4>Primera Pregunta</h4>
+                  <button class="but-preg">
+                    <i class="fa-solid fa-chevron-right arrow-but fc-3 m-lef-10px"></i>
+                  </button>
+                </div>
+                <div class="list-respu">
+                  <p class="respuesta p-5px fc-37">
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Amet
+                    quia consectetur earum, nulla ipsam
+                    aperiam explicabo delectus off
+                  </p>
+                </div>
+              </li>
+              <hr />
+              <li class="list-click of-hidden">
+                <div class="list-preg p-10px flex flex-wrap">
+                  <h4 class="pregunta">
+                    Segunda Pregunta
+                  </h4>
+                  <button class="but-preg">
+                    <i class="fa-solid fa-chevron-right arrow-but fc-3 m-lef-10px"></i>
+                  </button>
+                </div>
+                <div class="list-respu">
+                  <p class="respuesta p-5px fc-37">
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Amet
+                    quia consectetur earum, nulla ipsam
+                    aperiam explicabo delectus off
+                  </p>
+                </div>
+              </li>
+              <hr />
+              <li class="list-click of-hidden">
+                <div class="list-preg p-10px flex flex-wrap">
+                  <h4>Tercera Pregunta</h4>
+                  <button class="but-preg">
+                    <i class="fa-solid fa-chevron-right arrow-but fc-3 m-lef-10px"></i>
+                  </button>
+                </div>
+                <div class="list-respu">
+                  <p class="respuesta p-5px fc-37">
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Amet
+                    quia consectetur earum, nulla ipsam
+                    aperiam explicabo delectus off
+                  </p>
+                </div>
+              </li>
+              <hr />
+              <li class="list-click of-hidden">
+                <div class="list-preg p-10px flex flex-wrap">
+                  <h4>Cuarta Pregunta</h4>
+                  <button class="but-preg">
+                    <i class="fa-solid fa-chevron-right arrow-but fc-3 m-lef-10px"></i>
+                  </button>
+                </div>
+                <div class="list-respu">
+                  <p class="respuesta p-15px fc-37">
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Amet
+                    quia consectetur earum, nulla ipsam
+                    aperiam explicabo delectus off
+                  </p>
+                </div>
+              </li>
+              <hr />
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!--quienes somos-->
+
+      <article class="flex flex-d-column al-items bg-5 border-rad m-20" id="quienesSomos">
+        <h1 class="m-10">¿Quienes somos?</h1>
+        <ul class="pos-relative ul-qs">
+          <li class="qui-card li-qs">
+            <figure class="pos-relative of-hidden figure-qs flex al-items">
+              <img class="img-qs" src="/images/cosme.jpg" alt="cosme" />
+            </figure>
+
+            <div class="">
+              <h2 class="txt-center">Cosme Fulanito</h2>
+              <p class="p-top-10 txt-center">
+                Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Nihil voluptate
+              </p>
             </div>
-            <!-- carrusel -->
-        </header>
+          </li>
+          <li class="qui-card li-qs">
+            <figure class="pos-relative of-hidden figure-qs flex al-items">
+              <img class="img-qs" src="/images/cosme.jpg" alt="cosme" />
+            </figure>
 
-        <main>
-            <!-- breve descripción -->
-            <section id="info-domum" class="p-1rem">
-                <h1 class="txt-center title">Complejo de cabañas Domum</h1>
+            <div class="">
+              <h2 class="txt-center">Cosme Fulanito</h2>
+              <p class="p-top-10 txt-center">
+                Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Nihil voluptate
+              </p>
+            </div>
+          </li>
+          <li class="qui-card li-qs">
+            <figure class="pos-relative of-hidden figure-qs flex al-items">
+              <img class="img-qs" src="/images/cosme.jpg" alt="cosme" />
+            </figure>
 
-                <p class="txt-center p-top-10">
-                    Nuestros alojamientos, buscan superar las expectativas de
-                    nuestros clientes, mejorando constantemente.
-                </p>
-            </section>
+            <div class="">
+              <h2 class="txt-center">Cosme Fulanito</h2>
+              <p class="p-top-10 txt-center">
+                Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Nihil voluptate
+              </p>
+            </div>
+          </li>
+        </ul>
+      </article>
+    </section>
+  </main>
 
-            <!-- apartado de cabañas -->
-            <section id="cottages" class="m-auto">
-                <div class="flex m-auto">
-                    <button class="scroll-button prev-button">
-                        <i class="fa-solid fa-chevron-left"></i>
-                    </button>
-                    <button class="scroll-button order-1 next-button">
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </button>
+  <!-- apartado información general-->
+  <%- include("./partials/footer") %>
+</body>
+<script src="/js/slider.js"></script>
 
-                    <article class="m-auto cont-cottage w-80 bg-5">
-                        <ul class="cottage-list flex of-auto">
-                            <% cottage.forEach(cabana => { %>
-                            <!-- trae la tarjeta de cabaña -->
-                            <%-include('./partials/cottage-card',{cabana}) %> <%
-                            }); %>
-                        </ul>
-                    </article>
-                </div>
-            </section>
-
-            <!-- apartado de actividades -->
-            <section id="activities" class="m-auto">
-                <article class="p-1rem w-80 m-auto txt-center">
-                    <h2 class="">Actividades</h2>
-                    <p class="p-top-10">
-                        En nuestro complejo podrás ocupar tu tiempo de la manera que más te guste.
-                 Descanso, Relajación, Senderismo, Fogatas, Cabalgatas, Bicicletas
-                  y un sin fin de actividades para que disfrutes como más te guste.
-                    </p>
-                </article>
-
-                <article id="cont-act" class="flex flex-wrap">
-                    <div class="flex m-auto flex w-100">
-                        <button class="scroll-button prev-button">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </button>
-                        <button class="scroll-button order-1 next-button">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </button>
-
-                        <article
-                            class="of-hidden cont-activity bg-5 m-auto w-80"
-                        >
-                            <ul id="act-list" class="flex of-auto">
-                                <% activities.forEach(activity => { %> <%-
-                                include('./partials/activity-card',{activity})
-                                %> <% }); %>
-                            </ul>
-                        </article>
-                    </div>
-                </article>
-            </section>
-
-            <!-- apartado información general-->
-            <section class="info-general flex flex-wrap jc-center">
-                <!--botones-->
-                <article class="Flex flex-wrap w-100">
-                    <h2 class="txt-center p-1rem w-100">Información general</h2>
-
-                    <ul
-                        class="flex w-100 jc-center m-auto p-1rem flex-wrap"
-                        id="info-general"
-                    >
-                        <li class="p-1rem">
-                            <a
-                                href="#location"
-                                class="cottage-button bg-3 box-shadow"
-                                ><i class="fa-solid fa-location-dot"></i
-                            ></a>
-                        </li>
-                        <li class="p-1rem">
-                            <a
-                                href="#preguntasFrecunetes"
-                                class="cottage-button bg-3 box-shadow"
-                                ><i class="fa-solid fa-question"></i
-                            ></a>
-                        </li>
-                        <li class="p-1rem">
-                            <a
-                                href="#quienesSomos"
-                                class="cottage-button bg-3 box-shadow"
-                                ><i class="fa-solid fa-users"></i
-                            ></a>
-                        </li>
-                    </ul>
-                </article>
-
-                <!--donde estamos-->
-                <article
-                    class="flex flex-d-column al-items bg-5 border-rad m-20"
-                    id="location"
-                >
-                    <h1 class="m-10">¿Donde estamos?</h1>
-                    <iframe
-                        class="de-maps w-80"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d297036.76031724334!2d-58.60718037547631!3d-34.659158741183155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb14540715555%3A0x95502fb2a3baf427!2sDomun!5e0!3m2!1ses-419!2sar!4v1673106916534!5m2!1ses-419!2sar"
-                        style="border: 0"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                    ></iframe>
-                    <p class="m-20">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Vero ratione nobis quia magnam odio quaerat numquam
-                        libero distinctio, harum nesciunt animi dicta voluptates
-                        porro corporis illum eum a autem qui?
-                    </p>
-                </article>
-
-                <!--preguntas frecuentes-->
-                <div
-                    class="preguntas-frecuentes flex flex-d-column al-items bg-5 border-rad m-20"
-                    id="preguntasFrecunetes"
-                >
-                    <h3
-                        class="txt-center p-top-10 w-100"
-                        id="preguntasFrecuntes"
-                    >
-                        Preguntas Frecuentes
-                    </h3>
-                    <div class="input-preguntas">
-                        <nav class="Flex p-1rem nav-lista">
-                            <ul>
-                                <hr />
-                                <li class="list-click of-hidden">
-                                    <div
-                                        class="list-preg p-10px flex flex-wrap"
-                                    >
-                                        <h4>Primera Pregunta</h4>
-                                        <button class="but-preg">
-                                            <i
-                                                class="fa-solid fa-chevron-right arrow-but fc-3 m-lef-10px"
-                                            ></i>
-                                        </button>
-                                    </div>
-                                    <div class="list-respu">
-                                        <p class="respuesta p-5px fc-37">
-                                            Lorem ipsum dolor sit amet
-                                            consectetur adipisicing elit. Amet
-                                            quia consectetur earum, nulla ipsam
-                                            aperiam explicabo delectus off
-                                        </p>
-                                    </div>
-                                </li>
-                                <hr />
-                                <li class="list-click of-hidden">
-                                    <div
-                                        class="list-preg p-10px flex flex-wrap"
-                                    >
-                                        <h4 class="pregunta">
-                                            Segunda Pregunta
-                                        </h4>
-                                        <button class="but-preg">
-                                            <i
-                                                class="fa-solid fa-chevron-right arrow-but fc-3 m-lef-10px"
-                                            ></i>
-                                        </button>
-                                    </div>
-                                    <div class="list-respu">
-                                        <p class="respuesta p-5px fc-37">
-                                            Lorem ipsum dolor sit amet
-                                            consectetur adipisicing elit. Amet
-                                            quia consectetur earum, nulla ipsam
-                                            aperiam explicabo delectus off
-                                        </p>
-                                    </div>
-                                </li>
-                                <hr />
-                                <li class="list-click of-hidden">
-                                    <div
-                                        class="list-preg p-10px flex flex-wrap"
-                                    >
-                                        <h4>Tercera Pregunta</h4>
-                                        <button class="but-preg">
-                                            <i
-                                                class="fa-solid fa-chevron-right arrow-but fc-3 m-lef-10px"
-                                            ></i>
-                                        </button>
-                                    </div>
-                                    <div class="list-respu">
-                                        <p class="respuesta p-5px fc-37">
-                                            Lorem ipsum dolor sit amet
-                                            consectetur adipisicing elit. Amet
-                                            quia consectetur earum, nulla ipsam
-                                            aperiam explicabo delectus off
-                                        </p>
-                                    </div>
-                                </li>
-                                <hr />
-                                <li class="list-click of-hidden">
-                                    <div
-                                        class="list-preg p-10px flex flex-wrap"
-                                    >
-                                        <h4>Cuarta Pregunta</h4>
-                                        <button class="but-preg">
-                                            <i
-                                                class="fa-solid fa-chevron-right arrow-but fc-3 m-lef-10px"
-                                            ></i>
-                                        </button>
-                                    </div>
-                                    <div class="list-respu">
-                                        <p class="respuesta p-15px fc-37">
-                                            Lorem ipsum dolor sit amet
-                                            consectetur adipisicing elit. Amet
-                                            quia consectetur earum, nulla ipsam
-                                            aperiam explicabo delectus off
-                                        </p>
-                                    </div>
-                                </li>
-                                <hr />
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <!--quienes somos-->
-
-                <article
-                    class="flex flex-d-column al-items bg-5 border-rad m-20"
-                    id="quienesSomos"
-                >
-                    <h1 class="m-10">¿Quienes somos?</h1>
-                    <ul class="pos-relative ul-qs">
-                        <li class="qui-card li-qs">
-                            <figure
-                                class="pos-relative of-hidden figure-qs flex al-items"
-                            >
-                                <img
-                                    class="img-qs"
-                                    src="/images/cosme.jpg"
-                                    alt="cosme"
-                                />
-                            </figure>
-
-                            <div class="">
-                                <h2 class="txt-center">Cosme Fulanito</h2>
-                                <p class="p-top-10 txt-center">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Nihil voluptate
-                                </p>
-                            </div>
-                        </li>
-                        <li class="qui-card li-qs">
-                            <figure
-                                class="pos-relative of-hidden figure-qs flex al-items"
-                            >
-                                <img
-                                    class="img-qs"
-                                    src="/images/cosme.jpg"
-                                    alt="cosme"
-                                />
-                            </figure>
-
-                            <div class="">
-                                <h2 class="txt-center">Cosme Fulanito</h2>
-                                <p class="p-top-10 txt-center">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Nihil voluptate
-                                </p>
-                            </div>
-                        </li>
-                        <li class="qui-card li-qs">
-                            <figure
-                                class="pos-relative of-hidden figure-qs flex al-items"
-                            >
-                                <img
-                                    class="img-qs"
-                                    src="/images/cosme.jpg"
-                                    alt="cosme"
-                                />
-                            </figure>
-
-                            <div class="">
-                                <h2 class="txt-center">Cosme Fulanito</h2>
-                                <p class="p-top-10 txt-center">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Nihil voluptate
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </article>
-            </section>
-        </main>
-
-        <!-- apartado información general-->
-        <%- include("./partials/footer") %>
-    </body>
-    <script src="/js/slider.js"></script>
 </html>

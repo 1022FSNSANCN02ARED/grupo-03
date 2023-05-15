@@ -1,0 +1,29 @@
+      <article class="profile-article rents-profile hide">
+        <h2 class="txt-center border-xy">Alquileres</h2>
+        <table class="w-100 fs-15 txt-center p-top-10">
+
+          <tr class="flex">
+            <th class="w-100 column-profile-table flex al-items jc-center">cabaña</th>
+            <th class="w-100 column-profile-table flex al-items jc-center">check-in</th>
+            <th class="w-100 column-profile-table flex al-items jc-center">check-out</th>
+            <th class="w-100 column-profile-table flex al-items jc-center">huéspedes</th>
+            <th class="w-100 column-profile-table flex al-items jc-center">total</th>
+          </tr>
+
+          <% if (rents) { %>
+          <% rents.forEach((rent, i) => { %>
+          <tr class="flex">
+            <td class="w-100 column-profile-table flex al-items jc-center"><%= rent.cottage.name %></td>
+            <td class="w-100 column-profile-table flex al-items jc-center"><%= rent.date_in %></td>
+            <td class="w-100 column-profile-table flex al-items jc-center"><%= rent.date_out %></td>
+            <td class="w-100 column-profile-table flex al-items jc-center"><%= rent.guests %></td>
+            <td class="w-100 column-profile-table flex al-items jc-center"><%= rent.total_cost %></td>
+          </tr>
+          <% }) %>
+          <% } %>
+        </table>
+
+        <% if (rents.length < 1) { %>
+        <h3 class="txt-center p-20px">Todavía no ha alquilado ninguna cabaña...</h3>
+        <% } %>
+      </article>

@@ -9,11 +9,15 @@ module.exports = async (req, res, next) => {
             },
             include: ["rol"],
         });
-        req.session.userLog = userLog;
-        // Vuelve a "crear" la cookie, para reiniciar su tiempo de vida.
-        res.cookie("userLogInCookie", userLog.email, {
-            maxAge: 7 * 24 * 60 * 60 * 1000,
-        });
+        if (userLog) {
+            req.session.userLog = userLog;
+            // Vuelve a "crear" la cookie, para reiniciar su tiempo de vida.
+            res.cookie("userLogInCookie", userLog.email, {
+                maxAge: 7 * 24 * 60 * 60 * 1000,
+            });
+        } else {
+            res.clearCookie("userLogInCookie");
+        }
     }
     next();
 };

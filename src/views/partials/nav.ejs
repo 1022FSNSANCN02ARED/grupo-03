@@ -5,10 +5,10 @@
   <nav class="page-navbar hide grow-1">
     <ul class="flex fs-15">
       <li><a href="/">Inicio</a></li>
-      <li><a href="#info-general">Nosotros</a></li>
-      <li><a href="#cottages">Cabañas</a></li>
-      <li><a href="#activities">Actividades</a></li>
-      <li><a href="#footer">Contacto</a></li>
+      <li><a href="/#info-general">Nosotros</a></li>
+      <li><a href="/products/list?show=cottages">Cabañas</a></li>
+      <li><a href="/products/list?show=activities">Actividades</a></li>
+      <li><a href="/#footer">Contacto</a></li>
     </ul>
   </nav>
   <div class="header-buttons flex al-items">
@@ -32,6 +32,7 @@
         <% if (userLog.rol.name == "admin") { %>
         <h5 class="txt-center">Admin</h5>
         <li class="user-menu-li"><a class="w-100" href="/products/create">Crear producto</a></li>
+        <li class="user-menu-li"><a class="w-100" href="/products/list">Lista de producto</a></li>
         <% } %>
       </ul>
     </section>

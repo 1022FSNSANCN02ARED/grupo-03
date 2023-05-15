@@ -7,7 +7,7 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
     <h2 class="form-section-title m-10 p-5px txt-center">General</h2>
 
     <label for="activity_name"></label>
-    <input type="text" name="name" id="activity_name" class="f-input" placeholder="Nombre" value="<%= isActivity && locals.oldData?.name ? oldData.name : ""; %>" />
+    <input type="text" name="name" id="activity_name" class="f-input" placeholder="Nombre de la actividad" value="<%= isActivity && locals.oldData?.name ? oldData.name : ""; %>" />
     <% if ( isActivity && locals.errors?.name){ %>
     <p class="txt-error"><%= errors.name.msg %></p>
     <% } %>
@@ -50,7 +50,7 @@ flex flex-wrap jc-evenly p-10px bg-4 border-rad box-shadow
     <% if ( isActivity && locals.errors?.description){ %>
     <p class=" txt-error txt-center"><%= errors.description.msg %></p>
     <% } %>
-    <p class="errorFrontActDescription error-front txt-center">Debe completar la descripción de la cabaña (mínimo 10 caracteres, máximo 500 caracteres)</p>
+    <p class="errorFrontActDescription error-front txt-center">Debe completar la descripción de la cabaña (mínimo 10 caracteres, máximo 70 caracteres)</p>
   </div>
 
   <div class="w-100 txt-center">

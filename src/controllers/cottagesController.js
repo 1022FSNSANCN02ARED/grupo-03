@@ -130,7 +130,9 @@ module.exports = {
                         `../../public/${image.image}`
                     );
                     // lo elimina
-                    await fs.promises.unlink(imagePath);
+                    if (fs.existsSync(imagePath)) {
+                        await fs.promises.unlink(imagePath);
+                    }
                     await image.destroy();
                 }
             }
@@ -184,7 +186,9 @@ module.exports = {
         res.redirect("/");
     },
     showDeleteOption: async (req, res) => {
-        const cottageToDelete = await db.Cottages.findByPk(req.params.id);
+        const cottageToDelete = await db.Cottages.findByPk(req.params.id, {
+            include: ["images", "assessments"],
+        });
         res.render("delete-detail", {
             product: cottageToDelete,
             productType: "cottages",
@@ -204,7 +208,10 @@ module.exports = {
                         `../../public/${image.image}`
                     );
                     // lo elimina
-                    await fs.promises.unlink(imagePath);
+                    if (fs.existsSync(imagePath)) {
+                        await fs.promises.unlink(imagePath);
+                    }
+
                     await image.destroy();
                 }
             }
@@ -243,8 +250,9 @@ module.exports = {
             user_id: req.session.userLog.id,
             date_in: req.body.check_in,
             date_out: req.body.check_out,
+            total_cost: Number(req.body.total),
+            guests: Number(req.body.guest),
             cart_id: null,
-            total: Number(req.body.total),
         };
 
         if (!req.session.cottagesInCart) {
