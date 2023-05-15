@@ -167,7 +167,9 @@ module.exports = {
                         `../../public/${image.image}`
                     );
                     // lo elimina
-                    await fs.promises.unlink(imagePath);
+                    if (fs.existsSync(imagePath)) {
+                        await fs.promises.unlink(imagePath);
+                    }
                     await image.destroy();
                 }
             }
@@ -246,7 +248,9 @@ module.exports = {
                         `../../public/${image.image}`
                     );
                     // lo elimina
-                    await fs.promises.unlink(imagePath);
+                    if (fs.existsSync(imagePath)) {
+                        await fs.promises.unlink(imagePath);
+                    }
                     await image.destroy();
                 }
             }

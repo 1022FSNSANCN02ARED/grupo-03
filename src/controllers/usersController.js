@@ -91,6 +91,11 @@ module.exports = {
                 }
             );
             req.session.userLog = user;
+
+            // Actualiza la cookie, por si se modifica el email.
+            res.cookie("userLogInCookie", userLog.email, {
+                maxAge: 7 * 24 * 60 * 60 * 1000,
+            });
         } catch (error) {
             console.log(error);
         }
