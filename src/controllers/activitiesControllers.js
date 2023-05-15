@@ -167,7 +167,9 @@ module.exports = {
                         `../../public/${image.image}`
                     );
                     // lo elimina
-                    await fs.promises.unlink(imagePath);
+                    if (fs.existsSync(imagePath)) {
+                        await fs.promises.unlink(imagePath);
+                    }
                     await image.destroy();
                 }
             }
@@ -246,7 +248,9 @@ module.exports = {
                         `../../public/${image.image}`
                     );
                     // lo elimina
-                    await fs.promises.unlink(imagePath);
+                    if (fs.existsSync(imagePath)) {
+                        await fs.promises.unlink(imagePath);
+                    }
                     await image.destroy();
                 }
             }
@@ -298,9 +302,9 @@ module.exports = {
                 user_id: req.session.userLog.id,
                 day: req.body.day,
                 quantity: req.body.quantity,
-                cart_id: null,
+                total: Number(req.body.total),
                 hour: req.body.hour,
-                total: req.body.total,
+                cart_id: null,
             };
 
             if (!req.session.activitiesInCart) {
