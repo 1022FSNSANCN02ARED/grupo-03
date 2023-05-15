@@ -54,6 +54,10 @@ body {
     border-radius: 10px;
 }
 
+.border-rad5 {
+    border-radius: 5px;
+}
+
 .border-none {
     border: none;
 }
@@ -551,7 +555,7 @@ grisclaro #f1f7ed */
 .list-card {
     min-width: 100%;
     width: 100%;
-    padding: 0 5px;
+    padding: 5px 5px;
 }
 
 .cottage-description {
