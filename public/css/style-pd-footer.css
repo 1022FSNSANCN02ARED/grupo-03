@@ -1,10 +1,15 @@
 /*cambio en el footer solo para el detalle de producto*/
 .footer-produc-detail {
-    padding-bottom: 200px;
+    padding-bottom: 250px;
 }
 
+@media (min-width: 768px) {
+    .footer-produc-detail {
+        padding-bottom: 200px;
+    }
+}
 @media (min-width: 1024px) {
     .footer-produc-detail {
-        margin-bottom: 0px;
+        padding-bottom: 0px;
     }
 }

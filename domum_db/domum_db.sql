@@ -270,10 +270,10 @@ CREATE TABLE `cottages` (
 LOCK TABLES `cottages` WRITE;
 /*!40000 ALTER TABLE `cottages` DISABLE KEYS */;
 INSERT INTO `cottages` (`id`, `name`, `price`, `description`, `beds`, `assessment`, `createdAt`, `updatedAt`, `guest`, `bedrooms`, `bathrooms`) VALUES
-(1, 'Los Pinos', 9000, 'Patagónica, sobre los árboles.', 3, '0', '2023-03-27 15:58:56', '2023-05-10 14:49:45', 4, 2, 1),
-(2, 'El Granero', 8500, 'Típico americano, en 2 plantas con el dormitorio en el altillo, un gran hogar a leña y baño característico del campo.', 3, '0', '2023-03-27 16:05:38', '2023-05-10 14:50:12', 3, 3, 1),
-(3, 'Los Naranjos', 9500, 'Moderna, en 2 plantas con camas extragrandes, y un reconfortante jacuzzi doble.', 5, '0', '2023-03-27 16:05:38', '2023-05-10 14:51:23', 6, 3, 2),
-(4, 'Los Liquidámbar', 12000, 'Sobre los árboles ambientada a lo María Antonieta.', 3, '0', '2023-03-27 16:05:38', '2023-05-10 14:50:53', 3, 2, 1);
+(15, 'El Granero', 9000, 'Típico americano,el dormitorio en el altillo, un gran hogar a leña.', 4, '0', '2023-05-13 23:58:43', '2023-05-13 23:58:43', 4, 2, 1),
+(16, 'Los Pinos', 8500, 'Patagónica, sobre los árboles.', 3, '0', '2023-05-14 00:06:49', '2023-05-14 00:06:49', 4, 2, 1),
+(17, 'Los Liquidámbar', 12000, 'Sobre los árboles ambientada a lo María Antonieta.', 3, '0', '2023-05-14 00:10:05', '2023-05-14 00:10:05', 4, 3, 2),
+(18, 'Los Naranjos', 11000, 'Moderna,con cama extragrande, y un reconfortante jacuzzi doble.', 3, '0', '2023-05-14 00:22:36', '2023-05-14 00:22:36', 5, 2, 1);
 
 /*!40000 ALTER TABLE `cottages` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -334,23 +334,6 @@ CREATE TABLE `images` (
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
 INSERT INTO `images` (`id`, `cottage_id`, `image`, `activity_id`, `createdAt`, `updatedAt`) VALUES
-(1, 1, '/images/cottageImages/liquidambar01.jpg', NULL, '2023-04-03 22:51:41', '2023-04-03 22:51:41'),
-(2, 1, '/images/cottageImages/liquidambar02.jpg', NULL, '2023-04-03 22:51:59', '2023-04-03 22:51:59'),
-(3, 1, '/images/cottageImages/liquidambar03.jpg', NULL, '2023-04-03 22:52:19', '2023-04-03 22:52:19'),
-(4, 1, '/images/cottageImages/liquidambar04.jpg', NULL, '2023-04-03 22:53:23', '2023-04-03 22:53:23'),
-(5, 1, '/images/cottageImages/liquidambar05.jpg', NULL, '2023-04-03 22:53:23', '2023-04-03 22:53:23'),
-(6, 2, '/images/cottageImages/naranjos01.jpg', NULL, '2023-04-03 22:53:24', '2023-04-03 22:53:24'),
-(7, 2, '/images/cottageImages/naranjos02.jpg', NULL, '2023-04-03 22:54:32', '2023-04-03 22:55:44'),
-(8, 2, '/images/cottageImages/naranjos03.jpg', NULL, '2023-04-03 22:54:32', '2023-04-03 22:55:39'),
-(9, 2, '/images/cottageImages/naranjos04.jpg', NULL, '2023-04-03 22:54:32', '2023-04-03 22:55:33'),
-(10, 2, '/images/cottageImages/naranjos05.jpg', NULL, '2023-04-03 22:54:32', '2023-04-03 22:55:29'),
-(11, 2, '/images/cottageImages/naranjos06.jpg', NULL, '2023-04-03 22:54:32', '2023-04-03 22:55:22'),
-(12, 3, '/images/cottageImages/pinos01.jpg', NULL, '2023-04-03 22:54:57', '2023-04-03 22:54:57'),
-(13, 3, '/images/cottageImages/pinos02.jpg', NULL, '2023-04-03 22:56:02', '2023-04-03 22:56:02'),
-(14, 4, '/images/cottageImages/pinos03.jpg', NULL, '2023-04-03 22:57:28', '2023-04-03 22:57:28'),
-(15, 4, '/images/cottageImages/pinos04.jpg', NULL, '2023-04-03 22:57:28', '2023-04-03 22:57:28'),
-(16, 5, '/images/cottageImages/pinos05.jpg', NULL, '2023-04-03 22:58:17', '2023-04-03 22:58:17'),
-(17, 5, '/images/cottageImages/pinos06.jpg', NULL, '2023-04-03 22:59:07', '2023-04-03 22:59:07'),
 (18, NULL, '/images/cottageImages/pinos02.jpg', 1, '2023-04-04 00:12:55', '2023-04-04 00:15:17'),
 (19, NULL, '/images/cottageImages/naranjos02.jpg', 1, '2023-04-04 00:12:55', '2023-04-04 00:15:56'),
 (20, NULL, '/images/cottageImages/liquidambar02.jpg', 1, '2023-04-04 00:12:55', '2023-04-04 00:15:56'),
@@ -366,33 +349,30 @@ INSERT INTO `images` (`id`, `cottage_id`, `image`, `activity_id`, `createdAt`, `
 (30, NULL, '/images/cottageImages/naranjos05.jpg', 5, '2023-04-04 00:14:26', '2023-04-04 00:15:57'),
 (31, NULL, '/images/cottageImages/naranjos06.jpg', 5, '2023-04-04 00:14:26', '2023-04-04 00:15:57'),
 (32, NULL, '/images/cottageImages/pinos05.jpg', 5, '2023-04-04 00:14:26', '2023-04-04 00:15:57'),
-(39, NULL, '/images/activityImages/1683618957213_img_activity.jpg', 6, '2023-05-09 07:55:57', '2023-05-09 07:55:57'),
-(40, NULL, '/images/activityImages/1683618957306_img_activity.jpg', 6, '2023-05-09 07:55:57', '2023-05-09 07:55:57'),
-(41, NULL, '/images/activityImages/1683618957355_img_activity.jpg', 6, '2023-05-09 07:55:57', '2023-05-09 07:55:57'),
-(42, NULL, '/images/activityImages/1683702708479_img_activity.jpg', 7, '2023-05-10 07:11:56', '2023-05-10 07:11:56'),
-(43, NULL, '/images/activityImages/1683702708480_img_activity.jpg', 7, '2023-05-10 07:11:56', '2023-05-10 07:11:56'),
-(44, NULL, '/images/activityImages/1683702708481_img_activity.jpg', 7, '2023-05-10 07:11:56', '2023-05-10 07:11:56'),
-(45, NULL, '/images/activityImages/1683703078787_img_activity.jpg', 8, '2023-05-10 07:17:58', '2023-05-10 07:17:58'),
-(46, NULL, '/images/activityImages/1683703078796_img_activity.jpg', 8, '2023-05-10 07:17:58', '2023-05-10 07:17:58'),
-(47, NULL, '/images/activityImages/1683703078810_img_activity.jpg', 8, '2023-05-10 07:17:58', '2023-05-10 07:17:58'),
-(48, NULL, '/images/activityImages/1683703180721_img_activity.jpg', 9, '2023-05-10 07:19:42', '2023-05-10 07:19:42'),
-(49, NULL, '/images/activityImages/1683703180774_img_activity.jpg', 9, '2023-05-10 07:19:42', '2023-05-10 07:19:42'),
-(50, NULL, '/images/activityImages/1683703180784_img_activity.jpg', 9, '2023-05-10 07:19:42', '2023-05-10 07:19:42'),
-(51, NULL, '/images/activityImages/1683703455667_img_activity.jpg', 10, '2023-05-10 07:24:16', '2023-05-10 07:24:16'),
-(52, NULL, '/images/activityImages/1683703455667_img_activity.jpg', 10, '2023-05-10 07:24:16', '2023-05-10 07:24:16'),
-(53, NULL, '/images/activityImages/1683703455845_img_activity.jpg', 10, '2023-05-10 07:24:16', '2023-05-10 07:24:16'),
-(54, NULL, '/images/activityImages/1683703579732_img_activity.jpg', 11, '2023-05-10 07:26:21', '2023-05-10 07:26:21'),
-(55, NULL, '/images/activityImages/1683703579835_img_activity.jpg', 11, '2023-05-10 07:26:21', '2023-05-10 07:26:21'),
-(56, NULL, '/images/activityImages/1683703580521_img_activity.jpg', 11, '2023-05-10 07:26:21', '2023-05-10 07:26:21'),
-(57, NULL, '/images/activityImages/1683703689482_img_activity.jpg', 12, '2023-05-10 07:28:10', '2023-05-10 07:28:10'),
-(58, NULL, '/images/activityImages/1683703689488_img_activity.jpg', 12, '2023-05-10 07:28:10', '2023-05-10 07:28:10'),
-(59, NULL, '/images/activityImages/1683703689499_img_activity.jpg', 12, '2023-05-10 07:28:10', '2023-05-10 07:28:10'),
-(60, NULL, '/images/activityImages/1683703823245_img_activity.jpg', 13, '2023-05-10 07:30:23', '2023-05-10 07:30:23'),
-(61, NULL, '/images/activityImages/1683703823273_img_activity.jpg', 13, '2023-05-10 07:30:23', '2023-05-10 07:30:23'),
-(62, NULL, '/images/activityImages/1683703823503_img_activity.jpg', 13, '2023-05-10 07:30:23', '2023-05-10 07:30:23'),
-(63, NULL, '/images/activityImages/1683703940719_img_activity.jpg', 14, '2023-05-10 07:32:20', '2023-05-10 07:32:20'),
-(64, NULL, '/images/activityImages/1683703940725_img_activity.jpg', 14, '2023-05-10 07:32:20', '2023-05-10 07:32:20'),
-(65, NULL, '/images/activityImages/1683703940745_img_activity.jpg', 14, '2023-05-10 07:32:20', '2023-05-10 07:32:20');
+(45, 15, '/images/cottageImages/1684022323671_img_cottage.jpg', NULL, '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
+(46, 15, '/images/cottageImages/1684022323674_img_cottage.jpg', NULL, '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
+(47, 15, '/images/cottageImages/1684022323687_img_cottage.jpg', NULL, '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
+(48, 15, '/images/cottageImages/1684022323692_img_cottage.jpg', NULL, '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
+(49, 15, '/images/cottageImages/1684022323804_img_cottage.jpg', NULL, '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
+(50, 15, '/images/cottageImages/1684022323827_img_cottage.jpg', NULL, '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
+(51, 16, '/images/cottageImages/1684022809649_img_cottage.jpg', NULL, '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
+(52, 16, '/images/cottageImages/1684022809655_img_cottage.jpg', NULL, '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
+(53, 16, '/images/cottageImages/1684022809677_img_cottage.jpg', NULL, '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
+(54, 16, '/images/cottageImages/1684022809678_img_cottage.jpg', NULL, '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
+(55, 16, '/images/cottageImages/1684022809682_img_cottage.jpg', NULL, '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
+(56, 16, '/images/cottageImages/1684022809684_img_cottage.jpg', NULL, '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
+(57, 17, '/images/cottageImages/1684023004872_img_cottage.jpg', NULL, '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
+(58, 17, '/images/cottageImages/1684023004874_img_cottage.jpg', NULL, '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
+(59, 17, '/images/cottageImages/1684023004878_img_cottage.jpg', NULL, '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
+(60, 17, '/images/cottageImages/1684023004895_img_cottage.jpg', NULL, '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
+(61, 17, '/images/cottageImages/1684023004902_img_cottage.jpg', NULL, '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
+(62, 17, '/images/cottageImages/1684023004934_img_cottage.jpg', NULL, '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
+(63, 18, '/images/cottageImages/1684023756774_img_cottage.jpg', NULL, '2023-05-14 00:22:37', '2023-05-14 00:22:37'),
+(64, 18, '/images/cottageImages/1684023756846_img_cottage.jpg', NULL, '2023-05-14 00:22:37', '2023-05-14 00:22:37'),
+(65, 18, '/images/cottageImages/1684023756861_img_cottage.jpg', NULL, '2023-05-14 00:22:37', '2023-05-14 00:22:37'),
+(66, 18, '/images/cottageImages/1684023756874_img_cottage.jpg', NULL, '2023-05-14 00:22:37', '2023-05-14 00:22:37'),
+(67, 18, '/images/cottageImages/1684023756898_img_cottage.jpg', NULL, '2023-05-14 00:22:37', '2023-05-14 00:22:37'),
+(68, 18, '/images/cottageImages/1684023756905_img_cottage.jpg', NULL, '2023-05-14 00:22:37', '2023-05-14 00:22:37');
 
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -483,7 +463,23 @@ CREATE TABLE `services` (
 
 LOCK TABLES `services` WRITE;
 /*!40000 ALTER TABLE `services` DISABLE KEYS */;
-INSERT INTO `services` VALUES (1,1,'Wifi','2023-04-20 16:40:25','2023-04-20 16:40:25'),(2,1,'Cocina','2023-04-20 16:40:42','2023-04-20 16:40:42'),(3,1,'Calefacción','2023-04-20 16:41:31','2023-04-20 16:41:31'),(4,1,'Pileta','2023-04-20 16:41:31','2023-04-20 16:41:31'),(5,2,'WiFi','2023-04-20 16:42:21','2023-04-20 16:42:21'),(6,2,'Cocina','2023-04-20 16:42:21','2023-04-20 16:42:21'),(7,2,'Calefacción','2023-04-20 16:42:21','2023-04-20 16:42:21'),(8,3,'Wifi','2023-04-20 16:42:21','2023-04-20 16:42:21'),(9,3,'Pileta','2023-04-20 16:43:44','2023-04-20 16:43:44'),(10,3,'Cocina','2023-04-20 16:43:44','2023-04-20 16:43:44'),(11,4,'WiFi','2023-04-20 16:43:44','2023-04-20 16:43:44'),(12,4,'Calefacción','2023-04-20 16:43:44','2023-04-20 16:43:44'),(13,4,'Pileta','2023-04-20 16:43:44','2023-04-20 16:43:44'),(14,5,'WiFi','2023-04-20 16:43:44','2023-04-20 16:43:44'),(15,5,'Cocina','2023-04-20 16:43:44','2023-04-20 16:43:44'),(16,5,'Calefacción','2023-04-20 16:43:44','2023-04-20 16:43:44');
+INSERT INTO `services` (`id`, `cottage_id`, `service`, `createdAt`, `updatedAt`) VALUES
+(20, 15, 'Wi-fi', '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
+(21, 15, 'Calefacción', '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
+(22, 15, 'Aire acondicionado', '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
+(23, 15, 'Cocina', '2023-05-13 23:58:44', '2023-05-13 23:58:44'),
+(24, 16, 'Wi-fi', '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
+(25, 16, 'Calefacción', '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
+(26, 16, 'Cocina', '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
+(27, 16, 'Jacuzzi', '2023-05-14 00:06:50', '2023-05-14 00:06:50'),
+(28, 17, 'Wi-fi', '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
+(29, 17, 'Calefacción', '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
+(30, 17, 'Cocina', '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
+(31, 17, 'Jacuzzi', '2023-05-14 00:10:05', '2023-05-14 00:10:05'),
+(32, 18, 'Wi-fi', '2023-05-14 00:22:37', '2023-05-14 00:22:37'),
+(33, 18, 'Calefacción', '2023-05-14 00:22:37', '2023-05-14 00:22:37'),
+(34, 18, 'Cocina', '2023-05-14 00:22:37', '2023-05-14 00:22:37');
+
 /*!40000 ALTER TABLE `services` ENABLE KEYS */;
 UNLOCK TABLES;
 
