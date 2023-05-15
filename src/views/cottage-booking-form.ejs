@@ -35,8 +35,9 @@
 
         <input type="number" name="total" id="total" class="hide">
 
-
+      
       </form>
+   
       <section class="">
         <% if (errors?.check_in) { %>
         <p class="txt-error"><%= errors.check_in.msg %></p>
@@ -72,6 +73,7 @@
       </div>
       <aside class="p-1rem aside-prod-detail ">
         <div class="flex flex-wrap">
+       
           <h3 class="aside-precio p-bot-20px">Por noche: $ARS <span class="price"><%= cottage.price %></span></h3>
 
           <div class="desde-hasta flex jc-evenly txt-center">
@@ -90,8 +92,9 @@
           </p>
 
           <h3 class="aside-total">Total: $ARS <span class="total-info">0</span> </h3>
+          <button type="submit" class="border-none aside-but fs-18">Reservar</button>
 
-          <button type="submit" form="form" class="border-none aside-but fs-18">Reservar</button>
+
         </div>
       </aside>
     </section>
