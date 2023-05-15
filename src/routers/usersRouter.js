@@ -45,7 +45,7 @@ router.get("/profile", redirectUserLoggedOut, usersController.showProfile);
 
 router.get("/edit", redirectUserLoggedOut, usersController.showEdit);
 router.put(
-    "/edit/:id",
+    "/edit",
     uploadFile.single("file"),
     [redirectUserLoggedOut, editUserMiddleware, error_edit_user],
     usersController.edit
