@@ -17,8 +17,8 @@ module.exports = {
         // Objeto que devuelve la API
         res.json({
             status: 200,
-            count: allUsers.length,
             data: allUsers,
+            count: allUsers.length,
         });
     },
 
@@ -32,6 +32,29 @@ module.exports = {
         res.json({
             status: 200,
             data: user,
+        });
+    },
+    async findRents(req, res) {
+        const rents = await Rents.findAll({
+            where: { user_id: req.params.id },
+            include: ["cottage", "cart"],
+        });
+        res.json({
+            status: 200,
+            data: rents,
+            count: rents.length,
+        });
+    },
+
+    async findTickets(req, res) {
+        const tickets = await AcivitiesUsers.findAll({
+            where: { user_id: req.params.id },
+            include: ["activity", "cart"],
+        });
+        res.json({
+            status: 200,
+            data: tickets,
+            count: tickets.length,
         });
     },
 };
