@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import MainUsersSection from "./components/UsersSection/MainUsersSection";
 import { Route, Routes } from "react-router-dom";
 
+
 function App() {
     return (
         <div className="App">
