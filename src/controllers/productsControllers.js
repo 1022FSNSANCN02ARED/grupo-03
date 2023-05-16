@@ -48,7 +48,7 @@ module.exports = {
         //console.log(cottageInCart);
         //console.log(actInCart);
 
-        let cottages 
+        let cottages;
         if (cottageInCart) {
             const cottageId = cottageInCart.map((cottage) => {
                 return cottage.cottage_id;
@@ -61,7 +61,7 @@ module.exports = {
             });
         }
 
-        let activities
+        let activities;
         if (actInCart) {
             const actId = actInCart.map((act) => {
                 return act.activity_id;
@@ -78,7 +78,7 @@ module.exports = {
             return cabana.id == cottageInCart[0].cottage_id;
         });
         console.log(cabana);*/
-        
+
         //console.log(cottages);
         //console.log(activities);
 
@@ -87,8 +87,8 @@ module.exports = {
             actId: activities,
             cottageInCart: cottageInCart,
             actInCart: actInCart,
-//            total_cost_cottage: cottageInCart.total_cost,
-//            total_cost_act: actInCart.total_cost
+            // total_cost_cottage: cottageInCart.total_cost,
+            // total_cost_act: actInCart.total_cost
         });
     },
 
@@ -131,14 +131,14 @@ module.exports = {
 
         if (tickets) {
             await db.AcivitiesUsers.bulkCreate(
-                tickets.map((rent) => {
+                tickets.map((ticket) => {
                     return {
                         user_id: req.session.userLog.id,
-                        activity_id: rent.activity_id,
-                        day: rent.day,
-                        quantity: rent.quantity,
-                        hour: rent.date_in,
-                        total_cost: rent.total_cost,
+                        activity_id: ticket.activity_id,
+                        day: ticket.day,
+                        quantity: ticket.quantity,
+                        hour: ticket.hour,
+                        total_cost: ticket.total_cost,
                         cart_id: newCart.id,
                     };
                 })
