@@ -39,7 +39,50 @@ module.exports = {
         }
     },
     productCart: async (req, res) => {
-        res.render("product-cart");
+        const actInCart = req.session.activitiesInCart;
+        const cottageInCart = req.session.cottagesInCart;
+        /*console.log(cottageInCart);
+        console.log(actInCart);
+
+        let cottages 
+        if (cottageInCart) {
+            const cottageId = cottageInCart.map((cottage) => {
+                return cottage.cottage_id;
+            });
+            cottages = await db.Cottages.findAll({
+                include: ["images"],
+                where: {
+                    id: cottageId,
+                },
+            });
+        }
+        let activities
+        if (actInCart) {
+            const actId = actInCart.map((act) => {
+                return act.activity_id;
+            });
+            activities = await db.Activities.findAll({
+                include: ["images"],
+                where: {
+                    id: actId,
+                },
+            });
+        }
+
+        cottageInCart.forEach((cottageInCart) => {
+            const cottage = ArrayDeCottagesDeDB.find((cottage) => {
+                cottage.id == cottageInCart.id;
+            });
+            cottageInCart.image = cottage.images[0].image;
+        });
+
+        console.log(cottagesInCart);*/
+    
+
+        res.render("product-cart", {
+            cottageInCart: actInCart,
+            actInCart: cottageInCart,
+        });
     },
 
     buyCart: async (req, res) => {

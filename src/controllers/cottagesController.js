@@ -260,7 +260,7 @@ module.exports = {
         } else {
             req.session.cottagesInCart.push(rent);
         }
-        console.log(req.session.cottagesInCart);
+        //console.log(req.session.cottagesInCart);
         res.redirect("/products/cart");
     },
 };
