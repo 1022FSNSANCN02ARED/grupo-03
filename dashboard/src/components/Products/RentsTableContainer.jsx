@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function ProductTableContainer({ userId }) {
     const [rents, setRents] = useState(null);
+    const [isLoading, setisLoading] = useState(true);
 
     useEffect(() => {
         fetch(`http://localhost:3000/api/users/rents/${userId}`)
@@ -9,13 +10,18 @@ function ProductTableContainer({ userId }) {
                 return response.json();
             })
             .then((result) => {
-                console.log(result.data);
+                setisLoading(false);
                 setRents(result.data);
             })
             .catch((error) => {
+                setisLoading(false);
                 console.log(error);
             });
     }, []);
+
+    if (isLoading) {
+        return <p>Cargando tickets...</p>;
+    }
 
     return (
         <table className="table">

@@ -5,7 +5,7 @@ function LastUser({ lastUser }) {
     useEffect(() => {}, []);
 
     return (
-        <div className="card m-4 bg-5 p-3">
+        <div className="card m-4 bg-5 p-3 shadow">
             <h3 className="text-center">Ultimo usuario cargado</h3>
             <div className="row g-0">
                 <div className="col-md-4 d-flex flex-column">

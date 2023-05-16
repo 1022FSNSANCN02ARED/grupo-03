@@ -52,16 +52,24 @@ function DetailUser() {
                         <h4 className="text-center border-3 border-bottom border-top p-2">
                             Alquileres
                         </h4>
-                        {user.rents.length > 0 && (
+                        {user.rents.length > 0 ? (
                             <RentsTableContainer userId={user.id} />
+                        ) : (
+                            <h6 className="text-center">
+                                Este usuario no tiene alquileres registrados...
+                            </h6>
                         )}
                     </div>
                     <div>
                         <h4 className="text-center border-3 border-bottom border-top p-2">
                             Tickets
                         </h4>
-                        {user.tickets.length > 0 && (
+                        {user.tickets.length > 0 ? (
                             <TickersTableContainer userId={user.id} />
+                        ) : (
+                            <h6 className="text-center">
+                                Este usuario no tiene compras registradas...
+                            </h6>
                         )}
                     </div>
                 </div>

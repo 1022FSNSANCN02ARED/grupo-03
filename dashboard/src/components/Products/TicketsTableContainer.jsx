@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function TickersTableContainer({ userId }) {
     const [tickets, setTickets] = useState(null);
+    const [isLoading, setisLoading] = useState(true);
 
     useEffect(() => {
         fetch(`http://localhost:3000/api/users/tickets/${userId}`)
@@ -9,12 +10,18 @@ function TickersTableContainer({ userId }) {
                 return response.json();
             })
             .then((result) => {
+                setisLoading(false);
                 setTickets(result.data);
             })
             .catch((error) => {
                 console.log(error);
+                setisLoading(false);
             });
-    }, []);
+    }, [userId]);
+
+    if (isLoading) {
+        return <p>Cargando tickets...</p>;
+    }
 
     return (
         <table className="table">
@@ -41,9 +48,9 @@ function TickersTableContainer({ userId }) {
                     </th>
                 </tr>
             </thead>
-            <tbody>
-                {tickets &&
-                    tickets.map((ticket, i) => {
+            {tickets && (
+                <tbody>
+                    {tickets.map((ticket, i) => {
                         return (
                             <tr key={ticket.activity.name + i}>
                                 <th className="text-center text-break align-middle">
@@ -70,7 +77,8 @@ function TickersTableContainer({ userId }) {
                             </tr>
                         );
                     })}
-            </tbody>
+                </tbody>
+            )}
         </table>
     );
 }
