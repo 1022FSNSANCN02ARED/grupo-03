@@ -305,7 +305,7 @@ module.exports = {
                 user_id: req.session.userLog.id,
                 day: req.body.day,
                 quantity: req.body.quantity,
-                total: Number(req.body.total),
+                total_cost: Number(req.body.total),
                 hour: req.body.hour,
                 cart_id: null,
             };
