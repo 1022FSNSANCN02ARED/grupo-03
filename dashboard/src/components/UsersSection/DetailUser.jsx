@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import RentsTableContainer from "../Products/RentsTableContainer";
+import TickersTableContainer from "../Products/TicketsTableContainer";
 
 function DetailUser() {
     const { id } = useParams();
@@ -45,6 +47,22 @@ function DetailUser() {
                                 <b>id:</b> {user.id}
                             </h6>
                         </div>
+                    </div>
+                    <div>
+                        <h4 className="text-center border-3 border-bottom border-top p-2">
+                            Alquileres
+                        </h4>
+                        {user.rents.length > 0 && (
+                            <RentsTableContainer userId={user.id} />
+                        )}
+                    </div>
+                    <div>
+                        <h4 className="text-center border-3 border-bottom border-top p-2">
+                            Tickets
+                        </h4>
+                        {user.tickets.length > 0 && (
+                            <TickersTableContainer userId={user.id} />
+                        )}
                     </div>
                 </div>
             )}
