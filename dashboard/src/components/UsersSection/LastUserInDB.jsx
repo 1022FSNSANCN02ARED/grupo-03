@@ -16,7 +16,7 @@ function LastUser({ lastUser }) {
                         alt={`Foto de perfíl de ${lastUser.first_name} ${lastUser.lastName}`}
                     />
                     <Link
-                        to={lastUser.detail}
+                        to={`/users/detail/${lastUser.id}`}
                         className="btn btn-primary bg-4 w-100 m-auto mt-2"
                         style={{ maxWidth: "280px" }}
                     >
@@ -30,8 +30,9 @@ function LastUser({ lastUser }) {
                         </h5>
                         <h6 className="text-body">Correo: {lastUser.email}</h6>
                         <h6 className="text-body">
-                            Cuenta creada: {lastUser.createdAt.slice(0, 10)}
+                            Creación: {lastUser.createdAt.slice(0, 10)}
                         </h6>
+                        <h6 className="text-body">id: {lastUser.id}</h6>
                     </div>
                 </div>
             </div>

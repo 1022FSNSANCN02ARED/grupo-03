@@ -41,7 +41,6 @@ module.exports = (sequelize, DataTypes) => {
             as: "user",
             foreignKey: "user_id",
         });
-
         model.belongsTo(db.Activities, {
             as: "activity",
             foreignKey: "activity_id",

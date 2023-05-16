@@ -7,7 +7,12 @@ function UsersList({ users }) {
             <div className="d-flex flex-wrap justify-content-evenly">
                 {users &&
                     users.map((user, i) => (
-                        <div className="m-2" key={user.first_name + i}>
+                        <div
+                            className={`m-2 ${
+                                user.rol.name == "admin" ? "order-1" : "order-2"
+                            }`}
+                            key={user.first_name + i}
+                        >
                             <CardUser user={user} />
                         </div>
                     ))}

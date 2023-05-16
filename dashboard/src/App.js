@@ -11,7 +11,7 @@ function App() {
             <NavBar />
 
             <Routes>
-                <Route path="/users" element={<MainUsersSection />} />
+                <Route path="/users/*" Component={MainUsersSection} />
             </Routes>
 
             <header className="App-header">
