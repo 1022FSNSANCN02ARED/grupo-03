@@ -30,12 +30,14 @@ module.exports = (sequelize, DataTypes) => {
             as: "rol",
             foreignKey: "rol_id",
         });
-        // model.belongsToMany(db.Cottages, {
-        //     through: "rents",
-        //     foreignKey: "user_id",
-        //     otherKey: "cottage_id",
-        //     as: "userRents"
-        // });
+        model.hasMany(db.Rents, {
+            as: "rents",
+            foreignKey: "user_id",
+        });
+        model.hasMany(db.AcivitiesUsers, {
+            as: "tickets",
+            foreignKey: "user_id",
+        });
     };
     return model;
 };
