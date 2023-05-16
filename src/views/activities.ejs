@@ -26,14 +26,11 @@
     
 <main class="vw-90 ">
         <section class="p-8px flex flex-wrap">
-            <div class="m-top-10 mb flex-d-column jc-bet ">
-                <ul class=" pos-relative flex flex-wrap  w-50 w-25">
+           
                     <% activities.forEach(activity => { %>
-                    <%- include('./partials/activity-card', {activity: activity}) %>
+                    <%- include('./partials/activity-cad', {activity: activity}) %>
                     <% }) %>
-                  </ul>
-    
-            </div>
+               
            
           
         </section>
