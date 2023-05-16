@@ -5,6 +5,7 @@ module.exports = {
 
         const allUsers = await users.map((users) => {
             let dataUsers = users.dataValues;
+            delete dataUsers.password;
             dataUsers.avatar = "http://localhost:3000" + dataUsers.avatar;
             return {
                 ...dataUsers,
