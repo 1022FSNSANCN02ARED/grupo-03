@@ -28,6 +28,9 @@ module.exports = {
                 include: ["images", "hours"],
             });
 
+            //console.log(cottages)
+            //console.log(activities);
+
             res.render("products-list", {
                 showCottages: req.query.show == "cottages",
                 showActivities: req.query.show == "activities",
@@ -39,10 +42,11 @@ module.exports = {
         }
     },
     productCart: async (req, res) => {
-        const actInCart = req.session.activitiesInCart;
         const cottageInCart = req.session.cottagesInCart;
-        /*console.log(cottageInCart);
-        console.log(actInCart);
+        const actInCart = req.session.activitiesInCart;
+
+        //console.log(cottageInCart);
+        //console.log(actInCart);
 
         let cottages 
         if (cottageInCart) {
@@ -56,6 +60,7 @@ module.exports = {
                 },
             });
         }
+
         let activities
         if (actInCart) {
             const actId = actInCart.map((act) => {
@@ -69,19 +74,21 @@ module.exports = {
             });
         }
 
-        cottageInCart.forEach((cottageInCart) => {
-            const cottage = ArrayDeCottagesDeDB.find((cottage) => {
-                cottage.id == cottageInCart.id;
-            });
-            cottageInCart.image = cottage.images[0].image;
+        /*const cabana = cottages.find((cabana) => {
+            return cabana.id == cottageInCart[0].cottage_id;
         });
-
-        console.log(cottagesInCart);*/
-    
+        console.log(cabana);*/
+        
+        //console.log(cottages);
+        //console.log(activities);
 
         res.render("product-cart", {
-            cottageInCart: actInCart,
-            actInCart: cottageInCart,
+            cottageId: cottages,
+            actId: activities,
+            cottageInCart: cottageInCart,
+            actInCart: actInCart,
+//            total_cost_cottage: cottageInCart.total_cost,
+//            total_cost_act: actInCart.total_cost
         });
     },
 

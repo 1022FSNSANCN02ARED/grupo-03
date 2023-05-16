@@ -1302,3 +1302,15 @@ footer h1 {
 .cart-total button:hover {
     background-color: #66b9bf;
 }
+
+.img-in-cart{
+    width: 30%;
+    max-width: 300px;
+    min-width: 180px;
+}
+
+.p-cart{
+    text-align: center;
+    margin: 90px 0 90px 0;
+    width: 100%;
+}

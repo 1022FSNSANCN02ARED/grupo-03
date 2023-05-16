@@ -308,6 +308,7 @@ module.exports = {
                 total_cost: Number(req.body.total),
                 hour: req.body.hour,
                 cart_id: null,
+                sessionId: req.session.activitiesInCart?.length || 0,
             };
 
             if (!req.session.activitiesInCart) {

@@ -253,6 +253,7 @@ module.exports = {
             total_cost: Number(req.body.total),
             guests: Number(req.body.guest),
             cart_id: null,
+            sessionId: req.session.cottagesInCart?.length || 0
         };
 
         if (!req.session.cottagesInCart) {

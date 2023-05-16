@@ -1,19 +1,18 @@
 <li class="border-solid m-1rem p-1rem flexhiden bg-6 border-rad">
-    <div class="m-10">
-        <img src="https://via.placeholder.com/150x150" >
+    <div class="img-in-cart">
+        <img class="w-100 border-rad5" src="<%=activity.images[0].image%>">
     </div>
     <div class="item-details m-10 fc-37">
-        <% oneActInCart.forEach(oneCart => { %> 
-        <%- oneCart.cottage_id %>
-        <% }); %>
-        <h3>Cabaña </h3>
-        <p>Precio por noche: $100.00</p>
-        <p>Check In: </p> <p>Check Out:</p>
-        <p>Cantidad huéspedes: 1</p>
-        <p>Noches: 1</p>
-        <p class="m-10">TOTAL</p>
+        <h3 class="m-10"><%= activity.name%></h3>
+        <p>Precio por persona: <b>$<%=activity.price%></b></p>
+        <p>Para el día: <b><%=dataActInCart.day%></b></p>
+        <p>Horario: <b><%=dataActInCart.hour%></b></p>
+        <p>Cantidad participantes: <b><%=dataActInCart.quantity%></b></p>
+        <p class="m-10">TOTAL: $<b class="total_cost"><%=dataActInCart.total_cost%></b></p>
     </div>
     <div class="item-remove ">
+        <form action="/products/cart/delete/activity/<%=dataActInCart.sessionId%>?_method=delete" method="delete">
         <button class="border-rad5">Quitar</button>
+        </form>
     </div>
 </li>
