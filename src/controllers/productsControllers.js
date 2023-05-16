@@ -92,6 +92,68 @@ module.exports = {
         });
     },
 
+    showEditCottageInCart: async (req, res) => {
+        const cottageToEdit = req.session.cottagesInCart.find((cottage) => {
+            return Number(cottage.sessionId) == Number(req.params.id);
+        });
+
+        const cottage = await db.Cottages.findByPk(cottageToEdit.cottage_id, {
+            include: ["images", "services"],
+        });
+
+        const oldData = {
+            check_in: cottageToEdit.date_in,
+            check_out: cottageToEdit.date_out,
+            guest: Number(cottageToEdit.guests),
+        };
+
+        const newCottagesInCart = req.session.cottagesInCart.filter(
+            (cartCottage) => {
+                return (
+                    Number(cartCottage.sessionId) !==
+                    Number(cottageToEdit.sessionId)
+                );
+            }
+        );
+        req.session.cottagesInCart = newCottagesInCart;
+
+        res.render("cottage-booking-form", {
+            errors: null,
+            oldData,
+            cottage: cottage,
+        });
+    },
+
+    showEditActivityInCart: async (req, res) => {
+        const activityToEdit = req.session.activitiesInCart.find((activity) => {
+            return Number(activity.sessionId) === Number(req.params.id);
+        });
+
+        const activity = await db.Activities.findByPk(
+            activityToEdit.activity_id,
+            {
+                include: ["images", "hours"],
+            }
+        );
+
+        const newActivitiesInCart = req.session.activitiesInCart.filter(
+            (sessionActivity) => {
+                return (
+                    Number(activityToEdit.sessionId) !==
+                    Number(sessionActivity.sessionId)
+                );
+            }
+        );
+
+        req.session.activitiesInCart = newActivitiesInCart;
+
+        res.render("activity-ticket-form", {
+            errors: null,
+            oldData: activityToEdit,
+            activity: activity,
+        });
+    },
+
     buyCart: async (req, res) => {
         const rents = req.session.cottagesInCart;
         const tickets = req.session.activitiesInCart;

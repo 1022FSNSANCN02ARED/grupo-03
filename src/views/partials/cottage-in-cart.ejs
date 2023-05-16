@@ -1,18 +1,22 @@
 <li class="border-solid m-1rem p-1rem flexhiden bg-6 border-rad">
-    <div class="img-in-cart">
-        <img class="w-100 border-rad5" src="<%=cabana.images[0].image%>">
-    </div>
-    <div class="item-details m-10 fc-37">
-        <h3 class="m-10"><%=cabana.name%></h3>
-        <p>Precio por noche: <b>$<%=cabana.price%></b></p>
-        <p>Check In: <b><%=dataCottageInCart.date_in%></b></p> <p>Check Out: <b><%=dataCottageInCart.date_out%></b></p>
-        <p>Cantidad huéspedes: <b><%=dataCottageInCart.guests%></b></p>
-        <br>
-        <p class="m-10">TOTAL: $<b class="total_cost"><%=dataCottageInCart.total_cost%></b></p>
-    </div>
-    <div class="item-remove ">
-        <form action="/products/cart/delete/cottage/<%=dataCottageInCart.sessionId%>?_method=delete" method="delete">
-            <button class="border-rad5">Quitar</button>
-        </form>
-    </div>
+  <div class="img-in-cart">
+    <img class="w-100 border-rad5" src="<%=cabana.images[0].image%>">
+  </div>
+  <div class="item-details m-10 fc-37">
+    <h3 class="m-10"><%=cabana.name%></h3>
+    <p>Precio por noche: <b>$<%=cabana.price%></b></p>
+    <p>Check In: <b><%=dataCottageInCart.date_in%></b></p>
+    <p>Check Out: <b><%=dataCottageInCart.date_out%></b></p>
+    <p>Cantidad huéspedes: <b><%=dataCottageInCart.guests%></b></p>
+    <br>
+    <p class="m-10">TOTAL: $<b class="total_cost"><%=dataCottageInCart.total_cost%></b></p>
+  </div>
+  <div class="item-remove ">
+    <form action="/products/cart/delete/cottage/<%=dataCottageInCart.sessionId%>?_method=delete" method="delete">
+      <button class="border-rad5">Quitar</button>
+    </form>
+    <form action="/products/cart/edit/cottage/<%=dataCottageInCart.sessionId%>" method="get">
+      <button class="border-rad5">Editar</button>
+    </form>
+  </div>
 </li>

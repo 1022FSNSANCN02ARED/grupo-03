@@ -245,6 +245,9 @@ module.exports = {
         }
     },
     bookingCottage: async (req, res) => {
+        const lastCottageInCart = req.session.cottagesInCart
+            ? req.session.cottagesInCart[req.session.cottagesInCart.length - 1]
+            : null;
         const rent = {
             cottage_id: req.params.id,
             user_id: req.session.userLog.id,
@@ -253,7 +256,7 @@ module.exports = {
             total_cost: Number(req.body.total),
             guests: Number(req.body.guest),
             cart_id: null,
-            sessionId: req.session.cottagesInCart?.length || 0
+            sessionId: lastCottageInCart ? lastCottageInCart.sessionId + 1 : 0,
         };
 
         if (!req.session.cottagesInCart) {

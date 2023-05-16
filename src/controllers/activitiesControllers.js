@@ -300,6 +300,12 @@ module.exports = {
     },
     addTicketsToCart: async (req, res) => {
         try {
+            const lastActivityInCart = req.session.activitiesInCart
+                ? req.session.activitiesInCart[
+                      req.session.activitiesInCart.length - 1
+                  ]
+                : null;
+
             const activityToAddCart = {
                 activity_id: req.params.id,
                 user_id: req.session.userLog.id,
@@ -308,7 +314,9 @@ module.exports = {
                 total_cost: Number(req.body.total),
                 hour: req.body.hour,
                 cart_id: null,
-                sessionId: req.session.activitiesInCart?.length || 0,
+                sessionId: lastActivityInCart
+                    ? lastActivityInCart.sessionId + 1
+                    : 0,
             };
 
             if (!req.session.activitiesInCart) {
@@ -316,6 +324,7 @@ module.exports = {
             } else {
                 req.session.activitiesInCart.push(activityToAddCart);
             }
+
             console.log(req.session.activitiesInCart);
 
             res.redirect("/products/cart");
