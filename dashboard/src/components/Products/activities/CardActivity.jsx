@@ -24,7 +24,7 @@ function CardActivity({ activity }) {
             </p>
             <p className="card-text mb-0">id: {activity.id}</p>
             <Link
-                to={`/users/detail/${activity.id}`}
+                to={`/activities/detail/${activity.id}`}
                 className="btn btn-primary bg-4"
             >
                 Detalle

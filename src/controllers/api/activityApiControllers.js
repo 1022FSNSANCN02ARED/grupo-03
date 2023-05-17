@@ -1,4 +1,5 @@
 const { Activities } = require("../../database/models");
+
 module.exports = {
     async findActivities(req, res) {
         const activities = await Activities.findAll({
@@ -24,17 +25,15 @@ module.exports = {
         const activity = await Activities.findByPk(req.params.id, {
             include: ["images", "hours"],
         });
-        console.log(activity.images);
 
-        const urlImages = activity.images.map((img) => {
-            return img.image;
+        activity.dataValues.images = activity.images.map((img) => {
+            return `http://localhost:3000${img.image}`;
         });
 
         // Objeto que devuelve la API
         res.json({
-            activity: activity.dataValues,
-            urlImages,
-            hours: activity.hours,
+            status: 200,
+            data: activity.dataValues,
         });
     },
 };
