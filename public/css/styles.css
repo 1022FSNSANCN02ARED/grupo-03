@@ -56,6 +56,7 @@ body {
 
 .border-rad5 {
     border-radius: 5px;
+    
 }
 
 .border-none {
@@ -68,6 +69,8 @@ body {
 .box-shadow {
     box-shadow: 0px 0px 10px rgb(137, 137, 137);
 }
+
+
 
 .flex {
     display: flex;
@@ -1088,7 +1091,61 @@ footer h1 {
     border: #044a55 1px solid;
     padding: 10px 0;
 }
+/* -------------------ERROR 404 */
+.error404{
+    margin-top: 50px;
+   font-weight: bold;
+   font-size: 30px;
+   text-align: center;
+  
+  background: linear-gradient(to right, #66b9bf 20%, #e37222 40%, #FF0 60%, #07889b 80%);
+  background-size: 200% auto;
+  
+  color: #000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: erro 4s linear infinite;
+}
+@keyframes erro {
+    to {
+        background-position: 200% center;
+    }
+}
+.error-n{
+    font-weight: bold;
+    font-size: 80px;
+    text-align: center;
+}
+.error-404{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+.img-error404{
+    margin-left: 40px;
+    margin-top: -25px;
+    align-items: center;
+}
+.back-home{
+    margin-top: 60px;
+    margin-left: -300px;
+    font-size: 15px;
+    
+}
+.back-home a{
+    margin-left: 380px;
+    cursor: pointer;
+    background-color: #07889b;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 0.5rem;
+   
 
+}
+.back-home a:hover{
+    background-color: #66b9bf;
+}
 /*-------------- media queries */
 @media (min-width: 488px) {
     .w-50 {
@@ -1108,6 +1165,15 @@ footer h1 {
 
     .list-show-button {
         width: auto;
+    }
+    /*---------------------ERROR 404 */
+    .back-home{
+        margin-left: -210px;
+        font-size: 15px;
+    }
+    .img-error404{
+        width: 70%;
+        margin-left: 120px;
     }
 }
 @media (min-width: 761px) {
@@ -1197,6 +1263,19 @@ footer h1 {
         margin-top: 30px;
         margin-bottom: 30px;
     }
+    /*---------------------carrito */
+    .item-remove{
+        margin-top: 15px;
+        margin-left: 95px;
+    }
+    /*---------------------ERROR 404 */
+    .back-home{
+        margin-left: -150px;
+    }
+    .img-error404{
+        margin-left: 200px;
+    }
+
 }
 
 @media (min-width: 1024px) {
@@ -1259,6 +1338,15 @@ footer h1 {
     .border-top {
         display: none;
     }
+     /*---------------------ERROR 404 */
+     .back-home{
+        margin-left: -30px;
+        font-size: 15px;
+    }
+    .img-error404{
+        width: 80%;
+        margin-left: 340px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -1277,6 +1365,15 @@ footer h1 {
     .card-products-list {
         width: 25%;
     }
+    /*---------------------ERROR 404 */
+    .back-home{
+        margin-left: 65px;
+        font-size: 18px;
+    }
+    .img-error404{
+        width: 100%;
+        margin-left: 440px;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -1287,18 +1384,74 @@ footer h1 {
     .f-submit {
         height: 40px;
     }
+    /*---------------------ERROR 404 */
+    .error404{
+        font-size: 60px;
+    }
+    .error404 p{
+        font-size: 150px;
+    }
+    .error-404{
+        font-size: 40px;
+    }
+    
+    .back-home{
+        
+        margin-left: 150px;
+        font-size: 18px;
+    }
+    .img-error404{
+        width: 150vh;
+        margin-left: 550px;
+    }
 }
 /*carrito*/
 
 .item-details {
     flex-grow: 1;
+    
+}
+.item-remove form{
+    padding: 0.5rem;
 }
 .item-remove button {
-    background-color: #fff;
-    color: #333;
+    margin-left: 20px;
     border: 1px solid #333;
     padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all .3s;
+    
+
 }
+
+.button-cart1{
+    background-color: red;
+    
+}
+.button-cart1:hover{
+    transition: 0.2s;
+    background-color: #f46b6b;
+
+}
+.button-cart2{
+    background-color: #07889b;
+}
+.button-cart2:hover{
+    transition: 0.2s;
+    background-color: #77b1ba;
+
+}
+.icon-thash{
+    color: #ffffff;
+    font-size: 25px;
+}
+.icon-edit {
+    color: #ffffff;
+    font-size: 28px;
+
+}
+
+
 .cart-total button:hover {
     background-color: #66b9bf;
 }
@@ -1313,4 +1466,25 @@ footer h1 {
     text-align: center;
     margin: 90px 0 90px 0;
     width: 100%;
+}
+
+.cart-fin{
+    width: 70%;
+    height: 300px;
+    margin: auto;
+    display: block;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+    align-items: center;
+    background-color: #f1f7ed;
+    border: 1px solid #6b6b6b;
+    border-radius: 5px;
+}
+.cart-fin1{
+
+}
+.icon-cart-fin{
+    color: yellowgreen;
+    font-size: 40px;
 }

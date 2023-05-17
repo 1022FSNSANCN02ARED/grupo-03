@@ -203,7 +203,10 @@ module.exports = {
         req.session.cottagesInCart = null;
         req.session.activitiesInCart = null;
 
-        res.redirect("/");
+        res.redirect("/products/cart/cartFin");
+    },
+    cartFin: (req, res) => {
+        res.render("cartFin");
     },
     deleteCottageCart: (req, res) => {
         const cottageInCart = req.session.cottagesInCart;

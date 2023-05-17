@@ -5,17 +5,17 @@
   <div class="item-details m-10 fc-37">
     <h3 class="m-10"><%= activity.name%></h3>
     <p>Precio por persona: <b>$<%=activity.price%></b></p>
-    <p>Para el día: <b><%=dataActInCart.day%></b></p>
-    <p>Horario: <b><%=dataActInCart.hour%></b></p>
-    <p>Cantidad participantes: <b><%=dataActInCart.quantity%></b></p>
+    <p><i class="fa-solid fa-calendar-days"></i> <b><%=dataActInCart.day%></b></p>
+    <p><i class="fa-solid fa-clock"></i> <b><%=dataActInCart.hour%></b></p>
+    <p><i class="fa-solid fa-people-roof"></i> <b><%=dataActInCart.quantity%></b></p>
     <p class="m-10">TOTAL: $<b class="total_cost"><%=dataActInCart.total_cost%></b></p>
   </div>
   <div class="item-remove ">
     <form action="/products/cart/delete/activity/<%=dataActInCart.sessionId%>?_method=delete" method="delete">
-      <button class="border-rad5">Quitar</button>
+      <button class="border-rad5 button-cart1"><i class="fa-solid fa-trash-can icon-thash"></i></button>
     </form>
     <form action="/products/cart/edit/activity/<%=dataActInCart.sessionId%>" method="get">
-      <button class="border-rad5">Editar</button>
+      <button class="border-rad5 button-cart2"><i class="fa-solid fa-square-pen icon-edit"></i></button>
     </form>
   </div>
 </li>

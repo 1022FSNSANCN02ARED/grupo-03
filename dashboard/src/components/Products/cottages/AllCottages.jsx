@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import LastActivity from "./LastActivity";
-import ActivitiesList from "./ActivitiesList";
+import LastCottage from "./LastCottageInDb";
+import CottagesList from "./CottagesList";
 
-function AllActivitiesSection() {
-    const [activities, setActivities] = useState(null);
+function AllCottagesSection() {
+    const [cottages, setCottages] = useState(null);
     const [isLoading, setisLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/activities")
+        fetch("http://localhost:3000/api/cottages")
             .then((response) => {
                 return response.json();
             })
             .then((result) => {
                 setisLoading(false);
-                setActivities(result);
+                setCottages(result);
             })
             .catch((error) => {
                 setisLoading(false);
@@ -27,14 +27,12 @@ function AllActivitiesSection() {
 
     return (
         <div className="container-xl">
-            {activities && (
-                <LastActivity
-                    lastActivity={activities.data[activities.count - 1]}
-                />
+            {cottages && (
+                <LastCottage lastCottage={cottages.data[cottages.count - 1]} />
             )}
-            {activities && <ActivitiesList activities={activities.data} />}
+            {cottages && <CottagesList cottages={cottages.data} />}
         </div>
     );
 }
 
-export default AllActivitiesSection;
+export default AllCottagesSection;

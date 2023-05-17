@@ -45,6 +45,14 @@ function NavBar() {
                                 Actividades
                             </Link>
                         </li>
+                        <li className="nav-item">
+                            <Link
+                                to="http://localhost:3000/"
+                                className="nav-link active"
+                            >
+                                Página
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>
