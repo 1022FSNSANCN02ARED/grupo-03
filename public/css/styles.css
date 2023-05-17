@@ -1119,16 +1119,31 @@ footer h1 {
 }
 .error-404{
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
     text-align: center;
 }
 .img-error404{
     margin-left: 365px;
-    margin-top: 55px;
+    margin-top: -25px;
     align-items: center;
 }
+.back-home{
+    margin-top: 80px;
+    
+}
+.back-home a{
+    margin-left: 380px;
+    cursor: pointer;
+    background-color: #07889b;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 0.5rem;
+   
 
-
+}
+.back-home a:hover{
+    background-color: #66b9bf;
+}
 /*-------------- media queries */
 @media (min-width: 488px) {
     .w-50 {
