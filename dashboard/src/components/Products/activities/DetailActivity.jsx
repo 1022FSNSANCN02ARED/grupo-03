@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ImagesContainer from "../ImagesContainer";
+import TableHoursInfo from "./TableHoursInfo";
 
 function DetailUser() {
     const { id } = useParams();
@@ -59,12 +60,19 @@ function DetailUser() {
                                     Creación: {activity.createdAt.slice(0, 10)}
                                 </h6>
                                 <h6 className="text-body text-center">
-                                    id: {activity.id}
+                                    Precio: ARS$ {activity.price}
                                 </h6>
                             </div>
                         </div>
                     </div>
+                    <h4 className="text-center border-3 bg-4 fc-5 border-bottom border-top p-2">
+                        Imagenes
+                    </h4>
                     <ImagesContainer product={activity} />
+                    <h4 className="text-center border-3 bg-4 fc-5 border-bottom border-top p-2">
+                        Horarios
+                    </h4>
+                    <TableHoursInfo activity={activity} />
                 </div>
             )}
         </div>
