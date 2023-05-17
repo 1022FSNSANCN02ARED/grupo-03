@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LastActivity from "./LastActivity";
+import ActivitiesList from "./ActivitiesList";
 
 function AllUsersSection() {
     const [activities, setActivities] = useState(null);
@@ -31,7 +32,7 @@ function AllUsersSection() {
                     lastActivity={activities.data[activities.count - 1]}
                 />
             )}
-            {/* {activities && <UsersList users={activities.data} />} */}
+            {activities && <ActivitiesList activities={activities.data} />}
         </div>
     );
 }
