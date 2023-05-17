@@ -89,7 +89,7 @@
           <% } %>
 
           <% if (activity.hours.second_weekday_hours) { %>
-          <option value="<%= hours.second_weekday_hours %>" class="weekday-option hide" <%= (oldData?.hour == hours.second_weekday_hours) ? "selected" : "" %>><%= activity.hours.second_weekday_hours %></option>
+          <option value="<%= activity.hours.second_weekday_hours %>" class="weekday-option hide" <%= (oldData?.hour == activity.hours.second_weekday_hours) ? "selected" : "" %>><%= activity.hours.second_weekday_hours %></option>
           <% } %>
 
           <% if (activity.hours.weekend_hours) { %>
