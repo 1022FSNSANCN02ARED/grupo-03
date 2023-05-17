@@ -41,8 +41,16 @@ function NavBar() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/actividades" className="nav-link active">
+                            <Link to="/activities" className="nav-link active">
                                 Actividades
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link
+                                to="http://localhost:3000/"
+                                className="nav-link active"
+                            >
+                                Página
                             </Link>
                         </li>
                     </ul>

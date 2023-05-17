@@ -8,6 +8,8 @@ const methodOverride = require("method-override");
 
 const cookieParser = require("cookie-parser");
 
+
+
 const cors = require("cors");
 app.use(
     cors({
@@ -48,6 +50,11 @@ app.use(mainRouter);
 
 const productsRouter = require("./routers/productsRouter");
 app.use(productsRouter);
+
+//error404
+app.use((req,res,next)=>{
+    res.status(404).render('error404')
+});
 
 //PRUEBA DE MODELOS DB
 

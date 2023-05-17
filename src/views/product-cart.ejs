@@ -4,51 +4,44 @@
 <head>
   <%- include("./partials/head") %>
   <title>Carrito</title>
+  <script src="/js/total_cost.js" defer></script>
 </head>
 
 <body>
   <%- include("./partials/nav") %>
 
     <main class="w-80 m-auto top-100 mb">
-      <section class="border-solid m-1rem p-1rem bg-5 border-rad">
-        <h2 class="txt-center fc-37">Tu carrito</h2>
+      <section class="border-solid m-1rem p-1rem bg-5 border-rad box-shadow">
+        <h2 class="txt-center fc-37">Tu Carrito</h2>
         <ul>
-          <li class="border-solid m-1rem p-1rem flexhiden bg-6 border-rad">
-            <div class="m-10">
-              <img src="https://via.placeholder.com/150x150" >
-            </div>
-            <div class="item-details m-10 fc-37">
-              <h3>Cabaña </h3>
-              <p>Precio por noche</p>
-              <p>Check In:</p> <p>Check Out: </p>
-              <p>Cantidad huespedes: 1</p>
-              <p>Noches: 1</p>
-              <p class="m-10">TOTAL</p>
-            </div>
-            <div class="item-remove ">
-              <button class="border-rad5">Quitar</button>
-            </div>
-          </li>
-          <li class="border-solid m-1rem p-1rem bg-6 bg-6 flexhiden border-rad">
-            <div class="m-10 ">
-              <img src="https://via.placeholder.com/150x150" >
-            </div>
-            <div class="item-details m-10 fc-37">
-              <h3>Cabaña 4</h3>
-              <p>Precio por noche: $100.00</p>
-              <p>Check In: </p> <p>Check Out:</p>
-              <p>Cantidad huespedes: 1</p>
-              <p>Noches: 1</p>
-              <P class="m-10">TOTAL</P>
-            </div>
-            <div class="item-remove">
-              <button class="border-rad5">Quitar</button>
-            </div>
-          </li>
+
+          <%if(!cottageId && !actId){%>
+            <p class="p-cart">El carrito esta vació</p>
+          <%}%>
+
+            
+          <%if(cottageInCart){%>
+            <% cottageInCart.forEach(dataCottageInCart => { %>
+              <% const cabana = cottageId.find((cabana)=>{return cabana.id == dataCottageInCart.cottage_id}) %>
+                  <%-include('./partials/cottage-in-cart.ejs',{cabana, dataCottageInCart}) %>
+            <% }); %>
+          <%}%>
+
+          <%if(actInCart){%>
+            <% actInCart.forEach(dataActInCart => { %>
+              <% const activity = actId.find((activity)=>{return activity.id == dataActInCart.activity_id}) %>
+                  <%-include('./partials/activity-in-cart.ejs',{activity, dataActInCart}) %>
+            <% }); %>
+          <%}%>
+
         </ul>
         <div class="cart-total m-10 jc-bet al-items flex">
-          <h3 class="fc-37">Total: $40.00</h3>
-          <button class="login-button  bg-3">Finalizar compra</button>
+          <h3 class="fc-37">Total a pagar: $<b id="resultado_total_cost"></b>
+            
+          </h3>
+          <form action="/cart-final" method="post">
+            <button class="login-button  bg-3">Finalizar compra</button>
+          </form>
         </div>
       </section>
     </main>
