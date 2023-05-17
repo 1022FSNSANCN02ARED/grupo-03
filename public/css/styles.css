@@ -1123,12 +1123,14 @@ footer h1 {
     text-align: center;
 }
 .img-error404{
-    margin-left: 365px;
+    margin-left: 40px;
     margin-top: -25px;
     align-items: center;
 }
 .back-home{
-    margin-top: 80px;
+    margin-top: 60px;
+    margin-left: -300px;
+    font-size: 15px;
     
 }
 .back-home a{
@@ -1163,6 +1165,15 @@ footer h1 {
 
     .list-show-button {
         width: auto;
+    }
+    /*---------------------ERROR 404 */
+    .back-home{
+        margin-left: -210px;
+        font-size: 15px;
+    }
+    .img-error404{
+        width: 70%;
+        margin-left: 120px;
     }
 }
 @media (min-width: 761px) {
@@ -1257,6 +1268,14 @@ footer h1 {
         margin-top: 15px;
         margin-left: 95px;
     }
+    /*---------------------ERROR 404 */
+    .back-home{
+        margin-left: -150px;
+    }
+    .img-error404{
+        margin-left: 200px;
+    }
+
 }
 
 @media (min-width: 1024px) {
@@ -1319,6 +1338,15 @@ footer h1 {
     .border-top {
         display: none;
     }
+     /*---------------------ERROR 404 */
+     .back-home{
+        margin-left: -30px;
+        font-size: 15px;
+    }
+    .img-error404{
+        width: 80%;
+        margin-left: 340px;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -1337,6 +1365,15 @@ footer h1 {
     .card-products-list {
         width: 25%;
     }
+    /*---------------------ERROR 404 */
+    .back-home{
+        margin-left: 65px;
+        font-size: 18px;
+    }
+    .img-error404{
+        width: 100%;
+        margin-left: 440px;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -1346,6 +1383,26 @@ footer h1 {
 
     .f-submit {
         height: 40px;
+    }
+    /*---------------------ERROR 404 */
+    .error404{
+        font-size: 60px;
+    }
+    .error404 p{
+        font-size: 150px;
+    }
+    .error-404{
+        font-size: 40px;
+    }
+    
+    .back-home{
+        
+        margin-left: 150px;
+        font-size: 18px;
+    }
+    .img-error404{
+        width: 150vh;
+        margin-left: 550px;
     }
 }
 /*carrito*/
