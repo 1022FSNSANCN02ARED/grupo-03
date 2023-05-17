@@ -10,36 +10,36 @@
 <body>
   <%- include("./partials/nav") %>
 
-    <main class="w-80 m-auto top-100 mb">
-      <section class="border-solid m-1rem p-1rem bg-5 border-rad box-shadow">
-        <h2 class="txt-center fc-37">Tu Carrito</h2>
-        <ul>
+  <main class="w-80 m-auto top-100 mb">
+    <section class="border-solid m-1rem p-1rem bg-5 border-rad box-shadow">
+      <h2 class="txt-center fc-37">Tu Carrito</h2>
+      <ul>
 
-          <%if(!cottageId && !actId){%>
-            <p class="p-cart">El carrito esta vació</p>
-          <%}%>
+        <%if(!cottageId && !actId){%>
+        <p class="p-cart">El carrito esta vació</p>
+        <%}%>
 
             
           <%if(cottageInCart){%>
-            <% cottageInCart.forEach(dataCottageInCart => { %>
-              <% const cabana = cottageId.find((cabana)=>{return cabana.id == dataCottageInCart.cottage_id}) %>
-                  <%-include('./partials/cottage-in-cart.ejs',{cabana, dataCottageInCart}) %>
-            <% }); %>
-          <%}%>
+        <% cottageInCart.forEach(dataCottageInCart => { %>
+        <% const cabana = cottageId.find((cabana)=>{return cabana.id == dataCottageInCart.cottage_id}) %>
+        <%-include('./partials/cottage-in-cart.ejs',{cabana, dataCottageInCart}) %>
+        <% }); %>
+        <%}%>
 
           <%if(actInCart){%>
-            <% actInCart.forEach(dataActInCart => { %>
-              <% const activity = actId.find((activity)=>{return activity.id == dataActInCart.activity_id}) %>
-                  <%-include('./partials/activity-in-cart.ejs',{activity, dataActInCart}) %>
-            <% }); %>
-          <%}%>
+        <% actInCart.forEach(dataActInCart => { %>
+        <% const activity = actId.find((activity)=>{return activity.id == dataActInCart.activity_id}) %>
+        <%-include('./partials/activity-in-cart.ejs',{activity, dataActInCart}) %>
+        <% }); %>
+        <%}%>
 
         </ul>
         <div class="cart-total m-10 jc-bet al-items flex">
           <h3 class="fc-37">Total a pagar: $<b id="resultado_total_cost"></b>
             
           </h3>
-          <form action="/cart-final" method="post">
+          <form action="/products/cart" method="post">
             <button class="login-button  bg-3">Finalizar compra</button>
           </form>
         </div>

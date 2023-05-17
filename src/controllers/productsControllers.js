@@ -212,8 +212,7 @@ module.exports = {
 
         res.redirect("/products/cart/cartFin");
     },
-    cartFin:(req, res) => {
+    cartFin: (req, res) => {
         res.render("cartFin");
-    }
-    
+    },
 };
