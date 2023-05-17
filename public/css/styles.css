@@ -56,6 +56,7 @@ body {
 
 .border-rad5 {
     border-radius: 5px;
+    
 }
 
 .border-none {
@@ -68,6 +69,8 @@ body {
 .box-shadow {
     box-shadow: 0px 0px 10px rgb(137, 137, 137);
 }
+
+
 
 .flex {
     display: flex;
@@ -1197,6 +1200,11 @@ footer h1 {
         margin-top: 30px;
         margin-bottom: 30px;
     }
+    /*---------------------carrito */
+    .item-remove{
+        margin-top: 15px;
+        margin-left: 95px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -1292,13 +1300,49 @@ footer h1 {
 
 .item-details {
     flex-grow: 1;
+    
+}
+.item-remove form{
+    padding: 0.5rem;
 }
 .item-remove button {
-    background-color: #fff;
-    color: #333;
+    margin-left: 20px;
     border: 1px solid #333;
     padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all .3s;
+    
+
 }
+
+.button-cart1{
+    background-color: red;
+    
+}
+.button-cart1:hover{
+    transition: 0.2s;
+    background-color: #f46b6b;
+
+}
+.button-cart2{
+    background-color: #07889b;
+}
+.button-cart2:hover{
+    transition: 0.2s;
+    background-color: #77b1ba;
+
+}
+.icon-thash{
+    color: #ffffff;
+    font-size: 25px;
+}
+.icon-edit {
+    color: #ffffff;
+    font-size: 28px;
+
+}
+
+
 .cart-total button:hover {
     background-color: #66b9bf;
 }
