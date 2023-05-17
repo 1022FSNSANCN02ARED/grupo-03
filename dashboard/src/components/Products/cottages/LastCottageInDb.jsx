@@ -33,7 +33,7 @@ function LastActivity({ lastCottage }) {
                     <div className="d-flex flex-wrap m-auto">
                         <div className="col-md-8 m-auto">
                             <h6 className="text-body text-center">
-                                Cupos máximos: {lastCottage.max_place}
+                                Huéspedes: {lastCottage.guest}
                             </h6>
                             <h6 className="text-body text-center">
                                 Creación: {lastCottage.createdAt.slice(0, 10)}

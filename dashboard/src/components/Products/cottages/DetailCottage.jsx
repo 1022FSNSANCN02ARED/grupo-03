@@ -54,7 +54,7 @@ function DetailUser() {
                         <div className="d-flex flex-wrap m-auto">
                             <div className="col-md-8 m-auto">
                                 <h6 className="text-body text-center">
-                                    Cupos máximos: {cottage.max_place}
+                                    Huéspedes: {cottage.guest}
                                 </h6>
                                 <h6 className="text-body text-center">
                                     Creación: {cottage.createdAt.slice(0, 10)}
