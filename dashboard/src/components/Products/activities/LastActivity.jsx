@@ -28,7 +28,7 @@ function LastActivity({ lastActivity }) {
                         {lastActivity.name}
                     </h4>
                     <h6 className="text-body text-center">
-                        Descripción: {lastActivity.description}
+                        {lastActivity.description}
                     </h6>
                     <div className="d-flex flex-wrap m-auto">
                         <div className="col-md-8 m-auto">
