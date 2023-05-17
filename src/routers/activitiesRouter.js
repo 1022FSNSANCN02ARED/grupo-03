@@ -22,6 +22,7 @@ const error_create_act = require("../middlewares/error_product_form");
 const error_edit_act = require("../middlewares/error_product_edit_form");
 const activityTicketsMiddleware = require("../middlewares/activityTicketsMiddleware");
 const error_activity_tickets = require("../middlewares/error_activity_tickets");
+const normalUserRedirect = require("../middlewares/normalUserRedirect");
 
 router.post(
     "/create",
@@ -33,7 +34,7 @@ router.post(
 
 router.get("/", activitiesController.activities);
 
-router.get("/edit/:id", activitiesController.showEditForm);
+router.get("/edit/:id", normalUserRedirect, activitiesController.showEditForm);
 router.put(
     "/edit/:id",
     uploadFile.array("activity_images"),
@@ -50,7 +51,11 @@ router.post(
     activitiesController.addTicketsToCart
 );
 
-router.get("/delete/:id", activitiesController.showDeleteOption);
-router.delete("/delete/:id", activitiesController.delete);
+router.get(
+    "/delete/:id",
+    normalUserRedirect,
+    activitiesController.showDeleteOption
+);
+router.delete("/delete/:id", normalUserRedirect, activitiesController.delete);
 
 module.exports = router;

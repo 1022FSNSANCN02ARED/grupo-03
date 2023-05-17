@@ -11,7 +11,7 @@
     <p class="m-10">TOTAL: $<b class="total_cost"><%=dataActInCart.total_cost%></b></p>
   </div>
   <div class="item-remove ">
-    <form action="/products/cart/delete/activity/<%=dataActInCart.sessionId%>?_method=delete" method="delete">
+    <form action="/products/cart/delete/activity/<%=dataActInCart.sessionId%>?_method=DELETE" method="post">
       <button class="border-rad5 button-cart1"><i class="fa-solid fa-trash-can icon-thash"></i></button>
     </form>
     <form action="/products/cart/edit/activity/<%=dataActInCart.sessionId%>" method="get">

@@ -20,6 +20,7 @@ const error_product_form = require("../middlewares/error_product_form");
 const error_product_edit_form = require("../middlewares/error_product_edit_form");
 const bookingMiddleware = require("../middlewares/bookingMiddleware");
 const error_booking_form = require("../middlewares/error_booking_form");
+const normalUserRedirect = require("../middlewares/normalUserRedirect");
 
 router.get("/details/:id", cottagesController.showDetails);
 
@@ -40,7 +41,7 @@ router.post(
     cottagesController.create
 );
 
-router.get("/edit/:id", cottagesController.showEditForm);
+router.get("/edit/:id", normalUserRedirect, cottagesController.showEditForm);
 router.put(
     "/edit/:id",
     uploadFile.array("cottage_images"),
@@ -49,7 +50,11 @@ router.put(
     cottagesController.update
 );
 
-router.get("/delete/:id", cottagesController.showDeleteOption);
+router.get(
+    "/delete/:id",
+    normalUserRedirect,
+    cottagesController.showDeleteOption
+);
 router.delete("/delete/:id", cottagesController.delete);
 
 module.exports = router;
