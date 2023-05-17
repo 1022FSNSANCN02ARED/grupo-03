@@ -7,6 +7,7 @@ import Tarjet from "./components/Tarjet";
 
 import MainUsersSection from "./components/UsersSection/MainUsersSection";
 import MainActivitiesSection from "./components/Products/activities/MainActivitiesSection";
+import MainCottagesSection from "./components/Products/cottages/MainCottagesSection";
 
 function App() {
     return (
@@ -20,13 +21,12 @@ function App() {
                     path="/activities/*"
                     Component={MainActivitiesSection}
                 />
+                <Route
+                    exact
+                    path="/cottages/*"
+                    Component={MainCottagesSection}
+                />
             </Routes>
-
-            <header className="App-header">
-                <main>
-                    <Cottages />
-                </main>
-            </header>
         </div>
     );
 }
