@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import UsersList from "./UsersList";
-import LastUser from "./LastUserInDB";
+import LastActivity from "./LastActivity";
+import ActivitiesList from "./ActivitiesList";
 
 function AllUsersSection() {
-    const [users, setUsers] = useState(null);
+    const [activities, setActivities] = useState(null);
     const [isLoading, setisLoading] = useState(true);
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/users")
+        fetch("http://localhost:3000/api/activities")
             .then((response) => {
                 return response.json();
             })
             .then((result) => {
                 setisLoading(false);
-                setUsers(result);
+                setActivities(result);
             })
             .catch((error) => {
                 setisLoading(false);
@@ -26,9 +26,13 @@ function AllUsersSection() {
     }
 
     return (
-        <div className="container-lg">
-            {users && <LastUser lastUser={users.data[users.count - 1]} />}
-            {users && <UsersList users={users.data} />}
+        <div className="container-xl">
+            {activities && (
+                <LastActivity
+                    lastActivity={activities.data[activities.count - 1]}
+                />
+            )}
+            {activities && <ActivitiesList activities={activities.data} />}
         </div>
     );
 }

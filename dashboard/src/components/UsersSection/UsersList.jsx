@@ -8,7 +8,7 @@ function UsersList({ users }) {
                 {users &&
                     users.map((user, i) => (
                         <div
-                            className={`m-2 ${
+                            className={`m-2 shadow ${
                                 user.rol.name == "admin" ? "order-1" : "order-2"
                             }`}
                             key={user.first_name + i}
