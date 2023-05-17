@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import LastActivity from "./LastActivity";
 import ActivitiesList from "./ActivitiesList";
 
-function AllUsersSection() {
+function AllActivitiesSection() {
     const [activities, setActivities] = useState(null);
     const [isLoading, setisLoading] = useState(true);
 
@@ -37,4 +37,4 @@ function AllUsersSection() {
     );
 }
 
-export default AllUsersSection;
+export default AllActivitiesSection;
