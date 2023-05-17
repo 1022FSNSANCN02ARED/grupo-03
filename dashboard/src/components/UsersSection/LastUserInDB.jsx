@@ -6,9 +6,11 @@ function LastUser({ lastUser }) {
 
     return (
         <div className="card m-4 bg-5 p-3 shadow">
-            <h3 className="text-center">Ultimo usuario cargado</h3>
+            <h3 className="text-center bg-4 rounded py-2 fc-5">
+                Ultimo usuario cargado
+            </h3>
             <div className="row g-0">
-                <div className="col-md-4 d-flex flex-column">
+                <div className="col d-flex flex-column">
                     <img
                         style={{ width: "280px" }}
                         src={lastUser.avatar}
@@ -23,8 +25,8 @@ function LastUser({ lastUser }) {
                         Detalle
                     </Link>
                 </div>
-                <div className="col-md-8">
-                    <div className="card-body">
+                <div className="col-md-8 m-auto">
+                    <div className="card-body text-center">
                         <h5 className="card-title">
                             {lastUser.first_name} {lastUser.last_name}
                         </h5>
