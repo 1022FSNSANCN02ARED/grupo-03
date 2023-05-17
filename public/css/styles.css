@@ -1091,6 +1091,43 @@ footer h1 {
     border: #044a55 1px solid;
     padding: 10px 0;
 }
+/* -------------------ERROR 404 */
+.error404{
+    margin-top: 50px;
+   font-weight: bold;
+   font-size: 30px;
+   text-align: center;
+  
+  background: linear-gradient(to right, #66b9bf 20%, #e37222 40%, #FF0 60%, #07889b 80%);
+  background-size: 200% auto;
+  
+  color: #000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  animation: erro 4s linear infinite;
+}
+@keyframes erro {
+    to {
+        background-position: 200% center;
+    }
+}
+.error-n{
+    font-weight: bold;
+    font-size: 80px;
+    text-align: center;
+}
+.error-404{
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+}
+.img-error404{
+    margin-left: 365px;
+    margin-top: 55px;
+    align-items: center;
+}
+
 
 /*-------------- media queries */
 @media (min-width: 488px) {
