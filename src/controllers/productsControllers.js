@@ -45,7 +45,7 @@ module.exports = {
         const cottageInCart = req.session.cottagesInCart;
         const actInCart = req.session.activitiesInCart;
 
-        //console.log(cottageInCart);
+        console.log(cottageInCart);
         //console.log(actInCart);
 
         let cottages;
@@ -74,11 +74,6 @@ module.exports = {
             });
         }
 
-        /*const cabana = cottages.find((cabana) => {
-            return cabana.id == cottageInCart[0].cottage_id;
-        });
-        console.log(cabana);*/
-
         //console.log(cottages);
         //console.log(activities);
 
@@ -87,8 +82,6 @@ module.exports = {
             actId: activities,
             cottageInCart: cottageInCart,
             actInCart: actInCart,
-            // total_cost_cottage: cottageInCart.total_cost,
-            // total_cost_act: actInCart.total_cost
         });
     },
 
@@ -211,5 +204,23 @@ module.exports = {
         req.session.activitiesInCart = null;
 
         res.redirect("/");
+    },
+    deleteCottageCart: (req, res) => {
+        const cottageInCart = req.session.cottagesInCart;
+        const cottageId = req.params.id
+        
+        req.session.cottagesInCart.find((cottage) => cottage.cottage_id === cottageId);
+
+        cottagesQueSeQuita = null;
+        res.redirect("/products/cart");
+    },
+    deleteActivityCart: (req, res) => {
+        const actInCart = req.session.activitiesInCart;
+        const actId = req.params.id;
+
+        
+
+        req.session.activitiesInCart = null;
+        res.redirect("/products/cart");
     },
 };

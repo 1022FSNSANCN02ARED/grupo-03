@@ -3,7 +3,7 @@ const expresiones = {
     surname: /^[a-zA-ZÀ-ÿ\s]{2,40}$/,
     email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     phoneNumber: /^\d{7,14}$/,
-    password: /^.{6,12}$/,
+    password: /^.{6,100}$/,
 };
 
 const inputs = document.querySelectorAll("#form-register input");
