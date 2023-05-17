@@ -208,22 +208,39 @@ module.exports = {
     cartFin: (req, res) => {
         res.render("cartFin");
     },
-    deleteCottageCart: (req, res) => {
-        const cottageInCart = req.session.cottagesInCart;
-        const cottageId = req.params.id
-        
-        req.session.cottagesInCart.find((cottage) => cottage.cottage_id === cottageId);
 
-        cottagesQueSeQuita = null;
+    deleteCottageCart: (req, res) => {
+        const cottageToDelete = req.session.cottagesInCart.find((cottage) => {
+            return Number(cottage.sessionId) == Number(req.params.id);
+        });
+        const newCottagesInCart = req.session.cottagesInCart.filter(
+            (sessionCottage) => {
+                return (
+                    Number(cottageToDelete.sessionId) !==
+                    Number(sessionCottage.sessionId)
+                );
+            }
+        );
+        req.session.cottagesInCart = newCottagesInCart;
+
         res.redirect("/products/cart");
     },
     deleteActivityCart: (req, res) => {
-        const actInCart = req.session.activitiesInCart;
-        const actId = req.params.id;
+        const activityToDelete = req.session.activitiesInCart.find(
+            (activity) => {
+                return Number(activity.sessionId) == Number(req.params.id);
+            }
+        );
+        const newActivityInCart = req.session.activitiesInCart.filter(
+            (sessionActivity) => {
+                return (
+                    Number(activityToDelete.sessionId) !==
+                    Number(sessionActivity.sessionId)
+                );
+            }
+        );
+        req.session.activitiesInCart = newActivityInCart;
 
-        
-
-        req.session.activitiesInCart = null;
         res.redirect("/products/cart");
     },
 };

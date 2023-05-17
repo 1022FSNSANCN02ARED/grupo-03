@@ -24,4 +24,13 @@ router.get(
     productsControllers.showEditActivityInCart
 );
 
+router.delete(
+    "/cart/delete/cottage/:id",
+    productsControllers.deleteCottageCart
+);
+router.delete(
+    "/cart/delete/activity/:id",
+    productsControllers.deleteActivityCart
+);
+
 module.exports = router;
