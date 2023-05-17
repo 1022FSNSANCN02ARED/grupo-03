@@ -2,6 +2,7 @@ import React from 'react';
 import "./App.css";
 import Cottages from './components/Cottages'
 
+
 function App() {
     return (
         <div className="App">
