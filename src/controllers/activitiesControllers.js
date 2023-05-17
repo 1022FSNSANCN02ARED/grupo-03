@@ -308,7 +308,7 @@ module.exports = {
 
             const activityToAddCart = {
                 activity_id: req.params.id,
-                user_id: req.session.userLog.id,
+                user_id: null,
                 day: req.body.day,
                 quantity: req.body.quantity,
                 total_cost: Number(req.body.total),

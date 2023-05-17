@@ -250,7 +250,7 @@ module.exports = {
             : null;
         const rent = {
             cottage_id: req.params.id,
-            user_id: req.session.userLog.id,
+            user_id: null,
             date_in: req.body.check_in,
             date_out: req.body.check_out,
             total_cost: Number(req.body.total),
