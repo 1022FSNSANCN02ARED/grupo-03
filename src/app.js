@@ -8,6 +8,13 @@ const methodOverride = require("method-override");
 
 const cookieParser = require("cookie-parser");
 
+const cors = require("cors");
+app.use(
+    cors({
+        origin: "*",
+    })
+);
+
 app.listen(3000, () => console.log("servidor corrinedo en el puerto 3000"));
 
 const publicPath = path.join(__dirname, "../public");

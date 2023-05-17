@@ -1,31 +1,37 @@
-const { Users } = require("../../database/models")
+const { Users } = require("../../database/models");
+const { Rents } = require("../../database/models");
+const { AcivitiesUsers } = require("../../database/models");
 module.exports = {
+    async findUsers(req, res) {
+        const users = await Users.findAll({ include: ["rol"] });
 
-async findUsers(req, res) {
-    const users = await Users.findAll();
+        const allUsers = await users.map((users) => {
+            let dataUsers = users.dataValues;
+            delete dataUsers.password;
+            dataUsers.avatar = "http://localhost:3000" + dataUsers.avatar;
+            return {
+                ...dataUsers,
+                detail: `http://localhost:3000/api/users/detail/${users.id}`,
+            };
+        });
+        // Objeto que devuelve la API
+        res.json({
+            status: 200,
+            count: allUsers.length,
+            data: allUsers,
+        });
+    },
 
-    const users2 = users.map((users) => {
-        let dataUsers = users.dataValues;
-        return {
-            ...dataUsers,
-            detail: `http://localhost:3000/api/users/${users.id}`,
-        };
-    });
-    // Objeto que devuelve la API
-    res.json({
-        count: users2.length,
-        data: users2,
-    });
-},
-
-async findUsers(req, res) {
-    const users = await Users.findByPk(req.params.id);
-    console.log(users.images);
-    
-    // Objeto que devuelve la API
-    res.json({
-        ...users,
-    });
-
-},
-}
+    async findUser(req, res) {
+        const user = await Users.findByPk(req.params.id, {
+            include: ["rol", "rents", "tickets"],
+        });
+        // Objeto que devuelve la API
+        user.avatar = `http://localhost:3000/${user.avatar}`;
+        delete user.dataValues.password;
+        res.json({
+            status: 200,
+            data: user,
+        });
+    },
+};

@@ -1,39 +1,42 @@
-.App {
-  text-align: center;
+/*----------------------------- config colors */
+/* Paleta de colores: 
+gris oscuro #373737
+naranja #e37222
+turquesa oscuro #07889b
+turquesa claro #66b9f
+grisclaro #f1f7ed */
+
+.bg-1 {
+    background-color: #373737;
+}
+.bg-2 {
+    background-color: #e37222;
+}
+.bg-3 {
+    background-color: #07889b;
+}
+.bg-4 {
+    background-color: #66b9bf;
+}
+.bg-5 {
+    background-color: #f1f7ed;
+}
+.bg-6 {
+    background-color: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.fc-37 {
+    color: #373737;
+}
+.fc-3 {
+    color: #07889b;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fc-2 {
+    color: #e37222;
 }
-
-.App-header {
- 
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fc-5 {
+    color: #f1f7ed;
 }
 @media (min-width: 1200px) {
   .row {

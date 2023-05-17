@@ -14,10 +14,11 @@
       <img src="" class="<%= type %>-preview-img">
     </div>
   </div>
-  <% if(locals.errors?.activity_images){ %>
+
+  <% if(locals.errors?.activity_images && type == "activity"){ %>
   <p class="txt-error txt-center"><%= errors.activity_images.msg %></p>
   <% } %>
-  <% if(locals.errors?.cottage_images){ %>
+  <% if(locals.errors?.cottage_images && type == "cottage"){ %>
   <p class="txt-error txt-center"><%= errors.cottage_images.msg %></p>
   <% } %>
   <% if(type == "cottage"){ %>

@@ -21,12 +21,14 @@
     </p>
 
     <div class="txt-center">
-      <a href="/products/cottages/details/<%= cabana.id%>" class="more-button txt-center bg-3">Más información</a>
+      <a href="/products/cottages/details/<%= cabana.id%>" class="more-button txt-center bg-3">Más imágenes</a>
     </div>
     <br />
+    <div class="flex flex-wrap p-10px">
     <div class="price-res flex w-100 jc-bet al-items">
       <h3>precio por noche: $<%= cabana.price %></h3>
       <a href="/products/cottages/booking/<%= cabana.id  %> " class="cottage-button txt-center bg-3">reservar</a>
+    </div>
     </div>
     <% if (userLog?.rol.name == "admin") { %>
     <div class="section-admin-buttons flex jc-evenly">
