@@ -1408,7 +1408,7 @@ footer h1 {
     }
     .cart-fin1{
         width: 68%;
-        height: 300px;
+        
         text-align: center;
         align-items: center;
         font-size: 18px;
@@ -1451,12 +1451,12 @@ footer h1 {
     }
     .cart-fin1{
         width: 58%;
-        height: 200px;
+        
         text-align: center;
         align-items: center;
-        font-size: 25px;
+        font-size: 15px;
         margin-left: 40px;
-        padding: 30px;
+        padding: 10px;
     }
 }
 /*carrito*/
@@ -1533,16 +1533,16 @@ footer h1 {
     
 }
 .cart-fin1{
-    width: 70%;
-    height: 400px;
-    margin-top: 20px;
-    margin-left: 50px;
+    width: 60%;
+    height: 300px;
+    margin-top: 30px;
+    margin-left: 160px;
 
     text-align: center;
     align-items: center;
     font-size: 15px;
     
-    padding: 10px;
+    padding: 15px;
 
 
     background-color: #ffffff;
