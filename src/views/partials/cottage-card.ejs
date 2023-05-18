@@ -3,14 +3,8 @@
   <figure class="pos-relative of-hidden cont-card-img flex al-items">
     <img class="card-img pos-absolute w-100" src="<%= cabana.images[0].image%> " alt="foto de cabaña" />
 
-    <a href="#" class="share-button pos-absolute flex">
-      <i class="fa-solid fa-share-nodes"></i>
-    </a>
-
     <div class="icons-beds jc-end al-items flex pos-absolute w-100">
-      <i class="fa-solid fa-bed icon-bed"></i>
-      <i class="fa-solid fa-bed icon-bed"></i>
-      <i class="fa-solid fa-bed icon-bed"></i>
+      <%= cabana.guest %> x <i class="fa-solid fa-user icon-bed"></i>
     </div>
   </figure>
 
@@ -25,10 +19,10 @@
     </div>
     <br />
     <div class="flex flex-wrap p-10px">
-    <div class="price-res flex w-100 jc-bet al-items">
-      <h3>precio por noche: $<%= cabana.price %></h3>
-      <a href="/products/cottages/booking/<%= cabana.id  %> " class="cottage-button txt-center bg-3">reservar</a>
-    </div>
+      <div class="price-res flex w-100 jc-bet al-items">
+        <h3>precio por noche: $<%= cabana.price %></h3>
+        <a href="/products/cottages/booking/<%= cabana.id  %> " class="cottage-button txt-center bg-3">reservar</a>
+      </div>
     </div>
     <% if (userLog?.rol.name == "admin") { %>
     <div class="section-admin-buttons flex jc-evenly">
