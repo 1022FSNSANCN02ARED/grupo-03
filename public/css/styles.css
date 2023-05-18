@@ -1467,3 +1467,24 @@ footer h1 {
     margin: 90px 0 90px 0;
     width: 100%;
 }
+
+.cart-fin{
+    width: 70%;
+    height: 300px;
+    margin: auto;
+    display: block;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+    align-items: center;
+    background-color: #f1f7ed;
+    border: 1px solid #6b6b6b;
+    border-radius: 5px;
+}
+.cart-fin1{
+
+}
+.icon-cart-fin{
+    color: yellowgreen;
+    font-size: 40px;
+}

@@ -14,6 +14,8 @@ router.use("/activities", activitiesRouter);
 
 router.get("/cart", productsControllers.productCart);
 router.post("/cart", productsControllers.buyCart);
+router.get("/cart/cartFin", productsControllers.cartFin);
+
 
 router.get("/cart/edit/cottage/:id", productsControllers.showEditCottageInCart);
 router.get(
