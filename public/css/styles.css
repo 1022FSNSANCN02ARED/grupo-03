@@ -1533,10 +1533,17 @@ footer h1 {
     
 }
 .cart-fin1{
-    width: 60%;
+    margin: 0 auto;
+    max-width: 750px;
+    
+}
+.cart-fin1{
+
+
     height: 300px;
+    margin: 0 auto;
     margin-top: 30px;
-    margin-left: 160px;
+  
 
     text-align: center;
     align-items: center;
