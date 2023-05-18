@@ -16,7 +16,7 @@
 
     <!-- images -->
     <section class="p-10px">
-      <ul class="flex flex-wrap gap-y-10 w-90 m-auto ">
+      <ul class="flex flex-wrap gap-y-10 w-90 m-auto jc-center">
         <% activity.images.forEach((image, i) => { %>
         <li class="list-card">
           <figure class="cont-card-img of-hidden pos-relative flex al-items">
@@ -89,7 +89,7 @@
           <% } %>
 
           <% if (activity.hours.second_weekday_hours) { %>
-          <option value="<%= hours.second_weekday_hours %>" class="weekday-option hide" <%= (oldData?.hour == hours.second_weekday_hours) ? "selected" : "" %>><%= activity.hours.second_weekday_hours %></option>
+          <option value="<%= activity.hours.second_weekday_hours %>" class="weekday-option hide" <%= (oldData?.hour == activity.hours.second_weekday_hours) ? "selected" : "" %>><%= activity.hours.second_weekday_hours %></option>
           <% } %>
 
           <% if (activity.hours.weekend_hours) { %>
